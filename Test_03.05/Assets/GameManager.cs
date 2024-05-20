@@ -22,8 +22,10 @@ public class GameManager : MonoBehaviourPunCallbacks
     public List<GameObject> PlayersSorted = new List<GameObject>();
     public List<GameObject> PlayersJoin = new List<GameObject>();
     public int WhoseTurn = 0;
+    public int MinigameCount = 0;
 
 
+    public GameObject[] MinigameList;
 
     // Start is called before the first frame update
     void Start()
@@ -84,9 +86,11 @@ public class GameManager : MonoBehaviourPunCallbacks
 
     public void CreateRoom()
     {
+
         RoomOptions options = new RoomOptions();
         options.MaxPlayers = 4; // Set maximum players
         PhotonNetwork.CreateRoom(RoomName.text, options);
+   
     }
     public void JoinRoom()
     {

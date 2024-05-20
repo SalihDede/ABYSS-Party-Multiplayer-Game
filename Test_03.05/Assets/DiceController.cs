@@ -16,6 +16,8 @@ public class DiceController : MonoBehaviourPunCallbacks
     public GameObject GUI;
 
 
+
+
     public Button startButton;
     public List<GameObject> StepsList = new List<GameObject>();
 
@@ -105,8 +107,6 @@ public class DiceController : MonoBehaviourPunCallbacks
         }
         startButton.gameObject.SetActive(PhotonNetwork.IsMasterClient);
 
-
-
     }
 
     public void StartGameButton()
@@ -118,7 +118,7 @@ public class DiceController : MonoBehaviourPunCallbacks
 
         }
     }
-
+    //PhotonNetwork.Instantiate("Playerr", new Vector3(0, 0.51f, 0), Quaternion.identity);
 
     public void ThrowDice()
     {
@@ -143,6 +143,10 @@ public class DiceController : MonoBehaviourPunCallbacks
             }
             else
             {
+                GameManager.GetComponent<GameManager>().MinigameCount = Random.Range(0,5);
+                photonView.RPC("MiniGameSelectUpdate", RpcTarget.All, GameManager.GetComponent<GameManager>().MinigameCount);
+
+                GameManager.GetComponent<GameManager>().MinigameList[GameManager.GetComponent<GameManager>().MinigameCount].SetActive(true);
                 GameManager.GetComponent<GameManager>().WhoseTurn = 0;
             }
 
@@ -213,6 +217,12 @@ public class DiceController : MonoBehaviourPunCallbacks
     void WhoseTurnUpdate(int result)
     {
         GameManager.GetComponent<GameManager>().WhoseTurn = result;
+
+
+    }
+    void MiniGameSelectUpdate(int result)
+    {
+        GameManager.GetComponent<GameManager>().MinigameCount = result;
 
 
     }
