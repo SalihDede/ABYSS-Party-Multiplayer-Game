@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviourPunCallbacks
     public int WhoseTurn = 0;
     public int MinigameCount = 0;
 
+    public GameObject Kamera;
 
     public GameObject[] MinigameList;
 

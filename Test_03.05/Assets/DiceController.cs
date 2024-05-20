@@ -17,7 +17,6 @@ public class DiceController : MonoBehaviourPunCallbacks
 
 
 
-
     public Button startButton;
     public List<GameObject> StepsList = new List<GameObject>();
 
@@ -146,7 +145,7 @@ public class DiceController : MonoBehaviourPunCallbacks
                 GameManager.GetComponent<GameManager>().MinigameCount = Random.Range(0,5);
                 photonView.RPC("MiniGameSelectUpdate", RpcTarget.All, GameManager.GetComponent<GameManager>().MinigameCount);
 
-                GameManager.GetComponent<GameManager>().MinigameList[GameManager.GetComponent<GameManager>().MinigameCount].SetActive(true);
+ 
                 GameManager.GetComponent<GameManager>().WhoseTurn = 0;
             }
 
@@ -225,6 +224,8 @@ public class DiceController : MonoBehaviourPunCallbacks
     void MiniGameSelectUpdate(int result)
     {
         GameManager.GetComponent<GameManager>().MinigameCount = result;
+        GameManager.GetComponent<GameManager>().MinigameList[GameManager.GetComponent<GameManager>().MinigameCount].SetActive(true);
+        GameManager.GetComponent<GameManager>().Kamera.SetActive(false);
 
 
     }
