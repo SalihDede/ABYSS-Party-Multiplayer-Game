@@ -220,6 +220,8 @@ public class DiceController : MonoBehaviourPunCallbacks
 
 
     }
+
+    [PunRPC]
     void MiniGameSelectUpdate(int result)
     {
         GameManager.GetComponent<GameManager>().MinigameCount = result;
