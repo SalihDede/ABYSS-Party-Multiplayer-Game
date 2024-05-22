@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviourPunCallbacks
 
     public GameObject[] MinigameList;
 
-
+    public string NameForPhoton;
 
 
     public GameObject[] LobbyListObjects;
