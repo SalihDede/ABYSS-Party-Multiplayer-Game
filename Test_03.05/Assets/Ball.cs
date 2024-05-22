@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class Ball : MonoBehaviour
+public class ball : MonoBehaviour
 {
     public GameObject SemihGame;
     public GameObject DeathEffect;
