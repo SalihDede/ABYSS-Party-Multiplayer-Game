@@ -1946,7 +1946,7 @@ Transform:
   - {fileID: 418464548780536592}
   - {fileID: 7208048087026703768}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &8987136569212136116
 CapsuleCollider:
@@ -2435,7 +2435,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3061946375615597150, guid: bcc6d0c76e6dde4469f26632e92208fb, type: 3}
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: bcc6d0c76e6dde4469f26632e92208fb, type: 3}
 --- !u!4 &3772470100646754169 stripped
@@ -2443,6 +2444,27 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3061946375615597151, guid: bcc6d0c76e6dde4469f26632e92208fb, type: 3}
   m_PrefabInstance: {fileID: 2172064951731502374}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &3772470100646754170 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3061946375615597148, guid: bcc6d0c76e6dde4469f26632e92208fb, type: 3}
+  m_PrefabInstance: {fileID: 2172064951731502374}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7671815366988814828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3772470100646754170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc7f56b9872e25c48a5662975a762c60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OrbitCamera: {fileID: 312110741136010128}
+  CameraFollowPoint: {fileID: 8987136569899355445}
+  Character: {fileID: 8987136569212136118}
+  pushPullForce: 5
 --- !u!1001 &2172064952394938348
 PrefabInstance:
   m_ObjectHideFlags: 0

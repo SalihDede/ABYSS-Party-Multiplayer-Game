@@ -13,11 +13,8 @@ namespace KinematicCharacterController.Walkthrough.MultipleMovementStates
         public Transform CameraFollowPoint;
         public MyCharacterController Character;
 
-        public float pushPullForce = 10f; // Çekme ve itme kuvveti
+        public float pushPullForce = 1f; // Push and Pull Force
 
-        private const string MouseXInput = "Mouse X";
-        private const string MouseYInput = "Mouse Y";
-        private const string MouseScrollInput = "Mouse ScrollWheel";
         private const string HorizontalInput = "Horizontal";
         private const string VerticalInput = "Vertical";
 
@@ -25,10 +22,10 @@ namespace KinematicCharacterController.Walkthrough.MultipleMovementStates
         {
             Cursor.lockState = CursorLockMode.Locked;
 
-            // Kameranın takip etmesini sağla
+            // Camera follow us
             OrbitCamera.SetFollowTransform(CameraFollowPoint);
 
-            // Kamera engellerini kontrol ederken karakterin collider'larını yok say
+            // not control collider
             OrbitCamera.IgnoredColliders.Clear();
             OrbitCamera.IgnoredColliders.AddRange(Character.GetComponentsInChildren<Collider>());
         }
@@ -41,7 +38,7 @@ namespace KinematicCharacterController.Walkthrough.MultipleMovementStates
             }
 
             HandleCharacterInput();
-            HandlePuzzleInteraction(); // Puzzle objeleriyle etkileşimi kontrol et
+            HandlePuzzleInteraction(); // Itteration of puzzles tag
         }
 
         private void LateUpdate()
@@ -51,24 +48,24 @@ namespace KinematicCharacterController.Walkthrough.MultipleMovementStates
 
         private void HandleCameraInput()
         {
-            // Kamera için giriş vektörünü oluştur
-            float mouseLookAxisUp = Input.GetAxisRaw(MouseYInput);
-            float mouseLookAxisRight = Input.GetAxisRaw(MouseXInput);
+            // Camera vector (input)
+            float mouseLookAxisUp = Input.GetAxisRaw("Mouse Y");
+            float mouseLookAxisRight = Input.GetAxisRaw("Mouse X");
             Vector3 lookInputVector = new Vector3(mouseLookAxisRight, mouseLookAxisUp, 0f);
 
-            // Farenin kilitli olmadığı durumda kamerayı hareket ettirmeyi engelle
+            
             if (Cursor.lockState != CursorLockMode.Locked)
             {
                 lookInputVector = Vector3.zero;
             }
 
-            // Kamerayı hareket ettirme girişi
-            float scrollInput = -Input.GetAxis(MouseScrollInput);
+            // Move Camera
+            float scrollInput = -Input.GetAxis("Mouse ScrollWheel");
 
-            // Kameraya girişleri uygula
+            // Apply camera inpts
             OrbitCamera.UpdateWithInput(Time.deltaTime, scrollInput, lookInputVector);
 
-            // Yakınlaşma seviyesini değiştirme
+            // Zoom level
             if (Input.GetMouseButtonDown(1))
             {
                 OrbitCamera.TargetDistance = (OrbitCamera.TargetDistance == 0f) ? OrbitCamera.DefaultDistance : 0f;
@@ -79,7 +76,7 @@ namespace KinematicCharacterController.Walkthrough.MultipleMovementStates
         {
             PlayerCharacterInputs characterInputs = new PlayerCharacterInputs();
 
-            // Karakter girişlerini oluştur
+            // Character inputs
             characterInputs.MoveAxisForward = Input.GetAxisRaw(VerticalInput);
             characterInputs.MoveAxisRight = Input.GetAxisRaw(HorizontalInput);
             characterInputs.CameraRotation = OrbitCamera.Transform.rotation;
@@ -87,29 +84,29 @@ namespace KinematicCharacterController.Walkthrough.MultipleMovementStates
             characterInputs.CrouchDown = Input.GetKeyDown(KeyCode.C);
             characterInputs.CrouchUp = Input.GetKeyUp(KeyCode.C);
 
-            // Girişleri karaktere uygula
+            // Aplly inputs chrcter
             Character.SetInputs(ref characterInputs);
         }
 
         private void HandlePuzzleInteraction()
         {
-            // P tuşuna basılı tutulduğunda çekme ve itme işlevlerini kontrol et
+            // Control when user push P
             if (Input.GetKey(KeyCode.P))
             {
-                // Çekme işlevini kontrol et
+                // Kontrol pull
                 PullPuzzleObjects();
             }
-            else if (Input.GetKeyUp(KeyCode.P))
+            else if (Input.GetKey(KeyCode.U))
             {
-                // İtme işlevini kontrol et
+                // kontrol push
                 PushPuzzleObjects();
             }
         }
 
         private void PullPuzzleObjects()
         {
-            // Çekme işlevi için etkileşime giren nesneleri bul
-            Collider[] hitColliders = Physics.OverlapSphere(transform.position, 5f); // Oyuncunun etrafındaki 5 birimlik bir alanı kontrol et
+            // Find the object whic is near by (itterarion)
+            Collider[] hitColliders = Physics.OverlapSphere(transform.position, 3f); // search for 3 unit area
             foreach (Collider col in hitColliders)
             {
                 if (col.CompareTag("PUZZLE"))
@@ -126,8 +123,8 @@ namespace KinematicCharacterController.Walkthrough.MultipleMovementStates
 
         private void PushPuzzleObjects()
         {
-            // İtme işlevi için etkileşime giren nesneleri bul
-            Collider[] hitColliders = Physics.OverlapSphere(transform.position, 5f); // Oyuncunun etrafındaki 5 birimlik bir alanı kontrol et
+            // Find objects for push
+            Collider[] hitColliders = Physics.OverlapSphere(transform.position, 3f); // search for 3 unit area
             foreach (Collider col in hitColliders)
             {
                 if (col.CompareTag("PUZZLE"))
