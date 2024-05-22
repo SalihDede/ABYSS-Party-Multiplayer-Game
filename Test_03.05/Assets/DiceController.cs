@@ -86,6 +86,8 @@ public class DiceController : MonoBehaviourPunCallbacks
         GameManager = GameObject.Find("GameManager");
         gameObject.name = GameManager.GetComponent<GameManager>().PlayersJoin.Count.ToString();
 
+        GameManager.GetComponent<GameManager>().NameForPhoton = gameObject.name;
+
         diceResultText = GameObject.Find("DiceNumberResult").GetComponent<TMP_Text>();
         GameManager.GetComponent<GameManager>().PlayersJoin.Add(gameObject);
 

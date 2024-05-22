@@ -31,29 +31,31 @@ public class Ball : MonoBehaviour
 private void OnTriggerEnter(Collider other)
     {
 
-        if(other.tag == "0" || other.tag == "1" || other.tag == "2" || other.tag == "3")
+        if(other.name == "0" || other.name == "1" || other.name == "2" || other.name == "3")
         {
-            if(other.tag == "0")
-            {
-                SemihGame.GetComponent<GameOneManager>().Player1 += 1;
-            }
-            if (other.tag == "1")
-            {
-                SemihGame.GetComponent<GameOneManager>().Player2 += 1;
-            }
-            if (other.tag == "2")
-            {
-                SemihGame.GetComponent<GameOneManager>().Player3 += 1;
-            }
-            if (other.tag == "3")
-            {
-                SemihGame.GetComponent<GameOneManager>().Player4 += 1;
-            }
-            SemihGame.GetComponent<GameOneManager>().LastTouch.text = other.tag;
+
+            SemihGame.GetComponent<GameOneManager>().LastTouch.text = other.name;
         }
 
         if(other.tag == "NET1")
         {
+
+            if (SemihGame.GetComponent<GameOneManager>().LastTouch.text == "0")
+            {
+                SemihGame.GetComponent<GameOneManager>().Player1 += 1;
+            }
+            if (SemihGame.GetComponent<GameOneManager>().LastTouch.text == "1")
+            {
+                SemihGame.GetComponent<GameOneManager>().Player2 += 1;
+            }
+            if (SemihGame.GetComponent<GameOneManager>().LastTouch.text == "2")
+            {
+                SemihGame.GetComponent<GameOneManager>().Player3 += 1;
+            }
+            if (SemihGame.GetComponent<GameOneManager>().LastTouch.text == "3")
+            {
+                SemihGame.GetComponent<GameOneManager>().Player4 += 1;
+            }
             StartCoroutine(Effect());
             Destroy(gameObject);
             SemihGame.GetComponent<GameOneManager>().Goal = true;
