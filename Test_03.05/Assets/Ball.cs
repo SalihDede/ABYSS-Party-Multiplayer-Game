@@ -3,25 +3,30 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 
-public class ball : MonoBehaviourPun
+public class Ball : MonoBehaviourPun
 {
     Rigidbody rb;
-    public float speed = 10f; // Adjust speed as needed
+    Photon.Realtime.Player ownerPlayer; // Topun sahibini tutmak iÃ§in
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        ownerPlayer = photonView.Owner; // Topun sahibini ayarla
+        if (PhotonNetwork.IsMasterClient) // EÄŸer mevcut oyuncu ev sahibi ise
+        {
+            photonView.TransferOwnership(ownerPlayer); // Topun sahibini belirle
+        }
     }
 
     void Update()
     {
-
-        if (!photonView.IsMine)
+        if (PhotonNetwork.IsConnected && ownerPlayer != null && PhotonNetwork.LocalPlayer != ownerPlayer)
         {
-            Rigidbody rb = GetComponent<Rigidbody>();
-            rb.isKinematic = true; // Diðer oyuncularýn topu kontrol etmemesi için Rigidbody'yi kinematik yapýn
+            rb.isKinematic = true; // Sadece topun sahibi tarafÄ±ndan kontrol edilmesini saÄŸla
+        }
+        else
+        {
+            rb.isKinematic = false; // DiÄŸer oyuncularÄ±n topu kontrol etmesine izin ver
         }
     }
-
-
 }
