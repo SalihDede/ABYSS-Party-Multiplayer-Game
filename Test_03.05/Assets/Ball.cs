@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 
-public class BallController : MonoBehaviourPun, IPunObservable
+public class BallController : MonoBehaviourPun
 {
     Rigidbody rb;
     public float speed = 10f; // Adjust speed as needed
