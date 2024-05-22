@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 
-public class Ball : MonoBehaviourPun
+public class ball : MonoBehaviourPun
 {
     Rigidbody rb;
 
