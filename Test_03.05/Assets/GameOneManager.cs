@@ -38,8 +38,11 @@ public class GameOneManager : MonoBehaviour
      IEnumerator GoalCoroutine()
      {
          yield return new WaitForSeconds(3);
-
+         if(photonView.IsMine)
+         {
             PhotonNetwork.Instantiate("Soccer Ball", BallSpawn.transform.position, Quaternion.identity);
+         }
+          
         
      }
 
