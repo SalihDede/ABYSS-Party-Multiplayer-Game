@@ -31,13 +31,7 @@ public class GameOneManager : MonoBehaviourPunCallbacks
 
     void Start()
     {
-        photonView = GetComponent<PhotonView>();
 
-        if (!photonView.IsMine)
-        {
-            Rigidbody rb = GetComponent<Rigidbody>();
-            rb.isKinematic = true; // Diðer oyuncularýn topu kontrol etmemesi için Rigidbody'yi kinematik yapýn
-        }
 
         Goal = true;
         RandomMapGenerator();
@@ -46,14 +40,14 @@ public class GameOneManager : MonoBehaviourPunCallbacks
     IEnumerator GoalCoroutine()
     {
         yield return new WaitForSeconds(3);
-
+    
         PhotonNetwork.Instantiate("Soccer Ball", BallSpawn.transform.position, Quaternion.identity);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Goal)
+        if (Goal && PhotonNetwork.IsMasterClient)
         {
             Goal = false;
             StartCoroutine(GoalCoroutine());

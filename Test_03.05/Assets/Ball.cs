@@ -15,31 +15,13 @@ public class BallController : MonoBehaviourPun, IPunObservable
 
     void Update()
     {
-        if (photonView.IsMine)
+
+        if (!photonView.IsMine)
         {
-            // Process player input to control the ball
-            // For example, using Input.GetAxis("Horizontal") and Input.GetAxis("Vertical")
-            // to control the ball's movement.
-            float moveHorizontal = Input.GetAxis("Horizontal");
-            float moveVertical = Input.GetAxis("Vertical");
-
-            Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
-
-            rb.AddForce(movement * speed);
+            Rigidbody rb = GetComponent<Rigidbody>();
+            rb.isKinematic = true; // Diðer oyuncularýn topu kontrol etmemesi için Rigidbody'yi kinematik yapýn
         }
     }
 
-    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
-    {
-        if (stream.IsWriting)
-        {
-            stream.SendNext(rb.position);
-            stream.SendNext(rb.velocity);
-        }
-        else
-        {
-            rb.position = (Vector3)stream.ReceiveNext();
-            rb.velocity = (Vector3)stream.ReceiveNext();
-        }
-    }
+
 }
