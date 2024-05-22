@@ -7,69 +7,63 @@ using TMPro;
 
 public class GameOneManager : MonoBehaviourPunCallbacks
 {
+
+    public bool Goal;
     public GameObject BallPrefab;
+
+    public int Player1;
+    public int Player2;
+    public int Player3;
+    public int Player4;
+
     public TMP_Text Player1Text;
     public TMP_Text Player2Text;
+
+    public TMP_Text LastTouch;
+
+    public GameObject Spawn0;
+    public GameObject Spawn1;
+    public GameObject Spawn2;
+    public GameObject Spawn3;
     public GameObject BallSpawn;
 
-    private bool goal;
-    private GameObject ballInstance;
+    private PhotonView photonView;
 
     void Start()
     {
-        goal = true;
+        photonView = GetComponent<PhotonView>();
+
+        if (!photonView.IsMine)
+        {
+            Rigidbody rb = GetComponent<Rigidbody>();
+            rb.isKinematic = true; // Diðer oyuncularýn topu kontrol etmemesi için Rigidbody'yi kinematik yapýn
+        }
+
+        Goal = true;
         RandomMapGenerator();
     }
 
+    IEnumerator GoalCoroutine()
+    {
+        yield return new WaitForSeconds(3);
+
+        PhotonNetwork.Instantiate("Soccer Ball", BallSpawn.transform.position, Quaternion.identity);
+    }
+
+    // Update is called once per frame
     void Update()
     {
-        if (goal)
+        if (Goal)
         {
-            goal = false;
+            Goal = false;
             StartCoroutine(GoalCoroutine());
         }
         Player1Text.text = "Player 1\n" + Player1;
         Player2Text.text = "Player 2\n" + Player2;
     }
 
-    IEnumerator GoalCoroutine()
-    {
-        yield return new WaitForSeconds(3);
-        
-        if (PhotonNetwork.IsMasterClient)
-        {
-            // Destroy the existing ball
-            if (ballInstance != null)
-            {
-                PhotonNetwork.Destroy(ballInstance);
-            }
-
-            // Spawn a new ball and transfer ownership to a random player
-            ballInstance = PhotonNetwork.Instantiate(BallPrefab.name, BallSpawn.transform.position, Quaternion.identity);
-            PhotonView ballPhotonView = ballInstance.GetComponent<PhotonView>();
-            int randomPlayerIndex = Random.Range(0, PhotonNetwork.PlayerList.Length);
-            ballPhotonView.TransferOwnership(PhotonNetwork.PlayerList[randomPlayerIndex]);
-        }
-    }
-
     public void RandomMapGenerator()
     {
         PhotonNetwork.Instantiate("TemplatePlayer", BallSpawn.transform.position, Quaternion.identity);
-    }
-
-    public int Player1 { get; private set; }
-    public int Player2 { get; private set; }
-
-    // Method to increase player score
-    public void IncreasePlayerScore(int playerIndex)
-    {
-        if (playerIndex == 1)
-        {
-            Player1++;
-        }
-        else if (playerIndex == 2)
-        {
-            Player2++;
-        }
     }
 }
