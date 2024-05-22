@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
+using TMPro;
 
 public class GameOneManager : MonoBehaviour
 {
     [Header("SemihYýlmazGame")]
+
+    public TMP_Text LastTouch;
     public GameObject Spawn0;
     public GameObject Spawn1;
     public GameObject Spawn2;
