@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class ball : MonoBehaviour
+public class Ball : MonoBehaviour
 {
     public GameObject SemihGame;
     public GameObject DeathEffect;
@@ -12,6 +12,15 @@ public class ball : MonoBehaviour
     {
         SemihGame = GameObject.Find("SemihGame");
         DeathEffect.SetActive(false);
+    }
+
+    public GameObject[] Option;
+    void Start()
+    {
+        Option[0].SetActive(false);
+        Option[1].SetActive(false);
+        Option[2].SetActive(false);
+        Option[Random.Range(0, 3)].SetActive(true);
     }
 
 
@@ -31,6 +40,22 @@ public class ball : MonoBehaviour
 
         if(other.tag == "0" || other.tag == "1" || other.tag == "2" || other.tag == "3")
         {
+            if(other.tag == "0")
+            {
+                SemihGame.GetComponent<GameOneManager>().Player1 += 1;
+            }
+            if (other.tag == "1")
+            {
+                SemihGame.GetComponent<GameOneManager>().Player2 += 1;
+            }
+            if (other.tag == "2")
+            {
+                SemihGame.GetComponent<GameOneManager>().Player3 += 1;
+            }
+            if (other.tag == "3")
+            {
+                SemihGame.GetComponent<GameOneManager>().Player4 += 1;
+            }
             SemihGame.GetComponent<GameOneManager>().LastTouch.text = other.tag;
         }
 
@@ -38,6 +63,7 @@ public class ball : MonoBehaviour
         {
             StartCoroutine(Effect());
             Destroy(gameObject);
+            SemihGame.GetComponent<GameOneManager>().Goal = true;
         }
     }
 
