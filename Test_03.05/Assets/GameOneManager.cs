@@ -40,8 +40,9 @@ public class GameOneManager : MonoBehaviourPunCallbacks
     IEnumerator GoalCoroutine()
     {
         yield return new WaitForSeconds(3);
-    
         PhotonNetwork.Instantiate("Soccer Ball", BallSpawn.transform.position, Quaternion.identity);
+
+
     }
 
     // Update is called once per frame
@@ -49,6 +50,7 @@ public class GameOneManager : MonoBehaviourPunCallbacks
     {
         if (Goal && PhotonNetwork.IsMasterClient)
         {
+            
             Goal = false;
             StartCoroutine(GoalCoroutine());
         }
