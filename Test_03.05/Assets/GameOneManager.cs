@@ -7,7 +7,7 @@ using TMPro;
 
 public class GameOneManager : MonoBehaviourPunCallbacks
 {
-
+    public GameObject GameManagerr;
     public bool Goal;
     public GameObject BallPrefab;
 
@@ -31,7 +31,7 @@ public class GameOneManager : MonoBehaviourPunCallbacks
 
     void Start()
     {
-
+        GameManagerr = GameObject.Find("GameManager");
 
         Goal = true;
         RandomMapGenerator();
@@ -60,6 +60,7 @@ public class GameOneManager : MonoBehaviourPunCallbacks
 
     public void RandomMapGenerator()
     {
-        PhotonNetwork.Instantiate("TemplatePlayer", BallSpawn.transform.position, Quaternion.identity);
+        GameObject player = PhotonNetwork.Instantiate("TemplatePlayer", BallSpawn.transform.position, Quaternion.identity);
+        player.name = GameManagerr.GetComponent<GameManager>().NameForPhoton;
     }
 }
