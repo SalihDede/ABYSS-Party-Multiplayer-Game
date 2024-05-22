@@ -7,57 +7,53 @@ using TMPro;
 
 public class GameOneManager : MonoBehaviourPunCallbacks
 {
-
-    public bool Goal;
-    public GameObject BallPrefab;
-
-    public int Player1;
-    public int Player2;
-    public int Player3;
-    public int Player4;
-
     public TMP_Text Player1Text;
     public TMP_Text Player2Text;
 
-    public TMP_Text LastTouch;
-
-    public GameObject Spawn0;
-    public GameObject Spawn1;
-    public GameObject Spawn2;
-    public GameObject Spawn3;
-    public GameObject BallSpawn;
-
-    private PhotonView photonView;
+    private int Player1Score;
+    private int Player2Score;
 
     void Start()
     {
-
-
-        Goal = true;
-        RandomMapGenerator();
+        // Oyun başlangıcında skorları sıfırla ve skorları güncelle
+        Player1Score = 0;
+        Player2Score = 0;
+        UpdateScoreTexts();
     }
 
-    IEnumerator GoalCoroutine()
+    // Player 1'in gol attığını diğer oyunculara bildirir
+    [PunRPC]
+    void Player1Scores()
     {
-        yield return new WaitForSeconds(3);
-    
-        PhotonNetwork.Instantiate("Soccer Ball", BallSpawn.transform.position, Quaternion.identity);
+        Player1Score++;
+        UpdateScoreTexts();
     }
 
-    // Update is called once per frame
-    void Update()
+    // Player 2'in gol attığını diğer oyunculara bildirir
+    [PunRPC]
+    void Player2Scores()
     {
-        if (Goal && PhotonNetwork.IsMasterClient)
+        Player2Score++;
+        UpdateScoreTexts();
+    }
+
+    // Skor metinlerini günceller
+    void UpdateScoreTexts()
+    {
+        Player1Text.text = "Player 1\n" + Player1Score;
+        Player2Text.text = "Player 2\n" + Player2Score;
+    }
+
+    // Oyuncular gol attığında bu metod çağrılır ve RPC'leri kullanarak diğer oyunculara bildirir
+    public void PlayerScores(int playerNumber)
+    {
+        if (playerNumber == 1)
         {
-            Goal = false;
-            StartCoroutine(GoalCoroutine());
+            photonView.RPC("Player1Scores", RpcTarget.All);
         }
-        Player1Text.text = "Player 1\n" + Player1;
-        Player2Text.text = "Player 2\n" + Player2;
-    }
-
-    public void RandomMapGenerator()
-    {
-        PhotonNetwork.Instantiate("TemplatePlayer", BallSpawn.transform.position, Quaternion.identity);
+        else if (playerNumber == 2)
+        {
+            photonView.RPC("Player2Scores", RpcTarget.All);
+        }
     }
 }
