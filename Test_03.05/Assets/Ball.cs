@@ -14,14 +14,7 @@ public class Ball : MonoBehaviour
         DeathEffect.SetActive(false);
     }
 
-    public GameObject[] Option;
-    void Start()
-    {
-        Option[0].SetActive(false);
-        Option[1].SetActive(false);
-        Option[2].SetActive(false);
-        Option[Random.Range(0, 3)].SetActive(true);
-    }
+
 
 
     void Update()
