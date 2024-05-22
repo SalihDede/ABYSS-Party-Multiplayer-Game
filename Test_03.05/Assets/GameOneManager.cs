@@ -23,7 +23,7 @@ public class GameOneManager : MonoBehaviourPunCallbacks
 
     void Update()
     {
-        if (goal && PhotonNetwork.IsMasterClient)
+        if (goal)
         {
             goal = false;
             StartCoroutine(GoalCoroutine());
@@ -35,6 +35,7 @@ public class GameOneManager : MonoBehaviourPunCallbacks
     IEnumerator GoalCoroutine()
     {
         yield return new WaitForSeconds(3);
+        
         if (PhotonNetwork.IsMasterClient)
         {
             // Destroy the existing ball
@@ -42,7 +43,8 @@ public class GameOneManager : MonoBehaviourPunCallbacks
             {
                 PhotonNetwork.Destroy(ballInstance);
             }
-            
+
+            // Spawn a new ball and transfer ownership to a random player
             ballInstance = PhotonNetwork.Instantiate(BallPrefab.name, BallSpawn.transform.position, Quaternion.identity);
             PhotonView ballPhotonView = ballInstance.GetComponent<PhotonView>();
             int randomPlayerIndex = Random.Range(0, PhotonNetwork.PlayerList.Length);
@@ -58,7 +60,7 @@ public class GameOneManager : MonoBehaviourPunCallbacks
     public int Player1 { get; private set; }
     public int Player2 { get; private set; }
 
-    
+    // Method to increase player score
     public void IncreasePlayerScore(int playerIndex)
     {
         if (playerIndex == 1)
