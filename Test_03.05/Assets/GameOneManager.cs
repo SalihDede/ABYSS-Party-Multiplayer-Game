@@ -39,7 +39,7 @@ public class GameOneManager : MonoBehaviour
      {
          yield return new WaitForSeconds(3);
 
-            PhotonNetwork.Instantiate("BallPrefab", BallSpawn.transform.position, Quaternion.identity);
+            PhotonNetwork.Instantiate("Soccer Ball", BallSpawn.transform.position, Quaternion.identity);
         
      }
 
