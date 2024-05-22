@@ -29,6 +29,7 @@ public class GameOneManager : MonoBehaviour
 
     void Start()
     {
+        Goal = true;
         RandomMapGenerator();
     }
 
