@@ -8,6 +8,11 @@ using System.Linq;
 public class GameManager : MonoBehaviourPunCallbacks
 {
 
+    public GameObject[] MinigameList;
+
+
+
+
     public GameObject[] LobbyListObjects;
     public GameObject LobbyListContent;
     public GameObject UserCard;
@@ -26,7 +31,6 @@ public class GameManager : MonoBehaviourPunCallbacks
 
     public GameObject Kamera;
 
-    public GameObject[] MinigameList;
 
     // Start is called before the first frame update
     void Start()
