@@ -223,9 +223,12 @@ public class DiceController : MonoBehaviourPunCallbacks
     [PunRPC]
     void MiniGameSelectUpdate(int result)
     {
+
         GameManager.GetComponent<GameManager>().MinigameCount = result;
         GameManager.GetComponent<GameManager>().MinigameList[GameManager.GetComponent<GameManager>().MinigameCount].SetActive(true);
         GameManager.GetComponent<GameManager>().Kamera.SetActive(false);
+        GameManager.GetComponent<GameManager>().GUI.SetActive(false);
+
 
 
     }
