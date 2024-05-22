@@ -4184,64 +4184,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 718392108}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &723154206 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1045281241412332819, guid: 8ab7266c93272944c94d3e2719f51166, type: 3}
-  m_PrefabInstance: {fileID: 1556911716}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &723154212
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 723154206}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ae41e326544a1040ac45e44b3b2a425, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SemihGame: {fileID: 0}
-  DeathEffect: {fileID: 0}
---- !u!114 &723154213
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 723154206}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 1
---- !u!114 &723154214
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 723154206}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObservedComponentsFoldoutOpen: 1
-  Group: 0
-  prefixField: -1
-  Synchronization: 3
-  OwnershipTransfer: 0
-  observableSearch: 2
-  ObservedComponents:
-  - {fileID: 723154213}
-  sceneViewId: 5
-  InstantiationId: 0
-  isRuntimeInstantiated: 0
 --- !u!1 &745416948
 GameObject:
   m_ObjectHideFlags: 0
@@ -11143,6 +11085,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 4e1a4e79a3548164da24123dbb0f3566, type: 2}
+    - target: {fileID: 1045281241412332819, guid: 8ab7266c93272944c94d3e2719f51166, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1051337599366871929, guid: 8ab7266c93272944c94d3e2719f51166, type: 3}
       propertyPath: m_LocalPosition.x
       value: 12.32
@@ -11183,6 +11129,22 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 4e1a4e79a3548164da24123dbb0f3566, type: 2}
+    - target: {fileID: 3308184293316744225, guid: 8ab7266c93272944c94d3e2719f51166, type: 3}
+      propertyPath: sceneViewId
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3308184293316744225, guid: 8ab7266c93272944c94d3e2719f51166, type: 3}
+      propertyPath: ObservedComponents.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3308184293316744225, guid: 8ab7266c93272944c94d3e2719f51166, type: 3}
+      propertyPath: ObservedComponents.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3308184293316744225, guid: 8ab7266c93272944c94d3e2719f51166, type: 3}
+      propertyPath: ObservedComponents.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3483882677318999445, guid: 8ab7266c93272944c94d3e2719f51166, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -11277,7 +11239,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6276795853415664870, guid: 8ab7266c93272944c94d3e2719f51166, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6315398348791292858, guid: 8ab7266c93272944c94d3e2719f51166, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -11311,7 +11273,9 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: db1318ffb13bfef419a8dad09473425d, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3308184293316744225, guid: 8ab7266c93272944c94d3e2719f51166, type: 3}
+    - {fileID: 1331827160918447823, guid: 8ab7266c93272944c94d3e2719f51166, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 4242373818795215095, guid: 8ab7266c93272944c94d3e2719f51166, type: 3}
       insertIndex: -1
