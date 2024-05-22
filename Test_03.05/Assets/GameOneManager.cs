@@ -29,34 +29,33 @@ public class GameOneManager : MonoBehaviour
 
     private PhotonView photonView;
 
-    void Start() {
- photonView = GetComponent<PhotonView>();
- Goal = true;
- RandomMapGenerator();
- }
+        void Start() {
+     photonView = GetComponent<PhotonView>();
+     Goal = true;
+     RandomMapGenerator();
+     }
 
- IEnumerator GoalCoroutine()
- {
- yield return new WaitForSeconds(3);
- if (photonView.IsMine)
- {
- Instantiate(BallPrefab, BallSpawn.transform.position, Quaternion.identity);
-  }
- }
+     IEnumerator GoalCoroutine()
+     {
+         yield return new WaitForSeconds(3);
 
- // Update is called once per frame
- void Update()
- {
- if(Goal)
- {
- Goal = false;
- StartCoroutine(GoalCoroutine());
- }
- Player1Text.text = "Player 1\n" + Player1;
- Player2Text.text = "Player 2\n" + Player2;
- }
-  public void RandomMapGenerator()
-  {
-  PhotonNetwork.Instantiate("TemplatePlayer", BallSpawn.transform.position, Quaternion.identity);
-  }
+            PhotonNetwork.Instantiate("BallPrefab", BallSpawn.transform.position, Quaternion.identity);
+        
+     }
+
+     // Update is called once per frame
+     void Update()
+     {
+         if(Goal)
+         {
+             Goal = false;
+             StartCoroutine(GoalCoroutine());
+         }
+             Player1Text.text = "Player 1\n" + Player1;
+             Player2Text.text = "Player 2\n" + Player2;
+     }
+      public void RandomMapGenerator()
+      {
+      PhotonNetwork.Instantiate("TemplatePlayer", BallSpawn.transform.position, Quaternion.identity);
+      }
 }
