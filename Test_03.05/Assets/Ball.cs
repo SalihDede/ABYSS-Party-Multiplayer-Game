@@ -23,7 +23,7 @@ public class ball : MonoBehaviourPun
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.name == "Bullet")
+        if (other.tag == "Bullet")
         {
             GetComponent<PhotonView>().TransferOwnership(other.gameObject.GetComponent<PhotonView>().Controller);
             Debug.Log(other.gameObject.GetComponent<PhotonView>().Controller);
