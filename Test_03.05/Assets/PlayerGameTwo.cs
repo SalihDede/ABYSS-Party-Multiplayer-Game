@@ -14,7 +14,7 @@ public class PlayerGameTwo : MonoBehaviour
     private PhotonView photonView;
     void Start()
     {
-        GameManagerr = GameObject.Find("BahaGame");
+        GameManagerr = GameObject.Find("Baha Game");
         photonView = GetComponent<PhotonView>();
     }
 
