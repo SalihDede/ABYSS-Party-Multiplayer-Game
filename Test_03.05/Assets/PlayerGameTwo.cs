@@ -26,7 +26,7 @@ public class PlayerGameTwo : MonoBehaviour
     void Update()
     {
         
-        if(Finish >=3 && CheckPoint >=3)
+        if(Finish >=7 && CheckPoint >=6)
         {
             photonView.RPC("Winner", RpcTarget.All, photonView.OwnerActorNr.ToString());
         }
@@ -54,9 +54,14 @@ public class PlayerGameTwo : MonoBehaviour
     {
         if(!GameManagerr.GetComponent<GameTwoManager>().IsWin)
         {
+            GameManagerr.GetComponent<GameTwoManager>().Win.gameObject.SetActive(true);
             GameManagerr.GetComponent<GameTwoManager>().Win.text = "Winner is " + name;
         }
-        GameManagerr.GetComponent<GameTwoManager>().Ranking.Add(gameObject);
+        if(!GameManagerr.GetComponent<GameTwoManager>().Ranking.Contains(gameObject))
+        {
+            GameManagerr.GetComponent<GameTwoManager>().Ranking.Add(gameObject);
+        }
+
     }
 
 

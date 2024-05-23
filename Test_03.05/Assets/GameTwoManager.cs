@@ -60,7 +60,7 @@ public class GameTwoManager : MonoBehaviourPunCallbacks
     void Update()
     {
 
-        if (Ranking.Count == 4)
+        if (Ranking.Count == 2)
         {
             GameManagerr.GetComponent<GameManager>().Kamera.SetActive(true);
             gameObject.SetActive(false);
