@@ -18,6 +18,10 @@ using Photon.Realtime;
 public class PrometeoCarController : MonoBehaviour
 {
 
+
+    public GameObject Kamera;
+
+
     //CAR SETUP
 
       [Space(20)]
@@ -162,7 +166,7 @@ public class PrometeoCarController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        Kamera = gameObject.transform.GetChild(3).gameObject;
         photonView = GetComponent<PhotonView>();
         
 
@@ -273,6 +277,7 @@ public class PrometeoCarController : MonoBehaviour
 
         if(photonView.IsMine)
         {
+            Kamera.SetActive(true);
 
             //CAR DATA
 
