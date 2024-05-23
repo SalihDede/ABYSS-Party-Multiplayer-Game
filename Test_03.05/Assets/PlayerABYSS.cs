@@ -15,6 +15,10 @@ public class PlayerABYSS : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+
+
+
         if(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.A))
         {
             Anim.SetBool("IsRun",true);
@@ -32,4 +36,17 @@ public class PlayerABYSS : MonoBehaviour
             Anim.SetBool("IsJump", false);
         }
     }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if(other.tag == "Ball")
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                Rigidbody rb = other.gameObject.GetComponent<Rigidbody>();
+                rb.AddForce(transform.forward * 10f, ForceMode.Impulse);
+            }
+        }
+    }
+
 }
