@@ -59,11 +59,11 @@ public class PlayerGameTwo : MonoBehaviour
     {
         if(other.tag == "Finish")
         {
-            photonView.RPC("StartRace", RpcTarget.All);
+            photonView.RPC("FinishUpdate", RpcTarget.All);
         }
         if (other.tag == "CheckPoint")
         {
-            photonView.RPC("StartRace", RpcTarget.All);
+            photonView.RPC("CheckPointUpdate", RpcTarget.All);
         }
     }
 
