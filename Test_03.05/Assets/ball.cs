@@ -25,8 +25,8 @@ public class ball : MonoBehaviourPun
     {
         if (other.tag == "Bullet")
         {
-            GetComponent<PhotonView>().TransferOwnership(other.gameObject.GetComponent<PhotonView>().ViewID);
-            Debug.Log(other.gameObject.GetComponent<PhotonView>().ViewID);
+            GetComponent<PhotonView>().TransferOwnership(other.gameObject.GetComponent<PhotonView>().OwnerActorNr);
+            Debug.Log(other.gameObject.GetComponent<PhotonView>().OwnerActorNr);
         }
     }
 }
