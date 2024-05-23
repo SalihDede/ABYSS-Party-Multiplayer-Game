@@ -5266,6 +5266,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RaceGameDesertV2
       objectReference: {fileID: 0}
+    - target: {fileID: 1574234313444839332, guid: d81d949b743fdb347963998c2185eb6a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2203136979198809374, guid: d81d949b743fdb347963998c2185eb6a, type: 3}
       propertyPath: m_RootOrder
       value: 4
