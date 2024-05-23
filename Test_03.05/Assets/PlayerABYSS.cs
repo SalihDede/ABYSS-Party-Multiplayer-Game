@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
+using Photon.Realtime;
 
 public class PlayerABYSS : MonoBehaviour
 {
@@ -9,7 +11,7 @@ public class PlayerABYSS : MonoBehaviour
 
     void Start()
     {
-
+        gameObject.name = gameObject.GetComponent<PhotonView>().OwnerActorNr.ToString();
     }
 
     // Update is called once per frame
@@ -50,7 +52,7 @@ public class PlayerABYSS : MonoBehaviour
 
             // Aşırma şut hızı ve yönü topun bulunduğu konumdan hedef noktasına doğru belirlenebilir.
             Vector3 shootDirection = (targetPoint - other.transform.position).normalized;
-            float shootSpeed = 10f; // Aşırma şutun hızı
+            float shootSpeed = 25f; // Aşırma şutun hızı
 
             // Topa kuvvet uygulanması
             rb.velocity = shootDirection * shootSpeed;
