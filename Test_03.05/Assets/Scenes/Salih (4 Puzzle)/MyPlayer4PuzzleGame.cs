@@ -13,7 +13,7 @@ namespace KinematicCharacterController.Walkthrough.MultipleMovementStates
         public Transform CameraFollowPoint;
         public MyCharacterController Character;
 
-        public float pushPullForce = 1f; // Push and Pull Force
+        public float pushPullForce = 3f; // Push and Pull Force
 
         private const string HorizontalInput = "Horizontal";
         private const string VerticalInput = "Vertical";
@@ -109,7 +109,7 @@ namespace KinematicCharacterController.Walkthrough.MultipleMovementStates
             Collider[] hitColliders = Physics.OverlapSphere(transform.position, 3f); // search for 3 unit area
             foreach (Collider col in hitColliders)
             {
-                if (col.CompareTag("PUZZLE"))
+                if (col.CompareTag("PUZZLE")) || (col.CompareTag("PuzzlePurple")) || (col.CompareTag("PuzzleWhite")) || (col.CompareTag("PuzzleGreen"))
                 {
                     Rigidbody rb = col.GetComponent<Rigidbody>();
                     if (rb != null)
@@ -127,7 +127,7 @@ namespace KinematicCharacterController.Walkthrough.MultipleMovementStates
             Collider[] hitColliders = Physics.OverlapSphere(transform.position, 3f); // search for 3 unit area
             foreach (Collider col in hitColliders)
             {
-                if (col.CompareTag("PUZZLE"))
+                if (col.CompareTag("PUZZLE")) || (col.CompareTag("PuzzlePurple")) || (col.CompareTag("PuzzleWhite")) || (col.CompareTag("PuzzleGreen"))
                 {
                     Rigidbody rb = col.GetComponent<Rigidbody>();
                     if (rb != null)
