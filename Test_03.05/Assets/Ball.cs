@@ -26,7 +26,7 @@ public class ball : MonoBehaviourPun
         if (other.name == "0" || other.name == "1")
         {
             GetComponent<PhotonView>().TransferOwnership(other.gameObject.GetComponent<PhotonView>().Controller);
-            
+            Debug.Log(other.gameObject.GetComponent<PhotonView>().Controller);
         }
     }
 }

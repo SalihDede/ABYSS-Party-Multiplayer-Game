@@ -60,7 +60,7 @@ public class GameOneManager : MonoBehaviourPunCallbacks
 
     public void RandomMapGenerator()
     {
-        PhotonNetwork.Instantiate("TemplatePlayer", BallSpawn.transform.position, Quaternion.identity);
-       // player.name = GameManagerr.GetComponent<GameManager>().NameForPhoton;
+        GameObject player = PhotonNetwork.Instantiate("TemplatePlayer", BallSpawn.transform.position, Quaternion.identity);
+        player.name = GameManagerr.GetComponent<GameManager>().NameForPhoton;
     }
 }
