@@ -9789,6 +9789,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ac9175b50b8f324e9bc0404a75b8967, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManagerr: {fileID: 0}
   Goal: 0
   BallPrefab: {fileID: 0}
   Player1: 0
@@ -11324,6 +11325,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ac9175b50b8f324e9bc0404a75b8967, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameManagerr: {fileID: 0}
   Goal: 0
   BallPrefab: {fileID: 2271624791391367490, guid: 28277502e9c781c4299e68082e37e13d, type: 3}
   Player1: 0
@@ -11332,7 +11334,7 @@ MonoBehaviour:
   Player4: 0
   Player1Text: {fileID: 1202496788}
   Player2Text: {fileID: 1060560659}
-  LastTouch: {fileID: 2088714589}
+  LastTouch: {fileID: 0}
   Spawn0: {fileID: 624060976}
   Spawn1: {fileID: 1002989244}
   Spawn2: {fileID: 59748127}

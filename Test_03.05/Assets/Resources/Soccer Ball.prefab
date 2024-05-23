@@ -132,8 +132,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.17829402
-  m_Center: {x: 0, y: 0, z: 0.014019172}
+  m_Radius: 0.39610878
+  m_Center: {x: 0, y: 0, z: 0.011350473}
 --- !u!114 &4390714281376827504
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -149,7 +149,7 @@ MonoBehaviour:
   ObservedComponentsFoldoutOpen: 1
   Group: 0
   prefixField: -1
-  Synchronization: 3
+  Synchronization: 1
   OwnershipTransfer: 0
   observableSearch: 2
   ObservedComponents:
