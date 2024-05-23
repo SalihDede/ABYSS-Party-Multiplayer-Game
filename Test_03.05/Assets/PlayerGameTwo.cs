@@ -10,6 +10,8 @@ public class PlayerGameTwo : MonoBehaviour
     public GameObject GameManagerr;
     public int CheckPoint = 0;
     public int Finish = -1;
+    public int TempFinish;
+    public int TempCheckPoint;
 
     private PhotonView photonView;
     void Start()
@@ -22,7 +24,7 @@ public class PlayerGameTwo : MonoBehaviour
     void Update()
     {
         
-        if(Finish ==3 && CheckPoint ==3)
+        if(Finish >=3 && CheckPoint >=3)
         {
             photonView.RPC("Winner", RpcTarget.All, photonView.OwnerActorNr);
         }
