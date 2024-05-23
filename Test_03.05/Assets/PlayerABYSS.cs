@@ -48,7 +48,7 @@ public class PlayerABYSS : MonoBehaviour
             Rigidbody rb = other.gameObject.GetComponent<Rigidbody>();
 
             // Aşırma şut hedef noktası, topun şu anki konumu ve bir miktar öne, yukarı ve ileri alınarak belirlenebilir.
-            Vector3 targetPoint = other.transform.position + other.transform.forward * 5f + Vector3.up * 2f + transform.forward * 5f;
+            Vector3 targetPoint = other.transform.position + other.transform.forward * 20f + Vector3.up * 1f + transform.forward * 20f;
 
             // Aşırma şut hızı ve yönü topun bulunduğu konumdan hedef noktasına doğru belirlenebilir.
             Vector3 shootDirection = (targetPoint - other.transform.position).normalized;
