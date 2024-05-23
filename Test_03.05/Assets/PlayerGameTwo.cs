@@ -8,8 +8,8 @@ public class PlayerGameTwo : MonoBehaviour
 {
 
     public GameObject GameManagerr;
-    int CheckPoint = 0;
-    int Finish = -1;
+    public int CheckPoint = 0;
+    public int Finish = -1;
 
     private PhotonView photonView;
     void Start()
