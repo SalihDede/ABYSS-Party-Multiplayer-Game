@@ -39,14 +39,27 @@ public class PlayerABYSS : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.tag == "Ball")
+    if (other.tag == "Ball")
+    {
+        if (Input.GetMouseButtonDown(0))
         {
-            if (Input.GetMouseButtonDown(0))
-            {
-                Rigidbody rb = other.gameObject.GetComponent<Rigidbody>();
-                rb.AddForce(transform.forward * 10f, ForceMode.Impulse);
-            }
+            Rigidbody rb = other.gameObject.GetComponent<Rigidbody>();
+
+            // Topun şu anki konumu
+            Vector3 currentPosition = other.transform.position;
+
+            // Aşırma şut hedef noktası, topun şu anki konumu ve bir miktar yukarı alınarak belirlenebilir.
+            Vector3 targetPoint = currentPosition + Vector3.up * 2f;
+
+            // Aşırma şut hızı ve yönü topun bulunduğu konumdan hedef noktasına doğru belirlenebilir.
+            Vector3 shootDirection = (targetPoint - currentPosition).normalized;
+            float shootSpeed = 10f; // Aşırma şutun hızı
+
+            // Topa kuvvet uygulanması
+            rb.velocity = shootDirection * shootSpeed;
         }
     }
+}
+
 
 }
