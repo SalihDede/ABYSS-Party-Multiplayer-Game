@@ -37,7 +37,6 @@ namespace KinematicCharacterController.Walkthrough.MultipleMovementStates
                 Cursor.lockState = CursorLockMode.Locked;
             }
 
-            HandleCharacterInput();
             HandlePuzzleInteraction(); // Itteration of puzzles tag
         }
 
@@ -72,21 +71,7 @@ namespace KinematicCharacterController.Walkthrough.MultipleMovementStates
             }
         }
 
-        private void HandleCharacterInput()
-        {
-            PlayerCharacterInputs characterInputs = new PlayerCharacterInputs();
 
-            // Character inputs
-            characterInputs.MoveAxisForward = Input.GetAxisRaw(VerticalInput);
-            characterInputs.MoveAxisRight = Input.GetAxisRaw(HorizontalInput);
-            characterInputs.CameraRotation = OrbitCamera.Transform.rotation;
-            characterInputs.JumpDown = Input.GetKeyDown(KeyCode.Space);
-            characterInputs.CrouchDown = Input.GetKeyDown(KeyCode.C);
-            characterInputs.CrouchUp = Input.GetKeyUp(KeyCode.C);
-
-            // Aplly inputs chrcter
-            Character.SetInputs(ref characterInputs);
-        }
 
         private void HandlePuzzleInteraction()
         {
@@ -109,7 +94,7 @@ namespace KinematicCharacterController.Walkthrough.MultipleMovementStates
             Collider[] hitColliders = Physics.OverlapSphere(transform.position, 3f); // search for 3 unit area
             foreach (Collider col in hitColliders)
             {
-                if (col.CompareTag("PUZZLE")) || (col.CompareTag("PuzzlePurple")) || (col.CompareTag("PuzzleWhite")) || (col.CompareTag("PuzzleGreen"))
+                if ((col.CompareTag("PUZZLE")) || (col.CompareTag("PuzzlePurple")) || (col.CompareTag("PuzzleWhite")) || (col.CompareTag("PuzzleGreen")))
                 {
                     Rigidbody rb = col.GetComponent<Rigidbody>();
                     if (rb != null)
@@ -127,7 +112,7 @@ namespace KinematicCharacterController.Walkthrough.MultipleMovementStates
             Collider[] hitColliders = Physics.OverlapSphere(transform.position, 3f); // search for 3 unit area
             foreach (Collider col in hitColliders)
             {
-                if (col.CompareTag("PUZZLE")) || (col.CompareTag("PuzzlePurple")) || (col.CompareTag("PuzzleWhite")) || (col.CompareTag("PuzzleGreen"))
+                if ((col.CompareTag("PUZZLE")) || (col.CompareTag("PuzzlePurple")) || (col.CompareTag("PuzzleWhite")) || (col.CompareTag("PuzzleGreen")))
                 {
                     Rigidbody rb = col.GetComponent<Rigidbody>();
                     if (rb != null)
