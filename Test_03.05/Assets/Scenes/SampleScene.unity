@@ -8365,6 +8365,7 @@ MonoBehaviour:
   UserCard: {fileID: 6747065563593803263, guid: 7f33c1dd3b2435b4ebb6ce069b8cc728, type: 3}
   position: {fileID: 123075982}
   GUI: {fileID: 1360402727}
+  GameGUI: {fileID: 926095705}
   RunGame: {fileID: 1836466180}
   Input: {fileID: 1382469737}
   RoomName: {fileID: 1398772429}
@@ -11240,7 +11241,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6276795853415664870, guid: 8ab7266c93272944c94d3e2719f51166, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6315398348791292858, guid: 8ab7266c93272944c94d3e2719f51166, type: 3}
       propertyPath: m_Materials.Array.data[0]

@@ -11,7 +11,7 @@ public class PlayerABYSS : MonoBehaviour
 
     void Start()
     {
-        gameObject.name = gameObject.GetComponent<PhotonView>().OwnerActorNr.ToString();
+        gameObject.name = "SemihGamePlayer" +gameObject.GetComponent<PhotonView>().OwnerActorNr.ToString();
     }
 
     // Update is called once per frame

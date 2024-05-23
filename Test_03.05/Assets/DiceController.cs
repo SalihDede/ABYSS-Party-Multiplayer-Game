@@ -17,6 +17,7 @@ public class DiceController : MonoBehaviourPunCallbacks
 
 
 
+
     public Button startButton;
     public List<GameObject> StepsList = new List<GameObject>();
 
@@ -229,9 +230,7 @@ public class DiceController : MonoBehaviourPunCallbacks
         GameManager.GetComponent<GameManager>().MinigameCount = result;
         GameManager.GetComponent<GameManager>().MinigameList[GameManager.GetComponent<GameManager>().MinigameCount].SetActive(true);
         GameManager.GetComponent<GameManager>().Kamera.SetActive(false);
-        GameManager.GetComponent<GameManager>().GUI.SetActive(false);
-
-
+        GameManager.GetComponent<GameManager>().GameGUI.SetActive(false);
 
     }
 

@@ -13,6 +13,7 @@ public class ball : MonoBehaviourPun
 
     void Start()
     {
+        GameManagerr = GameObject.Find("SemihGame");
         DeathEffect.SetActive(false);
         rb = GetComponent<Rigidbody>();
     }
@@ -40,6 +41,16 @@ public class ball : MonoBehaviourPun
             GetComponent<PhotonView>().TransferOwnership(other.gameObject.GetComponent<PhotonView>().OwnerActorNr);
             Debug.Log(other.gameObject.GetComponent<PhotonView>().OwnerActorNr);
         }
+
+        if(other.gameObject.name == "SemihGamePlayer1")
+        {
+            GameManagerr.GetComponent<GameOneManager>().Player1 += 1;
+        }
+        if (other.gameObject.name == "SemihGamePlayer2")
+        {
+            GameManagerr.GetComponent<GameOneManager>().Player2 += 1;
+        }
+
 
         if (other.tag == "NET1")
         {

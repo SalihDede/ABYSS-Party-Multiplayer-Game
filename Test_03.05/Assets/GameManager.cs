@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviourPunCallbacks
 
     public GameObject position;
     public GameObject GUI;
+    public GameObject GameGUI;
     public GameObject RunGame;
     public TMP_InputField Input;
     public TMP_InputField RoomName;

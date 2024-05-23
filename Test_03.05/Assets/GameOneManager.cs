@@ -37,6 +37,9 @@ public class GameOneManager : MonoBehaviourPunCallbacks
         RandomMapGenerator();
     }
 
+
+
+
     IEnumerator GoalCoroutine()
     {
         yield return new WaitForSeconds(3);
