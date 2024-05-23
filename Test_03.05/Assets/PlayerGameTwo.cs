@@ -12,6 +12,8 @@ public class PlayerGameTwo : MonoBehaviour
     public int Finish = -1;
     public int TempFinish;
     public int TempCheckPoint;
+    public bool passedFinish;
+    public bool passedCheckPoint;
 
     private PhotonView photonView;
     void Start()
@@ -26,7 +28,7 @@ public class PlayerGameTwo : MonoBehaviour
         
         if(Finish >=3 && CheckPoint >=3)
         {
-            photonView.RPC("Winner", RpcTarget.All, photonView.OwnerActorNr);
+            photonView.RPC("Winner", RpcTarget.All, photonView.OwnerActorNr.ToString());
         }
 
 
@@ -38,6 +40,7 @@ public class PlayerGameTwo : MonoBehaviour
     [PunRPC]
     void FinishUpdate()
     {
+
         Finish += 1;
     }
     [PunRPC]
@@ -51,7 +54,7 @@ public class PlayerGameTwo : MonoBehaviour
     {
         if(!GameManagerr.GetComponent<GameTwoManager>().IsWin)
         {
-            GameManagerr.GetComponent<GameTwoManager>().Win.text = name;
+            GameManagerr.GetComponent<GameTwoManager>().Win.text = "Winner is " + name;
         }
         GameManagerr.GetComponent<GameTwoManager>().Ranking.Add(gameObject);
     }
@@ -61,11 +64,22 @@ public class PlayerGameTwo : MonoBehaviour
     {
         if(other.tag == "Finish")
         {
-            photonView.RPC("FinishUpdate", RpcTarget.All);
+            if(!passedFinish)
+            {
+                passedFinish = true;
+                passedCheckPoint = false;
+                photonView.RPC("FinishUpdate", RpcTarget.All);
+            }
+
         }
         if (other.tag == "CheckPoint")
         {
-            photonView.RPC("CheckPointUpdate", RpcTarget.All);
+            if (!passedCheckPoint)
+            {
+                passedFinish = false;
+                passedCheckPoint = true;
+                photonView.RPC("CheckPointUpdate", RpcTarget.All);
+            }
         }
     }
 
