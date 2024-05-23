@@ -37,6 +37,13 @@ public class PlayerABYSS : MonoBehaviour
         {
             Anim.SetBool("IsJump", false);
         }
+        if (Input.GetKey(KeyCode.P))
+        {
+            Anim.SetBool("IsPull", true);
+        }
+        else{
+            Anim.SetBool("IsPull", false);
+        }
     }
 
  private void OnTriggerStay(Collider other)
