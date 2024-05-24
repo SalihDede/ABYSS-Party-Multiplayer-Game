@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class ObjectCoordinateMaanager : MonoBehaviour
 {
-   
-
     public GameObject chair; //will add
     public GameObject bluePlate;
     public GameObject happyPillow;
-    
+
     public GameObject Fork; //Added
     public GameObject Spoon;
     public GameObject Knife;
@@ -152,9 +150,9 @@ public class ObjectCoordinateMaanager : MonoBehaviour
         int randomIndex = Random.Range(0, fork.Length);
         transform.position = objManager[randomIndex];
 
-        if (Fork!= null && Spoon != null && Knife != null && Hat != null && Sword != null && Glassess != null && chair != null && bluePlate != null && happyPillow != null
-            && Computer != null && calculator != null && Brown != null && Red != null && Blue != null && Green != null && Orange != null && Yellow != null 
-            && LargeBox != null && MediumBox != null && SmallBox != null && Radio !=null)
+        if (Fork != null && Spoon != null && Knife != null && Hat != null && Sword != null && Glassess != null && chair != null && bluePlate != null && happyPillow != null
+            && Computer != null && calculator != null && Brown != null && Red != null && Blue != null && Green != null && Orange != null && Yellow != null
+            && LargeBox != null && MediumBox != null && SmallBox != null && Radio != null)
         {
             Fork.transform.position = fork[randomIndex];
             Spoon.transform.position = spoon[randomIndex];
@@ -178,6 +176,7 @@ public class ObjectCoordinateMaanager : MonoBehaviour
             SmallBox.transform.position = thirdObjectPositions[randomIndex];
             Radio.transform.position = radio[randomIndex];
         }
+       
     }
 
     // Update is called once per frame
@@ -207,6 +206,8 @@ public class ObjectCoordinateMaanager : MonoBehaviour
                 }
             }
         }
+
+
     }
 
     // Coroutine to reappear the object after 2 seconds
@@ -215,4 +216,7 @@ public class ObjectCoordinateMaanager : MonoBehaviour
         yield return new WaitForSeconds(reappearTime);
         obj.SetActive(true);
     }
+    
 }
+
+

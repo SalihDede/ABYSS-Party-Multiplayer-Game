@@ -20,7 +20,7 @@ public class Kapı3 : MonoBehaviour
 
     void FixedUpdate()
     {
-        float oyuncuMesafe = Vector3.Distance(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position);
+        float oyuncuMesafe = Vector3.Distance(transform.position, GameObject.FindGameObjectWithTag("Bullet").transform.position);
         if (Input.GetKeyDown(KeyCode.F))
         {
             kapıAcik = !kapıAcik; // Kapı durumunu tersine çevir

@@ -304,26 +304,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 1852102700301092330, guid: ab5b79c175ecc7941a237cabd6c15217, type: 3}
---- !u!1 &98093873 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3772470100646754170, guid: 2edc37bda84856a47a1d91cddfee8c57, type: 3}
-  m_PrefabInstance: {fileID: 416966270}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &98093875
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 98093873}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7bad51a62556c6f4692fd8537d6e2c20, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OrbitCamera: {fileID: 312110740719046126}
-  CameraFollowPoint: {fileID: 8987136570022456139}
-  Character: {fileID: 8987136569602575560}
 --- !u!64 &114112994
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -869,77 +849,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -6757234435522828885, guid: ab5b79c175ecc7941a237cabd6c15217, type: 3}
---- !u!1001 &416966270
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 2
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3772470100646754170, guid: 2edc37bda84856a47a1d91cddfee8c57, type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 7671815366988814828, guid: 2edc37bda84856a47a1d91cddfee8c57, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8987136569212136115, guid: 2edc37bda84856a47a1d91cddfee8c57, type: 3}
-      propertyPath: m_Name
-      value: TemplatePlayer
-      objectReference: {fileID: 0}
-    - target: {fileID: 8987136569212136119, guid: 2edc37bda84856a47a1d91cddfee8c57, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8987136569212136119, guid: 2edc37bda84856a47a1d91cddfee8c57, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 83.31476
-      objectReference: {fileID: 0}
-    - target: {fileID: 8987136569212136119, guid: 2edc37bda84856a47a1d91cddfee8c57, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 7.884461
-      objectReference: {fileID: 0}
-    - target: {fileID: 8987136569212136119, guid: 2edc37bda84856a47a1d91cddfee8c57, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 37.455
-      objectReference: {fileID: 0}
-    - target: {fileID: 8987136569212136119, guid: 2edc37bda84856a47a1d91cddfee8c57, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8987136569212136119, guid: 2edc37bda84856a47a1d91cddfee8c57, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8987136569212136119, guid: 2edc37bda84856a47a1d91cddfee8c57, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8987136569212136119, guid: 2edc37bda84856a47a1d91cddfee8c57, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8987136569212136119, guid: 2edc37bda84856a47a1d91cddfee8c57, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8987136569212136119, guid: 2edc37bda84856a47a1d91cddfee8c57, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8987136569212136119, guid: 2edc37bda84856a47a1d91cddfee8c57, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9121865610430834315, guid: 2edc37bda84856a47a1d91cddfee8c57, type: 3}
-      propertyPath: sceneViewId
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_AddedGameObjects: []
-  m_SourcePrefab: {fileID: 100100000, guid: 2edc37bda84856a47a1d91cddfee8c57, type: 3}
 --- !u!64 &427851016
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1801,6 +1710,11 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4314502613289724794, guid: ab5b79c175ecc7941a237cabd6c15217, type: 3}
+--- !u!4 &1020934996 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8987136569212136119, guid: 2edc37bda84856a47a1d91cddfee8c57, type: 3}
+  m_PrefabInstance: {fileID: 1166374427}
+  m_PrefabAsset: {fileID: 0}
 --- !u!64 &1063833621
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1927,6 +1841,69 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2335831570432678962, guid: ab5b79c175ecc7941a237cabd6c15217, type: 3}
+--- !u!1001 &1166374427
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 2
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8987136569212136115, guid: 2edc37bda84856a47a1d91cddfee8c57, type: 3}
+      propertyPath: m_Name
+      value: TemplatePlayer (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8987136569212136119, guid: 2edc37bda84856a47a1d91cddfee8c57, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8987136569212136119, guid: 2edc37bda84856a47a1d91cddfee8c57, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 84.70149
+      objectReference: {fileID: 0}
+    - target: {fileID: 8987136569212136119, guid: 2edc37bda84856a47a1d91cddfee8c57, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7.7248793
+      objectReference: {fileID: 0}
+    - target: {fileID: 8987136569212136119, guid: 2edc37bda84856a47a1d91cddfee8c57, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 41.27914
+      objectReference: {fileID: 0}
+    - target: {fileID: 8987136569212136119, guid: 2edc37bda84856a47a1d91cddfee8c57, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8987136569212136119, guid: 2edc37bda84856a47a1d91cddfee8c57, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8987136569212136119, guid: 2edc37bda84856a47a1d91cddfee8c57, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8987136569212136119, guid: 2edc37bda84856a47a1d91cddfee8c57, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8987136569212136119, guid: 2edc37bda84856a47a1d91cddfee8c57, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8987136569212136119, guid: 2edc37bda84856a47a1d91cddfee8c57, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8987136569212136119, guid: 2edc37bda84856a47a1d91cddfee8c57, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9121865610430834315, guid: 2edc37bda84856a47a1d91cddfee8c57, type: 3}
+      propertyPath: sceneViewId
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_AddedGameObjects: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2edc37bda84856a47a1d91cddfee8c57, type: 3}
 --- !u!64 &1178244687
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3748,17 +3725,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 273215351516701787}
   m_Mesh: {fileID: -569845992571696745, guid: ab5b79c175ecc7941a237cabd6c15217, type: 3}
---- !u!114 &312110740719046126 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 312110741136010128, guid: 2edc37bda84856a47a1d91cddfee8c57, type: 3}
-  m_PrefabInstance: {fileID: 416966270}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24092a40b02616e479baeb940325e339, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!23 &315244111470615050
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7284,7 +7250,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8222391761245457452}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 25, y: 25, z: 25}
+  m_LocalPosition: {x: 20.03, y: 14.83, z: 25}
   m_LocalScale: {x: 0.25186893, y: 0.3916855, z: 0.003916855}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8505,7 +8471,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a13d5d86d72693443a423360524e98ba, type: 2}
+  - {fileID: 2100000, guid: ab0a8a7719a77484e90f8573ad5f2f60, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10058,29 +10024,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29056e2d64fddb440b6814b8e0490927, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Red: {fileID: 0}
-  Blue: {fileID: 0}
-  Green: {fileID: 0}
-  Orange: {fileID: 0}
-  Yellow: {fileID: 0}
-  brownBook:
-  - {x: 85.86394, y: 9.270824, z: 4.318}
-  - {x: 60.598, y: 8.758, z: 7.851}
-  redBook:
-  - {x: 83.06701, y: 9.278195, z: 35.90474}
-  - {x: 85.86394, y: 9.270824, z: 4.318}
-  blueBook:
-  - {x: 82.1, y: 9.13, z: 2.293}
-  - {x: 29.066, y: 3.859, z: 66.833}
-  greenBook:
-  - {x: 72.89, y: 10.02, z: 6.63}
-  - {x: 34.199, y: 1.53, z: 66.84}
-  orangeBook:
-  - {x: 85.1582, y: 9.734, z: 56.15}
-  - {x: 37.151, y: 3.548, z: -35.85}
-  yellowBook:
-  - {x: 73.34819, y: 8.018076, z: 2.08}
-  - {x: 71.75, y: 7.99, z: 2.394}
 --- !u!23 &4380885717623675416
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10505,29 +10448,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 215aa18c2c32ca340a4b0d7d8818d564, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Spoon: {fileID: 0}
-  Knife: {fileID: 0}
-  Hat: {fileID: 0}
-  Sword: {fileID: 0}
-  Glassess: {fileID: 0}
-  fork:
-  - {x: 50.32991, y: 8.719487, z: 20.5955}
-  - {x: 50.306, y: 8.72, z: 8.107}
-  spoon:
-  - {x: 50.575, y: 8.736, z: 20.757}
-  - {x: 50.63, y: 8.736, z: 29.4}
-  knife:
-  - {x: 50.599, y: 8.719487, z: 20.883}
-  - {x: 86.007, y: 10.373, z: 56.945}
-  hat:
-  - {x: 85.31, y: 9.126, z: 37.648}
-  - {x: 0.046, y: 1.31, z: -37.331}
-  sword:
-  - {x: 82.60853, y: 8.433764, z: 36.10616}
-  - {x: 73.54, y: 7.92, z: 9.81}
-  glassess:
-  - {x: 82.22437, y: 9.277376, z: 36.28313}
-  - {x: 29.426, y: 1.403, z: -40.799}
 --- !u!23 &4618634374609048353
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10674,17 +10594,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20097987ab8be98438676d82051bc5fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MediumBox: {fileID: 7983270045679529259}
-  SmallBox: {fileID: 6381833863216622182}
-  possiblePositions:
-  - {x: 3.212101, y: 1.381771, z: -35.789}
-  - {x: -1.8, y: 1.381771, z: -37.98}
-  secondObjectPositions:
-  - {x: 2.28, y: 1.381771, z: -39.79728}
-  - {x: -2.33, y: 1.381771, z: -39.79728}
-  thirdObjectPositions:
-  - {x: -2, y: 1.381771, z: -35.83}
-  - {x: 81.53, y: 7.98, z: -17.23}
 --- !u!33 &4658274025283254038
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -12571,29 +12480,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29056e2d64fddb440b6814b8e0490927, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Red: {fileID: 0}
-  Blue: {fileID: 0}
-  Green: {fileID: 0}
-  Orange: {fileID: 0}
-  Yellow: {fileID: 0}
-  brownBook:
-  - {x: 85.86394, y: 9.270824, z: 4.318}
-  - {x: 60.598, y: 8.758, z: 7.851}
-  redBook:
-  - {x: 83.06701, y: 9.278195, z: 35.90474}
-  - {x: 85.86394, y: 9.270824, z: 4.318}
-  blueBook:
-  - {x: 82.1, y: 9.13, z: 2.293}
-  - {x: 29.066, y: 3.859, z: 66.833}
-  greenBook:
-  - {x: 72.89, y: 10.02, z: 6.63}
-  - {x: 34.199, y: 1.53, z: 66.84}
-  orangeBook:
-  - {x: 85.1582, y: 9.734, z: 56.15}
-  - {x: 37.151, y: 3.548, z: -35.85}
-  yellowBook:
-  - {x: 73.34819, y: 8.018076, z: 2.08}
-  - {x: 71.75, y: 7.99, z: 2.394}
 --- !u!4 &6038099797527555733
 Transform:
   m_ObjectHideFlags: 0
@@ -14415,29 +14301,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29056e2d64fddb440b6814b8e0490927, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Red: {fileID: 0}
-  Blue: {fileID: 0}
-  Green: {fileID: 0}
-  Orange: {fileID: 0}
-  Yellow: {fileID: 0}
-  brownBook:
-  - {x: 85.86394, y: 9.270824, z: 4.318}
-  - {x: 60.598, y: 8.758, z: 7.851}
-  redBook:
-  - {x: 83.06701, y: 9.278195, z: 35.90474}
-  - {x: 85.86394, y: 9.270824, z: 4.318}
-  blueBook:
-  - {x: 82.1, y: 9.13, z: 2.293}
-  - {x: 29.066, y: 3.859, z: 66.833}
-  greenBook:
-  - {x: 72.89, y: 10.02, z: 6.63}
-  - {x: 34.199, y: 1.53, z: 66.84}
-  orangeBook:
-  - {x: 85.1582, y: 9.734, z: 56.15}
-  - {x: 37.151, y: 3.548, z: -35.85}
-  yellowBook:
-  - {x: 73.34819, y: 8.018076, z: 2.08}
-  - {x: 71.75, y: 7.99, z: 2.394}
 --- !u!4 &7164611031957360160
 Transform:
   m_ObjectHideFlags: 0
@@ -14524,29 +14387,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29056e2d64fddb440b6814b8e0490927, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Red: {fileID: 0}
-  Blue: {fileID: 0}
-  Green: {fileID: 0}
-  Orange: {fileID: 0}
-  Yellow: {fileID: 0}
-  brownBook:
-  - {x: 85.86394, y: 9.270824, z: 4.318}
-  - {x: 60.598, y: 8.758, z: 7.851}
-  redBook:
-  - {x: 83.06701, y: 9.278195, z: 35.90474}
-  - {x: 85.86394, y: 9.270824, z: 4.318}
-  blueBook:
-  - {x: 82.1, y: 9.13, z: 2.293}
-  - {x: 29.066, y: 3.859, z: 66.833}
-  greenBook:
-  - {x: 72.89, y: 10.02, z: 6.63}
-  - {x: 34.199, y: 1.53, z: 66.84}
-  orangeBook:
-  - {x: 85.1582, y: 9.734, z: 56.15}
-  - {x: 37.151, y: 3.548, z: -35.85}
-  yellowBook:
-  - {x: 73.34819, y: 8.018076, z: 2.08}
-  - {x: 71.75, y: 7.99, z: 2.394}
 --- !u!33 &7294745122125056818
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -14656,29 +14496,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 215aa18c2c32ca340a4b0d7d8818d564, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Spoon: {fileID: 0}
-  Knife: {fileID: 0}
-  Hat: {fileID: 0}
-  Sword: {fileID: 0}
-  Glassess: {fileID: 0}
-  fork:
-  - {x: 50.32991, y: 8.719487, z: 20.5955}
-  - {x: 50.306, y: 8.72, z: 8.107}
-  spoon:
-  - {x: 50.575, y: 8.736, z: 20.757}
-  - {x: 50.63, y: 8.736, z: 29.4}
-  knife:
-  - {x: 50.599, y: 8.719487, z: 20.883}
-  - {x: 86.007, y: 10.373, z: 56.945}
-  hat:
-  - {x: 85.31, y: 9.126, z: 37.648}
-  - {x: 0.046, y: 1.31, z: -37.331}
-  sword:
-  - {x: 82.60853, y: 8.433764, z: 36.10616}
-  - {x: 73.54, y: 7.92, z: 9.81}
-  glassess:
-  - {x: 82.22437, y: 9.277376, z: 36.28313}
-  - {x: 29.426, y: 1.403, z: -40.799}
 --- !u!33 &7416605495744058260
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -15043,17 +14860,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bddd595d83ae01b46873b0707ae6e5a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bluePlate: {fileID: 3240271851113402163}
-  happyPillow: {fileID: 555679847147217024}
-  redChair:
-  - {x: 49.766, y: 7.637, z: 17.446}
-  - {x: 27.48, y: 1.37, z: 67.34}
-  plate:
-  - {x: 50.021, y: 7.436, z: 13.914}
-  - {x: 29.575, y: 3.091, z: -41.069}
-  pillowH:
-  - {x: 82.02351, y: 9.121099, z: 0.8273819}
-  - {x: 86.41, y: 9.177, z: 36.8}
 --- !u!114 &7567852143259155412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15193,17 +14999,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bddd595d83ae01b46873b0707ae6e5a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bluePlate: {fileID: 0}
-  happyPillow: {fileID: 0}
-  redChair:
-  - {x: 49.766, y: 7.637, z: 17.446}
-  - {x: 27.48, y: 1.37, z: 67.34}
-  plate:
-  - {x: 50.021, y: 7.436, z: 13.914}
-  - {x: 29.575, y: 3.091, z: -41.069}
-  pillowH:
-  - {x: 82.02351, y: 9.121099, z: 0.8273819}
-  - {x: 86.41, y: 9.177, z: 36.8}
 --- !u!23 &7670120671781464203
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -15530,29 +15325,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29056e2d64fddb440b6814b8e0490927, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Red: {fileID: 0}
-  Blue: {fileID: 0}
-  Green: {fileID: 0}
-  Orange: {fileID: 0}
-  Yellow: {fileID: 0}
-  brownBook:
-  - {x: 85.86394, y: 9.270824, z: 4.318}
-  - {x: 60.598, y: 8.758, z: 7.851}
-  redBook:
-  - {x: 83.06701, y: 9.278195, z: 35.90474}
-  - {x: 85.86394, y: 9.270824, z: 4.318}
-  blueBook:
-  - {x: 82.1, y: 9.13, z: 2.293}
-  - {x: 29.066, y: 3.859, z: 66.833}
-  greenBook:
-  - {x: 72.89, y: 10.02, z: 6.63}
-  - {x: 34.199, y: 1.53, z: 66.84}
-  orangeBook:
-  - {x: 85.1582, y: 9.734, z: 56.15}
-  - {x: 37.151, y: 3.548, z: -35.85}
-  yellowBook:
-  - {x: 73.34819, y: 8.018076, z: 2.08}
-  - {x: 71.75, y: 7.99, z: 2.394}
 --- !u!1 &7983270045679529259
 GameObject:
   m_ObjectHideFlags: 0
@@ -15827,6 +15599,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52bf27eb96e68ef478ed721772845bdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerTransform: {fileID: 1020934996}
+  maxDistance: 10
+  dotSize: 0.1
+  collisionLayers:
+    serializedVersion: 2
+    m_Bits: 2147483647
+  proximityDistance: 2
+  wallCheckDistance: 1
   chair: {fileID: 3390901238710583498}
   bluePlate: {fileID: 3240271851113402163}
   happyPillow: {fileID: 555679847147217024}
@@ -16090,15 +15870,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1bf18fab09143a4e96a23bd908b0ef1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  calculator: {fileID: 2463530792002648178}
-  computer:
-  - {x: 81.75115, y: 9.704586, z: 56.36886}
-  - {x: 72.981, y: 8.319, z: 67.003}
-  - {x: 29.81, y: 6.06, z: 66.89}
-  calcu:
-  - {x: 83.07209, y: 9.691993, z: 56.08224}
-  - {x: 49.98, y: 8.7191, z: 25.831}
-  - {x: 30.057, y: 2.352, z: -40.94}
 --- !u!1 &8395833648373359959
 GameObject:
   m_ObjectHideFlags: 0
@@ -16146,29 +15917,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 215aa18c2c32ca340a4b0d7d8818d564, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Spoon: {fileID: 3126153320559843623}
-  Knife: {fileID: 7413139308310205105}
-  Hat: {fileID: 8699652204202120729}
-  Sword: {fileID: 2204471700158626575}
-  Glassess: {fileID: 6764597822294282133}
-  fork:
-  - {x: 50.32991, y: 8.719487, z: 20.5955}
-  - {x: 50.306, y: 8.72, z: 8.107}
-  spoon:
-  - {x: 50.575, y: 8.736, z: 20.757}
-  - {x: 50.63, y: 8.736, z: 29.4}
-  knife:
-  - {x: 50.599, y: 8.719487, z: 20.883}
-  - {x: 86.007, y: 10.373, z: 56.945}
-  hat:
-  - {x: 85.31, y: 9.126, z: 37.648}
-  - {x: 0.046, y: 1.31, z: -37.331}
-  sword:
-  - {x: 82.60853, y: 8.433764, z: 36.10616}
-  - {x: 73.54, y: 7.92, z: 9.81}
-  glassess:
-  - {x: 82.22437, y: 9.277376, z: 36.28313}
-  - {x: 29.426, y: 1.403, z: -40.799}
 --- !u!23 &8454502403143101742
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -16307,17 +16055,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bddd595d83ae01b46873b0707ae6e5a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bluePlate: {fileID: 0}
-  happyPillow: {fileID: 0}
-  redChair:
-  - {x: 49.766, y: 7.637, z: 17.446}
-  - {x: 27.48, y: 1.37, z: 67.34}
-  plate:
-  - {x: 50.021, y: 7.436, z: 13.914}
-  - {x: 29.575, y: 3.091, z: -41.069}
-  pillowH:
-  - {x: 82.02351, y: 9.121099, z: 0.8273819}
-  - {x: 86.41, y: 9.177, z: 36.8}
 --- !u!114 &8478514451999219214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16560,29 +16297,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 215aa18c2c32ca340a4b0d7d8818d564, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Spoon: {fileID: 0}
-  Knife: {fileID: 0}
-  Hat: {fileID: 0}
-  Sword: {fileID: 0}
-  Glassess: {fileID: 0}
-  fork:
-  - {x: 50.32991, y: 8.719487, z: 20.5955}
-  - {x: 50.306, y: 8.72, z: 8.107}
-  spoon:
-  - {x: 50.575, y: 8.736, z: 20.757}
-  - {x: 50.63, y: 8.736, z: 29.4}
-  knife:
-  - {x: 50.599, y: 8.719487, z: 20.883}
-  - {x: 86.007, y: 10.373, z: 56.945}
-  hat:
-  - {x: 85.31, y: 9.126, z: 37.648}
-  - {x: 0.046, y: 1.31, z: -37.331}
-  sword:
-  - {x: 82.60853, y: 8.433764, z: 36.10616}
-  - {x: 73.54, y: 7.92, z: 9.81}
-  glassess:
-  - {x: 82.22437, y: 9.277376, z: 36.28313}
-  - {x: 29.426, y: 1.403, z: -40.799}
 --- !u!4 &8729090381252553505
 Transform:
   m_ObjectHideFlags: 0
@@ -16641,29 +16355,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29056e2d64fddb440b6814b8e0490927, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Red: {fileID: 7131894875989244737}
-  Blue: {fileID: 3978497987733374564}
-  Green: {fileID: 7660081212262864912}
-  Orange: {fileID: 2869789712203622884}
-  Yellow: {fileID: 3802353075118893703}
-  brownBook:
-  - {x: 85.86394, y: 9.270824, z: 4.318}
-  - {x: 60.598, y: 8.758, z: 7.851}
-  redBook:
-  - {x: 83.06701, y: 9.278195, z: 35.90474}
-  - {x: 85.86394, y: 9.270824, z: 4.318}
-  blueBook:
-  - {x: 82.1, y: 9.13, z: 2.293}
-  - {x: 29.066, y: 3.859, z: 66.833}
-  greenBook:
-  - {x: 72.89, y: 10.02, z: 6.63}
-  - {x: 34.199, y: 1.53, z: 66.84}
-  orangeBook:
-  - {x: 85.1582, y: 9.734, z: 56.15}
-  - {x: 37.151, y: 3.548, z: -35.85}
-  yellowBook:
-  - {x: 73.34819, y: 8.018076, z: 2.08}
-  - {x: 71.75, y: 7.99, z: 2.394}
 --- !u!33 &8794787730930635890
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -16801,29 +16492,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 215aa18c2c32ca340a4b0d7d8818d564, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Spoon: {fileID: 0}
-  Knife: {fileID: 0}
-  Hat: {fileID: 0}
-  Sword: {fileID: 0}
-  Glassess: {fileID: 0}
-  fork:
-  - {x: 50.32991, y: 8.719487, z: 20.5955}
-  - {x: 50.306, y: 8.72, z: 8.107}
-  spoon:
-  - {x: 50.575, y: 8.736, z: 20.757}
-  - {x: 50.63, y: 8.736, z: 29.4}
-  knife:
-  - {x: 50.599, y: 8.719487, z: 20.883}
-  - {x: 86.007, y: 10.373, z: 56.945}
-  hat:
-  - {x: 85.31, y: 9.126, z: 37.648}
-  - {x: 0.046, y: 1.31, z: -37.331}
-  sword:
-  - {x: 82.60853, y: 8.433764, z: 36.10616}
-  - {x: 73.54, y: 7.92, z: 9.81}
-  glassess:
-  - {x: 82.22437, y: 9.277376, z: 36.28313}
-  - {x: 29.426, y: 1.403, z: -40.799}
 --- !u!33 &8850568107229310924
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -17004,22 +16672,6 @@ Transform:
   m_Father: {fileID: 543450651605870220}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8987136569602575560 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8987136569212136118, guid: 2edc37bda84856a47a1d91cddfee8c57, type: 3}
-  m_PrefabInstance: {fileID: 416966270}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdd0dd2408e42ba47b026e5583efd762, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &8987136570022456139 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8987136569899355445, guid: 2edc37bda84856a47a1d91cddfee8c57, type: 3}
-  m_PrefabInstance: {fileID: 416966270}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &8992427064663725634
 GameObject:
   m_ObjectHideFlags: 0
@@ -17246,29 +16898,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 215aa18c2c32ca340a4b0d7d8818d564, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Spoon: {fileID: 0}
-  Knife: {fileID: 0}
-  Hat: {fileID: 0}
-  Sword: {fileID: 0}
-  Glassess: {fileID: 0}
-  fork:
-  - {x: 50.32991, y: 8.719487, z: 20.5955}
-  - {x: 50.306, y: 8.72, z: 8.107}
-  spoon:
-  - {x: 50.575, y: 8.736, z: 20.757}
-  - {x: 50.63, y: 8.736, z: 29.4}
-  knife:
-  - {x: 50.599, y: 8.719487, z: 20.883}
-  - {x: 86.007, y: 10.373, z: 56.945}
-  hat:
-  - {x: 85.31, y: 9.126, z: 37.648}
-  - {x: 0.046, y: 1.31, z: -37.331}
-  sword:
-  - {x: 82.60853, y: 8.433764, z: 36.10616}
-  - {x: 73.54, y: 7.92, z: 9.81}
-  glassess:
-  - {x: 82.22437, y: 9.277376, z: 36.28313}
-  - {x: 29.426, y: 1.403, z: -40.799}
 --- !u!4 &9021214427997088880
 Transform:
   m_ObjectHideFlags: 0
