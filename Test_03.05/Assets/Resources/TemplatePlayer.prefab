@@ -2449,7 +2449,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3061946375615597148, guid: bcc6d0c76e6dde4469f26632e92208fb, type: 3}
   m_PrefabInstance: {fileID: 2172064951731502374}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &7671815366988814828
+--- !u!114 &2286385850498693564
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2458,13 +2458,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 3772470100646754170}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc7f56b9872e25c48a5662975a762c60, type: 3}
+  m_Script: {fileID: 11500000, guid: 352724ca8fc793a4fbc78781d8d32aaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   OrbitCamera: {fileID: 312110741136010128}
   CameraFollowPoint: {fileID: 8987136569899355445}
   Character: {fileID: 8987136569212136118}
-  pushPullForce: 5
+  pushPullForce: 3
 --- !u!1001 &2172064952394938348
 PrefabInstance:
   m_ObjectHideFlags: 0
