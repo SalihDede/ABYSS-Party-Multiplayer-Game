@@ -6,14 +6,14 @@ public class SlipperAndBallCoord : MonoBehaviour
 {
     public GameObject Slipper; // Ýkinci HappyPillow objesini bu alana atayacaðýz
 
-    private Vector3[] possiblePositions = new Vector3[]
+    private Vector3[] ball = new Vector3[]
     {
         new Vector3(86.6f, 8.316042f, -11.83404f),
         new Vector3(15.11f, 1.464f, 2.45f),
         new Vector3(80.836f, 8.316042f, 54.05f)
     };
 
-    private Vector3[] secondObjectPositions = new Vector3[]
+    private Vector3[] slipper = new Vector3[]
     {
         new Vector3(81.41604f, 7.841867f, -1.08615f),
         new Vector3(30.642f, 1.45f, 66.69f),
@@ -24,13 +24,13 @@ public class SlipperAndBallCoord : MonoBehaviour
     void Start()
     {
         // Ýlk objenin pozisyonunu rastgele belirle
-        int randomIndex = Random.Range(0, possiblePositions.Length);
-        transform.position = possiblePositions[randomIndex];
+        int randomIndex = Random.Range(0, ball.Length);
+        transform.position = ball[randomIndex];
 
         // Ýkinci objenin pozisyonunu belirle
         if (Slipper != null)
         {
-            Slipper.transform.position = secondObjectPositions[randomIndex];
+            Slipper.transform.position = slipper[randomIndex];
         }
     }
 

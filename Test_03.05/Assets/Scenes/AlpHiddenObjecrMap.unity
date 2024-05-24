@@ -165,6 +165,148 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -569845992571696745, guid: ab5b79c175ecc7941a237cabd6c15217, type: 3}
+--- !u!1 &28139422
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 28139423}
+  - component: {fileID: 28139427}
+  - component: {fileID: 28139426}
+  - component: {fileID: 28139425}
+  - component: {fileID: 28139424}
+  - component: {fileID: 28139428}
+  m_Layer: 0
+  m_Name: DoorManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &28139423
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 28139422}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+  m_LocalPosition: {x: 20.03, y: 14.83, z: 22.48}
+  m_LocalScale: {x: 0.25186893, y: 0.3916855, z: 0.003916855}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 543450651605870220}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &28139424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 28139422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  "Kap\u01310": {fileID: 0}
+  "Kap\u01311": {fileID: 0}
+  "Kap\u01312": {fileID: 0}
+  "Kap\u01313": {fileID: 0}
+  "Kap\u01314": {fileID: 0}
+  "Kap\u01315": {fileID: 0}
+  "Kap\u01316": {fileID: 0}
+  "Kap\u01317": {fileID: 0}
+  reappearTime: 2
+--- !u!64 &28139425
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 28139422}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5975739977229366047, guid: ab5b79c175ecc7941a237cabd6c15217, type: 3}
+--- !u!23 &28139426
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 28139422}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &28139427
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 28139422}
+  m_Mesh: {fileID: -5975739977229366047, guid: ab5b79c175ecc7941a237cabd6c15217, type: 3}
+--- !u!114 &28139428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 28139422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3ce69425a21b2745b19ded0eef31d08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  "Kap\u01310": {fileID: 375952373242874176}
+  "Kap\u01311": {fileID: 1771039327}
+  "Kap\u01312": {fileID: 1592408778}
+  "Kap\u01313": {fileID: 1352386147}
+  "Kap\u01314": {fileID: 114702827}
+  "Kap\u01315": {fileID: 64996446}
+  "Kap\u01316": {fileID: 932019174}
+  "Kap\u01317": {fileID: 431110882}
+  "Kap\u01318": {fileID: 1352355527}
 --- !u!64 &53412869
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -193,7 +335,7 @@ GameObject:
   - component: {fileID: 64996449}
   - component: {fileID: 64996448}
   m_Layer: 0
-  m_Name: "Kap\u0131 (5)"
+  m_Name: "Kap\u01315"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -226,6 +368,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3be63e33ccaa73f4ab9e4be09ba56154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  baslangicPozisyonu: {x: 0, y: 0, z: 0}
+  baslangicRotasyonu: {x: 0, y: 0, z: 0, w: 0}
+  hedefRotasyon: {x: 0, y: 0, z: 0, w: 0}
+  "kap\u0131AcilacakMesafe": 0.4
+  "kap\u0131HareketHizi": 1.5
+  "kap\u0131Acik": 0
 --- !u!64 &64996449
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -332,7 +480,7 @@ GameObject:
   - component: {fileID: 114702830}
   - component: {fileID: 114702829}
   m_Layer: 0
-  m_Name: "Kap\u0131 (4)"
+  m_Name: "Kap\u01314"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -379,6 +527,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cd959483adac064bab6eb3a774867c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  baslangicPozisyonu: {x: 0, y: 0, z: 0}
+  hedefPozisyonu: {x: 0, y: 0, z: 0}
+  "kap\u0131AcilacakMesafe": 1.3
+  "kap\u0131HareketHizi": 1.5
+  "kap\u0131Acik": 0
 --- !u!23 &114702831
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -877,7 +1030,7 @@ GameObject:
   - component: {fileID: 431110885}
   - component: {fileID: 431110884}
   m_Layer: 0
-  m_Name: "Kap\u0131 (7)"
+  m_Name: "Kap\u01317"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -924,6 +1077,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3be63e33ccaa73f4ab9e4be09ba56154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  baslangicPozisyonu: {x: 0, y: 0, z: 0}
+  baslangicRotasyonu: {x: 0, y: 0, z: 0, w: 0}
+  hedefRotasyon: {x: 0, y: 0, z: 0, w: 0}
+  "kap\u0131AcilacakMesafe": 0.4
+  "kap\u0131HareketHizi": 1.5
+  "kap\u0131Acik": 0
 --- !u!23 &431110886
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1058,6 +1217,73 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2539749958819145422, guid: ab5b79c175ecc7941a237cabd6c15217, type: 3}
+--- !u!1 &525304475
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 525304478}
+  - component: {fileID: 525304477}
+  - component: {fileID: 525304476}
+  m_Layer: 0
+  m_Name: EventSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &525304476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 525304475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0
+--- !u!114 &525304477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 525304475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
+--- !u!4 &525304478
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 525304475}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &535638563
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1362,6 +1588,108 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2982990837364758801, guid: ab5b79c175ecc7941a237cabd6c15217, type: 3}
+--- !u!1 &703797797
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 703797798}
+  - component: {fileID: 703797801}
+  - component: {fileID: 703797800}
+  - component: {fileID: 703797799}
+  m_Layer: 0
+  m_Name: Canvas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &703797798
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 703797797}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 839432115}
+  m_Father: {fileID: 543450651605870220}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
+--- !u!114 &703797799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 703797797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &703797800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 703797797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 0
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
+--- !u!223 &703797801
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 703797797}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 0
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 25
+  m_UpdateRectTransformForStandalone: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
 --- !u!64 &714831188
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1432,6 +1760,141 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 2871540374110685717, guid: ab5b79c175ecc7941a237cabd6c15217, type: 3}
+--- !u!1 &839432114
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 839432115}
+  - component: {fileID: 839432117}
+  - component: {fileID: 839432116}
+  m_Layer: 0
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &839432115
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 839432114}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 703797798}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 200, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &839432116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 839432114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: +
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 36
+  m_fontSizeBase: 36
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &839432117
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 839432114}
+  m_CullTransparentMesh: 1
 --- !u!64 &849953048
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1545,7 +2008,7 @@ GameObject:
   - component: {fileID: 932019176}
   - component: {fileID: 932019177}
   m_Layer: 0
-  m_Name: "Kap\u0131 (6)"
+  m_Name: "Kap\u01316"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1592,6 +2055,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3be63e33ccaa73f4ab9e4be09ba56154, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  baslangicPozisyonu: {x: 0, y: 0, z: 0}
+  baslangicRotasyonu: {x: 0, y: 0, z: 0, w: 0}
+  hedefRotasyon: {x: 0, y: 0, z: 0, w: 0}
+  "kap\u0131AcilacakMesafe": 0.4
+  "kap\u0131HareketHizi": 1.5
+  "kap\u0131Acik": 0
 --- !u!23 &932019178
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1654,6 +2123,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f210cb700852da148bdfc662e8d79b86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  baslangicPozisyonu: {x: 0, y: 0, z: 0}
+  hedefPozisyonu: {x: 0, y: 0, z: 0}
+  "kap\u0131AcilacakMesafe": 1.3
+  "kap\u0131HareketHizi": 1.5
+  "kap\u0131Acik": 0
 --- !u!64 &954464347
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1710,11 +2184,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4314502613289724794, guid: ab5b79c175ecc7941a237cabd6c15217, type: 3}
---- !u!4 &1020934996 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8987136569212136119, guid: 2edc37bda84856a47a1d91cddfee8c57, type: 3}
-  m_PrefabInstance: {fileID: 1166374427}
-  m_PrefabAsset: {fileID: 0}
 --- !u!64 &1063833621
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1859,15 +2328,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8987136569212136119, guid: 2edc37bda84856a47a1d91cddfee8c57, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 84.70149
+      value: 25.4
       objectReference: {fileID: 0}
     - target: {fileID: 8987136569212136119, guid: 2edc37bda84856a47a1d91cddfee8c57, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.7248793
+      value: 1.11
       objectReference: {fileID: 0}
     - target: {fileID: 8987136569212136119, guid: 2edc37bda84856a47a1d91cddfee8c57, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 41.27914
+      value: -2.54
       objectReference: {fileID: 0}
     - target: {fileID: 8987136569212136119, guid: 2edc37bda84856a47a1d91cddfee8c57, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2058,7 +2527,7 @@ GameObject:
   - component: {fileID: 1352355530}
   - component: {fileID: 1352355529}
   m_Layer: 0
-  m_Name: "Kap\u0131 (8)"
+  m_Name: "Kap\u01318"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2105,6 +2574,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cd959483adac064bab6eb3a774867c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  baslangicPozisyonu: {x: 0, y: 0, z: 0}
+  hedefPozisyonu: {x: 0, y: 0, z: 0}
+  "kap\u0131AcilacakMesafe": 1.3
+  "kap\u0131HareketHizi": 1.5
+  "kap\u0131Acik": 0
 --- !u!23 &1352355531
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2169,7 +2643,7 @@ GameObject:
   - component: {fileID: 1352386153}
   - component: {fileID: 1352386149}
   m_Layer: 0
-  m_Name: "Kap\u0131 (3)"
+  m_Name: "Kap\u01313"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2266,6 +2740,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cd959483adac064bab6eb3a774867c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  baslangicPozisyonu: {x: 0, y: 0, z: 0}
+  hedefPozisyonu: {x: 0, y: 0, z: 0}
+  "kap\u0131AcilacakMesafe": 1.3
+  "kap\u0131HareketHizi": 1.5
+  "kap\u0131Acik": 0
 --- !u!64 &1361252131
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2476,7 +2955,7 @@ GameObject:
   - component: {fileID: 1592408781}
   - component: {fileID: 1592408780}
   m_Layer: 0
-  m_Name: "Kap\u0131 (2)"
+  m_Name: "Kap\u01312"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2523,6 +3002,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f210cb700852da148bdfc662e8d79b86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  baslangicPozisyonu: {x: 0, y: 0, z: 0}
+  hedefPozisyonu: {x: 0, y: 0, z: 0}
+  "kap\u0131AcilacakMesafe": 1.3
+  "kap\u0131HareketHizi": 1.5
+  "kap\u0131Acik": 0
 --- !u!23 &1592408782
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2740,8 +3224,9 @@ GameObject:
   - component: {fileID: 1771039331}
   - component: {fileID: 1771039330}
   - component: {fileID: 1771039329}
+  - component: {fileID: 1771039333}
   m_Layer: 0
-  m_Name: "Kap\u0131 (1)"
+  m_Name: "Kap\u01311"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2788,6 +3273,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f210cb700852da148bdfc662e8d79b86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  baslangicPozisyonu: {x: 0, y: 0, z: 0}
+  hedefPozisyonu: {x: 0, y: 0, z: 0}
+  "kap\u0131AcilacakMesafe": 1.3
+  "kap\u0131HareketHizi": 1.5
+  "kap\u0131Acik": 0
 --- !u!23 &1771039331
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2838,6 +3328,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1771039327}
   m_Mesh: {fileID: 5609946475628668771, guid: 60f97fec4d64ad84d946fc8e425df1bc, type: 3}
+--- !u!114 &1771039333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1771039327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfb7fed66e4b7f244a4a7d1684a9f3ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  "Kap\u01310": {fileID: 0}
+  "Kap\u01311": {fileID: 0}
+  "Kap\u01312": {fileID: 0}
+  "Kap\u01313": {fileID: 0}
+  "Kap\u01314": {fileID: 0}
+  "Kap\u01315": {fileID: 0}
+  "Kap\u01316": {fileID: 0}
+  "Kap\u01317": {fileID: 0}
+  reappearTime: 2
 --- !u!64 &1772688007
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3781,7 +4292,7 @@ GameObject:
   - component: {fileID: 8053245740311775954}
   - component: {fileID: 8053245740311775958}
   m_Layer: 0
-  m_Name: "Kap\u0131"
+  m_Name: "Kap\u01310"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4190,6 +4701,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 28139423}
   - {fileID: 3138110223705051849}
   - {fileID: 8183431373161485978}
   - {fileID: 2585827211038362634}
@@ -4323,6 +4835,7 @@ Transform:
   - {fileID: 932019175}
   - {fileID: 431110883}
   - {fileID: 1352355528}
+  - {fileID: 703797798}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4544,7 +5057,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8222391761245457452}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -6070,6 +6583,8 @@ GameObject:
   - component: {fileID: 2864955281221776702}
   - component: {fileID: 5337465030539225993}
   - component: {fileID: 6248946323544699764}
+  - component: {fileID: 6248946323544699765}
+  - component: {fileID: 6248946323544699766}
   m_Layer: 0
   m_Name: KalemEkstra
   m_TagString: Untagged
@@ -12886,6 +13401,36 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!54 &6248946323544699765
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1684046542125098333}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &6248946323544699766
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1684046542125098333}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2191164815881781786, guid: 60f97fec4d64ad84d946fc8e425df1bc, type: 3}
 --- !u!1 &6249200680957638742
 GameObject:
   m_ObjectHideFlags: 0
@@ -15426,6 +15971,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f210cb700852da148bdfc662e8d79b86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  baslangicPozisyonu: {x: 0, y: 0, z: 0}
+  hedefPozisyonu: {x: 0, y: 0, z: 0}
+  "kap\u0131AcilacakMesafe": 1.3
+  "kap\u0131HareketHizi": 1.5
+  "kap\u0131Acik": 0
 --- !u!64 &8053245740311775958
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -15543,7 +16093,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 408246130821192497}
   m_LocalRotation: {x: 0.5, y: 0.49999997, z: 0.5, w: -0.5}
-  m_LocalPosition: {x: 73.121315, y: 8.034624, z: 6.135824}
+  m_LocalPosition: {x: 33.756, y: 3.886, z: 66.385}
   m_LocalScale: {x: 0.65, y: 0.22952634, z: 0.045}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -15599,14 +16149,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52bf27eb96e68ef478ed721772845bdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTransform: {fileID: 1020934996}
-  maxDistance: 10
-  dotSize: 0.1
-  collisionLayers:
-    serializedVersion: 2
-    m_Bits: 2147483647
-  proximityDistance: 2
-  wallCheckDistance: 1
   chair: {fileID: 3390901238710583498}
   bluePlate: {fileID: 3240271851113402163}
   happyPillow: {fileID: 555679847147217024}
@@ -15628,6 +16170,9 @@ MonoBehaviour:
   MediumBox: {fileID: 7983270045679529259}
   SmallBox: {fileID: 6381833863216622182}
   Radio: {fileID: 273215351516701787}
+  Bag: {fileID: 408246130821192497}
+  Ball: {fileID: 2281577767966309950}
+  Slipper: {fileID: 1575291341055854884}
 --- !u!4 &8276144903531161134
 Transform:
   m_ObjectHideFlags: 0

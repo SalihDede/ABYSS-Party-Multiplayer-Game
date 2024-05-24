@@ -2,33 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
 public class ObjectCoordinateMaanager : MonoBehaviour
 {
-    public GameObject chair; //will add
-    public GameObject bluePlate;
-    public GameObject happyPillow;
-
-    public GameObject Fork; //Added
-    public GameObject Spoon;
-    public GameObject Knife;
-    public GameObject Hat;
-    public GameObject Sword;
-    public GameObject Glassess;
-    public GameObject Computer; //will add
-    public GameObject calculator;
-    public GameObject Brown; //will add
-    public GameObject Red;
-    public GameObject Blue;
-    public GameObject Green;
-    public GameObject Orange;
-    public GameObject Yellow;
-    public GameObject LargeBox;
-    public GameObject MediumBox;
-    public GameObject SmallBox;
-    public GameObject Radio;
-
-
-
+    public GameObject chair; public GameObject bluePlate; public GameObject happyPillow; public GameObject Fork; 
+    public GameObject Spoon; public GameObject Knife; public GameObject Hat;
+    public GameObject Sword; public GameObject Glassess; public GameObject Computer; 
+    public GameObject calculator; public GameObject Brown;  public GameObject Red; public GameObject Blue;
+    public GameObject Green; public GameObject Orange; public GameObject Yellow;
+    public GameObject LargeBox; public GameObject MediumBox; public GameObject SmallBox;
+    public GameObject Radio; public GameObject Bag; public GameObject Ball;  public GameObject Slipper; 
 
     private Vector3[] objManager = new Vector3[]
    {
@@ -142,17 +126,36 @@ public class ObjectCoordinateMaanager : MonoBehaviour
         new Vector3(15.22907f, 1.670282f, -37.024f),
         new Vector3(80.478f, 8.147f, 38.373f),
    };
+    private Vector3[] bag = new Vector3[]
+   {
+        new Vector3(33.756f, 3.886f, 66.385f),
+        new Vector3(73.12132f, 8.034624f, 6.135824f),
+   };
+    private Vector3[] ball = new Vector3[]
+    {
+        new Vector3(86.6f, 8.316042f, -11.83404f),
+        new Vector3(15.11f, 1.464f, 2.45f),
+        new Vector3(80.836f, 8.316042f, 54.05f)
+    };
+
+    private Vector3[] slipper = new Vector3[]
+    {
+        new Vector3(81.41604f, 7.841867f, -1.08615f),
+        new Vector3(30.642f, 1.45f, 66.69f),
+        new Vector3(86.04f, 7.94f, -12.839f)
+    };
 
     private float reappearTime = 2f;
     // Start is called before the first frame update
     void Start()
     {
+
         int randomIndex = Random.Range(0, fork.Length);
         transform.position = objManager[randomIndex];
 
         if (Fork != null && Spoon != null && Knife != null && Hat != null && Sword != null && Glassess != null && chair != null && bluePlate != null && happyPillow != null
             && Computer != null && calculator != null && Brown != null && Red != null && Blue != null && Green != null && Orange != null && Yellow != null
-            && LargeBox != null && MediumBox != null && SmallBox != null && Radio != null)
+            && LargeBox != null && MediumBox != null && SmallBox != null && Radio != null && Bag != null && Ball != null && Slipper != null)
         {
             Fork.transform.position = fork[randomIndex];
             Spoon.transform.position = spoon[randomIndex];
@@ -175,6 +178,9 @@ public class ObjectCoordinateMaanager : MonoBehaviour
             MediumBox.transform.position = secondObjectPositions[randomIndex];
             SmallBox.transform.position = thirdObjectPositions[randomIndex];
             Radio.transform.position = radio[randomIndex];
+            Bag.transform.position = bag[randomIndex];
+            Ball.transform.position = ball[randomIndex];
+            Slipper.transform.position = slipper[randomIndex];
         }
        
     }
@@ -192,22 +198,21 @@ public class ObjectCoordinateMaanager : MonoBehaviour
             if (Physics.Raycast(ray, out hit))
             {
                 // Týklanan nesneye göre iþlem yapýn
-                if (hit.collider.gameObject == chair || hit.collider.gameObject == bluePlate || hit.collider.gameObject == happyPillow || // ... Diðer nesneleri ekleyin
-                    hit.collider.gameObject == Fork || hit.collider.gameObject == Spoon || hit.collider.gameObject == Knife || // ... Diðer nesneleri ekleyin
-                    hit.collider.gameObject == Hat || hit.collider.gameObject == Sword || hit.collider.gameObject == Glassess || // ... Diðer nesneleri ekleyin
-                    hit.collider.gameObject == Computer || hit.collider.gameObject == calculator || hit.collider.gameObject == Brown || // ... Diðer nesneleri ekleyin
-                    hit.collider.gameObject == Red || hit.collider.gameObject == Blue || hit.collider.gameObject == Green || // ... Diðer nesneleri ekleyin
-                    hit.collider.gameObject == Orange || hit.collider.gameObject == Yellow || hit.collider.gameObject == LargeBox || // ... Diðer nesneleri ekleyin
-                    hit.collider.gameObject == MediumBox || hit.collider.gameObject == SmallBox || hit.collider.gameObject == Radio)
+                if (hit.collider.gameObject == chair || hit.collider.gameObject == bluePlate || hit.collider.gameObject == happyPillow || 
+                    hit.collider.gameObject == Fork || hit.collider.gameObject == Spoon || hit.collider.gameObject == Knife ||
+                    hit.collider.gameObject == Hat || hit.collider.gameObject == Sword || hit.collider.gameObject == Glassess ||
+                    hit.collider.gameObject == Computer || hit.collider.gameObject == calculator || hit.collider.gameObject == Brown || 
+                    hit.collider.gameObject == Red || hit.collider.gameObject == Blue || hit.collider.gameObject == Green || 
+                    hit.collider.gameObject == Orange || hit.collider.gameObject == Yellow || hit.collider.gameObject == LargeBox ||
+                    hit.collider.gameObject == MediumBox || hit.collider.gameObject == SmallBox || hit.collider.gameObject == Radio || 
+                    hit.collider.gameObject == Bag || hit.collider.gameObject == Ball || hit.collider.gameObject == Slipper)
                 {
                     // Sadece týklanan nesneyi gizleyin ve yeniden gösterin
                     hit.collider.gameObject.SetActive(false);
-                    StartCoroutine(ReappearObject(hit.collider.gameObject));
+                    StartCoroutine(ReappearObject(hit.collider.gameObject));               
                 }
             }
         }
-
-
     }
 
     // Coroutine to reappear the object after 2 seconds
