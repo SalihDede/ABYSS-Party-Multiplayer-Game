@@ -11,6 +11,7 @@ public class PuzzleManager : MonoBehaviour
 
     private Dictionary<Transform, Vector3> originalPositions; // Stores where pieces originally were
     private Dictionary<Transform, Vector3> currentPositions;  // Stores where pieces are now
+    private float maxDistance; // Maximum distance allowed for shuffling
 
     void Start()
     {
@@ -18,6 +19,7 @@ public class PuzzleManager : MonoBehaviour
         SaveOriginalPositions();
         PrintOriginalPositions();
         SaveCurrentPositions();
+        CalculateMaxDistance(); // Calculate the maximum distance before shuffling
         ShufflePuzzle();
         StartCoroutine(UpdateCurrentPositionsPeriodically()); // Keep track of current positions
     }
@@ -40,6 +42,7 @@ public class PuzzleManager : MonoBehaviour
         {
             originalPositions[tile] = tile.position;
         }
+        originalPositions[emptyTile] = emptyTile.position; // Add the empty tile position
     }
 
     // Save where the puzzle pieces are currently
@@ -50,8 +53,26 @@ public class PuzzleManager : MonoBehaviour
         {
             currentPositions[tile] = tile.position;
         }
+        currentPositions[emptyTile] = emptyTile.position; // Add the empty tile position
     }
 
+    // Calculate the maximum distance allowed for shuffling
+    void CalculateMaxDistance()
+    {
+        maxDistance = 0f;
+        Vector3 emptyTileOriginalPosition = originalPositions[emptyTile];
+
+        foreach (Transform tile in puzzleTiles)
+        {
+            float dist = Vector3.Distance(tile.position, emptyTileOriginalPosition);
+            if (dist > maxDistance)
+            {
+                maxDistance = dist;
+            }
+        }
+    }
+
+    // Shuffle the puzzle tiles
     void ShufflePuzzle()
     {
         for (int i = 0; i < shuffleCount; i++)
@@ -60,16 +81,27 @@ public class PuzzleManager : MonoBehaviour
             int randomIndex = Random.Range(0, puzzleTiles.Length);
             Transform randomTile = puzzleTiles[randomIndex];
 
-            // Swap positions with the empty space
-            Vector3 tempPosition = randomTile.position;
-            randomTile.position = emptyTile.position;
-            emptyTile.position = tempPosition;
+            // Calculate the distance between the empty tile and the random tile
+            float distance = Vector3.Distance(randomTile.position, emptyTile.position);
+
+            // Check if the distance is within the limit
+            if (distance <= maxDistance)
+            {
+                // Swap positions with the empty space
+                Vector3 tempPosition = randomTile.position;
+                randomTile.position = emptyTile.position;
+                emptyTile.position = tempPosition;
+            }
+            else
+            {
+                // Decrement the counter to ensure the required number of shuffles
+                i--;
+            }
         }
 
         SaveCurrentPositions(); // Save positions after shuffling
         PrintCurrentPositions(); // Print current positions after shuffling
     }
-
 
     // Print the original positions of all pieces
     void PrintOriginalPositions()
