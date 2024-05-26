@@ -6,13 +6,16 @@ using UnityEngine;
 
 public class ObjectCoordinateMaanager : MonoBehaviour
 {
+
+                                 
     public GameObject chair; public GameObject bluePlate; public GameObject happyPillow; public GameObject Fork; 
     public GameObject Spoon; public GameObject Knife; public GameObject Hat;
     public GameObject Sword; public GameObject Glassess; public GameObject Computer; 
-    public GameObject calculator; public GameObject Brown;  public GameObject Red; public GameObject Blue;
+    public GameObject Calculator; public GameObject Brown;  public GameObject Red; public GameObject Blue;
     public GameObject Green; public GameObject Orange; public GameObject Yellow;
     public GameObject LargeBox; public GameObject MediumBox; public GameObject SmallBox;
-    public GameObject Radio; public GameObject Bag; public GameObject Ball;  public GameObject Slipper; 
+    public GameObject Radio; public GameObject Bag; public GameObject Ball;  public GameObject Slipper;
+    public GameObject Pencil; public GameObject WateringCan; public GameObject sadPillow;
 
     private Vector3[] objManager = new Vector3[]
    {
@@ -144,6 +147,21 @@ public class ObjectCoordinateMaanager : MonoBehaviour
         new Vector3(30.642f, 1.45f, 66.69f),
         new Vector3(86.04f, 7.94f, -12.839f)
     };
+    private Vector3[] wateringcan = new Vector3[]
+   {
+        new Vector3(5.210814f, 1.94f, 30.90473f),
+        new Vector3(34.25f, 1.971f, -36.369f),
+   };
+
+    private Vector3[] pencil = new Vector3[]
+   {
+        new Vector3(23.92394f, 1.98f, 4.31f),
+   };
+    private Vector3[] pillowS = new Vector3[]
+   {
+        new Vector3(26.5585f, 1.446077f, -41.06846f),
+        new Vector3(15.18f, 1.491f, -39.612f),
+   };
 
     private float reappearTime = 2f;
     // Start is called before the first frame update
@@ -154,8 +172,9 @@ public class ObjectCoordinateMaanager : MonoBehaviour
         transform.position = objManager[randomIndex];
 
         if (Fork != null && Spoon != null && Knife != null && Hat != null && Sword != null && Glassess != null && chair != null && bluePlate != null && happyPillow != null
-            && Computer != null && calculator != null && Brown != null && Red != null && Blue != null && Green != null && Orange != null && Yellow != null
-            && LargeBox != null && MediumBox != null && SmallBox != null && Radio != null && Bag != null && Ball != null && Slipper != null)
+            && Computer != null && Calculator != null && Brown != null && Red != null && Blue != null && Green != null && Orange != null && Yellow != null
+            && LargeBox != null && MediumBox != null && SmallBox != null && Radio != null && Bag != null && Ball != null && Slipper != null && WateringCan != null 
+            && Pencil != null && sadPillow != null)
         {
             Fork.transform.position = fork[randomIndex];
             Spoon.transform.position = spoon[randomIndex];
@@ -167,7 +186,7 @@ public class ObjectCoordinateMaanager : MonoBehaviour
             bluePlate.transform.position = plate[randomIndex];
             happyPillow.transform.position = pillowH[randomIndex];
             Computer.transform.position = computer[randomIndex];
-            calculator.transform.position = calcu[randomIndex];
+            Calculator.transform.position = calcu[randomIndex];
             Brown.transform.position = brownBook[randomIndex];
             Red.transform.position = redBook[randomIndex];
             Blue.transform.position = blueBook[randomIndex];
@@ -181,6 +200,9 @@ public class ObjectCoordinateMaanager : MonoBehaviour
             Bag.transform.position = bag[randomIndex];
             Ball.transform.position = ball[randomIndex];
             Slipper.transform.position = slipper[randomIndex];
+            WateringCan.transform.position = wateringcan[randomIndex];
+            Pencil.transform.position = pencil[randomIndex];
+            sadPillow.transform.position = pillowS[randomIndex];
         }
        
     }
@@ -201,11 +223,12 @@ public class ObjectCoordinateMaanager : MonoBehaviour
                 if (hit.collider.gameObject == chair || hit.collider.gameObject == bluePlate || hit.collider.gameObject == happyPillow || 
                     hit.collider.gameObject == Fork || hit.collider.gameObject == Spoon || hit.collider.gameObject == Knife ||
                     hit.collider.gameObject == Hat || hit.collider.gameObject == Sword || hit.collider.gameObject == Glassess ||
-                    hit.collider.gameObject == Computer || hit.collider.gameObject == calculator || hit.collider.gameObject == Brown || 
+                    hit.collider.gameObject == Computer || hit.collider.gameObject == Calculator || hit.collider.gameObject == Brown || 
                     hit.collider.gameObject == Red || hit.collider.gameObject == Blue || hit.collider.gameObject == Green || 
                     hit.collider.gameObject == Orange || hit.collider.gameObject == Yellow || hit.collider.gameObject == LargeBox ||
                     hit.collider.gameObject == MediumBox || hit.collider.gameObject == SmallBox || hit.collider.gameObject == Radio || 
-                    hit.collider.gameObject == Bag || hit.collider.gameObject == Ball || hit.collider.gameObject == Slipper)
+                    hit.collider.gameObject == Bag || hit.collider.gameObject == Ball || hit.collider.gameObject == Slipper || hit.collider.gameObject == Pencil
+                    || hit.collider.gameObject == WateringCan || hit.collider.gameObject == sadPillow)
                 {
                     // Sadece týklanan nesneyi gizleyin ve yeniden gösterin
                     hit.collider.gameObject.SetActive(false);
