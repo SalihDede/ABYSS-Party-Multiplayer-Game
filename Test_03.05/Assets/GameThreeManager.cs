@@ -11,11 +11,10 @@ public class GameThreeManager : MonoBehaviour
     void Start()
     {
         GameManagerr = GameObject.Find("GameManager");
-        if (PhotonNetwork.IsMasterClient)
-        {
+
 
             RandomMapGenerator();
-        }
+    
       
     }
 
