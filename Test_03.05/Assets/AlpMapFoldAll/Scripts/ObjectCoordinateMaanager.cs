@@ -6,8 +6,6 @@ using UnityEngine;
 
 public class ObjectCoordinateMaanager : MonoBehaviour
 {
-
-                                 
     public GameObject chair; public GameObject bluePlate; public GameObject happyPillow; public GameObject Fork; 
     public GameObject Spoon; public GameObject Knife; public GameObject Hat;
     public GameObject Sword; public GameObject Glassess; public GameObject Computer; 
