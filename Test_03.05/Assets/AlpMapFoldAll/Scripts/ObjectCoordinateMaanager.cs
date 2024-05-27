@@ -164,7 +164,7 @@ public class ObjectCoordinateMaanager : MonoBehaviour
     public int score = 0;
     public Text scoreText;
     public Text selectedObjectsText;
-    private List<GameObject> selectedObjects = new List<GameObject>();
+    public List<GameObject> selectedObjects = new List<GameObject>();
     private float reappearTime = 2f;
     private bool showSelectedObjects = false;
     // Start is called before the first frame update
