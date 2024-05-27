@@ -85,7 +85,7 @@ public class PuzzleManager : MonoBehaviour
             float distance = Vector3.Distance(randomTile.position, emptyTile.position);
 
             // Check if the distance is within the limit
-            if (distance <= maxDistance)
+            if (distance < maxDistance)
             {
                 // Swap positions with the empty space
                 Vector3 tempPosition = randomTile.position;
