@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 
@@ -160,11 +161,51 @@ public class ObjectCoordinateMaanager : MonoBehaviour
         new Vector3(26.5585f, 1.446077f, -41.06846f),
         new Vector3(15.18f, 1.491f, -39.612f),
    };
-
+    public int score = 0;
+    public Text scoreText;
+    public Text selectedObjectsText;
+    private List<GameObject> selectedObjects = new List<GameObject>();
     private float reappearTime = 2f;
+    private bool showSelectedObjects = false;
     // Start is called before the first frame update
     void Start()
     {
+
+
+
+        selectedObjectsText.gameObject.SetActive(false);
+        scoreText.text = "Point " + score;
+
+        List<GameObject> allObjects = new List<GameObject>()
+        {
+            chair, bluePlate, happyPillow, Fork, Spoon, Knife, Hat, Sword, Glassess, Computer,
+            Calculator, Brown, Red, Blue, Green, Orange, Yellow, LargeBox, MediumBox, SmallBox,
+            Radio, Bag, Ball, Slipper, Pencil, WateringCan, sadPillow
+        };
+
+        for (int i = allObjects.Count - 1; i > 0; i--)
+        {
+            int j = Random.Range(0, i + 1);
+            GameObject temp = allObjects[i];
+            allObjects[i] = allObjects[j];
+            allObjects[j] = temp;
+        }
+
+        for (int i = 0; i < 12; i++)
+        {
+            selectedObjects.Add(allObjects[i]);
+        }
+
+        
+        selectedObjects.Sort((a, b) => string.Compare(a.name, b.name));
+        string selectedNames = "";
+        foreach (GameObject obj in selectedObjects)
+        {
+            selectedNames += obj.name + "\n";
+        }
+        selectedObjectsText.text = selectedNames;
+        selectedObjectsText.fontSize = 9;
+
 
         int randomIndex = Random.Range(0, fork.Length);
         transform.position = objManager[randomIndex];
@@ -202,7 +243,6 @@ public class ObjectCoordinateMaanager : MonoBehaviour
             Pencil.transform.position = pencil[randomIndex];
             sadPillow.transform.position = pillowS[randomIndex];
         }
-       
     }
 
     // Update is called once per frame
@@ -218,22 +258,36 @@ public class ObjectCoordinateMaanager : MonoBehaviour
             if (Physics.Raycast(ray, out hit))
             {
                 // Týklanan nesneye göre iþlem yapýn
-                if (hit.collider.gameObject == chair || hit.collider.gameObject == bluePlate || hit.collider.gameObject == happyPillow || 
-                    hit.collider.gameObject == Fork || hit.collider.gameObject == Spoon || hit.collider.gameObject == Knife ||
-                    hit.collider.gameObject == Hat || hit.collider.gameObject == Sword || hit.collider.gameObject == Glassess ||
-                    hit.collider.gameObject == Computer || hit.collider.gameObject == Calculator || hit.collider.gameObject == Brown || 
-                    hit.collider.gameObject == Red || hit.collider.gameObject == Blue || hit.collider.gameObject == Green || 
-                    hit.collider.gameObject == Orange || hit.collider.gameObject == Yellow || hit.collider.gameObject == LargeBox ||
-                    hit.collider.gameObject == MediumBox || hit.collider.gameObject == SmallBox || hit.collider.gameObject == Radio || 
-                    hit.collider.gameObject == Bag || hit.collider.gameObject == Ball || hit.collider.gameObject == Slipper || hit.collider.gameObject == Pencil
-                    || hit.collider.gameObject == WateringCan || hit.collider.gameObject == sadPillow)
+                if (selectedObjects.Contains(hit.collider.gameObject))
                 {
                     // Sadece týklanan nesneyi gizleyin ve yeniden gösterin
                     hit.collider.gameObject.SetActive(false);
-                    StartCoroutine(ReappearObject(hit.collider.gameObject));               
+                    StartCoroutine(ReappearObject(hit.collider.gameObject));
+                    // Puan artýr
+                    score++;
+                    // Puaný Text öðesinde güncelle
+                    scoreText.text = "Puan: " + score;
+                    selectedObjects.Remove(hit.collider.gameObject);
+                    UpdateSelectedObjectsText();
                 }
+                
             }
         }
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            showSelectedObjects = !showSelectedObjects;
+            selectedObjectsText.gameObject.SetActive(showSelectedObjects);
+        }
+    }
+
+    private void UpdateSelectedObjectsText()
+    {
+        string selectedNames = "";
+        foreach (GameObject obj in selectedObjects)
+        {
+            selectedNames += obj.name + "\n";
+        }
+        selectedObjectsText.text = selectedNames;
     }
 
     // Coroutine to reappear the object after 2 seconds

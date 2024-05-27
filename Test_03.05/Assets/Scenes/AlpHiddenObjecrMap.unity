@@ -123,6 +123,86 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &23005
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 23006}
+  - component: {fileID: 23008}
+  - component: {fileID: 23007}
+  m_Layer: 5
+  m_Name: FindObjects
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &23006
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 23005}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 5, y: 5, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 356216335}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -537, y: -82.25}
+  m_SizeDelta: {x: 165.5196, y: 183.1}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &23007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 23005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: c16eb7d7c3953489db00312b8b09df4b, type: 3}
+    m_FontSize: 20
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 201
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: New Text
+--- !u!222 &23008
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 23005}
+  m_CullTransparentMesh: 1
 --- !u!64 &10657654
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -916,6 +996,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1644608521}
+  - {fileID: 23006}
   m_Father: {fileID: 543450651605870220}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -981,7 +1062,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -1650,159 +1731,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 2105996483934253829, guid: ab5b79c175ecc7941a237cabd6c15217, type: 3}
---- !u!1 &680634981
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 680634982}
-  - component: {fileID: 680634987}
-  - component: {fileID: 680634986}
-  - component: {fileID: 680634985}
-  - component: {fileID: 680634984}
-  - component: {fileID: 680634983}
-  m_Layer: 0
-  m_Name: ObjectGameManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &680634982
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 680634981}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 20.03, y: 14.83, z: 22.48}
-  m_LocalScale: {x: 0.25186893, y: 0.3916855, z: 0.003916855}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 543450651605870220}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &680634983
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 680634981}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d827f596ccff36248ac215ee64009363, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  chair: {fileID: 3390901238710583498}
-  bluePlate: {fileID: 3240271851113402163}
-  happyPillow: {fileID: 555679847147217024}
-  Fork: {fileID: 7271781626304117587}
-  Spoon: {fileID: 3126153320559843623}
-  Knife: {fileID: 7413139308310205105}
-  Hat: {fileID: 8699652204202120729}
-  Sword: {fileID: 2204471700158626575}
-  Glassess: {fileID: 6764597822294282133}
-  Computer: {fileID: 1810917345635263637}
-  Calculator: {fileID: 2463530792002648178}
-  Brown: {fileID: 8522220419624816358}
-  Red: {fileID: 7131894875989244737}
-  Blue: {fileID: 3978497987733374564}
-  Green: {fileID: 7660081212262864912}
-  Orange: {fileID: 2869789712203622884}
-  Yellow: {fileID: 3802353075118893703}
-  LargeBox: {fileID: 4522565426144987081}
-  MediumBox: {fileID: 7983270045679529259}
-  SmallBox: {fileID: 6381833863216622182}
-  Radio: {fileID: 273215351516701787}
-  Bag: {fileID: 408246130821192497}
-  Ball: {fileID: 2281577767966309950}
-  Slipper: {fileID: 1575291341055854884}
-  Pencil: {fileID: 1684046542125098333}
-  WateringCan: {fileID: 3118320563759705442}
-  sadPillow: {fileID: 2536979374640867638}
-  score: 0
-  scoreText: {fileID: 1644608522}
---- !u!114 &680634984
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 680634981}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!64 &680634985
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 680634981}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -5975739977229366047, guid: ab5b79c175ecc7941a237cabd6c15217, type: 3}
---- !u!23 &680634986
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 680634981}
-  m_Enabled: 0
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &680634987
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 680634981}
-  m_Mesh: {fileID: -5975739977229366047, guid: ab5b79c175ecc7941a237cabd6c15217, type: 3}
 --- !u!64 &703486619
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4570,7 +4498,7 @@ GameObject:
   - component: {fileID: 3804653757944904106}
   - component: {fileID: 15305433}
   m_Layer: 0
-  m_Name: OBJ.RadioM
+  m_Name: Radio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4720,7 +4648,7 @@ GameObject:
   - component: {fileID: 2447345859430132421}
   - component: {fileID: 1607799406}
   m_Layer: 0
-  m_Name: OBJ.BagM
+  m_Name: Brown Bag
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5070,17 +4998,40 @@ Transform:
   m_Children:
   - {fileID: 28139423}
   - {fileID: 2602674105287838340}
-  - {fileID: 680634982}
-  - {fileID: 3138110223705051849}
+  - {fileID: 6650497886872493069}
+  - {fileID: 3145340995756377475}
+  - {fileID: 268605059673157502}
+  - {fileID: 6671871342358302555}
+  - {fileID: 4600532296461235148}
+  - {fileID: 2050570033929322378}
+  - {fileID: 6983406143178106084}
   - {fileID: 8183431373161485978}
-  - {fileID: 2585827211038362634}
   - {fileID: 4110567368664744726}
-  - {fileID: 5290779525505835140}
-  - {fileID: 4469847818275532145}
-  - {fileID: 7164611031957360160}
   - {fileID: 4633401367061445362}
   - {fileID: 1538467453163433402}
   - {fileID: 2086272758023329128}
+  - {fileID: 1946025804021875115}
+  - {fileID: 8382410759526783395}
+  - {fileID: 8846950445102607405}
+  - {fileID: 4598024557672394257}
+  - {fileID: 1465032387797530890}
+  - {fileID: 2570693294439394814}
+  - {fileID: 8794699159003884865}
+  - {fileID: 3616523260729195668}
+  - {fileID: 7955475659196853648}
+  - {fileID: 5499793811624239708}
+  - {fileID: 6520113805983198883}
+  - {fileID: 2159626388862535600}
+  - {fileID: 8276144903531161134}
+  - {fileID: 799655801188927315}
+  - {fileID: 2864955281221776702}
+  - {fileID: 8382160565227267521}
+  - {fileID: 7328966687975197910}
+  - {fileID: 3138110223705051849}
+  - {fileID: 2585827211038362634}
+  - {fileID: 5290779525505835140}
+  - {fileID: 4469847818275532145}
+  - {fileID: 7164611031957360160}
   - {fileID: 636458395768926626}
   - {fileID: 2604791967878551883}
   - {fileID: 1664532076852423507}
@@ -5096,36 +5047,19 @@ Transform:
   - {fileID: 1358154185088498291}
   - {fileID: 8729090381252553505}
   - {fileID: 5049666544434880661}
-  - {fileID: 6650497886872493069}
   - {fileID: 5477908385292223885}
   - {fileID: 2597646086579812327}
   - {fileID: 3900839676399668331}
   - {fileID: 8280085808699855874}
-  - {fileID: 1946025804021875115}
-  - {fileID: 8382410759526783395}
-  - {fileID: 8846950445102607405}
-  - {fileID: 4598024557672394257}
-  - {fileID: 1465032387797530890}
-  - {fileID: 2570693294439394814}
-  - {fileID: 8794699159003884865}
-  - {fileID: 3616523260729195668}
-  - {fileID: 7955475659196853648}
   - {fileID: 4891302682982350064}
   - {fileID: 858028968659214456}
   - {fileID: 6698119243920561449}
   - {fileID: 6310555884475127957}
   - {fileID: 1092573720362798405}
-  - {fileID: 6671871342358302555}
-  - {fileID: 2050570033929322378}
-  - {fileID: 4600532296461235148}
-  - {fileID: 5499793811624239708}
   - {fileID: 8318659649621073252}
   - {fileID: 9088835081106412672}
-  - {fileID: 268605059673157502}
-  - {fileID: 6520113805983198883}
   - {fileID: 1630752977398674968}
   - {fileID: 7257790164152634274}
-  - {fileID: 3145340995756377475}
   - {fileID: 3286174380037366144}
   - {fileID: 1278975114228725059}
   - {fileID: 7986399402205236851}
@@ -5135,10 +5069,7 @@ Transform:
   - {fileID: 8981948772177021040}
   - {fileID: 4987214112920864241}
   - {fileID: 5735665755338376379}
-  - {fileID: 2159626388862535600}
   - {fileID: 2410823706332149291}
-  - {fileID: 8276144903531161134}
-  - {fileID: 799655801188927315}
   - {fileID: 8303389721087813626}
   - {fileID: 3065951556025416916}
   - {fileID: 3990640571566558379}
@@ -5147,7 +5078,6 @@ Transform:
   - {fileID: 3115928871620670756}
   - {fileID: 5852142810537414295}
   - {fileID: 6038099797527555733}
-  - {fileID: 7328966687975197910}
   - {fileID: 6969682139896043284}
   - {fileID: 9173326337231563725}
   - {fileID: 5522719208866330567}
@@ -5168,10 +5098,8 @@ Transform:
   - {fileID: 2045338982165250453}
   - {fileID: 1963389848243168313}
   - {fileID: 6672201252628771444}
-  - {fileID: 6983406143178106084}
   - {fileID: 5122270942228456108}
   - {fileID: 447190113643330938}
-  - {fileID: 8382160565227267521}
   - {fileID: 113037292603044330}
   - {fileID: 4805831623041833620}
   - {fileID: 631541228987842427}
@@ -5192,7 +5120,6 @@ Transform:
   - {fileID: 3297461781817966884}
   - {fileID: 5172665925758163549}
   - {fileID: 8798318101623359816}
-  - {fileID: 2864955281221776702}
   - {fileID: 978698460724495472}
   - {fileID: 1771039328}
   - {fileID: 1592408779}
@@ -5230,7 +5157,7 @@ GameObject:
   - component: {fileID: 1637343920}
   - component: {fileID: 7666707647405524229}
   m_Layer: 0
-  m_Name: .PillowHappyM
+  m_Name: Happy Face Pillow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6742,7 +6669,7 @@ GameObject:
   - component: {fileID: 1969586369}
   - component: {fileID: 8276144903531161135}
   m_Layer: 0
-  m_Name: OBJ.Slipper
+  m_Name: Slipper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6955,7 +6882,7 @@ GameObject:
   - component: {fileID: 6248946323544699765}
   - component: {fileID: 6248946323544699766}
   m_Layer: 0
-  m_Name: KalemEkstra
+  m_Name: Pencil
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7026,7 +6953,7 @@ GameObject:
   - component: {fileID: 1704067264}
   - component: {fileID: 8382410759526783396}
   m_Layer: 0
-  m_Name: .Comp
+  m_Name: Computer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7361,7 +7288,7 @@ GameObject:
   - component: {fileID: 4325580644273079576}
   - component: {fileID: 1234311948}
   m_Layer: 0
-  m_Name: OBJ.Phone
+  m_Name: Phone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7489,7 +7416,7 @@ GameObject:
   - component: {fileID: 265280567}
   - component: {fileID: 9003990100105067107}
   m_Layer: 0
-  m_Name: OBJ.SwordM
+  m_Name: Toy Sword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7528,7 +7455,7 @@ GameObject:
   - component: {fileID: 275625841}
   - component: {fileID: 8579256772262168230}
   m_Layer: 0
-  m_Name: OBJ.Ball
+  m_Name: Ball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7678,7 +7605,7 @@ GameObject:
   - component: {fileID: 485181646724240639}
   - component: {fileID: 8794787730930635891}
   m_Layer: 0
-  m_Name: OBJ.CalculatorM
+  m_Name: Calculator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7755,7 +7682,7 @@ GameObject:
   - component: {fileID: 2005110060}
   - component: {fileID: 9143200564327000937}
   m_Layer: 0
-  m_Name: OBJ.SadPillowM
+  m_Name: Sad Face Pillow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8678,7 +8605,7 @@ GameObject:
   - component: {fileID: 2055502762}
   - component: {fileID: 6031507777029298946}
   m_Layer: 0
-  m_Name: OBJ.OrangeBookM
+  m_Name: Orange Book
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9210,7 +9137,7 @@ GameObject:
   - component: {fileID: 1846739328248279235}
   - component: {fileID: 377069346}
   m_Layer: 0
-  m_Name: "OBJ.SulamaKab\u0131"
+  m_Name: Watering Can
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9238,7 +9165,7 @@ GameObject:
   - component: {fileID: 475657710}
   - component: {fileID: 4600532296461235149}
   m_Layer: 0
-  m_Name: .MealSpoonM
+  m_Name: Spoon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9503,7 +9430,7 @@ GameObject:
   - component: {fileID: 8478514451999219214}
   - component: {fileID: 8478514451999219213}
   m_Layer: 0
-  m_Name: OBJ.CyanPlate
+  m_Name: Cyan Plate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9703,7 +9630,7 @@ GameObject:
   - component: {fileID: 7567852143259155412}
   - component: {fileID: 7567852143259155411}
   m_Layer: 0
-  m_Name: .OBJ.Chair
+  m_Name: Red Chair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10008,7 +9935,7 @@ GameObject:
   - component: {fileID: 1229759503}
   - component: {fileID: 4378351418130011271}
   m_Layer: 0
-  m_Name: OBJ.YellowBookM
+  m_Name: Yellow Book
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10279,7 +10206,7 @@ GameObject:
   - component: {fileID: 1587803422}
   - component: {fileID: 7274353028264560676}
   m_Layer: 0
-  m_Name: OBJ.BlueBookM
+  m_Name: Blue Book
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11255,7 +11182,7 @@ GameObject:
   - component: {fileID: 1966394215}
   - component: {fileID: 4649245007991141169}
   m_Layer: 0
-  m_Name: OBJ.LargeBox
+  m_Name: Large Box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14011,7 +13938,7 @@ GameObject:
   - component: {fileID: 947739828462887287}
   - component: {fileID: 442148754}
   m_Layer: 0
-  m_Name: OBJ.SmallBox
+  m_Name: Small Box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14585,7 +14512,7 @@ GameObject:
   - component: {fileID: 374115123}
   - component: {fileID: 8846950445102607406}
   m_Layer: 0
-  m_Name: OBJ.GlassesM
+  m_Name: Glassess
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15158,7 +15085,7 @@ GameObject:
   - component: {fileID: 270358428214916211}
   - component: {fileID: 270020867}
   m_Layer: 0
-  m_Name: OBJ.TrashBin
+  m_Name: Trash Bin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15197,7 +15124,7 @@ GameObject:
   - component: {fileID: 445652435}
   - component: {fileID: 7131894875989244738}
   m_Layer: 0
-  m_Name: OBJ.RedBookM
+  m_Name: Red Book
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15275,7 +15202,7 @@ GameObject:
   - component: {fileID: 2107414561}
   - component: {fileID: 8417047546724990014}
   m_Layer: 0
-  m_Name: .MealForkM
+  m_Name: Fork
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15392,7 +15319,7 @@ GameObject:
   - component: {fileID: 1690497162}
   - component: {fileID: 7413139308310205106}
   m_Layer: 0
-  m_Name: .MealKnifeM
+  m_Name: Knife
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15834,7 +15761,7 @@ GameObject:
   - component: {fileID: 2133380080}
   - component: {fileID: 7955475659196853649}
   m_Layer: 0
-  m_Name: OBJ.GreenBook
+  m_Name: Green Book
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16252,7 +16179,7 @@ GameObject:
   - component: {fileID: 4396546558173065883}
   - component: {fileID: 80922178}
   m_Layer: 0
-  m_Name: OBJ.MediumBox
+  m_Name: Medium Box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16540,6 +16467,9 @@ MonoBehaviour:
   Pencil: {fileID: 1684046542125098333}
   WateringCan: {fileID: 3118320563759705442}
   sadPillow: {fileID: 2536979374640867638}
+  score: 0
+  scoreText: {fileID: 1644608522}
+  selectedObjectsText: {fileID: 23007}
 --- !u!4 &8276144903531161134
 Transform:
   m_ObjectHideFlags: 0
@@ -16567,15 +16497,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80aa74dc85b09e1498593e155d9ab3d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Slipper: {fileID: 0}
-  ball:
-  - {x: 86.6, y: 8.316042, z: -11.83404}
-  - {x: 15.11, y: 1.464, z: 2.45}
-  - {x: 80.836, y: 8.316042, z: 54.05}
-  slipper:
-  - {x: 81.41604, y: 7.841867, z: -1.08615}
-  - {x: 30.642, y: 1.45, z: 66.69}
-  - {x: 86.04, y: 7.94, z: -12.839}
 --- !u!4 &8280085808699855874
 Transform:
   m_ObjectHideFlags: 0
@@ -17017,7 +16938,7 @@ GameObject:
   - component: {fileID: 353538180}
   - component: {fileID: 8794699159003884866}
   m_Layer: 0
-  m_Name: OBJ.BrownBookM
+  m_Name: Brown Book
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17043,15 +16964,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80aa74dc85b09e1498593e155d9ab3d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Slipper: {fileID: 1575291341055854884}
-  ball:
-  - {x: 86.6, y: 8.316042, z: -11.83404}
-  - {x: 15.11, y: 1.464, z: 2.45}
-  - {x: 80.836, y: 8.316042, z: 54.05}
-  slipper:
-  - {x: 81.41604, y: 7.841867, z: -1.08615}
-  - {x: 30.642, y: 1.45, z: 66.69}
-  - {x: 86.04, y: 7.94, z: -12.839}
 --- !u!1 &8613527506372380594
 GameObject:
   m_ObjectHideFlags: 0
@@ -17207,7 +17119,7 @@ GameObject:
   - component: {fileID: 2082009432}
   - component: {fileID: 8699652204202120730}
   m_Layer: 0
-  m_Name: OBJ.Hat
+  m_Name: Brown Hat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
