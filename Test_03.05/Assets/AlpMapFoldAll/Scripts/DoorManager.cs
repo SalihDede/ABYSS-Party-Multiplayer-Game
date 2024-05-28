@@ -15,12 +15,17 @@ public class DoorManager : MonoBehaviour
     public GameObject Kapý7; //Dönecek
     public GameObject Kapý8; //SaðaX
 
-    private float reappearTime = 0.5f; // Geri dönüþ süresi (2 saniye)
-    private float clickCooldown = 0.5f; // Týklama soðuma süresi (2 saniye)
+    private float reappearTime = 0.8f; // Geri dönüþ süresi (2 saniye)
+    private float clickCooldown = 0.8f; // Týklama soðuma süresi (2 saniye)
 
     // Her kapýnýn açýk/kapalý durumunu ve son týklama zamanýný takip etmek için bir dictionary kullanacaðýz
     private Dictionary<GameObject, bool> doorStates = new Dictionary<GameObject, bool>();
     private Dictionary<GameObject, float> lastClickTime = new Dictionary<GameObject, float>();
+
+    //AUDIO
+    public AudioClip coinSound;
+    public AudioSource audioSource;
+    //AUDIO
 
     void Start()
     {
@@ -43,6 +48,13 @@ public class DoorManager : MonoBehaviour
         lastClickTime.Add(Kapý7, 0f);
         doorStates.Add(Kapý8, false);
         lastClickTime.Add(Kapý8, 0f);
+
+        //AUDIO
+        if (audioSource == null)
+        {
+            audioSource = GetComponent<AudioSource>();
+        }
+        //AUDIO
     }
 
     // Update is called once per frame
@@ -66,11 +78,25 @@ public class DoorManager : MonoBehaviour
                     {
                         // Z yönünde -1.25 metre hareket ettir (açýk)
                         StartCoroutine(MoveObject(Kapý0, new Vector3(0, 0, -1.25f)));
+
+                        //AUDIO
+                        if (coinSound != null && audioSource != null)
+                        {
+                            audioSource.PlayOneShot(coinSound);
+                        }
+                        //AUDIO
                     }
                     else
                     {
                         // Z yönünde 1.25 metre hareket ettir (kapalý)
                         StartCoroutine(MoveObject(Kapý0, new Vector3(0, 0, 1.25f)));
+
+                        //AUDIO
+                        if (coinSound != null && audioSource != null)
+                        {
+                            audioSource.PlayOneShot(coinSound);
+                        }
+                        //AUDIO
                     }
                     // Son týklama zamanýný güncelle
                     lastClickTime[Kapý0] = Time.time;
@@ -82,11 +108,25 @@ public class DoorManager : MonoBehaviour
                     {
                         // Z yönünde -1.26 metre hareket ettir (açýk)
                         StartCoroutine(MoveObject(Kapý1, new Vector3(0, 0, -1.26f)));
+
+                        //AUDIO
+                        if (coinSound != null && audioSource != null)
+                        {
+                            audioSource.PlayOneShot(coinSound);
+                        }
+                        //AUDIO
                     }
                     else
                     {
                         // Z yönünde 1.26 metre hareket ettir (kapalý)
                         StartCoroutine(MoveObject(Kapý1, new Vector3(0, 0, 1.26f)));
+
+                        //AUDIO
+                        if (coinSound != null && audioSource != null)
+                        {
+                            audioSource.PlayOneShot(coinSound);
+                        }
+                        //AUDIO
                     }
                     lastClickTime[Kapý1] = Time.time;
                 }
@@ -97,11 +137,25 @@ public class DoorManager : MonoBehaviour
                     {
                         // Z yönünde 1.166 metre hareket ettir (açýk)
                         StartCoroutine(MoveObject(Kapý2, new Vector3(0, 0, 1.166f)));
+
+                        //AUDIO
+                        if (coinSound != null && audioSource != null)
+                        {
+                            audioSource.PlayOneShot(coinSound);
+                        }
+                        //AUDIO
                     }
                     else
                     {
                         // Z yönünde -1.166 metre hareket ettir (kapalý)
                         StartCoroutine(MoveObject(Kapý2, new Vector3(0, 0, -1.166f)));
+
+                        //AUDIO
+                        if (coinSound != null && audioSource != null)
+                        {
+                            audioSource.PlayOneShot(coinSound);
+                        }
+                        //AUDIO
                     }
                     lastClickTime[Kapý2] = Time.time;
                 }
@@ -112,11 +166,25 @@ public class DoorManager : MonoBehaviour
                     {
                         // X yönünde 1 metre hareket ettir (açýk)
                         StartCoroutine(MoveObject(Kapý3, new Vector3(1.25f, 0, 0)));
+
+                        //AUDIO
+                        if (coinSound != null && audioSource != null)
+                        {
+                            audioSource.PlayOneShot(coinSound);
+                        }
+                        //AUDIO
                     }
                     else
                     {
                         // X yönünde -1 metre hareket ettir (kapalý)
                         StartCoroutine(MoveObject(Kapý3, new Vector3(-1.25f, 0, 0)));
+
+                        //AUDIO
+                        if (coinSound != null && audioSource != null)
+                        {
+                            audioSource.PlayOneShot(coinSound);
+                        }
+                        //AUDIO
                     }
                     lastClickTime[Kapý3] = Time.time;
                 }
@@ -127,11 +195,25 @@ public class DoorManager : MonoBehaviour
                     {
                         // X yönünde 1 metre hareket ettir (açýk)
                         StartCoroutine(MoveObject(Kapý4, new Vector3(1.25f, 0, 0)));
+
+                        //AUDIO
+                        if (coinSound != null && audioSource != null)
+                        {
+                            audioSource.PlayOneShot(coinSound);
+                        }
+                        //AUDIO
                     }
                     else
                     {
                         // X yönünde -1 metre hareket ettir (kapalý)
                         StartCoroutine(MoveObject(Kapý4, new Vector3(-1.25f, 0, 0)));
+
+                        //AUDIO
+                        if (coinSound != null && audioSource != null)
+                        {
+                            audioSource.PlayOneShot(coinSound);
+                        }
+                        //AUDIO
                     }
                     lastClickTime[Kapý4] = Time.time;
                 }
@@ -143,11 +225,25 @@ public class DoorManager : MonoBehaviour
                         // Y ekseni etrafýnda 90 derece döndür (açýk)
                         StartCoroutine(RotateObject(Kapý5, new Vector3(0, 0, 90f)));
 
+                        //AUDIO
+                        if (coinSound != null && audioSource != null)
+                        {
+                            audioSource.PlayOneShot(coinSound);
+                        }
+                        //AUDIO
+
                     }
                     else
                     {
                         // Y ekseni etrafýnda -90 derece döndür (kapalý)
                         StartCoroutine(RotateObject(Kapý5, new Vector3(0, 0, -90f)));
+
+                        //AUDIO
+                        if (coinSound != null && audioSource != null)
+                        {
+                            audioSource.PlayOneShot(coinSound);
+                        }
+                        //AUDIO
                     }
                     lastClickTime[Kapý5] = Time.time;
                 }
@@ -158,13 +254,27 @@ public class DoorManager : MonoBehaviour
                     {
                         // Y ekseni etrafýnda 90 derece döndür (açýk)
                         StartCoroutine(RotateObject(Kapý6, new Vector3(0, 0, 90f)));
-                        
+
+                        //AUDIO
+                        if (coinSound != null && audioSource != null)
+                        {
+                            audioSource.PlayOneShot(coinSound);
+                        }
+                        //AUDIO
+
                     }
                     else
                     {
                         // Y ekseni etrafýnda -90 derece döndür (kapalý)              
                         StartCoroutine(RotateObject(Kapý6, new Vector3(0, 0, -90f)));
-                        
+
+                        //AUDIO
+                        if (coinSound != null && audioSource != null)
+                        {
+                            audioSource.PlayOneShot(coinSound);
+                        }
+                        //AUDIO
+
                     }
                     lastClickTime[Kapý6] = Time.time;
                 }
@@ -175,11 +285,25 @@ public class DoorManager : MonoBehaviour
                     {
                         // Y ekseni etrafýnda 90 derece döndür (açýk)
                         StartCoroutine(RotateObject(Kapý7, new Vector3(0, 0, 90f)));
+
+                        //AUDIO
+                        if (coinSound != null && audioSource != null)
+                        {
+                            audioSource.PlayOneShot(coinSound);
+                        }
+                        //AUDIO
                     }
                     else
                     {
                         // Y ekseni etrafýnda -90 derece döndür (kapalý)
                         StartCoroutine(RotateObject(Kapý7, new Vector3(0, 0, -90f)));
+
+                        //AUDIO
+                        if (coinSound != null && audioSource != null)
+                        {
+                            audioSource.PlayOneShot(coinSound);
+                        }
+                        //AUDIO
                     }
                     lastClickTime[Kapý7] = Time.time;
                 }
@@ -190,11 +314,25 @@ public class DoorManager : MonoBehaviour
                     {
                         // X yönünde 1 metre hareket ettir (açýk)
                         StartCoroutine(MoveObject(Kapý8, new Vector3(1.25f, 0, 0)));
+
+                        //AUDIO
+                        if (coinSound != null && audioSource != null)
+                        {
+                            audioSource.PlayOneShot(coinSound);
+                        }
+                        //AUDIO
                     }
                     else
                     {
                         // X yönünde -1 metre hareket ettir (kapalý)
                         StartCoroutine(MoveObject(Kapý8, new Vector3(-1.25f, 0, 0)));
+
+                        //AUDIO
+                        if (coinSound != null && audioSource != null)
+                        {
+                            audioSource.PlayOneShot(coinSound);
+                        }
+                        //AUDIO
                     }
                     lastClickTime[Kapý8] = Time.time;
                 }

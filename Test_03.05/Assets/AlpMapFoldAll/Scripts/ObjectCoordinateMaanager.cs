@@ -7,14 +7,21 @@ using UnityEngine.UI;
 
 public class ObjectCoordinateMaanager : MonoBehaviour
 {
-    public GameObject chair; public GameObject bluePlate; public GameObject happyPillow; public GameObject Fork; 
+    public GameObject chair; public GameObject bluePlate; public GameObject happyPillow; public GameObject Fork;
     public GameObject Spoon; public GameObject Knife; public GameObject Hat;
-    public GameObject Sword; public GameObject Glassess; public GameObject Computer; 
-    public GameObject Calculator; public GameObject Brown;  public GameObject Red; public GameObject Blue;
+    public GameObject Sword; public GameObject Glassess; public GameObject Computer;
+    public GameObject Calculator; public GameObject Brown; public GameObject Red; public GameObject Blue;
     public GameObject Green; public GameObject Orange; public GameObject Yellow;
     public GameObject LargeBox; public GameObject MediumBox; public GameObject SmallBox;
-    public GameObject Radio; public GameObject Bag; public GameObject Ball;  public GameObject Slipper;
+    public GameObject Radio; public GameObject Bag; public GameObject Ball; public GameObject Slipper;
     public GameObject Pencil; public GameObject WateringCan; public GameObject sadPillow;
+
+    public GameObject Line;
+
+    //AUDIO
+    public AudioClip coinSound;
+    public AudioSource audioSource;
+    //AUDIO
 
     private Vector3[] objManager = new Vector3[]
    {
@@ -167,21 +174,37 @@ public class ObjectCoordinateMaanager : MonoBehaviour
     public List<GameObject> selectedObjects = new List<GameObject>();
     private float reappearTime = 2f;
     private bool showSelectedObjects = false;
+
+    //COUNTDOWN
+    public Text countdownText;
+    private float initialCountdownTime = 30f; // Ýlk countdown süresi
+    public float countdownTime = 181f; // Ýkinci countdown süresi
+    private bool initialCountdownFinished = false;
+    //COUNTDOWN
+
     // Start is called before the first frame update
     void Start()
     {
+        //AUDIO
+        if (audioSource == null)
+        {
+            audioSource = GetComponent<AudioSource>();
+        }
+        //AUDIO
 
-
-
+        //POINT
         selectedObjectsText.gameObject.SetActive(false);
         scoreText.text = "Point " + score;
+        //POINT
 
+        //HIDDENOBJECTLIST
         List<GameObject> allObjects = new List<GameObject>()
         {
             chair, bluePlate, happyPillow, Fork, Spoon, Knife, Hat, Sword, Glassess, Computer,
             Calculator, Brown, Red, Blue, Green, Orange, Yellow, LargeBox, MediumBox, SmallBox,
             Radio, Bag, Ball, Slipper, Pencil, WateringCan, sadPillow
         };
+        //HIDDENOBJECTLIST
 
         for (int i = allObjects.Count - 1; i > 0; i--)
         {
@@ -196,7 +219,7 @@ public class ObjectCoordinateMaanager : MonoBehaviour
             selectedObjects.Add(allObjects[i]);
         }
 
-        
+        //HIDDENOBJECT ALPHABETICAL TEXT LIST
         selectedObjects.Sort((a, b) => string.Compare(a.name, b.name));
         string selectedNames = "";
         foreach (GameObject obj in selectedObjects)
@@ -205,6 +228,7 @@ public class ObjectCoordinateMaanager : MonoBehaviour
         }
         selectedObjectsText.text = selectedNames;
         selectedObjectsText.fontSize = 9;
+        ////HIDDENOBJECT ALPHABETICAL TEXT LIST
 
 
         int randomIndex = Random.Range(0, fork.Length);
@@ -212,46 +236,47 @@ public class ObjectCoordinateMaanager : MonoBehaviour
 
         if (Fork != null && Spoon != null && Knife != null && Hat != null && Sword != null && Glassess != null && chair != null && bluePlate != null && happyPillow != null
             && Computer != null && Calculator != null && Brown != null && Red != null && Blue != null && Green != null && Orange != null && Yellow != null
-            && LargeBox != null && MediumBox != null && SmallBox != null && Radio != null && Bag != null && Ball != null && Slipper != null && WateringCan != null 
+            && LargeBox != null && MediumBox != null && SmallBox != null && Radio != null && Bag != null && Ball != null && Slipper != null && WateringCan != null
             && Pencil != null && sadPillow != null)
         {
-            Fork.transform.position = fork[randomIndex];
-            Spoon.transform.position = spoon[randomIndex];
-            Knife.transform.position = knife[randomIndex];
-            Hat.transform.position = hat[randomIndex];
-            Sword.transform.position = sword[randomIndex];
-            Glassess.transform.position = glassess[randomIndex];
-            chair.transform.position = redChair[randomIndex];
-            bluePlate.transform.position = plate[randomIndex];
-            happyPillow.transform.position = pillowH[randomIndex];
-            Computer.transform.position = computer[randomIndex];
-            Calculator.transform.position = calcu[randomIndex];
-            Brown.transform.position = brownBook[randomIndex];
-            Red.transform.position = redBook[randomIndex];
-            Blue.transform.position = blueBook[randomIndex];
-            Green.transform.position = greenBook[randomIndex];
-            Orange.transform.position = orangeBook[randomIndex];
-            Yellow.transform.position = yellowBook[randomIndex];
-            LargeBox.transform.position = possiblePositions[randomIndex];
-            MediumBox.transform.position = secondObjectPositions[randomIndex];
-            SmallBox.transform.position = thirdObjectPositions[randomIndex];
-            Radio.transform.position = radio[randomIndex];
-            Bag.transform.position = bag[randomIndex];
-            Ball.transform.position = ball[randomIndex];
-            Slipper.transform.position = slipper[randomIndex];
-            WateringCan.transform.position = wateringcan[randomIndex];
-            Pencil.transform.position = pencil[randomIndex];
-            sadPillow.transform.position = pillowS[randomIndex];
+            Fork.transform.position = fork[randomIndex]; Spoon.transform.position = spoon[randomIndex]; Knife.transform.position = knife[randomIndex];
+            Hat.transform.position = hat[randomIndex]; Sword.transform.position = sword[randomIndex]; Glassess.transform.position = glassess[randomIndex];
+            chair.transform.position = redChair[randomIndex]; bluePlate.transform.position = plate[randomIndex]; happyPillow.transform.position = pillowH[randomIndex];
+            Computer.transform.position = computer[randomIndex]; Calculator.transform.position = calcu[randomIndex]; Brown.transform.position = brownBook[randomIndex];
+            Red.transform.position = redBook[randomIndex]; Blue.transform.position = blueBook[randomIndex]; Green.transform.position = greenBook[randomIndex];
+            Orange.transform.position = orangeBook[randomIndex]; Yellow.transform.position = yellowBook[randomIndex]; LargeBox.transform.position = possiblePositions[randomIndex];
+            MediumBox.transform.position = secondObjectPositions[randomIndex]; SmallBox.transform.position = thirdObjectPositions[randomIndex]; Radio.transform.position = radio[randomIndex];
+            Bag.transform.position = bag[randomIndex]; Ball.transform.position = ball[randomIndex]; Slipper.transform.position = slipper[randomIndex];
+            WateringCan.transform.position = wateringcan[randomIndex]; Pencil.transform.position = pencil[randomIndex]; sadPillow.transform.position = pillowS[randomIndex];
         }
     }
 
     // Update is called once per frame
     void Update()
     {
+        //COUNTDOWN
+        if (!initialCountdownFinished)
+        {
+            initialCountdownTime -= Time.deltaTime;
+            countdownText.text = Mathf.FloorToInt(initialCountdownTime).ToString();
+
+            if (initialCountdownTime <= 0f)
+            {
+                initialCountdownFinished = true;
+                countdownTime = 181f; // Ýkinci countdown'u baþlat
+                Line.SetActive(false); // Line nesnesini gizle
+            }
+        }
+        else
+        {
+            countdownTime -= Time.deltaTime;
+            countdownText.text = Mathf.FloorToInt(countdownTime).ToString();
+        }
+        //COUNTDOWN
+
         // Sol týklama kontrolü
         if (Input.GetMouseButtonDown(0))
         {
-            // Fare imlecini týklanan nesneye yönlendirin
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
@@ -260,17 +285,25 @@ public class ObjectCoordinateMaanager : MonoBehaviour
                 // Týklanan nesneye göre iþlem yapýn
                 if (selectedObjects.Contains(hit.collider.gameObject))
                 {
+                    //AUDIO
+                    if (coinSound != null && audioSource != null)
+                    {
+                        audioSource.PlayOneShot(coinSound);
+                    }
+                    //AUDIO
+
                     // Sadece týklanan nesneyi gizleyin ve yeniden gösterin
                     hit.collider.gameObject.SetActive(false);
-                    StartCoroutine(ReappearObject(hit.collider.gameObject));
-                    // Puan artýr
+                 
+
+                    //POINT
                     score++;
-                    // Puaný Text öðesinde güncelle
-                    scoreText.text = "Puan: " + score;
+                    scoreText.text = "Point: " + score;
                     selectedObjects.Remove(hit.collider.gameObject);
                     UpdateSelectedObjectsText();
+                    //POINT
                 }
-                
+
             }
         }
         if (Input.GetKeyDown(KeyCode.Tab))
@@ -291,12 +324,6 @@ public class ObjectCoordinateMaanager : MonoBehaviour
     }
 
     // Coroutine to reappear the object after 2 seconds
-    IEnumerator ReappearObject(GameObject obj)
-    {
-        yield return new WaitForSeconds(reappearTime);
-        obj.SetActive(true);
-    }
-    
+  
+
 }
-
-
