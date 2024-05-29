@@ -19,7 +19,7 @@ public class ScriptForRandomStairs : MonoBehaviour
         }
 
     }
-
+    [PunRPC]
     void RandomStairs (int number)
     {
         Option[0].SetActive(false);
