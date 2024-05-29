@@ -202,7 +202,7 @@ public class ObjectCoordinateMaanager : MonoBehaviour
         {
             chair, bluePlate, happyPillow, Fork, Spoon, Knife, Hat, Sword, Glassess, Computer,
             Calculator, Brown, Red, Blue, Green, Orange, Yellow, LargeBox, MediumBox, SmallBox,
-            Radio, Bag, Ball, Slipper, Pencil, WateringCan, sadPillow
+            Radio, Bag, Ball, Slipper, WateringCan, sadPillow
         };
         //HIDDENOBJECTLIST
 
