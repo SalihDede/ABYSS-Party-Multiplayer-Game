@@ -158,8 +158,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -537, y: -82.25}
-  m_SizeDelta: {x: 165.5196, y: 183.1}
+  m_AnchoredPosition: {x: -750, y: -80}
+  m_SizeDelta: {x: 80, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &23007
 MonoBehaviour:
@@ -1097,8 +1097,8 @@ RectTransform:
   - {fileID: 1644608521}
   - {fileID: 23006}
   - {fileID: 559250314}
-  m_Father: {fileID: 543450651605870220}
-  m_RootOrder: -1
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1539,7 +1539,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &535638563
 MeshCollider:
@@ -1755,7 +1755,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!64 &592933021
 MeshCollider:
@@ -1957,8 +1957,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1383990896}
-  m_Father: {fileID: 543450651605870220}
-  m_RootOrder: -1
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3449,6 +3449,7 @@ GameObject:
   - component: {fileID: 1644608521}
   - component: {fileID: 1644608523}
   - component: {fileID: 1644608522}
+  - component: {fileID: 1644608525}
   m_Layer: 5
   m_Name: PointText
   m_TagString: Untagged
@@ -3518,6 +3519,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1644608520}
   m_CullTransparentMesh: 1
+--- !u!223 &1644608525
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1644608520}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 1
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 1
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_UpdateRectTransformForStandalone: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
 --- !u!64 &1651374256
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5275,7 +5298,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1865596225}
-  - {fileID: 356216335}
   - {fileID: 28139423}
   - {fileID: 2602674105287838340}
   - {fileID: 6650497886872493069}
@@ -5409,7 +5431,6 @@ Transform:
   - {fileID: 932019175}
   - {fileID: 431110883}
   - {fileID: 1352355528}
-  - {fileID: 703797798}
   - {fileID: 2078611950}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -8844,7 +8865,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1684046542125098333}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 23.923943, y: 1.98, z: -3.02}
+  m_LocalPosition: {x: 9.53, y: 2, z: 4.76}
   m_LocalScale: {x: 0.0015318791, y: 0.0015318791, z: 0.0015318791}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13986,7 +14007,7 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0

@@ -172,12 +172,11 @@ public class ObjectCoordinateMaanager : MonoBehaviour
     public Text scoreText;
     public Text selectedObjectsText;
     public List<GameObject> selectedObjects = new List<GameObject>();
-    private float reappearTime = 2f;
     private bool showSelectedObjects = false;
 
     //COUNTDOWN
     public Text countdownText;
-    private float initialCountdownTime = 30f; // Ýlk countdown süresi
+    private float initialCountdownTime = 15f; // Ýlk countdown süresi
     public float countdownTime = 181f; // Ýkinci countdown süresi
     private bool initialCountdownFinished = false;
     //COUNTDOWN
@@ -302,6 +301,18 @@ public class ObjectCoordinateMaanager : MonoBehaviour
                     selectedObjects.Remove(hit.collider.gameObject);
                     UpdateSelectedObjectsText();
                     //POINT
+                }
+
+                if (hit.collider.gameObject == Pencil)
+                {
+                    // Rastgele bir Z koordinatý belirleyin
+                    float randomZ = Random.Range(-3f, 45f);
+
+                    // Rastgele bir X koordinatý belirleyin
+                    float randomX = Random.Range(9.5f, 30.5f);
+
+                    // Kalemi yeni koordinatlara ýþýnlayýn
+                    Pencil.transform.position = new Vector3(randomX, Pencil.transform.position.y, randomZ);
                 }
 
             }
