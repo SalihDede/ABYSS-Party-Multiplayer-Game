@@ -10,7 +10,7 @@ public class MineKill : MonoBehaviourPunCallbacks
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") && PhotonNetwork.IsMasterClient)
+        if (other.CompareTag("Player") && photonView.IsMine)
         {
             // Only the mine owner should trigger the respawn
             RespawnPlayer();

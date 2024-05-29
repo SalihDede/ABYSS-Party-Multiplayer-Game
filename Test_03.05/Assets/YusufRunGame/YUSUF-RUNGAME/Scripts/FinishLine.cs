@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class FinishLine : MonoBehaviourPunCallbacks
 {
-    public Text finishMessageText; // Reference to the UI Text component for displaying the finish message
+    public TextMeshPro finishMessageText; // Reference to the UI Text component for displaying the finish message
 
     private void OnTriggerEnter(Collider other)
     {
