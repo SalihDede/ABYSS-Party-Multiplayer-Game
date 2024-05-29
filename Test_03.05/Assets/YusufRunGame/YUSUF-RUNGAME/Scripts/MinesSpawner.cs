@@ -20,7 +20,7 @@ public class MinesSpawner : MonoBehaviour
         }
         
     }
-
+    [PunRPC]
     void RandomMines(int number)
     {
         Mines[0].SetActive(true);
