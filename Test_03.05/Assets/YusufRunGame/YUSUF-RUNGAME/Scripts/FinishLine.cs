@@ -41,7 +41,6 @@ public class FinishLine : MonoBehaviourPunCallbacks
     [PunRPC]
     private void DisplayFinishMessage(string message)
     {
-        // Update the UI Text component with the finish message
         finishMessageText.text = message;
     }
 }
