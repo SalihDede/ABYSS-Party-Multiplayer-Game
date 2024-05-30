@@ -8645,12 +8645,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MinigameList:
-  - {fileID: 1516634220}
-  - {fileID: 1516634220}
-  - {fileID: 1516634220}
-  - {fileID: 1516634220}
-  - {fileID: 1516634220}
+  - {fileID: 1299971580}
+  - {fileID: 1299971580}
+  - {fileID: 1299971580}
+  - {fileID: 1299971580}
+  - {fileID: 1299971580}
   NameForPhoton: 
+  Spawn: {fileID: 1719630230}
   LobbyListObjects: []
   LobbyListContent: {fileID: 1015512005}
   UserCard: {fileID: 6747065563593803263, guid: 7f33c1dd3b2435b4ebb6ce069b8cc728, type: 3}
@@ -9730,6 +9731,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Alp Game
       objectReference: {fileID: 0}
+    - target: {fileID: 7037069499504043776, guid: e03d1e9f5dfc793478867323badaaaff, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7702107271892630970, guid: e03d1e9f5dfc793478867323badaaaff, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -9796,11 +9801,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GameManagerr: {fileID: 0}
   StartTime: 0
-  GameFourGUI: {fileID: 0}
-  GameFourGUI2: {fileID: 0}
   Ranking: []
-  Startees: []
-  Win: {fileID: 0}
+  Starters: []
   IsWin: 0
   Player2Text: {fileID: 0}
   LastTouch: {fileID: 0}
@@ -11298,11 +11300,6 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9bbbc7baff9da7749805b39f2e2dcec2, type: 3}
---- !u!1 &1516634220 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3505012294789075169, guid: 9bbbc7baff9da7749805b39f2e2dcec2, type: 3}
-  m_PrefabInstance: {fileID: 1516634219}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1529650020
 GameObject:
   m_ObjectHideFlags: 0
