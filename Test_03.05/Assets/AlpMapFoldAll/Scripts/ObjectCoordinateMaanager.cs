@@ -20,6 +20,7 @@ public class ObjectCoordinateMaanager : MonoBehaviour
 
     //AUDIO
     public AudioClip coinSound;
+    public AudioClip gameMusic;
     public AudioSource audioSource;
     //AUDIO
 
@@ -278,6 +279,10 @@ public class ObjectCoordinateMaanager : MonoBehaviour
                 initialCountdownFinished = true;
                 countdownTime = 181f; // Ýkinci countdown'u baþlat
                 Line.SetActive(false); // Line nesnesini gizle
+                if (gameMusic != null && audioSource != null)
+                {
+                    audioSource.PlayOneShot(gameMusic);
+                }
             }
         }
         else

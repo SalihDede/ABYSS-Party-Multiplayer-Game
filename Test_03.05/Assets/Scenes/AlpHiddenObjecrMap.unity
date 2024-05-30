@@ -1768,8 +1768,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -751.7533, y: 477.61835}
-  m_SizeDelta: {x: 79.2987, y: 24.1527}
+  m_AnchoredPosition: {x: -610.84686, y: 465.40668}
+  m_SizeDelta: {x: 135.6613, y: 29.0374}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1644608522
 MonoBehaviour:
@@ -9208,6 +9208,7 @@ MonoBehaviour:
   Phone: {fileID: 2145840301073518513}
   Line: {fileID: 1000350937}
   coinSound: {fileID: 8300000, guid: fe317fe80a258f7459aab591184860ea, type: 3}
+  gameMusic: {fileID: 8300000, guid: f0be33ab25cf4d54d9ccb0d7c8be1cc8, type: 3}
   audioSource: {fileID: 4687115805304518055}
   score: 0
   scoreText: {fileID: 1644608522}
