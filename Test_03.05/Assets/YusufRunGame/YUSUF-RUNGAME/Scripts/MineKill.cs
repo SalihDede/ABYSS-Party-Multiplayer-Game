@@ -13,9 +13,7 @@ public class MineKill : MonoBehaviourPunCallbacks
         if (other.CompareTag("Bullet") && photonView.IsMine)
         {
             Debug.Log("MINE EXPLODE!!");
-
-            // RespawnPlayer RPC'sini çaðýrýrken oyuncunun PhotonView'sini gönder
-            photonView.RPC("RespawnPlayer", RpcTarget.All, other.GetComponent<PhotonView>());
+            RespawnPlayer(other.gameObject);
             photonView.RPC("SpawnExplosionEffect", RpcTarget.All);
             PhotonNetwork.Destroy(gameObject);
         }
@@ -28,7 +26,7 @@ public class MineKill : MonoBehaviourPunCallbacks
     }
 
     [PunRPC]
-    private void RespawnPlayer(PhotonView playerView)
+    private void RespawnPlayer(GameObject playerObject)
     {
         // Get the checkpoint object
         GameObject checkpointObject = GameObject.FindGameObjectWithTag("FirstCheckpoint");
@@ -36,19 +34,17 @@ public class MineKill : MonoBehaviourPunCallbacks
         // If the checkpoint object is found
         if (checkpointObject != null)
         {
-            // Check if the playerView belongs to this client
-            if (playerView.IsMine)
-            {
-                // Get the player's position and rotation components
-                Transform playerTransform = playerView.gameObject.GetComponent<Transform>();
+            // Get the player's position and rotation components
+            Transform playerTransform = playerObject.GetComponent<Transform>();
 
-                // Teleport the player to the checkpoint position
-                playerTransform.position = checkpointObject.transform.position;
+            // Teleport the player to the checkpoint position
+            playerTransform.position = checkpointObject.transform.position;
 
-                // Reset the player's rotation to match the checkpoint rotation
-                playerTransform.rotation = checkpointObject.transform.rotation;
-               
-            }
+            // Reset the player's rotation to match the checkpoint rotation
+            playerTransform.rotation = checkpointObject.transform.rotation;
+
+            // If the player has a CharacterController component, reset its velocity
+       
         }
         else
         {
