@@ -1,28 +1,47 @@
 using UnityEngine;
+using UnityEngine.UI; // Import UI library
 using Photon.Pun;
 
-public class ObjectDisabler : MonoBehaviourPun
+public class StartingCountdown : MonoBehaviourPun
 {
-    public float timeToDisappear = 10f; // Seconds until the object disappears
+    public float timeToDisappear = 10f;
+    public Text countdownText; // Drag & drop your UI Text component here
 
     private float timer;
 
     void Start()
     {
-        timer = timeToDisappear; // Initialize the timer
+        timer = timeToDisappear;
+
+        // Initialize the countdown text (only on the master client)
+        if (PhotonNetwork.IsMasterClient && countdownText != null)
+        {
+            countdownText.gameObject.SetActive(true); // Ensure it's visible
+        }
     }
 
     void Update()
     {
-        // Only the master client manages the timer
         if (PhotonNetwork.IsMasterClient)
         {
             timer -= Time.deltaTime;
 
-            // Check if it's time to disable the object
+            // Update countdown text
+            if (countdownText != null)
+            {
+                countdownText.text = Mathf.CeilToInt(timer).ToString();
+            }
+
             if (timer <= 0f)
             {
-                PhotonNetwork.Destroy(gameObject); // Destroy for all players
+                // Destroy the object
+                PhotonNetwork.Destroy(gameObject);
+
+                // Hide the countdown text
+                if (countdownText != null)
+                {
+                    countdownText.gameObject.SetActive(false);
+                }
             }
         }
     }
