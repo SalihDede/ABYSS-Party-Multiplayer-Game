@@ -13,7 +13,7 @@ public class MineKill : MonoBehaviourPunCallbacks
         if (other.CompareTag("Bullet") && photonView.IsMine)
         {
             Debug.Log("MINE EXPLODE!!");
-            RespawnPlayer(other.gameObject);
+            photonView.RPC("RespawnPlayer", RpcTarget.All, other.gameObject);
             photonView.RPC("SpawnExplosionEffect", RpcTarget.All);
             PhotonNetwork.Destroy(gameObject);
         }
