@@ -342,14 +342,14 @@ public class GameFourPlayer : MonoBehaviour
         [PunRPC]
         void Winner(string name)
         {
-            if (!GameManagerr.GetComponent<GameTwoManager>().IsWin)
+            if (!GameManagerr.GetComponent<GameFourManager>().IsWin)
             {
                // GameManagerr.GetComponent<GameTwoManager>().Win.gameObject.SetActive(true);
                // GameManagerr.GetComponent<GameTwoManager>().Win.text = "Winner is " + name;
             }
-            if (!GameManagerr.GetComponent<GameTwoManager>().Ranking.Contains(gameObject))
+            if (!GameManagerr.GetComponent<GameFourManager>().Ranking.Contains(gameObject))
             {
-                GameManagerr.GetComponent<GameTwoManager>().Ranking.Add(gameObject);
+                GameManagerr.GetComponent<GameFourManager>().Ranking.Add(gameObject);
             }
 
         }
