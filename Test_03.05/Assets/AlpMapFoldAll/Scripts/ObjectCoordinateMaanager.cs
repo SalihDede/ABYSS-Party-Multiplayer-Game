@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
-
+// This script manages the coordinates and interactions of objects in the game.
 public class ObjectCoordinateMaanager : MonoBehaviour
 {
+    // Game objects for different objects in the scene
     public GameObject chair; public GameObject bluePlate; public GameObject happyPillow; public GameObject Fork;
     public GameObject Spoon; public GameObject Knife; public GameObject Hat;
     public GameObject Sword; public GameObject Glassess; public GameObject Computer;
@@ -16,14 +16,13 @@ public class ObjectCoordinateMaanager : MonoBehaviour
     public GameObject Radio; public GameObject Bag; public GameObject Ball; public GameObject Slipper;
     public GameObject Pencil; public GameObject WateringCan; public GameObject sadPillow; public GameObject Phone;
 
+    // Line object 
     public GameObject Line;
 
-    //AUDIO
-    public AudioClip coinSound;
-    public AudioClip gameMusic;
+    // Audio source for playing sound effects
     public AudioSource audioSource;
-    //AUDIO
 
+    // Arrays of possible positions for different objects
     private Vector3[] objManager = new Vector3[]
    {
         new Vector3(25f, 25f, 25f),
@@ -179,45 +178,64 @@ public class ObjectCoordinateMaanager : MonoBehaviour
         new Vector3(73.06637f, 7.976323f, 0.6416251f),
         new Vector3(55.37f, 8.713f, 8.486f),
   };
+
+    // Audio clips for different sound effects
+    public AudioClip tenSeconds;
+    public AudioClip coinSound;
+    public AudioClip gameMusic;
+
+    // Player's score
     public int score = 0;
+
+    // UI elements for displaying score and selected objects
     public Text scoreText;
     public Text selectedObjectsText;
+
+    // List of selected objects
     public List<GameObject> selectedObjects = new List<GameObject>();
+
+    // Flag to show or hide the list of selected objects
     private bool showSelectedObjects = false;
+
+    // Text element for displaying game guidance
     public Text GuideText;
+
+    // Flag to track if guidance text has been shown
     private bool guideTextShown = true;
 
-    //COUNTDOWN
+    // Countdown timer variables
     public Text countdownText;
-    private float initialCountdownTime = 15f; // Ýlk countdown süresi
-    public float countdownTime = 181f; // Ýkinci countdown süresi
+    private float initialCountdownTime = 15f; // Initial countdown time
+    public float countdownTime = 181f; // Second countdown time
     private bool initialCountdownFinished = false;
-    //COUNTDOWN
+
+    // Flag to track if music has been played
+    private bool musicPlayed = false; // Is music played?
 
     // Start is called before the first frame update
     void Start()
     {
-        //AUDIO
+        // Initialize audio source if it's not assigned
         if (audioSource == null)
         {
             audioSource = GetComponent<AudioSource>();
         }
-        //AUDIO
 
-        //POINT
+        // Hide the selected objects list initially
         selectedObjectsText.gameObject.SetActive(false);
-        scoreText.text = "Point " + score;
-        //POINT
 
-        //HIDDENOBJECTLIST
+        // Set initial score text
+        scoreText.text = "Point " + score;
+
+        // Create a list of all game objects
         List<GameObject> allObjects = new List<GameObject>()
         {
             chair, bluePlate, happyPillow, Fork, Spoon, Knife, Hat, Sword, Glassess, Computer,
             Calculator, Brown, Red, Blue, Green, Orange, Yellow, Purple , LargeBox, MediumBox, SmallBox,
             Radio, Bag, Ball, Slipper, WateringCan, sadPillow , Phone
         };
-        //HIDDENOBJECTLIST
 
+        // Shuffle the list of objects randomly
         for (int i = allObjects.Count - 1; i > 0; i--)
         {
             int j = Random.Range(0, i + 1);
@@ -226,41 +244,51 @@ public class ObjectCoordinateMaanager : MonoBehaviour
             allObjects[j] = temp;
         }
 
+        // Select 15 random objects from the shuffled list
         for (int i = 0; i < 15; i++)
         {
             selectedObjects.Add(allObjects[i]);
         }
 
-        //HIDDENOBJECT ALPHABETICAL TEXT LIST
+        // Sort the selected objects alphabetically by name
         selectedObjects.Sort((a, b) => string.Compare(a.name, b.name));
+
+        // Create a string with the names of selected objects
         string selectedNames = "";
         foreach (GameObject obj in selectedObjects)
         {
             selectedNames += obj.name + "\n";
         }
+
+        // Set the text of the selected objects UI element
         selectedObjectsText.text = selectedNames;
+
+        // Set font size of the selected objects text
         selectedObjectsText.fontSize = 9;
-        ////HIDDENOBJECT ALPHABETICAL TEXT LIST
 
-
+        // Select a random index from the fork array
         int randomIndex = Random.Range(0, fork.Length);
+
+        // Set the initial position of the object manager
         transform.position = objManager[randomIndex];
 
+        // Check if all game objects are assigned
         if (Fork != null && Spoon != null && Knife != null && Hat != null && Sword != null && Glassess != null && chair != null && bluePlate != null && happyPillow != null
             && Computer != null && Calculator != null && Brown != null && Red != null && Blue != null && Green != null && Orange != null && Yellow != null && Purple != null
             && LargeBox != null && MediumBox != null && SmallBox != null && Radio != null && Bag != null && Ball != null && Slipper != null && WateringCan != null
             && Pencil != null && sadPillow != null && Phone != null)
         {
+            // Set the initial positions of all game objects based on the random index
             Fork.transform.position = fork[randomIndex]; Spoon.transform.position = spoon[randomIndex]; Knife.transform.position = knife[randomIndex];
             Hat.transform.position = hat[randomIndex]; Sword.transform.position = sword[randomIndex]; Glassess.transform.position = glassess[randomIndex];
             chair.transform.position = redChair[randomIndex]; bluePlate.transform.position = plate[randomIndex]; happyPillow.transform.position = pillowH[randomIndex];
             Computer.transform.position = computer[randomIndex]; Calculator.transform.position = calcu[randomIndex]; Brown.transform.position = brownBook[randomIndex];
             Red.transform.position = redBook[randomIndex]; Blue.transform.position = blueBook[randomIndex]; Green.transform.position = greenBook[randomIndex];
             Orange.transform.position = orangeBook[randomIndex]; Yellow.transform.position = yellowBook[randomIndex]; Purple.transform.position = purpleBook[randomIndex];
-            LargeBox.transform.position = possiblePositions[randomIndex]; MediumBox.transform.position = secondObjectPositions[randomIndex]; 
+            LargeBox.transform.position = possiblePositions[randomIndex]; MediumBox.transform.position = secondObjectPositions[randomIndex];
             SmallBox.transform.position = thirdObjectPositions[randomIndex]; Radio.transform.position = radio[randomIndex];
             Bag.transform.position = bag[randomIndex]; Ball.transform.position = ball[randomIndex]; Slipper.transform.position = slipper[randomIndex];
-            WateringCan.transform.position = wateringcan[randomIndex]; Pencil.transform.position = pencil[randomIndex]; 
+            WateringCan.transform.position = wateringcan[randomIndex]; Pencil.transform.position = pencil[randomIndex];
             sadPillow.transform.position = pillowS[randomIndex]; Phone.transform.position = phone[randomIndex];
         }
     }
@@ -268,17 +296,41 @@ public class ObjectCoordinateMaanager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //COUNTDOWN
-        if (!initialCountdownFinished)
+        // Handle the countdown timer
+        if (!initialCountdownFinished) // If initial countdown is not finished
         {
+            // Decrement the initial countdown time
             initialCountdownTime -= Time.deltaTime;
+
+            // Update the countdown text
             countdownText.text = Mathf.FloorToInt(initialCountdownTime).ToString();
 
+            // Play 10-second warning sound if the time is less than 10.3 seconds and music hasn't been played yet
+            if (initialCountdownTime <= 10.3f && !musicPlayed)
+            {
+                // Set the music played flag
+                musicPlayed = true;
+
+                // Play the 10-second warning sound
+                if (tenSeconds != null && audioSource != null)
+                {
+                    audioSource.PlayOneShot(tenSeconds);
+                }
+            }
+
+            // Start the second countdown when the initial countdown reaches 0
             if (initialCountdownTime <= 0f)
             {
+                // Set the initial countdown finished flag
                 initialCountdownFinished = true;
-                countdownTime = 181f; // Ýkinci countdown'u baþlat
-                Line.SetActive(false); // Line nesnesini gizle
+
+                // Start the second countdown
+                countdownTime = 181f;
+
+                // Hide the Line object
+                Line.SetActive(false);
+
+                // Play the game music
                 if (gameMusic != null && audioSource != null)
                 {
                     audioSource.PlayOneShot(gameMusic);
@@ -287,78 +339,96 @@ public class ObjectCoordinateMaanager : MonoBehaviour
         }
         else
         {
+            // Decrement the second countdown time
             countdownTime -= Time.deltaTime;
+
+            // Update the countdown text
             countdownText.text = Mathf.FloorToInt(countdownTime).ToString();
         }
-        //COUNTDOWN
 
-        // Sol týklama kontrolü
-        if (Input.GetMouseButtonDown(0))
+        // Check for left mouse button clicks
+        if (Input.GetMouseButtonDown(0)) // If left mouse button is clicked
         {
+            // Create a ray from the mouse position
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
+            // Perform a raycast to check if the ray hits anything
             if (Physics.Raycast(ray, out hit))
             {
-                // Týklanan nesneye göre iþlem yapýn
+                // Handle the clicked object
                 if (selectedObjects.Contains(hit.collider.gameObject))
                 {
-                    //AUDIO
+                    // Play the coin sound
                     if (coinSound != null && audioSource != null)
                     {
                         audioSource.PlayOneShot(coinSound);
                     }
-                    //AUDIO
 
-                    // Sadece týklanan nesneyi gizleyin ve yeniden gösterin
+                    // Hide the clicked object and then show it again (this is likely a visual effect for feedback)
                     hit.collider.gameObject.SetActive(false);
-                 
 
-                    //POINT
+
+                    // Increase the score and update the score text
                     score++;
                     scoreText.text = "Point: " + score;
+
+                    // Remove the object from the list of selected objects
                     selectedObjects.Remove(hit.collider.gameObject);
+
+                    // Update the text that displays the list of selected objects
                     UpdateSelectedObjectsText();
-                    //POINT
                 }
 
+                // Handle the pencil object
                 if (hit.collider.gameObject == Pencil)
                 {
-                    // Rastgele bir Z koordinatý belirleyin
+                    // Generate a random Z coordinate
                     float randomZ = Random.Range(-3f, 45f);
 
-                    // Rastgele bir X koordinatý belirleyin
+                    // Generate a random X coordinate
                     float randomX = Random.Range(9.5f, 30.5f);
 
-                    // Kalemi yeni koordinatlara ýþýnlayýn
+                    // Teleport the pencil to the new random coordinates
                     Pencil.transform.position = new Vector3(randomX, Pencil.transform.position.y, randomZ);
                 }
 
             }
         }
+
+        // Handle Tab key press
         if (Input.GetKeyDown(KeyCode.Tab))
         {
+            // Toggle the visibility of the selected objects list
             showSelectedObjects = !showSelectedObjects;
             selectedObjectsText.gameObject.SetActive(showSelectedObjects);
+
+            // Clear the guidance text and set the flag to indicate that it has been shown
             if (guideTextShown)
             {
-                GuideText.text = ""; // Metni temizleyin
-                guideTextShown = false; // Metnin artýk görünür olmadýðýný belirtin
+                GuideText.text = "";
+                guideTextShown = false;
             }
         }
     }
 
+    // Update the text that displays the list of selected objects
     private void UpdateSelectedObjectsText()
     {
+        // Create a string to store the names of selected objects
         string selectedNames = "";
+
+        // Loop through all selected objects
         foreach (GameObject obj in selectedObjects)
         {
+            // Add the object's name to the string
             selectedNames += obj.name + "\n";
         }
+
+        // Set the text of the selected objects UI element
         selectedObjectsText.text = selectedNames;
     }
 
-    // Coroutine to reappear the object after 2 seconds
-  
+
 
 }
