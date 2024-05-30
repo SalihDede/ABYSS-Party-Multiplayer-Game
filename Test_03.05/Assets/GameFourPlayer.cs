@@ -2,16 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using UnityEngine.UI;
 using Photon.Pun;
 using Photon.Realtime;
 
-// This script manages the coordinates and interactions of objects in the game.
-public class ObjectCoordinateMaanager : MonoBehaviour
+public class GameFourPlayer : MonoBehaviour
 {
-
-    /*
-    
     // Game objects for different objects in the scene
     public GameObject chair; public GameObject bluePlate; public GameObject happyPillow; public GameObject Fork;
     public GameObject Spoon; public GameObject Knife; public GameObject Hat;
@@ -22,11 +17,16 @@ public class ObjectCoordinateMaanager : MonoBehaviour
     public GameObject Radio; public GameObject Bag; public GameObject Ball; public GameObject Slipper;
     public GameObject Pencil; public GameObject WateringCan; public GameObject sadPillow; public GameObject Phone;
 
-    // Line object 
+    private PhotonView photonView;
 
+    private GameObject OBJCordinate;
+
+
+    // Line object 
+    public GameObject Line;
 
     // Audio source for playing sound effects
-
+    public AudioSource audioSource;
 
     // Arrays of possible positions for different objects
     private Vector3[] objManager = new Vector3[]
@@ -186,49 +186,64 @@ public class ObjectCoordinateMaanager : MonoBehaviour
   };
 
     // Audio clips for different sound effects
-
+    public AudioClip tenSeconds;
     public AudioClip coinSound;
-
+    public AudioClip gameMusic;
 
     // Player's score
     public int score = 0;
+    public TMP_Text GuideText;
 
+    // Flag to track if guidance text has been shown
+    private bool guideTextShown = true;
     // UI elements for displaying score and selected objects
-    public Text scoreText;
-    public Text selectedObjectsText;
+    public TMP_Text scoreText;
+    public TMP_Text selectedObjectsText;
 
     // List of selected objects
     public List<GameObject> selectedObjects = new List<GameObject>();
 
     // Flag to show or hide the list of selected objects
     private bool showSelectedObjects = false;
+    public Camera Kamera;
 
-    // Text element for displaying game guidance
-    public Text GuideText;
-
-    // Flag to track if guidance text has been shown
-    private bool guideTextShown = true;
-    */
-    // Countdown timer variables
-    public GameObject Line;
-    public AudioSource audioSource;
-    public AudioClip gameMusic;
-    public AudioClip tenSeconds;
-    public TMP_Text countdownText;
-    private float initialCountdownTime = 15f; // Initial countdown time
-    public float countdownTime = 181f; // Second countdown time
-    private bool initialCountdownFinished = false;
-
-    // Flag to track if music has been played
-    private bool musicPlayed = false; // Is music played?
-    
-
-    // Start is called before the first frame update
     void Start()
     {
+        LargeBox = GameObject.Find("Box Large");
+        MediumBox = GameObject.Find("Box Medium");
+        SmallBox = GameObject.Find("Box Small");
+        Ball = GameObject.Find("Ball");
+        Bag = GameObject.Find("Bag");
+        Hat = GameObject.Find("Hat");
+        Calculator = GameObject.Find("Calculator");
+        bluePlate = GameObject.Find("Plate Cyan");
+        Radio = GameObject.Find("Radio");
+        Slipper = GameObject.Find("Slipper");
+        Sword = GameObject.Find("Sword");
+        Brown = GameObject.Find("Book Brown");
+        Red = GameObject.Find("Book Red");
+        Blue = GameObject.Find("Book Blue");
+        Green = GameObject.Find("Book Green");
+        Orange = GameObject.Find("Book Orange");
+        Yellow = GameObject.Find("Book Yellow");
+        chair = GameObject.Find("Chair Red");
+        Computer = GameObject.Find("Laptop");
+        happyPillow = GameObject.Find("Pillow Happy");
+        sadPillow = GameObject.Find("Pillow Sad");
+        WateringCan = GameObject.Find("Watering Can");
+        Pencil = GameObject.Find("Pencil");
+        Fork = GameObject.Find("Fork");
+        Knife = GameObject.Find("Knife");
+        Spoon = GameObject.Find("Spoon");
+        Purple = GameObject.Find("Book Purple");
+        Phone = GameObject.Find("Phone");
+        Glassess = GameObject.Find("Glassese");
+
+        photonView = GetComponent<PhotonView>();
+
+
+
         // Initialize audio source if it's not assigned
-       
-        /*
         if (audioSource == null)
         {
             audioSource = GetComponent<AudioSource>();
@@ -240,7 +255,10 @@ public class ObjectCoordinateMaanager : MonoBehaviour
         // Set initial score text
         scoreText.text = "Point " + score;
 
-        // Create a list of all game objects
+
+
+
+
         List<GameObject> allObjects = new List<GameObject>()
         {
             chair, bluePlate, happyPillow, Fork, Spoon, Knife, Hat, Sword, Glassess, Computer,
@@ -248,30 +266,20 @@ public class ObjectCoordinateMaanager : MonoBehaviour
             Radio, Bag, Ball, Slipper, WateringCan, sadPillow , Phone
         };
 
-        // Shuffle the list of objects randomly
-        for (int i = allObjects.Count - 1; i > 0; i--)
-        {
-            int j = Random.Range(0, i + 1);
-            GameObject temp = allObjects[i];
-            allObjects[i] = allObjects[j];
-            allObjects[j] = temp;
-        }
-
-        // Select 15 random objects from the shuffled list
         for (int i = 0; i < 15; i++)
         {
             selectedObjects.Add(allObjects[i]);
         }
 
-        // Sort the selected objects alphabetically by name
         selectedObjects.Sort((a, b) => string.Compare(a.name, b.name));
 
-        // Create a string with the names of selected objects
+
         string selectedNames = "";
         foreach (GameObject obj in selectedObjects)
         {
             selectedNames += obj.name + "\n";
         }
+
 
         // Set the text of the selected objects UI element
         selectedObjectsText.text = selectedNames;
@@ -303,68 +311,46 @@ public class ObjectCoordinateMaanager : MonoBehaviour
             Bag.transform.position = bag[randomIndex]; Ball.transform.position = ball[randomIndex]; Slipper.transform.position = slipper[randomIndex];
             WateringCan.transform.position = wateringcan[randomIndex]; Pencil.transform.position = pencil[randomIndex];
             sadPillow.transform.position = pillowS[randomIndex]; Phone.transform.position = phone[randomIndex];
-        }*/
+        }
+
+
+
+  
     }
 
-    // Update is called once per frame
+
+   
+
+
+        [PunRPC]
+        void MyGame(bool result)
+        {
+            
+
+        
+
+        }
+
+
     void Update()
     {
-        // Handle the countdown timer
-        if (!initialCountdownFinished) // If initial countdown is not finished
+
+        if ()
         {
-            // Decrement the initial countdown time
-            initialCountdownTime -= Time.deltaTime;
-
-            // Update the countdown text
-            countdownText.text = Mathf.FloorToInt(initialCountdownTime).ToString();
-
-            // Play 10-second warning sound if the time is less than 10.3 seconds and music hasn't been played yet
-            if (initialCountdownTime <= 10.3f && !musicPlayed)
-            {
-                // Set the music played flag
-                musicPlayed = true;
-
-                // Play the 10-second warning sound
-                if (tenSeconds != null && audioSource != null)
-                {
-                    audioSource.PlayOneShot(tenSeconds);
-                }
-            }
-
-            // Start the second countdown when the initial countdown reaches 0
-            if (initialCountdownTime <= 0f)
-            {
-                // Set the initial countdown finished flag
-                initialCountdownFinished = true;
-
-                // Start the second countdown
-                countdownTime = 181f;
-
-                // Hide the Line object
-                Line.SetActive(false);
-
-                // Play the game music
-                if (gameMusic != null && audioSource != null)
-                {
-                    audioSource.PlayOneShot(gameMusic);
-                }
-            }
-        }
-        else
-        {
-            // Decrement the second countdown time
-            countdownTime -= Time.deltaTime;
-
-            // Update the countdown text
-            countdownText.text = Mathf.FloorToInt(countdownTime).ToString();
+            photonView.RPC("MyGame", RpcTarget.All, true);
         }
 
-        // Check for left mouse button clicks
-     /*   if (Input.GetMouseButtonDown(0)) // If left mouse button is clicked
+
+
+
+
+
+
+        if (Input.GetMouseButtonDown(0)) // If left mouse button is clicked
         {
             // Create a ray from the mouse position
             RaycastHit hit;
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            Ray ray = Kamera.ScreenPointToRay(Input.mousePosition);
 
             // Perform a raycast to check if the ray hits anything
             if (Physics.Raycast(ray, out hit))
@@ -410,24 +396,23 @@ public class ObjectCoordinateMaanager : MonoBehaviour
         }
 
         // Handle Tab key press
-      //  if (Input.GetKeyDown(KeyCode.Tab))
+        if (Input.GetKeyDown(KeyCode.Tab))
         {
             // Toggle the visibility of the selected objects list
             showSelectedObjects = !showSelectedObjects;
             selectedObjectsText.gameObject.SetActive(showSelectedObjects);
 
-            // Clear the guidance text and set the flag to indicate that it has been shown
             if (guideTextShown)
             {
                 GuideText.text = "";
                 guideTextShown = false;
             }
         }
-     */
+
     }
 
-    // Update the text that displays the list of selected objects
-   /* private void UpdateSelectedObjectsText()
+
+    private void UpdateSelectedObjectsText()
     {
         // Create a string to store the names of selected objects
         string selectedNames = "";
@@ -442,7 +427,5 @@ public class ObjectCoordinateMaanager : MonoBehaviour
         // Set the text of the selected objects UI element
         selectedObjectsText.text = selectedNames;
     }
-
-    */
 
 }
