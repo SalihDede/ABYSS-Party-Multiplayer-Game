@@ -51,6 +51,14 @@ MonoBehaviour:
   - CheckPointUpdate
   - FinishUpdate
   - Winner
+  - RandomDoorClose
+  - RespawnPlayer
+  - SpawnExplosionEffect
+  - RandomMines
+  - DisplayFinishMessage
+  - NotifyPlayerFinished
+  - RandomStairs
+  - SyncCountdown
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1
