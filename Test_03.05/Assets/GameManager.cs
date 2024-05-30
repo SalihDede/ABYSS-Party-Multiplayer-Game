@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviourPunCallbacks
 
     public string NameForPhoton;
 
-
+    public GameObject Spawn;
     public GameObject[] LobbyListObjects;
     public GameObject LobbyListContent;
     public GameObject UserCard;
@@ -128,7 +128,7 @@ public class GameManager : MonoBehaviourPunCallbacks
     {
 
         Debug.Log("Joined room: " + PhotonNetwork.CurrentRoom.Name);
-        PhotonNetwork.Instantiate("Playerr", new Vector3(0, 0.51f, 0), Quaternion.identity);
+        PhotonNetwork.Instantiate("Playerr", Spawn.transform.position, Quaternion.identity);
         GUI.SetActive(false);
 
     }
