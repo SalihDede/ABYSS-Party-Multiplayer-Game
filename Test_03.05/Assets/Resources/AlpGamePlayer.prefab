@@ -1923,7 +1923,7 @@ GameObject:
   - component: {fileID: 5555029094317551503}
   - component: {fileID: 1308135524390676317}
   m_Layer: 0
-  m_Name: AlpGamePlayer 1
+  m_Name: AlpGamePlayer
   m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
