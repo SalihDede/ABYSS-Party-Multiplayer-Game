@@ -48,6 +48,7 @@ public class GameTwoManager : MonoBehaviourPunCallbacks
         photonView.RPC("StartRace", RpcTarget.All, true);
     }
 
+    
 
     [PunRPC]
     void StartRace(bool result)
@@ -55,6 +56,7 @@ public class GameTwoManager : MonoBehaviourPunCallbacks
         GameTwoGUI.SetActive(false);
         StartTime = result;
     }
+
 
 
     void Update()
