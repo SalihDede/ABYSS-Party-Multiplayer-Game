@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Photon.Pun;
 
 
 
@@ -192,10 +193,18 @@ public class ObjectCoordinateMaanager : MonoBehaviour
     public float countdownTime = 181f; // Ýkinci countdown süresi
     private bool initialCountdownFinished = false;
     //COUNTDOWN
+    
+    //PHOTON
+    private PhotonView photonView;
+    //PHOTON
 
     // Start is called before the first frame update
     void Start()
     {
+        //PHOTON
+        photonView = GetComponent<PhotonView>();
+        //PHOTON
+
         //AUDIO
         if (audioSource == null)
         {
@@ -315,6 +324,10 @@ public class ObjectCoordinateMaanager : MonoBehaviour
                     selectedObjects.Remove(hit.collider.gameObject);
                     UpdateSelectedObjectsText();
                     //POINT
+
+                    //PHOTON
+                    photonView.RPC("HideObject", RpcTarget.AllBuffered, hit.collider.gameObject.name);
+                    //PHOTON
                 }
 
                 if (hit.collider.gameObject == Pencil)
@@ -354,6 +367,14 @@ public class ObjectCoordinateMaanager : MonoBehaviour
     }
 
     // Coroutine to reappear the object after 2 seconds
-  
 
+    [PunRPC]
+    void HideObject(string objectName)
+    {
+        GameObject objToHide = GameObject.Find(objectName);
+        if (objToHide != null)
+        {
+            objToHide.SetActive(false);
+        }
+    }
 }
