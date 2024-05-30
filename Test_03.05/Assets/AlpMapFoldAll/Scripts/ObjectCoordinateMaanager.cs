@@ -11,10 +11,10 @@ public class ObjectCoordinateMaanager : MonoBehaviour
     public GameObject Spoon; public GameObject Knife; public GameObject Hat;
     public GameObject Sword; public GameObject Glassess; public GameObject Computer;
     public GameObject Calculator; public GameObject Brown; public GameObject Red; public GameObject Blue;
-    public GameObject Green; public GameObject Orange; public GameObject Yellow;
+    public GameObject Green; public GameObject Orange; public GameObject Yellow; public GameObject Purple;
     public GameObject LargeBox; public GameObject MediumBox; public GameObject SmallBox;
     public GameObject Radio; public GameObject Bag; public GameObject Ball; public GameObject Slipper;
-    public GameObject Pencil; public GameObject WateringCan; public GameObject sadPillow;
+    public GameObject Pencil; public GameObject WateringCan; public GameObject sadPillow; public GameObject Phone;
 
     public GameObject Line;
 
@@ -108,13 +108,18 @@ public class ObjectCoordinateMaanager : MonoBehaviour
     private Vector3[] orangeBook = new Vector3[]
     {
         new Vector3(85.1582f, 9.734f, 56.15f),
-        new Vector3(37.151f, 3.548f, -35.85f),
+        new Vector3(36.963f, 3.574f, -35.85f),
     };
     private Vector3[] yellowBook = new Vector3[]
     {
         new Vector3(73.34819f, 8.018076f, 2.08f),
         new Vector3(71.75f, 7.99f, 2.394f),
     };
+    private Vector3[] purpleBook = new Vector3[]
+   {
+        new Vector3(34.51f, 2.53f, -40.38f),
+        new Vector3(81.73f, 9.2f, 0.639f),
+   };
     private Vector3[] possiblePositions = new Vector3[]
     {
         new Vector3(3.212101f, 1.381771f, -35.789f),
@@ -128,7 +133,7 @@ public class ObjectCoordinateMaanager : MonoBehaviour
     private Vector3[] thirdObjectPositions = new Vector3[]
     {
         new Vector3(-2f, 1.381771f, -35.83f),
-        new Vector3(81.53f, 7.98f, -17.23f),
+        new Vector3(81.53f, 7.98f, -16.775f),
     };
     private Vector3[] radio = new Vector3[]
    {
@@ -143,7 +148,7 @@ public class ObjectCoordinateMaanager : MonoBehaviour
     private Vector3[] ball = new Vector3[]
     {
         new Vector3(86.6f, 8.316042f, -11.83404f),
-        new Vector3(15.11f, 1.464f, 2.45f),
+        new Vector3(36.77f, 1.674f, 67.075f),
         new Vector3(80.836f, 8.316042f, 54.05f)
     };
 
@@ -168,11 +173,18 @@ public class ObjectCoordinateMaanager : MonoBehaviour
         new Vector3(26.5585f, 1.446077f, -41.06846f),
         new Vector3(15.18f, 1.491f, -39.612f),
    };
+    private Vector3[] phone = new Vector3[]
+  {
+        new Vector3(73.06637f, 7.976323f, 0.6416251f),
+        new Vector3(55.37f, 8.713f, 8.486f),
+  };
     public int score = 0;
     public Text scoreText;
     public Text selectedObjectsText;
     public List<GameObject> selectedObjects = new List<GameObject>();
     private bool showSelectedObjects = false;
+    public Text GuideText;
+    private bool guideTextShown = true;
 
     //COUNTDOWN
     public Text countdownText;
@@ -200,8 +212,8 @@ public class ObjectCoordinateMaanager : MonoBehaviour
         List<GameObject> allObjects = new List<GameObject>()
         {
             chair, bluePlate, happyPillow, Fork, Spoon, Knife, Hat, Sword, Glassess, Computer,
-            Calculator, Brown, Red, Blue, Green, Orange, Yellow, LargeBox, MediumBox, SmallBox,
-            Radio, Bag, Ball, Slipper, WateringCan, sadPillow
+            Calculator, Brown, Red, Blue, Green, Orange, Yellow, Purple , LargeBox, MediumBox, SmallBox,
+            Radio, Bag, Ball, Slipper, WateringCan, sadPillow , Phone
         };
         //HIDDENOBJECTLIST
 
@@ -213,7 +225,7 @@ public class ObjectCoordinateMaanager : MonoBehaviour
             allObjects[j] = temp;
         }
 
-        for (int i = 0; i < 12; i++)
+        for (int i = 0; i < 15; i++)
         {
             selectedObjects.Add(allObjects[i]);
         }
@@ -234,19 +246,21 @@ public class ObjectCoordinateMaanager : MonoBehaviour
         transform.position = objManager[randomIndex];
 
         if (Fork != null && Spoon != null && Knife != null && Hat != null && Sword != null && Glassess != null && chair != null && bluePlate != null && happyPillow != null
-            && Computer != null && Calculator != null && Brown != null && Red != null && Blue != null && Green != null && Orange != null && Yellow != null
+            && Computer != null && Calculator != null && Brown != null && Red != null && Blue != null && Green != null && Orange != null && Yellow != null && Purple != null
             && LargeBox != null && MediumBox != null && SmallBox != null && Radio != null && Bag != null && Ball != null && Slipper != null && WateringCan != null
-            && Pencil != null && sadPillow != null)
+            && Pencil != null && sadPillow != null && Phone != null)
         {
             Fork.transform.position = fork[randomIndex]; Spoon.transform.position = spoon[randomIndex]; Knife.transform.position = knife[randomIndex];
             Hat.transform.position = hat[randomIndex]; Sword.transform.position = sword[randomIndex]; Glassess.transform.position = glassess[randomIndex];
             chair.transform.position = redChair[randomIndex]; bluePlate.transform.position = plate[randomIndex]; happyPillow.transform.position = pillowH[randomIndex];
             Computer.transform.position = computer[randomIndex]; Calculator.transform.position = calcu[randomIndex]; Brown.transform.position = brownBook[randomIndex];
             Red.transform.position = redBook[randomIndex]; Blue.transform.position = blueBook[randomIndex]; Green.transform.position = greenBook[randomIndex];
-            Orange.transform.position = orangeBook[randomIndex]; Yellow.transform.position = yellowBook[randomIndex]; LargeBox.transform.position = possiblePositions[randomIndex];
-            MediumBox.transform.position = secondObjectPositions[randomIndex]; SmallBox.transform.position = thirdObjectPositions[randomIndex]; Radio.transform.position = radio[randomIndex];
+            Orange.transform.position = orangeBook[randomIndex]; Yellow.transform.position = yellowBook[randomIndex]; Purple.transform.position = purpleBook[randomIndex];
+            LargeBox.transform.position = possiblePositions[randomIndex]; MediumBox.transform.position = secondObjectPositions[randomIndex]; 
+            SmallBox.transform.position = thirdObjectPositions[randomIndex]; Radio.transform.position = radio[randomIndex];
             Bag.transform.position = bag[randomIndex]; Ball.transform.position = ball[randomIndex]; Slipper.transform.position = slipper[randomIndex];
-            WateringCan.transform.position = wateringcan[randomIndex]; Pencil.transform.position = pencil[randomIndex]; sadPillow.transform.position = pillowS[randomIndex];
+            WateringCan.transform.position = wateringcan[randomIndex]; Pencil.transform.position = pencil[randomIndex]; 
+            sadPillow.transform.position = pillowS[randomIndex]; Phone.transform.position = phone[randomIndex];
         }
     }
 
@@ -321,6 +335,11 @@ public class ObjectCoordinateMaanager : MonoBehaviour
         {
             showSelectedObjects = !showSelectedObjects;
             selectedObjectsText.gameObject.SetActive(showSelectedObjects);
+            if (guideTextShown)
+            {
+                GuideText.text = ""; // Metni temizleyin
+                guideTextShown = false; // Metnin artýk görünür olmadýðýný belirtin
+            }
         }
     }
 
