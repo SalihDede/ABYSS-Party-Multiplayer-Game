@@ -473,6 +473,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameManagerr: {fileID: 0}
+  CheckPoint: 0
+  Finish: -1
+  TempFinish: 0
+  TempCheckPoint: 0
+  passedFinish: 0
+  passedCheckPoint: 0
 --- !u!1 &3396353756679278110
 GameObject:
   m_ObjectHideFlags: 0
