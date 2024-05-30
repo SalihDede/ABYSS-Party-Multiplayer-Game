@@ -9,9 +9,11 @@ public class GameFourManager : MonoBehaviourPunCallbacks
 {
     public GameObject GameManagerr;
     public bool StartTime;
-    public GameObject GameFourGUI;
+    //public GameObject GameFourGUI;
+    //public GameObject GameFourGUI2;
     public List<GameObject> Ranking = new List<GameObject>();
-    public TMP_Text Win;
+    public List<GameObject> Starters = new List<GameObject>();
+    //public TMP_Text Win;
     public bool IsWin;
     public TMP_Text Player2Text;
 
@@ -29,12 +31,12 @@ public class GameFourManager : MonoBehaviourPunCallbacks
     {
         GameManagerr = GameObject.Find("GameManager");
         RandomMapGenerator();
-        StartCoroutine(StartCountdownCoroutine());
+       // StartCoroutine(StartCountdownCoroutine());
     }
 
     IEnumerator StartCountdownCoroutine()
     {
-        int countdown = 15; // Initial countdown value
+        int countdown = 15;
         while (countdown > 0)
         {
             countdownText.text = countdown.ToString();
@@ -52,16 +54,23 @@ public class GameFourManager : MonoBehaviourPunCallbacks
     [PunRPC]
     void StartRace(bool result)
     {
-        GameFourGUI.SetActive(false);
-        StartTime = result;
+        //GameFourGUI.SetActive(false);
+        //GameFourGUI2.SetActive(false);
     }
 
 
     void Update()
     {
 
+        
+
+
+
+
         if (Ranking.Count == 2)
         {
+            Ranking.Sort((player1, player2) => player2.GetComponent<GameFourPlayer>().score.CompareTo(player1.GetComponent<GameFourPlayer>().score));
+
             GameManagerr.GetComponent<GameManager>().Kamera.SetActive(true);
             gameObject.SetActive(false);
         }

@@ -203,12 +203,22 @@ public class GameFourPlayer : MonoBehaviour
     // List of selected objects
     public List<GameObject> selectedObjects = new List<GameObject>();
 
+    public GameObject GameManagerr;
     // Flag to show or hide the list of selected objects
     private bool showSelectedObjects = false;
     public Camera Kamera;
 
     void Start()
     {
+
+
+
+        GameManagerr = GameObject.Find("Alp Game");
+        GameManagerr.GetComponent<GameFourManager>().Starters.Add(gameObject);
+        photonView = GetComponent<PhotonView>();
+        OBJCordinate = GameObject.Find("CoordinateManager");
+        
+
         LargeBox = GameObject.Find("Box Large");
         MediumBox = GameObject.Find("Box Medium");
         SmallBox = GameObject.Find("Box Small");
@@ -323,24 +333,40 @@ public class GameFourPlayer : MonoBehaviour
 
 
         [PunRPC]
-        void MyGame(bool result)
+        void MyScorePublish(int scoreparameter)
         {
-            
 
+            score = scoreparameter;
         
+        }
+        [PunRPC]
+        void Winner(string name)
+        {
+            if (!GameManagerr.GetComponent<GameTwoManager>().IsWin)
+            {
+               // GameManagerr.GetComponent<GameTwoManager>().Win.gameObject.SetActive(true);
+               // GameManagerr.GetComponent<GameTwoManager>().Win.text = "Winner is " + name;
+            }
+            if (!GameManagerr.GetComponent<GameTwoManager>().Ranking.Contains(gameObject))
+            {
+                GameManagerr.GetComponent<GameTwoManager>().Ranking.Add(gameObject);
+            }
 
         }
-
 
     void Update()
     {
 
-        if ()
+        if (OBJCordinate.GetComponent<ObjectCoordinateMaanager>().countdownTime >= 1)
         {
-            photonView.RPC("MyGame", RpcTarget.All, true);
+            photonView.RPC("MyScorePublish", RpcTarget.All, score);
         }
 
 
+        if (OBJCordinate.GetComponent<ObjectCoordinateMaanager>().countdownTime <= 1)
+        {
+            photonView.RPC("Winner", RpcTarget.All, photonView.OwnerActorNr.ToString());
+        }
 
 
 

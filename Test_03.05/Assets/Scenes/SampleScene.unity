@@ -9797,7 +9797,9 @@ MonoBehaviour:
   GameManagerr: {fileID: 0}
   StartTime: 0
   GameFourGUI: {fileID: 0}
+  GameFourGUI2: {fileID: 0}
   Ranking: []
+  Startees: []
   Win: {fileID: 0}
   IsWin: 0
   Player2Text: {fileID: 0}
@@ -10150,7 +10152,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1360402728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10273,6 +10275,8 @@ MonoBehaviour:
   Player4: 0
   Player1Text: {fileID: 0}
   Player2Text: {fileID: 0}
+  Player3Text: {fileID: 0}
+  Player4Text: {fileID: 0}
   LastTouch: {fileID: 0}
   Spawn0: {fileID: 0}
   Spawn1: {fileID: 0}
@@ -11916,6 +11920,8 @@ MonoBehaviour:
   Player4: 0
   Player1Text: {fileID: 1202496788}
   Player2Text: {fileID: 1060560659}
+  Player3Text: {fileID: 0}
+  Player4Text: {fileID: 0}
   LastTouch: {fileID: 2088714589}
   Spawn0: {fileID: 624060976}
   Spawn1: {fileID: 1002989244}
