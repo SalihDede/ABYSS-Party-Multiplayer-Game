@@ -12,7 +12,7 @@ public class MineKill : MonoBehaviourPunCallbacks
     {
         if (other.CompareTag("Bullet") && PhotonNetwork.IsMasterClient)
         {
-            // Only the mine owner should trigger the respawn
+            Debug.Log("MINE EXPLODE!!");
             RespawnPlayer();
             photonView.RPC("SpawnExplosionEffect", RpcTarget.All);
             PhotonNetwork.Destroy(gameObject);
