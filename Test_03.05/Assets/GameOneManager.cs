@@ -140,22 +140,22 @@ public class GameOneManager : MonoBehaviourPunCallbacks
             if (SpawnedBall.GetComponent<PhotonView>().Owner == Starters[0].GetComponent<PhotonView>().Owner && SpawnedBall.GetComponent<ball>().SomeoneTouch)
             {
                 Debug.Log("1. OYUNCU TOPUN SAHÝBÝ");
-                StartCoroutine(ScoreUp(Starters[0].GetComponent<PhotonView>().OwnerActorNr));
+                StartCoroutine(ScoreUp(Starters[0].GetComponent<PhotonView>().Owner));
             }
             else
             {
 
-                StopCoroutine(ScoreUp(Starters[0].GetComponent<PhotonView>().OwnerActorNr));
+                StopCoroutine(ScoreUp(Starters[0].GetComponent<PhotonView>().Owner));
             }
             if (SpawnedBall.GetComponent<PhotonView>().Owner == Starters[1].GetComponent<PhotonView>().Owner && SpawnedBall.GetComponent<ball>().SomeoneTouch)
             {
                 Debug.Log("2. OYUNCU TOPUN SAHÝBÝ");
-                StartCoroutine(ScoreUp(Starters[1].GetComponent<PhotonView>().OwnerActorNr));
+                StartCoroutine(ScoreUp(Starters[1].GetComponent<PhotonView>().Owner));
             }
             else
             {
 
-                StopCoroutine(ScoreUp(Starters[1].GetComponent<PhotonView>().OwnerActorNr));
+                StopCoroutine(ScoreUp(Starters[1].GetComponent<PhotonView>().Owner));
             }
             /*
             if (SpawnedBall.GetComponent<ball>().photonView.OwnerActorNr == Starters[2].GetComponent<PhotonView>().OwnerActorNr)
@@ -186,16 +186,16 @@ public class GameOneManager : MonoBehaviourPunCallbacks
              GameObject player1 = PhotonNetwork.Instantiate("TemplatePlayer", Spawn0.transform.position, Quaternion.identity);
         }
 
-    IEnumerator ScoreUp(int thisguy)
+    IEnumerator ScoreUp(Player thisguy)
     {
         while (Starters[0].GetComponent<PlayerABYSS>().score < 1000000 || Starters[1].GetComponent<PlayerABYSS>().score < 1000000)
         {
             yield return new WaitForSeconds(1);
-            if (Starters[0].GetComponent<PhotonView>().OwnerActorNr == thisguy)
+            if (Starters[0].GetComponent<PhotonView>().Owner == thisguy)
             {
                 Starters[0].GetComponent<PlayerABYSS>().score++;
             }
-            if (Starters[1].GetComponent<PhotonView>().OwnerActorNr == thisguy)
+            if (Starters[1].GetComponent<PhotonView>().Owner == thisguy)
             {
                 Starters[1].GetComponent<PlayerABYSS>().score++;
             }
