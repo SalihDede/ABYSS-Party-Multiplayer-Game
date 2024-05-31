@@ -84,7 +84,6 @@ public class GameTwoManager : MonoBehaviourPunCallbacks
                     }
                 }
             }
-            GameManagerrr.GetComponent<GameManager>().PlayersSorted.Clear();
             if(GameManagerrr.GetComponent<GameManager>().PlayersSorted.Count !=2)
             {
                 GameManagerrr.GetComponent<GameManager>().PlayersSorted.AddRange(GameManagerrr.GetComponent<GameManager>().PlayersTemp);
@@ -101,6 +100,7 @@ public class GameTwoManager : MonoBehaviourPunCallbacks
                 Destroy(player);
             }
             Ranking.Clear();
+            GameManagerrr.GetComponent<GameManager>().PlayersSorted.Clear();
 
         }
     }
