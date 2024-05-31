@@ -25,7 +25,7 @@ public class PlayerGameTwo : MonoBehaviourPunCallbacks
     private PhotonView photonView;
     void Start()
     {
-
+        gameObject.transform.eulerAngles = new Vector3(359.936462f, 281.749481f, 359.754913f);
         
 
         GameManagerr = GameObject.Find("Baha Game");
