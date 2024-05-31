@@ -100,6 +100,7 @@ public class GameOneManager : MonoBehaviourPunCallbacks
             GameFinished = false;
             GameManagerrr.GetComponent<GameManager>().MiniGameStarted = false;
             Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
             gameObject.SetActive(false);
         }
     }
