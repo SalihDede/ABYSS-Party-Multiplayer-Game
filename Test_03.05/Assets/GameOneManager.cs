@@ -132,7 +132,7 @@ public class GameOneManager : MonoBehaviourPunCallbacks
             {
                 Goal = false;
                 
-                SpawnedBall = PhotonNetwork.Instantiate("Soccer Ball", BallSpawn.transform.position, Quaternion.identity);
+                PhotonNetwork.Instantiate("Soccer Ball", BallSpawn.transform.position, Quaternion.identity);
                 StartCoroutine(StartCountdownCoroutine());
             }
             while(SpawnedBall == null)
