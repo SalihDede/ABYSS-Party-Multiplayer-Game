@@ -98,6 +98,7 @@ public class GameOneManager : MonoBehaviourPunCallbacks
 
             GameManagerrr.GetComponent<GameManager>().Kamera.SetActive(true);
             GameFinished = false;
+            GameManagerrr.GetComponent<GameManager>().MiniGameStarted = false;
             gameObject.SetActive(false);
         }
     }
