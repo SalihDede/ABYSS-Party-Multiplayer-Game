@@ -88,6 +88,7 @@ public class GameFourManager : MonoBehaviourPunCallbacks
                 Destroy(Player);
             }
             Ranking.Clear();
+            Starters.Clear();
             
             GameManagerrr.GetComponent<GameManager>().Kamera.SetActive(true);
             GameManagerrr.GetComponent<GameManager>().MiniGameStarted = false;
