@@ -135,7 +135,10 @@ public class GameOneManager : MonoBehaviourPunCallbacks
                 SpawnedBall = PhotonNetwork.Instantiate("Soccer Ball", BallSpawn.transform.position, Quaternion.identity);
                 StartCoroutine(StartCountdownCoroutine());
             }
-            SpawnedBall = GameObject.Find("Soccer Ball");
+            while(SpawnedBall == null)
+            {
+                SpawnedBall = GameObject.Find("Soccer Ball");
+            }
 
             if (SpawnedBall.GetComponent<PhotonView>().Owner == Starters[0].GetComponent<PhotonView>().Owner && SpawnedBall.GetComponent<ball>().SomeoneTouch)
             {
