@@ -14,20 +14,32 @@ public class PlayerGameTwo : MonoBehaviour
     public int TempCheckPoint;
     public bool passedFinish;
     public bool passedCheckPoint;
+    public GameObject Line1;
+    public GameObject Line2;
+    public GameObject Line3;
+    public GameObject Line4;
 
-    public GameObject[] Spawns;
+    public List<GameObject> Spawns = new List<GameObject>();
 
 
     private PhotonView photonView;
     void Start()
     {
 
+        
+
         GameManagerr = GameObject.Find("Baha Game");
 
-        Spawns[0] = GameObject.Find("Line1");
-        Spawns[1] = GameObject.Find("Line2");
-        Spawns[2] = GameObject.Find("Line3");
-        Spawns[3] = GameObject.Find("Line4");
+        Line1 = GameObject.Find("Line1");
+        Line2 = GameObject.Find("Line2");
+        Line3 = GameObject.Find("Line3");
+        Line4 = GameObject.Find("Line4");
+
+        Spawns.Add(Line1);
+        Spawns.Add(Line2);
+        Spawns.Add(Line3);
+        Spawns.Add(Line4);
+
 
         photonView = GetComponent<PhotonView>();
 
