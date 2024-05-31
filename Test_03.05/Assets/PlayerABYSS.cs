@@ -4,13 +4,21 @@ using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
 
-public class PlayerABYSS : MonoBehaviour
+public class PlayerABYSS : MonoBehaviourPunCallbacks
 {
 
+
+
+    public GameObject GameOneManager;
     public Animator Anim;
+    public int score;
 
     void Start()
     {
+        GameOneManager = GameObject.Find("SemihGame");
+
+        GameOneManager.GetComponent<GameOneManager>().Starters.Add(gameObject);
+
         gameObject.name = "SemihGamePlayer" +gameObject.GetComponent<PhotonView>().OwnerActorNr.ToString();
     }
 
@@ -19,7 +27,10 @@ public class PlayerABYSS : MonoBehaviour
     {
 
 
-
+        if(score == 100)
+        {
+            photonView.RPC("Finito", RpcTarget.All, true);
+        }
 
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.A))
         {
@@ -41,7 +52,14 @@ public class PlayerABYSS : MonoBehaviour
         
     }
 
- private void OnTriggerStay(Collider other)
+
+    [PunRPC]
+    void Finito(bool result)
+    {
+        GameOneManager.GetComponent<GameOneManager>().GameFinished = result;
+    }
+
+    private void OnTriggerStay(Collider other)
 {
     if (other.tag == "Ball")
     {

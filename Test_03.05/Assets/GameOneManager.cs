@@ -7,14 +7,23 @@ using TMPro;
 
 public class GameOneManager : MonoBehaviourPunCallbacks
 {
-    public GameObject GameManagerr;
+    public GameObject GameManagerrr;
     public bool Goal;
     public GameObject BallPrefab;
+
+    public List<GameObject> Ranking = new List<GameObject>();
+    public List<GameObject> Starters = new List<GameObject>();
+
 
     public int Player1;
     public int Player2;
     public int Player3;
     public int Player4;
+
+
+
+    public TMP_Text countdownText;
+
 
     public TMP_Text Player1Text;
     public TMP_Text Player2Text;
@@ -24,45 +33,149 @@ public class GameOneManager : MonoBehaviourPunCallbacks
     public TMP_Text LastTouch;
 
     public GameObject Spawn0;
-    public GameObject Spawn1;
-    public GameObject Spawn2;
-    public GameObject Spawn3;
     public GameObject BallSpawn;
+    public GameObject SpawnedBall;
 
     private PhotonView photonView;
-
+    public bool GameFinished;
     void Start()
     {
-        GameManagerr = GameObject.Find("GameManager");
+        GameManagerrr = GameObject.Find("GameManager");
+        SpawnedBall = GameObject.Find("Soccer Ball");
+
 
         Goal = true;
         RandomMapGenerator();
     }
 
-    IEnumerator GoalCoroutine()
+
+
+
+
+    IEnumerator GameFinishedCoroutine()
     {
-        yield return new WaitForSeconds(3);
-        PhotonNetwork.Instantiate("Soccer Ball", BallSpawn.transform.position, Quaternion.identity);
+        Starters.Sort((player1, player2) => player2.GetComponent<PlayerABYSS>().score.CompareTo(player1.GetComponent<PlayerABYSS>().score));
+
+        if (Starters.Count == 2)
+        {
+
+                GameManagerrr.GetComponent<GameManager>().PlayersTemp.Clear();
+                for (int i = 0; i < 2; i++)
+                {
+                    foreach (GameObject Player in GameManagerrr.GetComponent<GameManager>().PlayersSorted)
+                    {
+                        if (Starters[i].GetComponent<PhotonView>().ViewID / 1000 == Player.GetComponent<PhotonView>().ViewID / 1000)
+                        {
+                            GameManagerrr.GetComponent<GameManager>().PlayersTemp.Add(Player);
+                        }
+                    }
+                }
+
+                GameManagerrr.GetComponent<GameManager>().PlayersSorted.Clear();
+
+                if (GameManagerrr.GetComponent<GameManager>().PlayersSorted.Count != 2)
+                {
+                    GameManagerrr.GetComponent<GameManager>().PlayersSorted.AddRange(GameManagerrr.GetComponent<GameManager>().PlayersTemp);
+                }
+
+     
+
+            yield return new WaitForSeconds(10);
+            foreach (GameObject player in Starters)
+            {
+                Destroy(player);
+            }
+            Starters.Clear();
+            gameObject.SetActive(false);
+        }
     }
+
+        IEnumerator StartCountdownCoroutine()
+        {
+            int countdown = 60; // Initial countdown value
+            while (countdown > 0)
+            {
+                countdownText.text = countdown.ToString();
+                yield return new WaitForSeconds(1);
+                countdown--;
+            }
+
+            countdownText.text = "Finish";
+            yield return new WaitForSeconds(1);
+            countdownText.gameObject.SetActive(false); // Hide the countdown text
+
+
+
+        }
+
+
+
 
     void Update()
     {
+        if(countdownText.text == "Finish" || GameFinished == true)
+        {
+            GameFinished = true;
+
+            Destroy(SpawnedBall);
+            StartCoroutine(GameFinishedCoroutine());
+
+
+
+
+        }
+
+
+        if(!GameFinished)
+        {
+            Goal = true;
+            StartCountdownCoroutine();
+
+            if (SpawnedBall.GetComponent<ball>().photonView.OwnerActorNr == Starters[0].GetComponent<PhotonView>().OwnerActorNr)
+            {
+                StartCoroutine(ScoreUp(Starters[0].GetComponent<PlayerABYSS>().score));
+            }
+            if (SpawnedBall.GetComponent<ball>().photonView.OwnerActorNr == Starters[1].GetComponent<PhotonView>().OwnerActorNr)
+            {
+                StartCoroutine(ScoreUp(Starters[1].GetComponent<PlayerABYSS>().score));
+            }
+            if (SpawnedBall.GetComponent<ball>().photonView.OwnerActorNr == Starters[2].GetComponent<PhotonView>().OwnerActorNr)
+            {
+                StartCoroutine(ScoreUp(Starters[2].GetComponent<PlayerABYSS>().score));
+            }
+            if (SpawnedBall.GetComponent<ball>().photonView.OwnerActorNr == Starters[3].GetComponent<PhotonView>().OwnerActorNr)
+            {
+                StartCoroutine(ScoreUp(Starters[3].GetComponent<PlayerABYSS>().score));
+            }
+
+
+
+        }
+
+
+
         if (Goal && PhotonNetwork.IsMasterClient)
         {
             Goal = false;
-            StartCoroutine(GoalCoroutine());
+            PhotonNetwork.Instantiate("Soccer Ball", BallSpawn.transform.position, Quaternion.identity);
         }
-        Player1Text.text = "Player 1\n" + Player1;
-        Player2Text.text = "Player 2\n" + Player2;
-        Player3Text.text = "Player 3\n" + Player3;
-        Player4Text.text = "Player 4\n" + Player4;
+            Player1Text.text = "Player 1: " + Starters[0].GetComponent<PlayerABYSS>().score;
+            Player2Text.text = "Player 2: " + Starters[1].GetComponent<PlayerABYSS>().score;
+            Player3Text.text = "Player 3: " + Starters[2].GetComponent<PlayerABYSS>().score;
+            Player4Text.text = "Player 4: " + Starters[3].GetComponent<PlayerABYSS>().score;
     }
 
-    public void RandomMapGenerator()
+        public void RandomMapGenerator()
+        {
+             GameObject player1 = PhotonNetwork.Instantiate("TemplatePlayer", Spawn0.transform.position, Quaternion.identity);
+        }
+
+    IEnumerator ScoreUp(int thisguy)
     {
-        GameObject player1 = PhotonNetwork.Instantiate("TemplatePlayer", Spawn0.transform.position, Quaternion.identity);
-        GameObject player2 = PhotonNetwork.Instantiate("TemplatePlayer", Spawn1.transform.position, Quaternion.identity);
-        GameObject player3 = PhotonNetwork.Instantiate("TemplatePlayer", Spawn2.transform.position, Quaternion.identity);
-        GameObject player4 = PhotonNetwork.Instantiate("TemplatePlayer", Spawn3.transform.position, Quaternion.identity);
+        while (thisguy < 100)
+        {
+            yield return new WaitForSeconds(1);
+            thisguy++;
+        }
     }
 }
