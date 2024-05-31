@@ -16,7 +16,7 @@ public class Movement1 : MonoBehaviour
         if (PhotonNetwork.IsMasterClient)
         {
             float speedrandom = Random.Range(1.5f, 3f);
-            photonView.RPC("RandomDoorClose", RpcTarget.All, speedrandom);
+            photonView.RPC("RandomWallMove", RpcTarget.All, speedrandom);
         }
 
 
@@ -24,7 +24,7 @@ public class Movement1 : MonoBehaviour
         speed = Random.Range(1.5f, 3f);
     }
     [PunRPC]
-    void RandomDoorClose(float number)
+    void RandomWallMove(float number)
     {
         speed = number;
     }
