@@ -131,16 +131,16 @@ public class GameOneManager : MonoBehaviourPunCallbacks
         {
               if(Goal)
               {
-
+                StartCoroutine(StartCountdownCoroutine());
                 
-                    if (Goal && PhotonNetwork.IsMasterClient)
-                    {
-                        Goal = false;
 
-                        PhotonNetwork.Instantiate("Soccer Ball", BallSpawn.transform.position, Quaternion.identity);
+                    if (Goal && PhotonNetwork.IsMasterClient)
+                    {   Goal = false;
+
+                            PhotonNetwork.Instantiate("Soccer Ball", BallSpawn.transform.position, Quaternion.identity);
                     }
-                    StartCoroutine(StartCountdownCoroutine());
-              }
+                    Goal = false;
+                }
      
 
 
