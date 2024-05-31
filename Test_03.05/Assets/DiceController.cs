@@ -43,7 +43,7 @@ public class DiceController : MonoBehaviourPunCallbacks
 
     private void Update()
     {
-
+        BahaGame = GameObject.Find("Baha Game");
         if (BahaGame.GetComponent<GameTwoManager>().Ranking.Count == 2)
         {
             GUI.SetActive(true);
@@ -98,7 +98,7 @@ public class DiceController : MonoBehaviourPunCallbacks
     {
 
 
-        BahaGame = GameObject.Find("Baha Game");
+
 
 
         GameManager = GameObject.Find("GameManager");
