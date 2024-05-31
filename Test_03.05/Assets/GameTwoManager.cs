@@ -46,7 +46,6 @@ public class GameTwoManager : MonoBehaviourPunCallbacks
         countdownText.text = "GO!"; 
         yield return new WaitForSeconds(1); 
         countdownText.gameObject.SetActive(false); // Hide the countdown text
-        photonView.RPC("StartRace", RpcTarget.All, true);
     }
 
     
@@ -63,7 +62,7 @@ public class GameTwoManager : MonoBehaviourPunCallbacks
             GameManagerrr.GetComponent<GameManager>().Kamera.SetActive(true);
             gameObject.SetActive(false);
 
-            for(int i=0;i<4;i++)
+            for(int i=0;i<2;i++)
             {
                 foreach (GameObject Player in GameManagerrr.GetComponent<GameManager>().PlayersSorted)
                 {
