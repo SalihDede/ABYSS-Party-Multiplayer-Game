@@ -86,6 +86,7 @@ public class GameOneManager : MonoBehaviourPunCallbacks
                 Destroy(player);
             }
             Starters.Clear();
+            GameManagerrr.GetComponent<GameManager>().Kamera.SetActive(true);
             gameObject.SetActive(false);
         }
     }
