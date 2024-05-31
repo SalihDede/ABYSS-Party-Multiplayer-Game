@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviourPunCallbacks
     public TMP_InputField Name;
     public GameObject ShopPanel;
     public List<GameObject> PlayersSorted = new List<GameObject>();
+    public List<GameObject> PlayersTemp = new List<GameObject>();
     public List<GameObject> PlayersJoin = new List<GameObject>();
     public int WhoseTurn = 0;
     public int MinigameCount = 0;

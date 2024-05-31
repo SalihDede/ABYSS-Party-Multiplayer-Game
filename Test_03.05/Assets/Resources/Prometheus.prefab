@@ -479,6 +479,10 @@ MonoBehaviour:
   TempCheckPoint: 0
   passedFinish: 0
   passedCheckPoint: 0
+  Line1: {fileID: 0}
+  Line2: {fileID: 0}
+  Line3: {fileID: 0}
+  Line4: {fileID: 0}
   Spawns: []
 --- !u!1 &3396353756679278110
 GameObject:

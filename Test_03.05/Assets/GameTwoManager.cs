@@ -62,6 +62,30 @@ public class GameTwoManager : MonoBehaviourPunCallbacks
         {
             GameManagerrr.GetComponent<GameManager>().Kamera.SetActive(true);
             gameObject.SetActive(false);
+
+            for(int i=0;i<4;i++)
+            {
+                foreach (GameObject Player in GameManagerrr.GetComponent<GameManager>().PlayersSorted)
+                {
+                    if (Ranking[i].GetComponent<PhotonView>().ViewID == Player.GetComponent<PhotonView>().ViewID)
+                    {
+                        GameManagerrr.GetComponent<GameManager>().PlayersTemp.Add(Player);
+                    }
+                }
+            }
+           GameManagerrr.GetComponent<GameManager>().PlayersSorted = GameManagerrr.GetComponent<GameManager>().PlayersTemp;
+
+
+
+            //GameManagerrr.GetComponent<GameManager>().PlayersSorted.Sort((player1, player2) => player2.GetComponent<>().score.CompareTo(player1.GetComponent<GameFourPlayer>().score));
+
+
+
+            foreach (GameObject player in Ranking)
+            {
+                Destroy(player);
+            }
+            
         }
     }
 
