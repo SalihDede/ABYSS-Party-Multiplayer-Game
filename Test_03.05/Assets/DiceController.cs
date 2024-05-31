@@ -269,9 +269,11 @@ public class DiceController : MonoBehaviourPunCallbacks
         }
         if (GameManager.GetComponent<GameManager>().MinigameList[GameManager.GetComponent<GameManager>().MinigameCount].name == "Alp Game")
         {
-            GameManager.GetComponent<GameManager>().MinigameList[GameManager.GetComponent<GameManager>().MinigameCount].GetComponent<GameFourManager>().OBJCordinate.GetComponent<ObjectCoordinateMaanager>().initialCountdownFinished = false;
-            GameManager.GetComponent<GameManager>().MinigameList[GameManager.GetComponent<GameManager>().MinigameCount].GetComponent<GameFourManager>().OBJCordinate.GetComponent<ObjectCoordinateMaanager>().Line.SetActive(true);
+
             GameManager.GetComponent<GameManager>().MinigameList[GameManager.GetComponent<GameManager>().MinigameCount].GetComponent<GameFourManager>().OBJCordinate.GetComponent<ObjectCoordinateMaanager>().initialCountdownTime = 15f;
+            GameManager.GetComponent<GameManager>().MinigameList[GameManager.GetComponent<GameManager>().MinigameCount].GetComponent<GameFourManager>().OBJCordinate.GetComponent<ObjectCoordinateMaanager>().countdownTime = 30f;
+            GameManager.GetComponent<GameManager>().MinigameList[GameManager.GetComponent<GameManager>().MinigameCount].GetComponent<GameFourManager>().OBJCordinate.GetComponent<ObjectCoordinateMaanager>().Line.SetActive(true);
+            GameManager.GetComponent<GameManager>().MinigameList[GameManager.GetComponent<GameManager>().MinigameCount].GetComponent<GameFourManager>().OBJCordinate.GetComponent<ObjectCoordinateMaanager>().initialCountdownFinished = false;
             GameManager.GetComponent<GameManager>().MinigameList[GameManager.GetComponent<GameManager>().MinigameCount].GetComponent<GameFourManager>().GameStarted = true;
         }
 

@@ -338,7 +338,7 @@ public class ObjectCoordinateMaanager : MonoBehaviour
                 initialCountdownFinished = true;
 
                 // Start the second countdown
-                countdownTime = 60f;
+                countdownTime = 30f;
 
                 // Hide the Line object
                 Line.SetActive(false);
