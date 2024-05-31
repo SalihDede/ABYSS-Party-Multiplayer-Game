@@ -9,6 +9,8 @@ public class GameOneManager : MonoBehaviourPunCallbacks
 {
     public GameObject GameManagerrr;
     public bool Goal;
+    public bool Goal1;
+    public bool Goal2;
     public GameObject BallPrefab;
 
     public List<GameObject> Ranking = new List<GameObject>();
@@ -44,8 +46,7 @@ public class GameOneManager : MonoBehaviourPunCallbacks
         GameManagerrr = GameObject.Find("GameManager");
 
 
-        Goal = true;
-        RandomMapGenerator();
+
     }
 
 
@@ -100,13 +101,14 @@ public class GameOneManager : MonoBehaviourPunCallbacks
             GameFinished = false;
             GameManagerrr.GetComponent<GameManager>().MiniGameStarted = false;
             Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None;  //Modified by Salih to make click visible
+            Cursor.lockState = CursorLockMode.None;
             gameObject.SetActive(false);
         }
     }
 
         IEnumerator StartCountdownCoroutine()
         {
+
             int countdown = 20; // Initial countdown value
             while (countdown > 0)
             {
@@ -143,17 +145,23 @@ public class GameOneManager : MonoBehaviourPunCallbacks
 
         if(!GameFinished)
         {
-              if(Goal)
-              {
-                StartCoroutine(StartCountdownCoroutine());
+                Goal = true;
+                if (Goal)
+                {
+                    if(!Goal1)
+                    {
+                        RandomMapGenerator();
+                    }
+                    
+                    StartCoroutine(StartCountdownCoroutine());
                 
 
-                    if (Goal && PhotonNetwork.IsMasterClient)
-                    {   Goal = false;
+                        if (Goal && PhotonNetwork.IsMasterClient)
+                        {   Goal = false;
 
-                            PhotonNetwork.Instantiate("Soccer Ball", BallSpawn.transform.position, Quaternion.identity);
-                    }
-                    Goal = false;
+                                PhotonNetwork.Instantiate("Soccer Ball", BallSpawn.transform.position, Quaternion.identity);
+                        }
+                        Goal = false;
                 }
      
 
@@ -161,7 +169,7 @@ public class GameOneManager : MonoBehaviourPunCallbacks
 
             if (SpawnedBall.GetComponent<PhotonView>().Owner == Starters[0].GetComponent<PhotonView>().Owner && SpawnedBall.GetComponent<ball>().SomeoneTouch)
             {
-                Debug.Log("1. OYUNCU TOPUN SAHï¿½Bï¿½");
+                Debug.Log("1. OYUNCU TOPUN SAHÝBÝ");
                 thisguy = Starters[0].GetComponent<PhotonView>().Owner;
                 StartCoroutine(ScoreUp());
             }
@@ -198,6 +206,7 @@ public class GameOneManager : MonoBehaviourPunCallbacks
 
         public void RandomMapGenerator()
         {
+        Goal1 = true;
              GameObject player1 = PhotonNetwork.Instantiate("TemplatePlayer", Spawn0.transform.position, Quaternion.identity);
         }
 
