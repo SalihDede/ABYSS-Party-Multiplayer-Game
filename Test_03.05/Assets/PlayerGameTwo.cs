@@ -22,13 +22,13 @@ public class PlayerGameTwo : MonoBehaviour
     void Start()
     {
 
+        GameManagerr = GameObject.Find("Baha Game");
 
         Spawns[0] = GameObject.Find("Line1");
         Spawns[1] = GameObject.Find("Line2");
         Spawns[2] = GameObject.Find("Line3");
         Spawns[3] = GameObject.Find("Line4");
 
-        GameManagerr = GameObject.Find("Baha Game");
         photonView = GetComponent<PhotonView>();
 
         GameManagerr.GetComponent<GameTwoManager>().StartCar.Add(gameObject);

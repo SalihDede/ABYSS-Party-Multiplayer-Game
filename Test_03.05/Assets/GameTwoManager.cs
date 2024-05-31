@@ -7,7 +7,7 @@ using TMPro;
 
 public class GameTwoManager : MonoBehaviourPunCallbacks
 {
-    public GameObject GameManagerr;
+    public GameObject GameManagerrr;
     public bool StartTime;
     public GameObject GameTwoGUI;
     public List<GameObject> Ranking = new List<GameObject>();
@@ -28,7 +28,7 @@ public class GameTwoManager : MonoBehaviourPunCallbacks
 
     void Start()
     {
-        GameManagerr = GameObject.Find("GameManager");
+        GameManagerrr = GameObject.Find("GameManager");
         RandomMapGenerator();
         StartCoroutine(StartCountdownCoroutine()); 
     }
@@ -65,7 +65,7 @@ public class GameTwoManager : MonoBehaviourPunCallbacks
 
         if (Ranking.Count == 2)
         {
-            GameManagerr.GetComponent<GameManager>().Kamera.SetActive(true);
+            GameManagerrr.GetComponent<GameManager>().Kamera.SetActive(true);
             gameObject.SetActive(false);
         }
     }
