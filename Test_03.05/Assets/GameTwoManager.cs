@@ -73,7 +73,7 @@ public class GameTwoManager : MonoBehaviourPunCallbacks
             GameManagerrr.GetComponent<GameManager>().Kamera.SetActive(true);
             gameObject.SetActive(false);
 
-            GameManagerrr.GetComponent<GameManager>().PlayersSorted.Clear();
+            GameManagerrr.GetComponent<GameManager>().PlayersTemp.Clear();
             for (int i=0;i<2;i++)
             {
                 foreach (GameObject Player in GameManagerrr.GetComponent<GameManager>().PlayersSorted)
@@ -100,7 +100,6 @@ public class GameTwoManager : MonoBehaviourPunCallbacks
                 Destroy(player);
             }
             Ranking.Clear();
-            GameManagerrr.GetComponent<GameManager>().PlayersSorted.Clear();
 
         }
     }
