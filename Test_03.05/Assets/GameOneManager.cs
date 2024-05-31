@@ -158,7 +158,7 @@ public class GameOneManager : MonoBehaviourPunCallbacks
         {
                 if (Goal)
                 {
- 
+                        
                         RandomMapGenerator();
                         BallSpawnMethod();
                         StartCoroutine(StartCountdownCoroutine());
@@ -207,7 +207,7 @@ public class GameOneManager : MonoBehaviourPunCallbacks
 
         public void RandomMapGenerator()
         {
-        Goal1 = true;
+        
              GameObject player1 = PhotonNetwork.Instantiate("TemplatePlayer", Spawn0.transform.position, Quaternion.identity);
         }
 
