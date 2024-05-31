@@ -41,10 +41,15 @@ public class DiceController : MonoBehaviourPunCallbacks
     {
 
 
-            if (GameManager.GetComponent<GameManager>().MiniGameStarted)
-            {
+        if (GameManager.GetComponent<GameManager>().MiniGameStarted)
+        {
              GUI.SetActive(true);
-            }
+        }
+        else
+        {
+            GUI.SetActive(false);
+        }
+
 
 
 
