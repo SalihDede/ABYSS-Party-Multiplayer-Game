@@ -671,6 +671,11 @@ MonoBehaviour:
   isMyTurn: 0
   GameManager: {fileID: 0}
   GUI: {fileID: 6949861292942139350}
+  BahaGame: {fileID: 0}
+  YusufGame: {fileID: 0}
+  SemihGame: {fileID: 0}
+  AlpGame: {fileID: 0}
+  SalihGame: {fileID: 0}
   startButton: {fileID: 8324708658300045612}
   StepsList: []
   Steps: []

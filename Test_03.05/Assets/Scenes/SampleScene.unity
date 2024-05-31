@@ -23687,6 +23687,7 @@ MonoBehaviour:
   LobbyListObjects: []
   LobbyListContent: {fileID: 1015512005}
   UserCard: {fileID: 6747065563593803263, guid: 7f33c1dd3b2435b4ebb6ce069b8cc728, type: 3}
+  MiniGameStarted: 0
   position: {fileID: 123075982}
   GUI: {fileID: 1360402727}
   GameGUI: {fileID: 926095705}
@@ -23696,6 +23697,7 @@ MonoBehaviour:
   Name: {fileID: 0}
   ShopPanel: {fileID: 1044297358}
   PlayersSorted: []
+  PlayersTemp: []
   PlayersJoin: []
   WhoseTurn: 0
   MinigameCount: 0
@@ -30099,6 +30101,10 @@ PrefabInstance:
     - target: {fileID: 3505012294789075169, guid: 9bbbc7baff9da7749805b39f2e2dcec2, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3505012294789075169, guid: 9bbbc7baff9da7749805b39f2e2dcec2, type: 3}
+      propertyPath: m_TagString
+      value: BahaGame
       objectReference: {fileID: 0}
     - target: {fileID: 4318845046539930203, guid: 9bbbc7baff9da7749805b39f2e2dcec2, type: 3}
       propertyPath: m_RootOrder
