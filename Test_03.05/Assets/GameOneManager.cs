@@ -164,8 +164,9 @@ public class GameOneManager : MonoBehaviourPunCallbacks
       
             Player1Text.text = "Player 1: " + Starters[0].GetComponent<PlayerABYSS>().score;
             Player2Text.text = "Player 2: " + Starters[1].GetComponent<PlayerABYSS>().score;
-            Player3Text.text = "Player 3: " + Starters[2].GetComponent<PlayerABYSS>().score;
+           /* Player3Text.text = "Player 3: " + Starters[2].GetComponent<PlayerABYSS>().score;
             Player4Text.text = "Player 4: " + Starters[3].GetComponent<PlayerABYSS>().score;
+           */
     }
 
         public void RandomMapGenerator()
