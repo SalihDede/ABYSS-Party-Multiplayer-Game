@@ -25290,15 +25290,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05158f3f67bfc23479a148cb3caae199, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameManagerr: {fileID: 0}
+  GameManagerrr: {fileID: 0}
   StartTime: 0
+  OBJCordinate: {fileID: 0}
   Ranking: []
   Starters: []
   IsWin: 0
   Player2Text: {fileID: 0}
+  allObjectsMain: []
   LastTouch: {fileID: 0}
   Spawns:
   - {fileID: 1661219201}
+  GameStarted: 0
   countdownText: {fileID: 0}
 --- !u!4 &1299971583 stripped
 Transform:
@@ -27091,6 +27094,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GameManagerrr: {fileID: 0}
   Goal: 0
+  Goal1: 0
+  Goal2: 0
   BallPrefab: {fileID: 0}
   Ranking: []
   Starters: []
@@ -30817,6 +30822,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GameManagerrr: {fileID: 0}
   Goal: 0
+  Goal1: 0
+  Goal2: 0
   BallPrefab: {fileID: 2271624791391367490, guid: 28277502e9c781c4299e68082e37e13d, type: 3}
   Ranking: []
   Starters: []
