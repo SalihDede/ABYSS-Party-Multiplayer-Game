@@ -127,7 +127,7 @@ public class GameOneManager : MonoBehaviourPunCallbacks
 
         if(!GameFinished)
         {
-            Goal = true;
+      
             if (Goal && PhotonNetwork.IsMasterClient)
             {
                 Goal = false;
