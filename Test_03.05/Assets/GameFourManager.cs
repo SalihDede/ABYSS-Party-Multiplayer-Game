@@ -41,14 +41,18 @@ public class GameFourManager : MonoBehaviourPunCallbacks
     void Update()
     {
 
-        if(GameStarted && allObjectsMain.Count == 28)
+        if(GameStarted)
         {
             GameStarted = false;
-            foreach (GameObject player in allObjectsMain)
-            {
-                player.SetActive(true);
-            }
             RandomMapGenerator();
+            if(allObjectsMain.Count == 28)
+            {
+                foreach (GameObject player in allObjectsMain)
+                {
+                    player.SetActive(true);
+                }
+            }
+
         }
 
 
