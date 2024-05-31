@@ -73,7 +73,8 @@ public class GameTwoManager : MonoBehaviourPunCallbacks
             GameManagerrr.GetComponent<GameManager>().Kamera.SetActive(true);
             gameObject.SetActive(false);
 
-            for(int i=0;i<2;i++)
+            GameManagerrr.GetComponent<GameManager>().PlayersSorted.Clear();
+            for (int i=0;i<2;i++)
             {
                 foreach (GameObject Player in GameManagerrr.GetComponent<GameManager>().PlayersSorted)
                 {
