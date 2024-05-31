@@ -262,6 +262,13 @@ public class DiceController : MonoBehaviourPunCallbacks
         GameManager.GetComponent<GameManager>().GameGUI.SetActive(false);
         GameManager.GetComponent<GameManager>().GUI.SetActive(false);
         GameManager.GetComponent<GameManager>().MiniGameStarted = true;
+        if(GameManager.GetComponent<GameManager>().MinigameList[GameManager.GetComponent<GameManager>().MinigameCount].name == "SemihGame")
+        {
+            GameManager.GetComponent<GameManager>().MinigameList[GameManager.GetComponent<GameManager>().MinigameCount].GetComponent<GameOneManager>().Goal = true;
+            GameManager.GetComponent<GameManager>().MinigameList[GameManager.GetComponent<GameManager>().MinigameCount].GetComponent<GameOneManager>().GameFinished = false;
+        }
+        
+
 
 
     }

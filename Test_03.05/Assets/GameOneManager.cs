@@ -126,7 +126,15 @@ public class GameOneManager : MonoBehaviourPunCallbacks
         }
 
 
+    public void BallSpawnMethod()
+    {
+        if (Goal && PhotonNetwork.IsMasterClient)
+        {
+            Goal = false;
 
+            PhotonNetwork.Instantiate("Soccer Ball", BallSpawn.transform.position, Quaternion.identity);
+        }
+    }
 
     void FixedUpdate()
     {
@@ -143,24 +151,17 @@ public class GameOneManager : MonoBehaviourPunCallbacks
         }
 
 
+
+
+
         if(!GameFinished)
         {
-                Goal = true;
                 if (Goal)
                 {
-                    if(!Goal1)
-                    {
+ 
                         RandomMapGenerator();
-                    }
-                    
-                    StartCoroutine(StartCountdownCoroutine());
-                
-
-                        if (Goal && PhotonNetwork.IsMasterClient)
-                        {   Goal = false;
-
-                                PhotonNetwork.Instantiate("Soccer Ball", BallSpawn.transform.position, Quaternion.identity);
-                        }
+                        BallSpawnMethod();
+                        StartCoroutine(StartCountdownCoroutine());
                         Goal = false;
                 }
      
