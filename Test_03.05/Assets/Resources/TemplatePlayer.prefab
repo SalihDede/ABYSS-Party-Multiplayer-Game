@@ -2132,7 +2132,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 959a5be1b07764c44bfd3374e0f4c7dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameOneManager: {fileID: 0}
   Anim: {fileID: 8017516911683782433}
+  score: 0
 --- !u!1 &8987136569727909539
 GameObject:
   m_ObjectHideFlags: 0
@@ -2464,6 +2466,7 @@ MonoBehaviour:
   OrbitCamera: {fileID: 312110741136010128}
   CameraFollowPoint: {fileID: 8987136569899355445}
   Character: {fileID: 8987136569212136118}
+  puzzleManager: {fileID: 0}
   pushPullForce: 3
 --- !u!1001 &2172064952394938348
 PrefabInstance:

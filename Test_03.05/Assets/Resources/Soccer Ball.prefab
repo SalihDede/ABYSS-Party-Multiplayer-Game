@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 4390714281376827504}
   - component: {fileID: -8972187740290790754}
   - component: {fileID: 6739039576299476400}
+  - component: {fileID: 3582313310161458636}
   m_Layer: 0
   m_Name: Soccer Ball
   m_TagString: Ball
@@ -189,6 +190,20 @@ MonoBehaviour:
   m_SynchronizeAngularVelocity: 1
   m_TeleportEnabled: 0
   m_TeleportIfDistanceGreaterThan: 3
+--- !u!114 &3582313310161458636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2271624791391367490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7affa8808fc77c046b79e234947dc53b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DeathEffect: {fileID: 7905280044938635074}
+  GameManagerr: {fileID: 0}
 --- !u!1 &7905280044938635074
 GameObject:
   m_ObjectHideFlags: 0
