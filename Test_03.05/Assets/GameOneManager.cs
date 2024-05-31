@@ -14,6 +14,7 @@ public class GameOneManager : MonoBehaviourPunCallbacks
     public List<GameObject> Ranking = new List<GameObject>();
     public List<GameObject> Starters = new List<GameObject>();
 
+    Player thisguy;
 
     public int Player1;
     public int Player2;
@@ -110,7 +111,7 @@ public class GameOneManager : MonoBehaviourPunCallbacks
 
 
 
-    void Update()
+    void FixedUpdate()
     {
         if(countdownText.text == "Finish" || GameFinished == true)
         {
@@ -140,23 +141,16 @@ public class GameOneManager : MonoBehaviourPunCallbacks
             if (SpawnedBall.GetComponent<PhotonView>().Owner == Starters[0].GetComponent<PhotonView>().Owner && SpawnedBall.GetComponent<ball>().SomeoneTouch)
             {
                 Debug.Log("1. OYUNCU TOPUN SAHÝBÝ");
-                StartCoroutine(ScoreUp(Starters[0].GetComponent<PhotonView>().Owner));
+                thisguy = Starters[1].GetComponent<PhotonView>().Owner;
+                StartCoroutine(ScoreUp());
             }
-            else
-            {
-
-                StopCoroutine(ScoreUp(Starters[0].GetComponent<PhotonView>().Owner));
-            }
+      
             if (SpawnedBall.GetComponent<PhotonView>().Owner == Starters[1].GetComponent<PhotonView>().Owner && SpawnedBall.GetComponent<ball>().SomeoneTouch)
             {
-                Debug.Log("2. OYUNCU TOPUN SAHÝBÝ");
-                StartCoroutine(ScoreUp(Starters[1].GetComponent<PhotonView>().Owner));
+                thisguy = Starters[1].GetComponent<PhotonView>().Owner;
+                StartCoroutine(ScoreUp());
             }
-            else
-            {
-
-                StopCoroutine(ScoreUp(Starters[1].GetComponent<PhotonView>().Owner));
-            }
+          
             /*
             if (SpawnedBall.GetComponent<ball>().photonView.OwnerActorNr == Starters[2].GetComponent<PhotonView>().OwnerActorNr)
             {
@@ -186,17 +180,24 @@ public class GameOneManager : MonoBehaviourPunCallbacks
              GameObject player1 = PhotonNetwork.Instantiate("TemplatePlayer", Spawn0.transform.position, Quaternion.identity);
         }
 
-    IEnumerator ScoreUp(Player thisguy)
+    IEnumerator ScoreUp()
     {
         while (Starters[0].GetComponent<PlayerABYSS>().score < 1000000 || Starters[1].GetComponent<PlayerABYSS>().score < 1000000)
         {
             yield return new WaitForSeconds(1);
             if (Starters[0].GetComponent<PhotonView>().Owner == thisguy)
             {
+                if (Starters[0].GetComponent<PhotonView>().Owner != thisguy)
+                {
+                    break;
+                }
                 Starters[0].GetComponent<PlayerABYSS>().score++;
             }
             if (Starters[1].GetComponent<PhotonView>().Owner == thisguy)
-            {
+            {   if(Starters[1].GetComponent<PhotonView>().Owner != thisguy)
+                {
+                    break;
+                }
                 Starters[1].GetComponent<PlayerABYSS>().score++;
             }
         }
