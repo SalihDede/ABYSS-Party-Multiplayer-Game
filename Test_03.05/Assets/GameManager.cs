@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviourPunCallbacks
     public GameObject LobbyListContent;
     public GameObject UserCard;
 
+    public bool MiniGameStarted;
+
     public GameObject position;
     public GameObject GUI;
     public GameObject GameGUI;
