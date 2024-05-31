@@ -61,6 +61,7 @@ public class GameTwoManager : MonoBehaviourPunCallbacks
 
         if(!GameFinished)
         {
+            countdownText.gameObject.SetActive(true);
             GameFinished = true;
             RandomMapGenerator();
             StartCoroutine(StartCountdownCoroutine());
