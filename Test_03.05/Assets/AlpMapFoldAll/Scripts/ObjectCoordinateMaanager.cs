@@ -215,9 +215,9 @@ public class ObjectCoordinateMaanager : MonoBehaviour
     public AudioClip gameMusic;
     public AudioClip tenSeconds;
     public TMP_Text countdownText;
-    private float initialCountdownTime = 15f; // Initial countdown time
-    public float countdownTime = 181f; // Second countdown time
-    private bool initialCountdownFinished = false;
+    public float initialCountdownTime = 15f; // Initial countdown time
+    public float countdownTime = 30f; // Second countdown time
+    public bool initialCountdownFinished = false;
 
     // Flag to track if music has been played
     private bool musicPlayed = false; // Is music played?
@@ -338,7 +338,7 @@ public class ObjectCoordinateMaanager : MonoBehaviour
                 initialCountdownFinished = true;
 
                 // Start the second countdown
-                countdownTime = 181f;
+                countdownTime = 60f;
 
                 // Hide the Line object
                 Line.SetActive(false);

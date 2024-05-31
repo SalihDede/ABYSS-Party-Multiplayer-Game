@@ -7,8 +7,9 @@ using TMPro;
 
 public class GameFourManager : MonoBehaviourPunCallbacks
 {
-    public GameObject GameManagerr;
+    public GameObject GameManagerrr;
     public bool StartTime;
+    public GameObject OBJCordinate;
     //public GameObject GameFourGUI;
     //public GameObject GameFourGUI2;
     public List<GameObject> Ranking = new List<GameObject>();
@@ -16,53 +17,39 @@ public class GameFourManager : MonoBehaviourPunCallbacks
     //public TMP_Text Win;
     public bool IsWin;
     public TMP_Text Player2Text;
-
+    public List<GameObject> allObjectsMain = new List<GameObject>();
     public TMP_Text LastTouch;
 
     public GameObject[] Spawns;
 
+    public bool GameStarted;
 
-
+    
 
     public TMP_Text countdownText;
 
 
     void Start()
     {
-        GameManagerr = GameObject.Find("GameManager");
-        RandomMapGenerator();
-       // StartCoroutine(StartCountdownCoroutine());
-    }
-
-    IEnumerator StartCountdownCoroutine()
-    {
-        int countdown = 15;
-        while (countdown > 0)
-        {
-            countdownText.text = countdown.ToString();
-            yield return new WaitForSeconds(1);
-            countdown--;
-        }
-
-        countdownText.text = "GO!";
-        yield return new WaitForSeconds(1);
-        countdownText.gameObject.SetActive(false); // Hide the countdown text
-        photonView.RPC("StartRace", RpcTarget.All, true);
+        GameManagerrr = GameObject.Find("GameManager");
+        OBJCordinate = GameObject.Find("CoordinateManager");
     }
 
 
-    [PunRPC]
-    void StartRace(bool result)
-    {
-        //GameFourGUI.SetActive(false);
-        //GameFourGUI2.SetActive(false);
-    }
 
 
     void Update()
     {
 
-        
+        if(GameStarted && allObjectsMain.Count == 28)
+        {
+            GameStarted = false;
+            foreach (GameObject player in allObjectsMain)
+            {
+                player.SetActive(true);
+            }
+            RandomMapGenerator();
+        }
 
 
 
@@ -71,9 +58,35 @@ public class GameFourManager : MonoBehaviourPunCallbacks
         {
             Ranking.Sort((player1, player2) => player2.GetComponent<GameFourPlayer>().score.CompareTo(player1.GetComponent<GameFourPlayer>().score));
 
-           
 
-            GameManagerr.GetComponent<GameManager>().Kamera.SetActive(true);
+            GameManagerrr.GetComponent<GameManager>().PlayersTemp.Clear();
+            for (int i = 0; i < 2; i++)
+            {
+                foreach (GameObject Player in GameManagerrr.GetComponent<GameManager>().PlayersSorted)
+                {
+                    if (Ranking[i].GetComponent<PhotonView>().ViewID / 1000 == Player.GetComponent<PhotonView>().ViewID / 1000)
+                    {
+                        GameManagerrr.GetComponent<GameManager>().PlayersTemp.Add(Player);
+                    }
+                }
+            }
+
+            GameManagerrr.GetComponent<GameManager>().PlayersSorted.Clear();
+
+            if (GameManagerrr.GetComponent<GameManager>().PlayersSorted.Count != 2)
+            {
+                GameManagerrr.GetComponent<GameManager>().PlayersSorted.AddRange(GameManagerrr.GetComponent<GameManager>().PlayersTemp);
+            }
+
+
+            foreach(GameObject Player in Ranking)
+            {
+                Destroy(Player);
+            }
+            Ranking.Clear();
+            
+            GameManagerrr.GetComponent<GameManager>().Kamera.SetActive(true);
+            GameManagerrr.GetComponent<GameManager>().MiniGameStarted = false;
             gameObject.SetActive(false);
         }
     }

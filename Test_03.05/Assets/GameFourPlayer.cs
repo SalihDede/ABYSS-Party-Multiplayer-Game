@@ -275,6 +275,11 @@ public class GameFourPlayer : MonoBehaviour
             Calculator, Brown, Red, Blue, Green, Orange, Yellow, Purple , LargeBox, MediumBox, SmallBox,
             Radio, Bag, Ball, Slipper, WateringCan, sadPillow , Phone
         };
+        if(GameManagerr.GetComponent<GameFourManager>().allObjectsMain.Count == 0)
+        {
+            GameManagerr.GetComponent<GameFourManager>().allObjectsMain.AddRange(allObjects);
+        }
+
 
         for (int i = 0; i < 15; i++)
         {
