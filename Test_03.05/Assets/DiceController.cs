@@ -48,7 +48,7 @@ public class DiceController : MonoBehaviourPunCallbacks
 
 
 
-        BahaGame = GameObject.Find("Baha Game");
+        BahaGame = GameObject.FindGameObjectWithTag("BahaGame");
 
         GameManager = GameObject.Find("GameManager");
         gameObject.name = GameManager.GetComponent<GameManager>().PlayersJoin.Count.ToString();
