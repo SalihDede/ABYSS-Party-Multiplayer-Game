@@ -44,8 +44,7 @@ public class GameOneManager : MonoBehaviourPunCallbacks
         GameManagerrr = GameObject.Find("GameManager");
 
 
-        Goal = true;
-        RandomMapGenerator();
+
     }
 
 
@@ -107,6 +106,7 @@ public class GameOneManager : MonoBehaviourPunCallbacks
 
         IEnumerator StartCountdownCoroutine()
         {
+
             int countdown = 20; // Initial countdown value
             while (countdown > 0)
             {
@@ -143,18 +143,20 @@ public class GameOneManager : MonoBehaviourPunCallbacks
 
         if(!GameFinished)
         {
-              if(Goal)
-              {
-                StartCoroutine(StartCountdownCoroutine());
+                Goal = true;
+                if (Goal)
+                  {
+                    RandomMapGenerator();
+                    StartCoroutine(StartCountdownCoroutine());
                 
 
-                    if (Goal && PhotonNetwork.IsMasterClient)
-                    {   Goal = false;
+                        if (Goal && PhotonNetwork.IsMasterClient)
+                        {   Goal = false;
 
-                            PhotonNetwork.Instantiate("Soccer Ball", BallSpawn.transform.position, Quaternion.identity);
+                                PhotonNetwork.Instantiate("Soccer Ball", BallSpawn.transform.position, Quaternion.identity);
+                        }
+                        Goal = false;
                     }
-                    Goal = false;
-                }
      
 
 
