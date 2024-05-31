@@ -91,6 +91,8 @@ public class GameFourManager : MonoBehaviourPunCallbacks
             
             GameManagerrr.GetComponent<GameManager>().Kamera.SetActive(true);
             GameManagerrr.GetComponent<GameManager>().MiniGameStarted = false;
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
             gameObject.SetActive(false);
         }
     }
