@@ -80,12 +80,22 @@ public class GameOneManager : MonoBehaviourPunCallbacks
 
      
 
-            yield return new WaitForSeconds(10);
+            yield return new WaitForSeconds(3);
             foreach (GameObject player in Starters)
             {
                 Destroy(player);
             }
             Starters.Clear();
+
+            foreach (GameObject player in GameManagerrr.GetComponent<GameManager>().PlayersSorted)
+            {
+                if (player.GetComponent<PhotonView>().IsMine)
+                {
+                    player.GetComponent<DiceController>().GUI.SetActive(true);
+                }
+            }
+
+
             GameManagerrr.GetComponent<GameManager>().Kamera.SetActive(true);
             gameObject.SetActive(false);
         }

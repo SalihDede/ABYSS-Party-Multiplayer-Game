@@ -104,14 +104,6 @@ public class GameTwoManager : MonoBehaviourPunCallbacks
             }
             Ranking.Clear();
 
-            foreach(GameObject player in GameManagerrr.GetComponent<GameManager>().PlayersSorted)
-            {
-                if(player.GetComponent<PhotonView>().IsMine)
-                {
-                    player.GetComponent<DiceController>().GUI.SetActive(true);
-                }
-            }
-
         }
     }
 
