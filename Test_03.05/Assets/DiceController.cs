@@ -41,6 +41,43 @@ public class DiceController : MonoBehaviourPunCallbacks
 
     public int IsStart = 0;
 
+
+
+    void Start()
+    {
+
+
+
+        BahaGame = GameObject.Find("Baha Game");
+
+        GameManager = GameObject.Find("GameManager");
+        gameObject.name = GameManager.GetComponent<GameManager>().PlayersJoin.Count.ToString();
+
+        GameManager.GetComponent<GameManager>().NameForPhoton = gameObject.name;
+
+        diceResultText = GameObject.Find("DiceNumberResult").GetComponent<TMP_Text>();
+        GameManager.GetComponent<GameManager>().PlayersJoin.Add(gameObject);
+
+
+
+
+        if (photonView.IsMine)
+        {
+
+            GUI.SetActive(true);
+
+        }
+
+
+        for (int i = 1; i < 25; i++)
+        {
+            StepsList.Add(GameObject.Find(i.ToString()));
+        }
+        startButton.gameObject.SetActive(PhotonNetwork.IsMasterClient);
+
+    }
+
+
     private void Update()
     {
         if (BahaGame != null && BahaGame.GetComponent<GameTwoManager>().Ranking.Count == 2)
@@ -93,39 +130,7 @@ public class DiceController : MonoBehaviourPunCallbacks
 
     }
 
-    void Start()
-    {
-
-
-
-
-
-        GameManager = GameObject.Find("GameManager");
-        gameObject.name = GameManager.GetComponent<GameManager>().PlayersJoin.Count.ToString();
-
-        GameManager.GetComponent<GameManager>().NameForPhoton = gameObject.name;
-
-        diceResultText = GameObject.Find("DiceNumberResult").GetComponent<TMP_Text>();
-        GameManager.GetComponent<GameManager>().PlayersJoin.Add(gameObject);
-
- 
- 
-
-        if (photonView.IsMine)
-        {
-
-            GUI.SetActive(true);
-
-        }
-
-
-        for (int i = 1; i < 25; i++)
-        {
-            StepsList.Add(GameObject.Find(i.ToString()));
-        }
-        startButton.gameObject.SetActive(PhotonNetwork.IsMasterClient);
-
-    }
+  
 
     public void StartGameButton()
     {
