@@ -80,11 +80,11 @@ public class GameTwoManager : MonoBehaviourPunCallbacks
 
 
 
-            foreach (GameObject player in Ranking)
+            /*foreach (GameObject player in Ranking)
             {
                 Destroy(player);
             }
-            
+            */
         }
     }
 
