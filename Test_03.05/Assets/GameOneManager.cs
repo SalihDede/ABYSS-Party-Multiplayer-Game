@@ -178,7 +178,7 @@ public class GameOneManager : MonoBehaviourPunCallbacks
 
     IEnumerator ScoreUp(int thisguy)
     {
-        while (thisguy < 100)
+        while (Starters[0].GetComponent<PlayerABYSS>().score < 1000000 || Starters[1].GetComponent<PlayerABYSS>().score < 1000000)
         {
             yield return new WaitForSeconds(1);
             if (Starters[0].GetComponent<PhotonView>().OwnerActorNr == thisguy)
