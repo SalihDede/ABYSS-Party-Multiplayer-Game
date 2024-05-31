@@ -20,7 +20,6 @@ public class GameTwoManager : MonoBehaviourPunCallbacks
 
     public GameObject[] Spawns;
 
-    private PhotonView photonView;
 
 
     public TMP_Text countdownText;
@@ -29,7 +28,6 @@ public class GameTwoManager : MonoBehaviourPunCallbacks
     void Start()
     {
 
-        photonView = GetComponent<PhotonView>();
         GameManagerrr = GameObject.Find("GameManager");
         RandomMapGenerator();
         StartCoroutine(StartCountdownCoroutine()); 
@@ -53,12 +51,7 @@ public class GameTwoManager : MonoBehaviourPunCallbacks
 
     
 
-    [PunRPC]
-    void StartRace(bool result)
-    {
-        GameTwoGUI.SetActive(false);
-        StartTime = result;
-    }
+
 
 
 

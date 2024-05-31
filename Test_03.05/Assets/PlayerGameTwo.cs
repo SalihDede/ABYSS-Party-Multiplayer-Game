@@ -72,7 +72,22 @@ public class PlayerGameTwo : MonoBehaviourPunCallbacks
 
    
 
+        if(PhotonNetwork.IsMasterClient)
+        {
+            photonView.RPC("StartRace", RpcTarget.All, true);
+        }
+
+
     }
+
+
+    [PunRPC]
+    void StartRace(bool result)
+    {
+        GameManagerr.GetComponent<GameTwoManager>().GameTwoGUI.SetActive(false);
+        GameManagerr.GetComponent<GameTwoManager>().StartTime = result;
+    }
+
 
 
     [PunRPC]
