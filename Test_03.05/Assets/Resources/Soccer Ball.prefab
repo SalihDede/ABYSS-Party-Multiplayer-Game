@@ -204,6 +204,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DeathEffect: {fileID: 7905280044938635074}
   GameManagerr: {fileID: 0}
+  SomeoneTouch: 0
 --- !u!1 &7905280044938635074
 GameObject:
   m_ObjectHideFlags: 0

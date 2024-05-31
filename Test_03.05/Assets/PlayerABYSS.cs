@@ -28,7 +28,7 @@ public class PlayerABYSS : MonoBehaviourPunCallbacks
     {
 
 
-        if(score == 100)
+        if(score == 1000000)
         {
             photonView.RPC("Finito", RpcTarget.All, true);
         }
