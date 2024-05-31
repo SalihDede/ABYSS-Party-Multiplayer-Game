@@ -9,6 +9,8 @@ public class GameOneManager : MonoBehaviourPunCallbacks
 {
     public GameObject GameManagerrr;
     public bool Goal;
+    public bool Goal1;
+    public bool Goal2;
     public GameObject BallPrefab;
 
     public List<GameObject> Ranking = new List<GameObject>();
@@ -145,8 +147,12 @@ public class GameOneManager : MonoBehaviourPunCallbacks
         {
                 Goal = true;
                 if (Goal)
-                  {
-                    RandomMapGenerator();
+                {
+                    if(!Goal1)
+                    {
+                        RandomMapGenerator();
+                    }
+                    
                     StartCoroutine(StartCountdownCoroutine());
                 
 
@@ -156,7 +162,7 @@ public class GameOneManager : MonoBehaviourPunCallbacks
                                 PhotonNetwork.Instantiate("Soccer Ball", BallSpawn.transform.position, Quaternion.identity);
                         }
                         Goal = false;
-                    }
+                }
      
 
 
@@ -200,6 +206,7 @@ public class GameOneManager : MonoBehaviourPunCallbacks
 
         public void RandomMapGenerator()
         {
+        Goal1 = true;
              GameObject player1 = PhotonNetwork.Instantiate("TemplatePlayer", Spawn0.transform.position, Quaternion.identity);
         }
 
