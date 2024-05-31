@@ -149,6 +149,10 @@ public class GameOneManager : MonoBehaviourPunCallbacks
 
 
         }
+        else
+        {
+            StopCoroutine(GameFinishedCoroutine());
+        }
 
 
 
