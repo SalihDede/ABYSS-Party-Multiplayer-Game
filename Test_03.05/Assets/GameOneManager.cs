@@ -104,7 +104,7 @@ public class GameOneManager : MonoBehaviourPunCallbacks
 
         IEnumerator StartCountdownCoroutine()
         {
-            int countdown = 60; // Initial countdown value
+            int countdown = 20; // Initial countdown value
             while (countdown > 0)
             {
                 countdownText.text = countdown.ToString();
