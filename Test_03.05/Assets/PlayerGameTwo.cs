@@ -72,7 +72,7 @@ public class PlayerGameTwo : MonoBehaviourPunCallbacks
 
    
 
-        if(PhotonNetwork.IsMasterClient)
+        if(PhotonNetwork.IsMasterClient && GameManagerr.GetComponent<GameTwoManager>().countdownText.text == "GO!")
         {
             photonView.RPC("StartRace", RpcTarget.All, true);
         }
