@@ -83,7 +83,7 @@ public class GameTwoManager : MonoBehaviourPunCallbacks
             //GameManagerrr.GetComponent<GameManager>().PlayersSorted.Sort((player1, player2) => player2.GetComponent<>().score.CompareTo(player1.GetComponent<GameFourPlayer>().score));
 
 
-
+            Ranking.Clear();
             foreach (GameObject player in Ranking)
             {
                 Destroy(player);
