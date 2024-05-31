@@ -55,7 +55,10 @@ public class PlayerGameTwo : MonoBehaviourPunCallbacks
     void Update()
     {
         
-        if(Finish >=7 && CheckPoint >=6)
+
+
+
+        if(Finish >=3 && CheckPoint >=2)
         {
             photonView.RPC("Winner", RpcTarget.All, photonView.OwnerActorNr.ToString());
         }
@@ -95,6 +98,7 @@ public class PlayerGameTwo : MonoBehaviourPunCallbacks
     {
 
         Finish += 1;
+        
     }
     [PunRPC]
     void CheckPointUpdate()

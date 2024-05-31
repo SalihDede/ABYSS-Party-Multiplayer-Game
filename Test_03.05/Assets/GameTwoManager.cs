@@ -66,13 +66,13 @@ public class GameTwoManager : MonoBehaviourPunCallbacks
             {
                 foreach (GameObject Player in GameManagerrr.GetComponent<GameManager>().PlayersSorted)
                 {
-                    if (Ranking[i].GetComponent<PhotonView>().ViewID == Player.GetComponent<PhotonView>().ViewID)
+                    if (Ranking[i].GetComponent<PhotonView>().ViewID - 1 == Player.GetComponent<PhotonView>().ViewID)
                     {
                         GameManagerrr.GetComponent<GameManager>().PlayersTemp.Add(Player);
                     }
                 }
             }
-           GameManagerrr.GetComponent<GameManager>().PlayersSorted = GameManagerrr.GetComponent<GameManager>().PlayersTemp;
+            GameManagerrr.GetComponent<GameManager>().PlayersSorted.AddRange(GameManagerrr.GetComponent<GameManager>().PlayersTemp);
 
 
 

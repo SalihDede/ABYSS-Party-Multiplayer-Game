@@ -15,7 +15,11 @@ public class DiceController : MonoBehaviourPunCallbacks
     public GameObject GameManager;
     public GameObject GUI;
 
-
+    public GameObject BahaGame;
+    public GameObject YusufGame;
+    public GameObject SemihGame;
+    public GameObject AlpGame;
+    public GameObject SalihGame;
 
 
     public Button startButton;
@@ -40,6 +44,11 @@ public class DiceController : MonoBehaviourPunCallbacks
     private void Update()
     {
 
+        if (BahaGame.GetComponent<GameTwoManager>().Ranking.Count == 2)
+        {
+            GUI.SetActive(true);
+            GameManager.GetComponent<GameManager>().MiniGameStarted = false;
+        }
 
         if (GameManager.GetComponent<GameManager>().MiniGameStarted)
         {
@@ -89,8 +98,8 @@ public class DiceController : MonoBehaviourPunCallbacks
     {
 
 
+        BahaGame = GameObject.Find("Baha Game");
 
- 
 
         GameManager = GameObject.Find("GameManager");
         gameObject.name = GameManager.GetComponent<GameManager>().PlayersJoin.Count.ToString();
