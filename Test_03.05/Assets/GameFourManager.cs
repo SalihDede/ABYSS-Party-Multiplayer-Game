@@ -71,6 +71,8 @@ public class GameFourManager : MonoBehaviourPunCallbacks
         {
             Ranking.Sort((player1, player2) => player2.GetComponent<GameFourPlayer>().score.CompareTo(player1.GetComponent<GameFourPlayer>().score));
 
+           
+
             GameManagerr.GetComponent<GameManager>().Kamera.SetActive(true);
             gameObject.SetActive(false);
         }

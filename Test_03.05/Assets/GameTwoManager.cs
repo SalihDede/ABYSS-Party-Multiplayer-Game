@@ -11,6 +11,7 @@ public class GameTwoManager : MonoBehaviourPunCallbacks
     public bool StartTime;
     public GameObject GameTwoGUI;
     public List<GameObject> Ranking = new List<GameObject>();
+    public List<GameObject> StartCar = new List<GameObject>();
     public TMP_Text Win;
     public bool IsWin;
     public TMP_Text Player2Text;

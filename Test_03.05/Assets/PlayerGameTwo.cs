@@ -15,11 +15,28 @@ public class PlayerGameTwo : MonoBehaviour
     public bool passedFinish;
     public bool passedCheckPoint;
 
+    public GameObject[] Spawns;
+
+
     private PhotonView photonView;
     void Start()
     {
+
+
+        Spawns[0] = GameObject.Find("Line1");
+        Spawns[1] = GameObject.Find("Line2");
+        Spawns[2] = GameObject.Find("Line3");
+        Spawns[3] = GameObject.Find("Line4");
+
         GameManagerr = GameObject.Find("Baha Game");
         photonView = GetComponent<PhotonView>();
+
+        GameManagerr.GetComponent<GameTwoManager>().StartCar.Add(gameObject);
+
+
+        transform.position = Spawns[GameManagerr.GetComponent<GameTwoManager>().StartCar.IndexOf(gameObject)].transform.position;
+
+
     }
 
 
@@ -31,6 +48,15 @@ public class PlayerGameTwo : MonoBehaviour
             photonView.RPC("Winner", RpcTarget.All, photonView.OwnerActorNr.ToString());
         }
 
+
+        if(GameManagerr.GetComponent<GameTwoManager>().StartTime)
+        {
+            gameObject.GetComponent<PrometeoCarController>().enabled = true;
+        }
+        else
+        {
+            gameObject.GetComponent<PrometeoCarController>().enabled = false;
+        }
 
    
 
