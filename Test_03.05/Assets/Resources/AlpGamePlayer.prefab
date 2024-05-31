@@ -2174,6 +2174,7 @@ MonoBehaviour:
   scoreText: {fileID: 8056084145871968074}
   selectedObjectsText: {fileID: 7938863024030762279}
   selectedObjects: []
+  GameManagerr: {fileID: 0}
   Kamera: {fileID: 398103779138195444}
 --- !u!82 &1308135524390676317
 AudioSource:
