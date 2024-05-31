@@ -140,6 +140,7 @@ public class GameOneManager : MonoBehaviourPunCallbacks
     {
         if(countdownText.text == "Finish" || GameFinished == true)
         {
+            countdownText.text = "";
             GameFinished = true;
 
             Destroy(SpawnedBall);
