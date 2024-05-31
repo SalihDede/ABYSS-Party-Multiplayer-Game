@@ -137,17 +137,25 @@ public class GameOneManager : MonoBehaviourPunCallbacks
             }
 
 
-            if (SpawnedBall.GetComponent<PhotonView>().OwnerActorNr == Starters[0].GetComponent<PhotonView>().OwnerActorNr && SpawnedBall.GetComponent<ball>().SomeoneTouch)
+            if (SpawnedBall.GetComponent<PhotonView>().Owner == Starters[0].GetComponent<PhotonView>().Owner && SpawnedBall.GetComponent<ball>().SomeoneTouch)
             {
                 Debug.Log("1. OYUNCU TOPUN SAHÝBÝ");
-                StopCoroutine(ScoreUp(Starters[1].GetComponent<PhotonView>().OwnerActorNr));
                 StartCoroutine(ScoreUp(Starters[0].GetComponent<PhotonView>().OwnerActorNr));
             }
-            if (SpawnedBall.GetComponent<PhotonView>().OwnerActorNr == Starters[1].GetComponent<PhotonView>().OwnerActorNr && SpawnedBall.GetComponent<ball>().SomeoneTouch)
+            else
+            {
+
+                StopCoroutine(ScoreUp(Starters[0].GetComponent<PhotonView>().OwnerActorNr));
+            }
+            if (SpawnedBall.GetComponent<PhotonView>().Owner == Starters[1].GetComponent<PhotonView>().Owner && SpawnedBall.GetComponent<ball>().SomeoneTouch)
             {
                 Debug.Log("2. OYUNCU TOPUN SAHÝBÝ");
-                StopCoroutine(ScoreUp(Starters[0].GetComponent<PhotonView>().OwnerActorNr));
                 StartCoroutine(ScoreUp(Starters[1].GetComponent<PhotonView>().OwnerActorNr));
+            }
+            else
+            {
+
+                StopCoroutine(ScoreUp(Starters[1].GetComponent<PhotonView>().OwnerActorNr));
             }
             /*
             if (SpawnedBall.GetComponent<ball>().photonView.OwnerActorNr == Starters[2].GetComponent<PhotonView>().OwnerActorNr)
