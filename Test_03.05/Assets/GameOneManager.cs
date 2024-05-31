@@ -145,6 +145,7 @@ public class GameOneManager : MonoBehaviourPunCallbacks
             {
                 StartCoroutine(ScoreUp(Starters[1].GetComponent<PlayerABYSS>().score));
             }
+            /*
             if (SpawnedBall.GetComponent<ball>().photonView.OwnerActorNr == Starters[2].GetComponent<PhotonView>().OwnerActorNr)
             {
                 StartCoroutine(ScoreUp(Starters[2].GetComponent<PlayerABYSS>().score));
@@ -153,7 +154,7 @@ public class GameOneManager : MonoBehaviourPunCallbacks
             {
                 StartCoroutine(ScoreUp(Starters[3].GetComponent<PlayerABYSS>().score));
             }
-
+            */
 
 
         }
