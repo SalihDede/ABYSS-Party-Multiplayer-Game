@@ -158,56 +158,59 @@ public class GameOneManager : MonoBehaviourPunCallbacks
         {
                 if (Goal)
                 {
- 
-                        RandomMapGenerator();
+
                         BallSpawnMethod();
+                        RandomMapGenerator();
                         StartCoroutine(StartCountdownCoroutine());
                         Goal = false;
                 }
      
 
-
-
-            if (SpawnedBall.GetComponent<PhotonView>().Owner == Starters[0].GetComponent<PhotonView>().Owner && SpawnedBall.GetComponent<ball>().SomeoneTouch)
+            if(Starters.Count == 2)
             {
-                Debug.Log("1. OYUNCU TOPUN SAHÝBÝ");
-                thisguy = Starters[0].GetComponent<PhotonView>().Owner;
-                StartCoroutine(ScoreUp());
+
+                if (SpawnedBall.GetComponent<PhotonView>().Owner == Starters[0].GetComponent<PhotonView>().Owner && SpawnedBall.GetComponent<ball>().SomeoneTouch)
+                {
+                    Debug.Log("1. OYUNCU TOPUN SAHÝBÝ");
+                    thisguy = Starters[0].GetComponent<PhotonView>().Owner;
+                    StartCoroutine(ScoreUp());
+                }
+
+                if (SpawnedBall.GetComponent<PhotonView>().Owner == Starters[1].GetComponent<PhotonView>().Owner && SpawnedBall.GetComponent<ball>().SomeoneTouch)
+                {
+                    thisguy = Starters[1].GetComponent<PhotonView>().Owner;
+                    StartCoroutine(ScoreUp());
+                }
+
+                /*
+                if (SpawnedBall.GetComponent<ball>().photonView.OwnerActorNr == Starters[2].GetComponent<PhotonView>().OwnerActorNr)
+                {
+                    StartCoroutine(ScoreUp(Starters[2].GetComponent<PlayerABYSS>().score));
+                }
+                if (SpawnedBall.GetComponent<ball>().photonView.OwnerActorNr == Starters[3].GetComponent<PhotonView>().OwnerActorNr)
+                {
+                    StartCoroutine(ScoreUp(Starters[3].GetComponent<PlayerABYSS>().score));
+                }
+                */
+
+
             }
-      
-            if (SpawnedBall.GetComponent<PhotonView>().Owner == Starters[1].GetComponent<PhotonView>().Owner && SpawnedBall.GetComponent<ball>().SomeoneTouch)
-            {
-                thisguy = Starters[1].GetComponent<PhotonView>().Owner;
-                StartCoroutine(ScoreUp());
-            }
-          
-            /*
-            if (SpawnedBall.GetComponent<ball>().photonView.OwnerActorNr == Starters[2].GetComponent<PhotonView>().OwnerActorNr)
-            {
-                StartCoroutine(ScoreUp(Starters[2].GetComponent<PlayerABYSS>().score));
-            }
-            if (SpawnedBall.GetComponent<ball>().photonView.OwnerActorNr == Starters[3].GetComponent<PhotonView>().OwnerActorNr)
-            {
-                StartCoroutine(ScoreUp(Starters[3].GetComponent<PlayerABYSS>().score));
-            }
-            */
-
-
-        }
 
 
 
-      
+
             Player1Text.text = "Player 1: " + Starters[0].GetComponent<PlayerABYSS>().score;
             Player2Text.text = "Player 2: " + Starters[1].GetComponent<PlayerABYSS>().score;
-           /* Player3Text.text = "Player 3: " + Starters[2].GetComponent<PlayerABYSS>().score;
-            Player4Text.text = "Player 4: " + Starters[3].GetComponent<PlayerABYSS>().score;
-           */
+            /* Player3Text.text = "Player 3: " + Starters[2].GetComponent<PlayerABYSS>().score;
+             Player4Text.text = "Player 4: " + Starters[3].GetComponent<PlayerABYSS>().score;
+            */
+        }
+
     }
 
         public void RandomMapGenerator()
         {
-        Goal1 = true;
+        
              GameObject player1 = PhotonNetwork.Instantiate("TemplatePlayer", Spawn0.transform.position, Quaternion.identity);
         }
 
