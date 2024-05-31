@@ -479,6 +479,7 @@ MonoBehaviour:
   TempCheckPoint: 0
   passedFinish: 0
   passedCheckPoint: 0
+  Spawns: []
 --- !u!1 &3396353756679278110
 GameObject:
   m_ObjectHideFlags: 0
