@@ -20,6 +20,8 @@ public class GameTwoManager : MonoBehaviourPunCallbacks
 
     public GameObject[] Spawns;
 
+    public bool GameFinished;
+
 
 
     public TMP_Text countdownText;
@@ -29,8 +31,7 @@ public class GameTwoManager : MonoBehaviourPunCallbacks
     {
 
         GameManagerrr = GameObject.Find("GameManager");
-        RandomMapGenerator();
-        StartCoroutine(StartCountdownCoroutine()); 
+
     }
 
     IEnumerator StartCountdownCoroutine()
@@ -56,6 +57,15 @@ public class GameTwoManager : MonoBehaviourPunCallbacks
 
     void Update()
     {
+
+
+        if(!GameFinished)
+        {
+            GameFinished = true;
+            RandomMapGenerator();
+            StartCoroutine(StartCountdownCoroutine());
+        }
+
 
         if (Ranking.Count == 2)
         {
@@ -83,7 +93,7 @@ public class GameTwoManager : MonoBehaviourPunCallbacks
             //GameManagerrr.GetComponent<GameManager>().PlayersSorted.Sort((player1, player2) => player2.GetComponent<>().score.CompareTo(player1.GetComponent<GameFourPlayer>().score));
 
 
-     
+            GameFinished = true;
             foreach (GameObject player in Ranking)
             {
                 Destroy(player);
