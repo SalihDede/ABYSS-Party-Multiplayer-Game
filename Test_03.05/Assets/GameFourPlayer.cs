@@ -357,7 +357,7 @@ public class GameFourPlayer : MonoBehaviour
     void Update()
     {
 
-        if (OBJCordinate.GetComponent<ObjectCoordinateMaanager>().countdownTime >= 1)
+        if (OBJCordinate.GetComponent<ObjectCoordinateMaanager>().countdownTime <= 2)
         {
             photonView.RPC("MyScorePublish", RpcTarget.All, score);
         }
