@@ -80,11 +80,16 @@ public class DiceController : MonoBehaviourPunCallbacks
 
     private void Update()
     {
-        if (BahaGame != null && BahaGame.GetComponent<GameTwoManager>().Ranking.Count == 2)
+
+        if(BahaGame != null)
         {
-            GUI.SetActive(true);
-            GameManager.GetComponent<GameManager>().MiniGameStarted = false;
+            if (BahaGame.GetComponent<GameTwoManager>().Ranking.Count == 2)
+            {
+                GUI.SetActive(true);
+                GameManager.GetComponent<GameManager>().MiniGameStarted = false;
+            }
         }
+    
 
         if (GameManager.GetComponent<GameManager>().MiniGameStarted)
         {
