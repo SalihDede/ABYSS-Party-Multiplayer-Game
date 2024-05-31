@@ -77,7 +77,7 @@ public class GameTwoManager : MonoBehaviourPunCallbacks
             {
                 foreach (GameObject Player in GameManagerrr.GetComponent<GameManager>().PlayersSorted)
                 {
-                    if (Ranking[i].GetComponent<PhotonView>().ViewID - 1 == Player.GetComponent<PhotonView>().ViewID)
+                    if (Ranking[i].GetComponent<PhotonView>().ViewID/1000 == Player.GetComponent<PhotonView>().ViewID/1000)
                     {
                         GameManagerrr.GetComponent<GameManager>().PlayersTemp.Add(Player);
                     }
