@@ -8,13 +8,14 @@ public class PlayerABYSS : MonoBehaviourPunCallbacks
 {
 
 
-
+    private PhotonView photonView;
     public GameObject GameOneManager;
     public Animator Anim;
     public int score;
 
     void Start()
     {
+        photonView = GetComponent<PhotonView>();
         GameOneManager = GameObject.Find("SemihGame");
 
         GameOneManager.GetComponent<GameOneManager>().Starters.Add(gameObject);
