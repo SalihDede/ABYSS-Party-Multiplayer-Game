@@ -100,6 +100,7 @@ public class GameOneManager : MonoBehaviourPunCallbacks
             GameFinished = false;
             GameManagerrr.GetComponent<GameManager>().MiniGameStarted = false;
             Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None  //Modified by Salih to make click visible
             gameObject.SetActive(false);
         }
     }
@@ -160,7 +161,7 @@ public class GameOneManager : MonoBehaviourPunCallbacks
 
             if (SpawnedBall.GetComponent<PhotonView>().Owner == Starters[0].GetComponent<PhotonView>().Owner && SpawnedBall.GetComponent<ball>().SomeoneTouch)
             {
-                Debug.Log("1. OYUNCU TOPUN SAHÝBÝ");
+                Debug.Log("1. OYUNCU TOPUN SAHï¿½Bï¿½");
                 thisguy = Starters[0].GetComponent<PhotonView>().Owner;
                 StartCoroutine(ScoreUp());
             }
