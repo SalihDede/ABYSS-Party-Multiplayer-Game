@@ -15,6 +15,8 @@ public class ball : MonoBehaviourPun
     void Start()
     {
         GameManagerr = GameObject.Find("SemihGame");
+
+        GameManagerr.GetComponent<GameOneManager>().SpawnedBall = gameObject;
         DeathEffect.SetActive(false);
         rb = GetComponent<Rigidbody>();
     }
