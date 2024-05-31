@@ -20,7 +20,7 @@ public class GameTwoManager : MonoBehaviourPunCallbacks
 
     public GameObject[] Spawns;
 
-
+    private PhotonView photonView;
 
 
     public TMP_Text countdownText;
@@ -28,6 +28,8 @@ public class GameTwoManager : MonoBehaviourPunCallbacks
 
     void Start()
     {
+
+        photonView = GetComponent<PhotonView>();
         GameManagerrr = GameObject.Find("GameManager");
         RandomMapGenerator();
         StartCoroutine(StartCountdownCoroutine()); 
