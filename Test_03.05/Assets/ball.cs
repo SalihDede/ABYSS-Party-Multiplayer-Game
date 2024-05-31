@@ -8,6 +8,7 @@ public class ball : MonoBehaviourPun
 
     public GameObject DeathEffect;
     public GameObject GameManagerr;
+    public bool SomeoneTouch = false;
 
     Rigidbody rb;
 
@@ -40,6 +41,7 @@ public class ball : MonoBehaviourPun
         {
             GetComponent<PhotonView>().TransferOwnership(other.gameObject.GetComponent<PhotonView>().OwnerActorNr);
             Debug.Log(other.gameObject.GetComponent<PhotonView>().OwnerActorNr);
+            SomeoneTouch = true;
         }
 
 
