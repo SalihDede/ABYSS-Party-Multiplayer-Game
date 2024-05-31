@@ -23386,11 +23386,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MinigameList:
-  - {fileID: 1516634220}
-  - {fileID: 1516634220}
-  - {fileID: 1516634220}
-  - {fileID: 1516634220}
-  - {fileID: 1516634220}
+  - {fileID: 1556911717}
+  - {fileID: 1556911717}
+  - {fileID: 1556911717}
+  - {fileID: 1556911717}
+  - {fileID: 1556911717}
   NameForPhoton: 
   Spawn: {fileID: 1719630230}
   LobbyListObjects: []
@@ -29811,11 +29811,6 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 9bbbc7baff9da7749805b39f2e2dcec2, type: 3}
---- !u!1 &1516634220 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3505012294789075169, guid: 9bbbc7baff9da7749805b39f2e2dcec2, type: 3}
-  m_PrefabInstance: {fileID: 1516634219}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1522959568
 GameObject:
   m_ObjectHideFlags: 0
