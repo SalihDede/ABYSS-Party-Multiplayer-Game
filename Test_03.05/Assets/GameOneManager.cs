@@ -140,11 +140,13 @@ public class GameOneManager : MonoBehaviourPunCallbacks
             if (SpawnedBall.GetComponent<PhotonView>().OwnerActorNr == Starters[0].GetComponent<PhotonView>().OwnerActorNr && SpawnedBall.GetComponent<ball>().SomeoneTouch)
             {
                 Debug.Log("1. OYUNCU TOPUN SAHÝBÝ");
+                StopCoroutine(ScoreUp(Starters[1].GetComponent<PhotonView>().OwnerActorNr));
                 StartCoroutine(ScoreUp(Starters[0].GetComponent<PhotonView>().OwnerActorNr));
             }
             if (SpawnedBall.GetComponent<PhotonView>().OwnerActorNr == Starters[1].GetComponent<PhotonView>().OwnerActorNr && SpawnedBall.GetComponent<ball>().SomeoneTouch)
             {
                 Debug.Log("2. OYUNCU TOPUN SAHÝBÝ");
+                StopCoroutine(ScoreUp(Starters[0].GetComponent<PhotonView>().OwnerActorNr));
                 StartCoroutine(ScoreUp(Starters[1].GetComponent<PhotonView>().OwnerActorNr));
             }
             /*
