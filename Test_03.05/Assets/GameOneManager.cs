@@ -133,19 +133,19 @@ public class GameOneManager : MonoBehaviourPunCallbacks
                 Goal = false;
                 
                 SpawnedBall = PhotonNetwork.Instantiate("Soccer Ball", BallSpawn.transform.position, Quaternion.identity);
-
+                StartCoroutine(StartCountdownCoroutine());
             }
-            StartCoroutine(StartCountdownCoroutine());
+
 
             if (SpawnedBall.GetComponent<ball>().photonView.OwnerActorNr == Starters[0].GetComponent<PhotonView>().OwnerActorNr)
             {
                 Debug.Log("1. OYUNCU TOPUN SAHÝBÝ");
-                StartCoroutine(ScoreUp(Starters[0].GetComponent<PlayerABYSS>().score));
+                StartCoroutine(ScoreUp(Starters[0].GetComponent<PhotonView>().OwnerActorNr));
             }
             if (SpawnedBall.GetComponent<ball>().photonView.OwnerActorNr == Starters[1].GetComponent<PhotonView>().OwnerActorNr)
             {
                 Debug.Log("2. OYUNCU TOPUN SAHÝBÝ");
-                StartCoroutine(ScoreUp(Starters[1].GetComponent<PlayerABYSS>().score));
+                StartCoroutine(ScoreUp(Starters[1].GetComponent<PhotonView>().OwnerActorNr));
             }
             /*
             if (SpawnedBall.GetComponent<ball>().photonView.OwnerActorNr == Starters[2].GetComponent<PhotonView>().OwnerActorNr)
@@ -181,7 +181,14 @@ public class GameOneManager : MonoBehaviourPunCallbacks
         while (thisguy < 100)
         {
             yield return new WaitForSeconds(1);
-            thisguy++;
+            if (Starters[0].GetComponent<PhotonView>().OwnerActorNr == thisguy)
+            {
+                Starters[0].GetComponent<PlayerABYSS>().score++;
+            }
+            if (Starters[1].GetComponent<PhotonView>().OwnerActorNr == thisguy)
+            {
+                Starters[1].GetComponent<PlayerABYSS>().score++;
+            }
         }
     }
 }
