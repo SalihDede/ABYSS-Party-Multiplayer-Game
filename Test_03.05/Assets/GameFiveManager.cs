@@ -42,7 +42,7 @@ public class GameFiveManager : MonoBehaviourPunCallbacks
 
     IEnumerator StartCountdownCoroutine()
     {
-        int countdown = 15; // Initial countdown value
+        int countdown = 1; // Initial countdown value
         while (countdown > 0)
         {
             countdownText.text = countdown.ToString();
