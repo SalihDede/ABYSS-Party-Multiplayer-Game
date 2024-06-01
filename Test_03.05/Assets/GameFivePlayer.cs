@@ -34,6 +34,7 @@ public class GameFivePlayer : MonoBehaviour
         Spawns.Add(Line4);
         if(Spawns.Count == 4)
         {
+            transform.position = Spawns[GameFiveManager.GetComponent<GameFiveManager>().Starters.IndexOf(gameObject)].transform.position;
 
         }
 
@@ -42,8 +43,7 @@ public class GameFivePlayer : MonoBehaviour
 
     void Update()
     {
-        transform.position = Spawns[GameFiveManager.GetComponent<GameFiveManager>().Starters.IndexOf(gameObject)].transform.position;
-
+      
         if (IsHeSolve)
         {
             if(!GameFiveManager.GetComponent<GameFiveManager>().Ranking.Contains(gameObject))
