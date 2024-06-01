@@ -23387,11 +23387,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MinigameList:
-  - {fileID: 1299971580}
-  - {fileID: 1299971580}
-  - {fileID: 1299971580}
-  - {fileID: 1299971580}
-  - {fileID: 1299971580}
+  - {fileID: 2132587769}
+  - {fileID: 2132587769}
+  - {fileID: 2132587769}
+  - {fileID: 2132587769}
+  - {fileID: 2132587769}
   NameForPhoton: 
   Spawn: {fileID: 1719630230}
   LobbyListObjects: []
@@ -34613,6 +34613,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1705013746}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1710665173 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4838558373373552568, guid: 2966105e728257a41af182deba877483, type: 3}
+  m_PrefabInstance: {fileID: 4838558373018149707}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1714232408
 GameObject:
   m_ObjectHideFlags: 0
@@ -41630,6 +41635,11 @@ Transform:
   m_Father: {fileID: 1556911718}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2132587769 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4838558373409366839, guid: 2966105e728257a41af182deba877483, type: 3}
+  m_PrefabInstance: {fileID: 4838558373018149707}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2135204894
 GameObject:
   m_ObjectHideFlags: 0
@@ -46303,6 +46313,14 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4838558373409366837, guid: 2966105e728257a41af182deba877483, type: 3}
+      propertyPath: Spawns.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4838558373409366837, guid: 2966105e728257a41af182deba877483, type: 3}
+      propertyPath: Spawns.Array.data[0]
+      value: 
+      objectReference: {fileID: 1710665173}
     - target: {fileID: 4838558373409366838, guid: 2966105e728257a41af182deba877483, type: 3}
       propertyPath: m_RootOrder
       value: 7
