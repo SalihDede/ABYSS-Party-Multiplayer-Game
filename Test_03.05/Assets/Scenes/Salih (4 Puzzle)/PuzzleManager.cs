@@ -12,6 +12,8 @@ public class PuzzleManager : MonoBehaviour
     private Dictionary<Transform, Vector3> originalPositions; // Stores where pieces originally were
     private Dictionary<Transform, Vector3> currentPositions;  // Stores where pieces are now
 
+    public GameFiveManager GameFiveManager; // Reference to GameFiveManager
+
     void Start()
     {
         SaveOriginalPositions();
@@ -123,6 +125,7 @@ public class PuzzleManager : MonoBehaviour
         if (CheckIfPuzzleSolved())
         {
             Debug.Log("Puzzle solved");
+            GameFiveManager.PlayerCompletedPuzzle(gameObject); // Notify GameFiveManager
         }
         else
         {
