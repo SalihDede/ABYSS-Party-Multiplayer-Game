@@ -31,6 +31,8 @@ public class GameFiveManager : MonoBehaviourPunCallbacks
 
     void Update()
     {
+
+
         if (gameStarted)
         {
             elapsedTime += Time.deltaTime;
