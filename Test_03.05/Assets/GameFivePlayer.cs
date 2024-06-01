@@ -22,6 +22,7 @@ public class GameFivePlayer : MonoBehaviour
         GameFiveManager.GetComponent<GameFiveManager>().Starters.Add(gameObject);
 
 
+
         Line1 = GameObject.Find("SalihGameSpawn1");
         Line2 = GameObject.Find("SalihGameSpawn2");
         Line3 = GameObject.Find("SalihGameSpawn3");
@@ -31,17 +32,19 @@ public class GameFivePlayer : MonoBehaviour
         Spawns.Add(Line2);
         Spawns.Add(Line3);
         Spawns.Add(Line4);
+        if(Spawns.Count == 4)
+        {
 
-        transform.position = Spawns[GameFiveManager.GetComponent<GameFiveManager>().Starters.IndexOf(gameObject)].transform.position;
+        }
 
     }
 
 
     void Update()
     {
-        
+        transform.position = Spawns[GameFiveManager.GetComponent<GameFiveManager>().Starters.IndexOf(gameObject)].transform.position;
 
-        if(IsHeSolve)
+        if (IsHeSolve)
         {
             if(!GameFiveManager.GetComponent<GameFiveManager>().Ranking.Contains(gameObject))
             {
