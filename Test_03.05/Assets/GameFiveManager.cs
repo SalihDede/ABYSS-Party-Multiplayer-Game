@@ -60,7 +60,7 @@ public class GameFiveManager : MonoBehaviourPunCallbacks
     {
         for (int i = 0; i < PhotonNetwork.PlayerList.Length; i++)
         {
-            GameObject player = PhotonNetwork.Instantiate("Prometheus", Spawns[i].transform.position, Quaternion.identity);
+            GameObject player = PhotonNetwork.Instantiate("SalihGamePlayer", Spawns[i].transform.position, Quaternion.identity);
             // Assign PuzzleManager to each player
             player.GetComponent<PuzzleManager>().GameFiveManager = this;
         }
