@@ -14,35 +14,28 @@ public class GameFiveManager : MonoBehaviourPunCallbacks
     public List<GameObject> Starters = new List<GameObject>();
     public TMP_Text Win;
     public bool IsWin;
-    public GameObject Spawn;
+    public GameObject[] Spawns; // List of spawn points
     public bool GameFinished;
     public TMP_Text countdownText;
     public float gameDuration = 60f; // Duration of the game in seconds
     private float elapsedTime = 0f; // Time elapsed since the start of the game
     private bool gameStarted = false; // Indicates if the game has started
-    private int playerRank = 0; // Rank of players who complete the puzzle
+    private int currentSpawnIndex = 0; // Current spawn point index
 
     void Start()
     {
         GameManagerrrr = GameObject.Find("GameManager");
         StartCoroutine(StartCountdownCoroutine());
-        RandomMapGenerator();
     }
 
     void Update()
     {
-
-
         if (gameStarted)
         {
             elapsedTime += Time.deltaTime;
             if (elapsedTime >= gameDuration)
             {
                 EndGame(true);
-            }
-            else
-            {
-                EndGame(false);
             }
         }
     }
@@ -65,18 +58,30 @@ public class GameFiveManager : MonoBehaviourPunCallbacks
 
     public void RandomMapGenerator()
     {
+        if (Spawns.Length == 0)
+        {
+            Debug.LogError("No spawn points available.");
+            return;
+        }
 
-            GameObject player = PhotonNetwork.Instantiate("SalihGamePlayer", Spawn.transform.position, Quaternion.identity);
+        // Ensure we loop back to the first spawn point after the last one is used
+        if (currentSpawnIndex >= Spawns.Length)
+        {
+            currentSpawnIndex = 0;
+        }
 
+        // Instantiate the player at the current spawn point
+        PhotonNetwork.Instantiate("SalihGamePlayer", Spawns[currentSpawnIndex].transform.position, Quaternion.identity);
+
+        // Move to the next spawn point
+        currentSpawnIndex++;
     }
 
     public void PlayerCompletedPuzzle(GameObject player)
     {
         if (!Ranking.Contains(player))
         {
-            
             Ranking.Add(player);
-            //playerRank++;
 
             if (Ranking.Count == 1)
             {
@@ -100,19 +105,36 @@ public class GameFiveManager : MonoBehaviourPunCallbacks
     void StartGame()
     {
         gameStarted = true;
+        elapsedTime = 0f; // Reset elapsed time
+        RandomMapGenerator();
     }
 
     void EndGame(bool isFinished)
     {
+        gameStarted = false;
 
-        if (!isFinished)
+        if (isFinished)
         {
-            Win.text = "No one finished yet.";
+            Win.text += "\nGame Over!";
         }
-        else
+        else if (!GameFinished)
         {
-            gameStarted = false;
-            GameFinished = true;
+            Win.text = "Time is up! No one finished the puzzle.";
         }
+
+        GameFinished = true;
+        // Additional logic to handle game end can be added here
+
+        // Restart the game if needed
+        StartCoroutine(RestartGame());
+    }
+
+    IEnumerator RestartGame()
+    {
+        yield return new WaitForSeconds(5); // Wait for 5 seconds before restarting
+        Win.text = ""; // Clear the win text
+        Ranking.Clear(); // Clear the ranking list
+        GameFinished = false;
+        StartCoroutine(StartCountdownCoroutine());
     }
 }
