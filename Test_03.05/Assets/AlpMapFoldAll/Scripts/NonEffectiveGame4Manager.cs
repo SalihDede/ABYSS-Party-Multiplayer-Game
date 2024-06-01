@@ -166,4 +166,4 @@ using TMPro;
         // Bir oyuncunun spawnlandýðý noktayý belirler
         GameObject player = PhotonNetwork.Instantiate("AlpGamePlayer", Spawns[0].transform.position, Quaternion.identity);
     }
-}
+} */
