@@ -8,6 +8,7 @@ public class PuzzleManager : MonoBehaviour
     public Transform emptyTile; // Represents an empty space
     public int shuffleCount = 20; // Number of times to shuffle
     public float positionTolerance = 2.0f; // Tolerance for checking positions
+    public GameObject MainPlayerOfMap;
 
     private Dictionary<Transform, Vector3> originalPositions; // Stores where pieces originally were
     private Dictionary<Transform, Vector3> currentPositions;  // Stores where pieces are now
@@ -125,7 +126,8 @@ public class PuzzleManager : MonoBehaviour
         if (CheckIfPuzzleSolved())
         {
             Debug.Log("Puzzle solved");
-            GameFiveManager.PlayerCompletedPuzzle(gameObject); // Notify GameFiveManager
+
+            GameFiveManager.PlayerCompletedPuzzle(MainPlayerOfMap); // Notify GameFiveManager
         }
         else
         {
@@ -170,7 +172,7 @@ public class PuzzleManager : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(5); // Wait for 5 seconds
+            yield return new WaitForSeconds(1); // Wait for 5 seconds
             SaveCurrentPositions(); // Update current positions
             PrintCurrentPositions(); // Print updated positions - for developer
         }

@@ -1920,8 +1920,8 @@ GameObject:
   - component: {fileID: 884350556147295100}
   - component: {fileID: 5748156419702095746}
   - component: {fileID: 7761435927835404711}
-  - component: {fileID: 1654076392358180910}
   - component: {fileID: 4426158074723469894}
+  - component: {fileID: 1548504247458225539}
   m_Layer: 0
   m_Name: SalihGamePlayer
   m_TagString: Bullet
@@ -2121,21 +2121,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 416365289495481984}
---- !u!114 &1654076392358180910
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8987136569212136115}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 959a5be1b07764c44bfd3374e0f4c7dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GameOneManager: {fileID: 0}
-  Anim: {fileID: 8017516911683782433}
-  score: 0
 --- !u!114 &4426158074723469894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2153,6 +2138,18 @@ MonoBehaviour:
   Character: {fileID: 0}
   puzzleManager: {fileID: 0}
   pushPullForce: 3
+--- !u!114 &1548504247458225539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8987136569212136115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91fe086fd5a6bcd44a3f3b583c6d9a2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8987136569727909539
 GameObject:
   m_ObjectHideFlags: 0

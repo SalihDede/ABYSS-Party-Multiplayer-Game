@@ -11,9 +11,10 @@ public class GameFiveManager : MonoBehaviourPunCallbacks
     public bool StartTime;
     public GameObject GameTwoGUI;
     public List<GameObject> Ranking = new List<GameObject>();
+    public List<GameObject> Starters = new List<GameObject>();
     public TMP_Text Win;
     public bool IsWin;
-    public GameObject[] Spawns;
+    public GameObject Spawn;
     public bool GameFinished;
     public TMP_Text countdownText;
     public float gameDuration = 60f; // Duration of the game in seconds
@@ -34,6 +35,10 @@ public class GameFiveManager : MonoBehaviourPunCallbacks
         {
             elapsedTime += Time.deltaTime;
             if (elapsedTime >= gameDuration)
+            {
+                EndGame(true);
+            }
+            else
             {
                 EndGame(false);
             }
@@ -58,22 +63,20 @@ public class GameFiveManager : MonoBehaviourPunCallbacks
 
     public void RandomMapGenerator()
     {
-        for (int i = 0; i < PhotonNetwork.PlayerList.Length; i++)
-        {
-            GameObject player = PhotonNetwork.Instantiate("SalihGamePlayer", Spawns[i].transform.position, Quaternion.identity);
-            // Assign PuzzleManager to each player
-            player.GetComponent<PuzzleManager>().GameFiveManager = this;
-        }
+
+            GameObject player = PhotonNetwork.Instantiate("SalihGamePlayer", Spawn.transform.position, Quaternion.identity);
+
     }
 
     public void PlayerCompletedPuzzle(GameObject player)
     {
         if (!Ranking.Contains(player))
         {
+            
             Ranking.Add(player);
-            playerRank++;
+            //playerRank++;
 
-            if (playerRank == 1)
+            if (Ranking.Count == 1)
             {
                 // The first player to complete the puzzle
                 Win.text = "Player " + player.name + " wins!";
@@ -81,7 +84,7 @@ public class GameFiveManager : MonoBehaviourPunCallbacks
             else
             {
                 // For subsequent players
-                Win.text += "\nPlayer " + player.name + " finished in position " + playerRank;
+                Win.text += "\nPlayer " + player.name + " finished in position " + Ranking.Count;
             }
 
             // Check if all players have finished
@@ -99,14 +102,15 @@ public class GameFiveManager : MonoBehaviourPunCallbacks
 
     void EndGame(bool isFinished)
     {
-        gameStarted = false;
-        GameFinished = true;
 
         if (!isFinished)
         {
-            Win.text = "Time's up! No one wins.";
+            Win.text = "No one finished yet.";
         }
-
-        // Additional end game logic here, if needed
+        else
+        {
+            gameStarted = false;
+            GameFinished = true;
+        }
     }
 }
