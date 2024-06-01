@@ -46295,6 +46295,65 @@ MonoBehaviour:
   sceneViewId: 46
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!1001 &4838558373018149707
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 2
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4838558373409366838, guid: 2966105e728257a41af182deba877483, type: 3}
+      propertyPath: m_RootOrder
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 4838558373409366838, guid: 2966105e728257a41af182deba877483, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3000
+      objectReference: {fileID: 0}
+    - target: {fileID: 4838558373409366838, guid: 2966105e728257a41af182deba877483, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.038
+      objectReference: {fileID: 0}
+    - target: {fileID: 4838558373409366838, guid: 2966105e728257a41af182deba877483, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4838558373409366838, guid: 2966105e728257a41af182deba877483, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4838558373409366838, guid: 2966105e728257a41af182deba877483, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4838558373409366838, guid: 2966105e728257a41af182deba877483, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4838558373409366838, guid: 2966105e728257a41af182deba877483, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4838558373409366838, guid: 2966105e728257a41af182deba877483, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4838558373409366838, guid: 2966105e728257a41af182deba877483, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4838558373409366838, guid: 2966105e728257a41af182deba877483, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4838558373409366839, guid: 2966105e728257a41af182deba877483, type: 3}
+      propertyPath: m_Name
+      value: SalihGame
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_AddedGameObjects: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2966105e728257a41af182deba877483, type: 3}
 --- !u!114 &4962203873882639312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46774,7 +46833,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3097202470545615813, guid: a0cd58aee43a9dd4c8f5285889b95d73, type: 3}
       propertyPath: sceneViewId
-      value: 1
+      value: 52
+      objectReference: {fileID: 0}
+    - target: {fileID: 4652363274242862828, guid: a0cd58aee43a9dd4c8f5285889b95d73, type: 3}
+      propertyPath: m_Icon
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4652363274242862828, guid: a0cd58aee43a9dd4c8f5285889b95d73, type: 3}
       propertyPath: m_Name
