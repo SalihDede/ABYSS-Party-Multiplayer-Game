@@ -2150,6 +2150,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91fe086fd5a6bcd44a3f3b583c6d9a2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsHeSolve: 0
+  GameFiveManager: {fileID: 0}
+  Line1: {fileID: 0}
+  Line2: {fileID: 0}
+  Line3: {fileID: 0}
+  Line4: {fileID: 0}
+  Spawns: []
 --- !u!1 &8987136569727909539
 GameObject:
   m_ObjectHideFlags: 0

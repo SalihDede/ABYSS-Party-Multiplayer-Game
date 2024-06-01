@@ -64,17 +64,14 @@ public class GameFiveManager : MonoBehaviourPunCallbacks
             return;
         }
 
-        // Ensure we loop back to the first spawn point after the last one is used
-        if (currentSpawnIndex >= Spawns.Length)
-        {
-            currentSpawnIndex = 0;
-        }
+        // Get the player's index in the Photon player list
+        int playerIndex = PhotonNetwork.LocalPlayer.ActorNumber - 1;
 
-        // Instantiate the player at the current spawn point
-        PhotonNetwork.Instantiate("SalihGamePlayer", Spawns[currentSpawnIndex].transform.position, Quaternion.identity);
+        // Ensure the spawn index is within bounds
+        int spawnIndex = playerIndex % Spawns.Length;
 
-        // Move to the next spawn point
-        currentSpawnIndex++;
+        // Instantiate the player at the corresponding spawn point
+        PhotonNetwork.Instantiate("SalihGamePlayer", Spawns[spawnIndex].transform.position, Quaternion.identity);
     }
 
     public void PlayerCompletedPuzzle(GameObject player)
