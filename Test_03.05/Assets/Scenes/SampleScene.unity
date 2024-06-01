@@ -42189,6 +42189,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4838558373409366839, guid: 2966105e728257a41af182deba877483, type: 3}
   m_PrefabInstance: {fileID: 4838558373018149707}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2132587770 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4838558373409366837, guid: 2966105e728257a41af182deba877483, type: 3}
+  m_PrefabInstance: {fileID: 4838558373018149707}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2132587769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 820bf8928205705449e4b0e8d85188e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &2132587771 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4838558373409366838, guid: 2966105e728257a41af182deba877483, type: 3}
@@ -46867,10 +46878,18 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4838558371835580720, guid: 2966105e728257a41af182deba877483, type: 3}
+      propertyPath: GameFiveManager
+      value: 
+      objectReference: {fileID: 2132587770}
     - target: {fileID: 4838558371926439898, guid: 2966105e728257a41af182deba877483, type: 3}
       propertyPath: m_Name
       value: SalihGameSpawn2
       objectReference: {fileID: 0}
+    - target: {fileID: 4838558371978645539, guid: 2966105e728257a41af182deba877483, type: 3}
+      propertyPath: GameFiveManager
+      value: 
+      objectReference: {fileID: 2132587770}
     - target: {fileID: 4838558372148830262, guid: 2966105e728257a41af182deba877483, type: 3}
       propertyPath: m_Name
       value: SalihGameSpawn4
@@ -46879,6 +46898,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SalihGameSpawn3
       objectReference: {fileID: 0}
+    - target: {fileID: 4838558372672639255, guid: 2966105e728257a41af182deba877483, type: 3}
+      propertyPath: GameFiveManager
+      value: 
+      objectReference: {fileID: 2132587770}
     - target: {fileID: 4838558373373552568, guid: 2966105e728257a41af182deba877483, type: 3}
       propertyPath: m_Name
       value: SalihGameSpawn1
@@ -46955,6 +46978,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4838558373614325366, guid: 2966105e728257a41af182deba877483, type: 3}
+      propertyPath: GameFiveManager
+      value: 
+      objectReference: {fileID: 2132587770}
     m_RemovedComponents: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 4838558373409366838, guid: 2966105e728257a41af182deba877483, type: 3}
