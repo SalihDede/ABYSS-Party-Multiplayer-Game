@@ -55,14 +55,7 @@ public class GameOneManager : MonoBehaviourPunCallbacks
 
     IEnumerator GameFinishedCoroutine()
     {
-
-        if(PhotonNetwork.IsMasterClient)
-        {
-            photonView.RPC("AdminList", RpcTarget.All);
-            Starters.Sort((player1, player2) => player2.GetComponent<PlayerABYSS>().score.CompareTo(player1.GetComponent<PlayerABYSS>().score));
-
-        }
-        
+        Starters.Sort((player1, player2) => player2.GetComponent<PlayerABYSS>().score.CompareTo(player1.GetComponent<PlayerABYSS>().score));
 
         if (Starters.Count == 4)
         {
@@ -81,7 +74,7 @@ public class GameOneManager : MonoBehaviourPunCallbacks
 
                 GameManagerrr.GetComponent<GameManager>().PlayersSorted.Clear();
 
-                if (GameManagerrr.GetComponent<GameManager>().PlayersSorted.Count != 4)
+                if (GameManagerrr.GetComponent<GameManager>().PlayersSorted.Count != 2)
                 {
                     GameManagerrr.GetComponent<GameManager>().PlayersSorted.AddRange(GameManagerrr.GetComponent<GameManager>().PlayersTemp);
                 }
@@ -142,23 +135,7 @@ public class GameOneManager : MonoBehaviourPunCallbacks
             PhotonNetwork.Instantiate("Soccer Ball", BallSpawn.transform.position, Quaternion.identity);
         }
     }
-    [PunRPC]
-    void AdminList(int result)
-    {
-        if (PhotonNetwork.IsMasterClient)
-        {
-            Starters.AddRange(Ranking);
-            Starters.RemoveAt(0);
-            Starters.RemoveAt(1);
-            Starters.RemoveAt(2);
-            Starters.RemoveAt(3);
-        }
-        else
-        {
-            Starters.Clear();
-        }
 
-    }
     void FixedUpdate()
     {
 
@@ -171,14 +148,6 @@ public class GameOneManager : MonoBehaviourPunCallbacks
             GameFinished = true;
 
             Destroy(SpawnedBall);
-
-            if(PhotonNetwork.IsMasterClient)
-            {
-                
-            }
-
-
-
             StartCoroutine(GameFinishedCoroutine());
 
 
@@ -225,12 +194,12 @@ public class GameOneManager : MonoBehaviourPunCallbacks
                 
                 if (SpawnedBall.GetComponent<ball>().photonView.OwnerActorNr == Starters[2].GetComponent<PhotonView>().OwnerActorNr)
                 {
-                    thisguy = Starters[2].GetComponent<PhotonView>().Owner;
+                    thisguy = Starters[1].GetComponent<PhotonView>().Owner;
                     StartCoroutine(ScoreUp());
                 }
                 if (SpawnedBall.GetComponent<ball>().photonView.OwnerActorNr == Starters[3].GetComponent<PhotonView>().OwnerActorNr)
                 {
-                    thisguy = Starters[3].GetComponent<PhotonView>().Owner;
+                    thisguy = Starters[1].GetComponent<PhotonView>().Owner;
                     StartCoroutine(ScoreUp());
                 }
                 
