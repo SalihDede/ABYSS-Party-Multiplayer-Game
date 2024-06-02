@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI; // Add this to use the UI components
 using KinematicCharacterController;
 using KinematicCharacterController.Examples;
 using System.Linq;
@@ -13,6 +14,7 @@ namespace KinematicCharacterController.Walkthrough.MultipleMovementStates
         public Transform CameraFollowPoint;
         public MyCharacterController Character;
         public PuzzleManager puzzleManager; // Reference to the PuzzleManager
+        public Image puzzleImage; // Reference to the Image component
 
         public float pushPullForce = 3f; // Push and Pull Force
 
@@ -26,7 +28,15 @@ namespace KinematicCharacterController.Walkthrough.MultipleMovementStates
         {
             Cursor.lockState = CursorLockMode.Locked;
 
-          
+            // Tell camera to follow transform
+            OrbitCamera.SetFollowTransform(CameraFollowPoint);
+
+            // Ignore the character's collider(s) for camera obstruction checks
+            OrbitCamera.IgnoredColliders.Clear();
+            OrbitCamera.IgnoredColliders.AddRange(Character.GetComponentsInChildren<Collider>());
+
+            // Ensure the image is initially hidden
+            puzzleImage.gameObject.SetActive(false);
         }
 
         private void Update()
@@ -37,9 +47,60 @@ namespace KinematicCharacterController.Walkthrough.MultipleMovementStates
                 HandleTileSelection(); // Handle tile selection on mouse click
             }
 
+            HandleCharacterInput();
             HandlePuzzleInteraction(); // Handle puzzle interactions
+            HandleImageToggle(); // Handle toggling the image visibility
         }
 
+        private void LateUpdate()
+        {
+            HandleCameraInput();
+        }
+
+        private void HandleCameraInput()
+        {
+            // Create the look input vector for the camera
+            float mouseLookAxisUp = Input.GetAxisRaw(MouseYInput);
+            float mouseLookAxisRight = Input.GetAxisRaw(MouseXInput);
+            Vector3 lookInputVector = new Vector3(mouseLookAxisRight, mouseLookAxisUp, 0f);
+
+            // Prevent moving the camera while the cursor isn't locked
+            if (Cursor.lockState != CursorLockMode.Locked)
+            {
+                lookInputVector = Vector3.zero;
+            }
+
+            // Input for zooming the camera (disabled in WebGL because it can cause problems)
+            float scrollInput = -Input.GetAxis(MouseScrollInput);
+#if UNITY_WEBGL
+            scrollInput = 0f;
+#endif
+
+            // Apply inputs to the camera
+            OrbitCamera.UpdateWithInput(Time.deltaTime, scrollInput, lookInputVector);
+
+            // Handle toggling zoom level
+            if (Input.GetMouseButtonDown(1))
+            {
+                OrbitCamera.TargetDistance = (OrbitCamera.TargetDistance == 0f) ? OrbitCamera.DefaultDistance : 0f;
+            }
+        }
+
+        private void HandleCharacterInput()
+        {
+            PlayerCharacterInputs characterInputs = new PlayerCharacterInputs();
+
+            // Build the CharacterInputs struct
+            characterInputs.MoveAxisForward = Input.GetAxisRaw(VerticalInput);
+            characterInputs.MoveAxisRight = Input.GetAxisRaw(HorizontalInput);
+            characterInputs.CameraRotation = OrbitCamera.Transform.rotation;
+            characterInputs.JumpDown = Input.GetKeyDown(KeyCode.Space);
+            characterInputs.CrouchDown = Input.GetKeyDown(KeyCode.C);
+            characterInputs.CrouchUp = Input.GetKeyUp(KeyCode.C);
+
+            // Apply inputs to character
+            Character.SetInputs(ref characterInputs);
+        }
 
         // Handle tile selection and movement
         private void HandleTileSelection()
@@ -99,6 +160,15 @@ namespace KinematicCharacterController.Walkthrough.MultipleMovementStates
                         rb.AddForce(directionFromPlayer * pushPullForce);
                     }
                 }
+            }
+        }
+
+        // Handle toggling the image visibility
+        private void HandleImageToggle()
+        {
+            if (Input.GetKeyDown(KeyCode.M))
+            {
+                puzzleImage.gameObject.SetActive(!puzzleImage.gameObject.activeSelf);
             }
         }
     }
