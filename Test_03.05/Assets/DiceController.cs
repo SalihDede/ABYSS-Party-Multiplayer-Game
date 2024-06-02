@@ -297,7 +297,13 @@ public class DiceController : MonoBehaviourPunCallbacks
 
                 if (GameManager.GetComponent<GameManager>().MinigameList[GameManager.GetComponent<GameManager>().MinigameCount].GetComponent<GameFiveManager>().PuzzleMapList[i].GetComponent<PuzzleManager>().originalPositions != null)
                 {
+                    GameManager.GetComponent<GameManager>().MinigameList[GameManager.GetComponent<GameManager>().MinigameCount].GetComponent<GameFiveManager>().PuzzleMapList[i].GetComponent<PuzzleManager>().originalPositions.Clear();
+                    GameManager.GetComponent<GameManager>().MinigameList[GameManager.GetComponent<GameManager>().MinigameCount].GetComponent<GameFiveManager>().PuzzleMapList[i].GetComponent<PuzzleManager>().currentPositions.Clear();
+                    GameManager.GetComponent<GameManager>().MinigameList[GameManager.GetComponent<GameManager>().MinigameCount].GetComponent<GameFiveManager>().PuzzleMapList[i].GetComponent<PuzzleManager>().SaveOriginalPositions();
+                    GameManager.GetComponent<GameManager>().MinigameList[GameManager.GetComponent<GameManager>().MinigameCount].GetComponent<GameFiveManager>().PuzzleMapList[i].GetComponent<PuzzleManager>().PrintOriginalPositions(); 
+                    GameManager.GetComponent<GameManager>().MinigameList[GameManager.GetComponent<GameManager>().MinigameCount].GetComponent<GameFiveManager>().PuzzleMapList[i].GetComponent<PuzzleManager>().SaveCurrentPositions(); 
                     GameManager.GetComponent<GameManager>().MinigameList[GameManager.GetComponent<GameManager>().MinigameCount].GetComponent<GameFiveManager>().PuzzleMapList[i].GetComponent<PuzzleManager>().ShufflePuzzle();
+                    StartCoroutine(GameManager.GetComponent<GameManager>().MinigameList[GameManager.GetComponent<GameManager>().MinigameCount].GetComponent<GameFiveManager>().PuzzleMapList[i].GetComponent<PuzzleManager>().UpdateCurrentPositionsPeriodically());
                 }
             }
         }
