@@ -74,7 +74,7 @@ public class GameOneManager : MonoBehaviourPunCallbacks
 
                 GameManagerrr.GetComponent<GameManager>().PlayersSorted.Clear();
 
-                if (GameManagerrr.GetComponent<GameManager>().PlayersSorted.Count != 2)
+                if (GameManagerrr.GetComponent<GameManager>().PlayersSorted.Count != 4)
                 {
                     GameManagerrr.GetComponent<GameManager>().PlayersSorted.AddRange(GameManagerrr.GetComponent<GameManager>().PlayersTemp);
                 }
@@ -194,11 +194,13 @@ public class GameOneManager : MonoBehaviourPunCallbacks
                 
                 if (SpawnedBall.GetComponent<ball>().photonView.OwnerActorNr == Starters[2].GetComponent<PhotonView>().OwnerActorNr)
                 {
-                    StartCoroutine(ScoreUp(Starters[2].GetComponent<PlayerABYSS>().score));
+                    thisguy = Starters[2].GetComponent<PhotonView>().Owner;
+                    StartCoroutine(ScoreUp());
                 }
                 if (SpawnedBall.GetComponent<ball>().photonView.OwnerActorNr == Starters[3].GetComponent<PhotonView>().OwnerActorNr)
                 {
-                    StartCoroutine(ScoreUp(Starters[3].GetComponent<PlayerABYSS>().score));
+                    thisguy = Starters[3].GetComponent<PhotonView>().Owner;
+                    StartCoroutine(ScoreUp());
                 }
                 
 
