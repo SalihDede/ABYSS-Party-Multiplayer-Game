@@ -47245,13 +47245,17 @@ PrefabInstance:
       value: SalihGameSpawn1
       objectReference: {fileID: 0}
     - target: {fileID: 4838558373409366837, guid: 2966105e728257a41af182deba877483, type: 3}
+      propertyPath: Win
+      value: 
+      objectReference: {fileID: 424499722}
+    - target: {fileID: 4838558373409366837, guid: 2966105e728257a41af182deba877483, type: 3}
       propertyPath: Spawn
       value: 
       objectReference: {fileID: 2131362888}
     - target: {fileID: 4838558373409366837, guid: 2966105e728257a41af182deba877483, type: 3}
       propertyPath: GameTwoGUI
       value: 
-      objectReference: {fileID: 424499720}
+      objectReference: {fileID: 843793526}
     - target: {fileID: 4838558373409366837, guid: 2966105e728257a41af182deba877483, type: 3}
       propertyPath: gameDuration
       value: 30
@@ -47263,7 +47267,7 @@ PrefabInstance:
     - target: {fileID: 4838558373409366837, guid: 2966105e728257a41af182deba877483, type: 3}
       propertyPath: GameManagerrrr
       value: 
-      objectReference: {fileID: 2132587769}
+      objectReference: {fileID: 1211155381}
     - target: {fileID: 4838558373409366837, guid: 2966105e728257a41af182deba877483, type: 3}
       propertyPath: Spawns.Array.size
       value: 4
