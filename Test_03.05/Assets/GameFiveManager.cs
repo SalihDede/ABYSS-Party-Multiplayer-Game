@@ -95,21 +95,33 @@ public class GameFiveManager : MonoBehaviourPunCallbacks
             if (Ranking.Count == 1)
             {
                 // The first player to complete the puzzle
-                Win.text = "Player " + player.name + " wins!";
+
+
+
+                Win.text =  Ranking[0] + "\n";
             }
-            else
+            if (Ranking.Count == 2)
             {
-                // For subsequent players
-                Win.text += "\nPlayer " + player.name + " finished in position " + Ranking.Count;
+            
+                    Win.text = Ranking[0] + "\n" + Ranking[1];
+                    //Win.text += "\nPlayer " + player.name + " finished in position " + Ranking.Count;
             }
 
             // Check if all players have finished
             if (Ranking.Count == PhotonNetwork.PlayerList.Length)
             {
-                EndGame(true);
+                StartCoroutine(EndingGame());
             }
         }
     }
+
+
+    IEnumerator EndingGame()
+    {
+        yield return new WaitForSeconds(3);
+        EndGame(true);
+    }
+
 
     void StartGame()
     {
