@@ -347,11 +347,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 23528863}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &30796751 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4838558372151846232, guid: 2966105e728257a41af182deba877483, type: 3}
-  m_PrefabInstance: {fileID: 4838558373018149707}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &30858018
 GameObject:
   m_ObjectHideFlags: 0
@@ -6233,11 +6228,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 361157510}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &369011843 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4838558372914296422, guid: 2966105e728257a41af182deba877483, type: 3}
-  m_PrefabInstance: {fileID: 4838558373018149707}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &369711231
 GameObject:
   m_ObjectHideFlags: 0
@@ -15678,6 +15668,11 @@ MonoBehaviour:
   - {fileID: 7087822683809769759}
   - {fileID: 823414886}
   - {fileID: 1453123830}
+--- !u!1 &848478941 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4838558372642984207, guid: 2966105e728257a41af182deba877483, type: 3}
+  m_PrefabInstance: {fileID: 4838558373018149707}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &852137301
 GameObject:
   m_ObjectHideFlags: 0
@@ -18178,6 +18173,11 @@ MonoBehaviour:
   - {fileID: 1171499584}
   - {fileID: 1474511916}
   - {fileID: 1952097218}
+--- !u!1 &947471323 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4838558372148830262, guid: 2966105e728257a41af182deba877483, type: 3}
+  m_PrefabInstance: {fileID: 4838558373018149707}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &950590656
 GameObject:
   m_ObjectHideFlags: 0
@@ -46948,11 +46948,11 @@ PrefabInstance:
     - target: {fileID: 4838558373409366837, guid: 2966105e728257a41af182deba877483, type: 3}
       propertyPath: Spawns.Array.data[2]
       value: 
-      objectReference: {fileID: 30796751}
+      objectReference: {fileID: 848478941}
     - target: {fileID: 4838558373409366837, guid: 2966105e728257a41af182deba877483, type: 3}
       propertyPath: Spawns.Array.data[3]
       value: 
-      objectReference: {fileID: 369011843}
+      objectReference: {fileID: 947471323}
     - target: {fileID: 4838558373409366838, guid: 2966105e728257a41af182deba877483, type: 3}
       propertyPath: m_RootOrder
       value: 7
