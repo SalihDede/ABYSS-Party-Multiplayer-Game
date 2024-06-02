@@ -32,18 +32,30 @@ public class GameFiveManager : MonoBehaviourPunCallbacks
 
     void FixedUpdate()
     {
+
         if (Ranking.Count == 0)
         {
+            // The first player to complete the puzzle
+
+
+
             Win.text = "";
         }
         if (Ranking.Count == 1)
         {
+            // The first player to complete the puzzle
+
+
+
             Win.text = Ranking[0].GetComponent<PhotonView>().OwnerActorNr + "\n";
         }
         if (Ranking.Count == 2)
         {
+
             Win.text = Ranking[0].GetComponent<PhotonView>().OwnerActorNr + "\n" + Ranking[1].GetComponent<PhotonView>().OwnerActorNr;
+            //Win.text += "\nPlayer " + player.name + " finished in position " + Ranking.Count;
         }
+
 
         countdownText.text = countdown.ToString();
         ElapsedTime.text = ((int)(elapsedTime)).ToString();
@@ -60,15 +72,12 @@ public class GameFiveManager : MonoBehaviourPunCallbacks
 
     IEnumerator StartCountdownCoroutine()
     {
-        // Activate camera here if it's not already active
-        Camera.main.gameObject.SetActive(true); // Modified part
-
-        countdownText.gameObject.SetActive(true);
+        countdownText.gameObject.SetActive(true); // 
         ElapsedTime.gameObject.SetActive(false);
-        countdown = 15; // Initial countdown value
+        countdown = 3; // Initial countdown value
         while (countdown > 0)
         {
-            countdownText.text = countdown.ToString(); // Modified part to update countdown text
+
             yield return new WaitForSeconds(1);
             countdown--;
         }
@@ -76,7 +85,7 @@ public class GameFiveManager : MonoBehaviourPunCallbacks
         countdownText.text = "GO!";
         yield return new WaitForSeconds(1);
         countdownText.gameObject.SetActive(false); // Hide the countdown text
-        ElapsedTime.gameObject.SetActive(true); // Show the elapsed time text
+        ElapsedTime.gameObject.SetActive(true); // Hide the countdown text
         StartGame(); // Start the game after the countdown
     }
 
@@ -100,12 +109,16 @@ public class GameFiveManager : MonoBehaviourPunCallbacks
 
     public void PlayerCompletedPuzzle(GameObject player)
     {
+
+
+
+
         if (!Ranking.Contains(player))
         {
             Debug.Log("AloAloAlo");
+ 
 
-            // Add player to ranking
-            Ranking.Add(player);
+      
 
             // Check if all players have finished
             if (Ranking.Count == PhotonNetwork.PlayerList.Length)
@@ -115,11 +128,13 @@ public class GameFiveManager : MonoBehaviourPunCallbacks
         }
     }
 
+
     IEnumerator EndingGame()
     {
         yield return new WaitForSeconds(3);
         EndGame(true);
     }
+
 
     void StartGame()
     {
@@ -145,7 +160,7 @@ public class GameFiveManager : MonoBehaviourPunCallbacks
         // Additional logic to handle game end can be added here
 
         // Restart the game if needed
-        // StartCoroutine(RestartGame());
+        //StartCoroutine(RestartGame());
     }
 
     IEnumerator RestartGame()
@@ -157,3 +172,4 @@ public class GameFiveManager : MonoBehaviourPunCallbacks
         StartCoroutine(StartCountdownCoroutine());
     }
 }
+
