@@ -292,22 +292,18 @@ public class DiceController : MonoBehaviourPunCallbacks
         {
             GameManager.GetComponent<GameManager>().MinigameList[GameManager.GetComponent<GameManager>().MinigameCount].GetComponent<GameFiveManager>().gameActive = true;
 
-            for(int i = 0;i<4;i++)
+            for (int i = 0; i < 4; i++)
             {
+                    var puzzleManager = GameManager.GetComponent<GameManager>().MinigameList[GameManager.GetComponent<GameManager>().MinigameCount].GetComponent<GameFiveManager>().PuzzleMapList[i].GetComponent<PuzzleManager>();
 
-                if (GameManager.GetComponent<GameManager>().MinigameList[GameManager.GetComponent<GameManager>().MinigameCount].GetComponent<GameFiveManager>().PuzzleMapList[i].GetComponent<PuzzleManager>().originalPositions != null)
-                {
-                    GameManager.GetComponent<GameManager>().MinigameList[GameManager.GetComponent<GameManager>().MinigameCount].GetComponent<GameFiveManager>().PuzzleMapList[i].GetComponent<PuzzleManager>().originalPositions.Clear();
-                    GameManager.GetComponent<GameManager>().MinigameList[GameManager.GetComponent<GameManager>().MinigameCount].GetComponent<GameFiveManager>().PuzzleMapList[i].GetComponent<PuzzleManager>().currentPositions.Clear();
-
-                    GameManager.GetComponent<GameManager>().MinigameList[GameManager.GetComponent<GameManager>().MinigameCount].GetComponent<GameFiveManager>().PuzzleMapList[i].GetComponent<PuzzleManager>().SaveOriginalPositions();
-                    GameManager.GetComponent<GameManager>().MinigameList[GameManager.GetComponent<GameManager>().MinigameCount].GetComponent<GameFiveManager>().PuzzleMapList[i].GetComponent<PuzzleManager>().PrintOriginalPositions(); 
-                    GameManager.GetComponent<GameManager>().MinigameList[GameManager.GetComponent<GameManager>().MinigameCount].GetComponent<GameFiveManager>().PuzzleMapList[i].GetComponent<PuzzleManager>().SaveCurrentPositions(); 
-                    GameManager.GetComponent<GameManager>().MinigameList[GameManager.GetComponent<GameManager>().MinigameCount].GetComponent<GameFiveManager>().PuzzleMapList[i].GetComponent<PuzzleManager>().ShufflePuzzle();
-                    StartCoroutine(GameManager.GetComponent<GameManager>().MinigameList[GameManager.GetComponent<GameManager>().MinigameCount].GetComponent<GameFiveManager>().PuzzleMapList[i].GetComponent<PuzzleManager>().UpdateCurrentPositionsPeriodically());
-                }
+            if (puzzleManager != null)
+            {
+                puzzleManager.ResetPuzzleState(); // Reset the puzzle state
+                puzzleManager.ShufflePuzzle();    // Shuffle the puzzle to reset it
+            }
             }
         }
+
         if (GameManager.GetComponent<GameManager>().MinigameList[GameManager.GetComponent<GameManager>().MinigameCount].name == "YusufGame")
         {
             GameManager.GetComponent<GameManager>().MinigameList[GameManager.GetComponent<GameManager>().MinigameCount].GetComponent<GameThreeManager>().gameActive = true;
