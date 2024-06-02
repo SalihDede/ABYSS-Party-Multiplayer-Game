@@ -49694,7 +49694,7 @@ GameObject:
   - component: {fileID: 3616397801754938534}
   - component: {fileID: 5397802263882941697}
   m_Layer: 0
-  m_Name: Yusuf Game
+  m_Name: YusufGame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
