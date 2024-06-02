@@ -51,25 +51,20 @@ public class GameOneManager : MonoBehaviourPunCallbacks
 
 
 
-    [PunRPC]
-    void AdminList()
-    {
-        Starters.AddRange(Starters);
-        if(Starters.Count > 4)
-        {
-            Starters.RemoveAt(0);
-            Starters.RemoveAt(1);
-            Starters.RemoveAt(2);
-            Starters.RemoveAt(3);
-        }
-
-    }
+ 
 
     IEnumerator GameFinishedCoroutine()
     {
         if(PhotonNetwork.IsMasterClient)
         {
-            photonView.RPC("AdminList", RpcTarget.All);
+            foreach(GameObject Player in Starters)
+            {
+                if(Player.GetComponent<PhotonView>().ViewID/1000 == 1)
+                {
+                    Player.GetComponent<PhotonView>().RPC("AdminList", RpcTarget.All);
+                }
+
+            }
         }
 
 
