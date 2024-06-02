@@ -134,7 +134,6 @@ public class PuzzleManager : MonoBehaviourPunCallbacks
                 Debug.Log("You solved the puzzle!");
                 MainPlayerOfMap.GetComponent<GameFivePlayer>().IsHeSolve = true;
                 GameFiveManager.PlayerCompletedPuzzle(MainPlayerOfMap); // Notify GameFiveManager
-                //photonView.RPC("NotifyPuzzleSolved", RpcTarget.AllBuffered, MainPlayerOfMap.GetComponent<PhotonView>().ViewID);
             }
         }
         else
@@ -147,17 +146,7 @@ public class PuzzleManager : MonoBehaviourPunCallbacks
         }
     }
 
-    [PunRPC]
-    void NotifyPuzzleSolved(int viewID)
-    {
-        PhotonView playerPhotonView = PhotonView.Find(viewID);
-        if (playerPhotonView != null)
-        {
-            GameObject playerObject = playerPhotonView.gameObject;
-            playerObject.GetComponent<GameFivePlayer>().IsHeSolve = true;
-            Debug.Log(playerObject.name + " solved the puzzle!");
-        }
-    }
+
 
     // Check if the puzzle is solved
     bool CheckIfPuzzleSolved()
