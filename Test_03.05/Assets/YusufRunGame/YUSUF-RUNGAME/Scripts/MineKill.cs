@@ -12,7 +12,7 @@ public class MineKill : MonoBehaviourPunCallbacks
     {
         if (other.CompareTag("Bullet") && PhotonNetwork.IsMasterClient)
         {
-            
+
             // Only the mine owner should trigger the respawn
             RespawnPlayer();
             photonView.RPC("SpawnExplosionEffect", RpcTarget.All);
@@ -40,7 +40,7 @@ public class MineKill : MonoBehaviourPunCallbacks
         {
             // Get the player's position and rotation components
             Transform playerTransform = playerObject.GetComponent<Transform>();
-            CharacterController characterController = playerObject.GetComponent<CharacterController>();
+      
 
             // Teleport the player to the checkpoint position
             playerTransform.position = checkpointObject.transform.position;
@@ -49,10 +49,7 @@ public class MineKill : MonoBehaviourPunCallbacks
             playerTransform.rotation = checkpointObject.transform.rotation;
 
             // If the player has a CharacterController component, reset its velocity
-            if (characterController != null)
-            {
-                characterController.Move(Vector3.zero); // Reset the velocity
-            }
+         
         }
         else
         {
