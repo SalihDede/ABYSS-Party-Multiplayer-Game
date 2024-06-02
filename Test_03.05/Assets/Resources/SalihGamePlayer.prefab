@@ -2135,7 +2135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OrbitCamera: {fileID: 0}
   CameraFollowPoint: {fileID: 0}
-  Character: {fileID: 0}
+  Character: {fileID: 8987136569212136118}
   puzzleManager: {fileID: 0}
   pushPullForce: 3
 --- !u!114 &1548504247458225539
@@ -2145,7 +2145,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8987136569212136115}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 91fe086fd5a6bcd44a3f3b583c6d9a2e, type: 3}
   m_Name: 
