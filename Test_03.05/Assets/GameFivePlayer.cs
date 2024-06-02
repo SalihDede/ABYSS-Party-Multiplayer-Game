@@ -29,6 +29,7 @@ public class GameFivePlayer : MonoBehaviour
         GameFiveManager = GameObject.Find("SalihGame");
 
 
+
         Line1 = GameObject.Find("SalihGameSpawn1");
         Line2 = GameObject.Find("SalihGameSpawn2");
         Line3 = GameObject.Find("SalihGameSpawn3");
@@ -65,6 +66,10 @@ public class GameFivePlayer : MonoBehaviour
         {
             photonView.RPC("SolvedThePuzzle", RpcTarget.All, IsHeSolve);
         }
+
+
+
+
 
 
       
