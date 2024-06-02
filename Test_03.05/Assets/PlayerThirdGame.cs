@@ -6,13 +6,14 @@ using Photon.Pun;
 
 public class PlayerThirdGame : MonoBehaviour
 {
-    
+    private PhotonView photonView;
     public GameObject GameManagerr;
     public GameObject CP2;
     public bool isDeath;
 
     void Start()
     {
+        photonView = gameObject.GetComponent<PhotonView>();
         CP2 = GameObject.Find("SpawnerBefore2");
         GameManagerr = GameObject.Find("YusufGame");
         GameManagerr.GetComponent<GameThreeManager>().StartingMans.Add(gameObject);
@@ -21,12 +22,33 @@ public class PlayerThirdGame : MonoBehaviour
     [PunRPC]
     void Death2()
     {
-            Debug.Log("Harbi Oldu");
-            if (gameObject.GetComponent<PhotonView>().IsMine)
+        Debug.Log("Death2 method called"); // Check if the method is called
+        
+        if (photonView != null)
+        {
+            Debug.Log("PhotonView found"); // Check if PhotonView is found
+            if (photonView.IsMine)
             {
-                gameObject.transform.position = CP2.transform.position;
+                Debug.Log("IsMine is true"); // Check if IsMine is true
+                if (CP2 != null)
+                {
+                    Debug.Log("CP2 found"); // Check if CP2 is found
+                    gameObject.transform.position = CP2.transform.position;
+                }
+                else
+                {
+                    Debug.LogError("CP2 is null"); // Log an error if CP2 is null
+                }
             }
-       
+            else
+            {
+                Debug.LogWarning("IsMine is false"); // Log a warning if IsMine is false
+            }
+        }
+        else
+        {
+            Debug.LogError("PhotonView is null"); // Log an error if PhotonView is null
+        }
     }
 
     void Update()
@@ -35,7 +57,7 @@ public class PlayerThirdGame : MonoBehaviour
         if(isDeath)
         {
             isDeath = false;
-            gameObject.GetComponent<PhotonView>().RPC("Death2", RpcTarget.All);
+            photonView.RPC("Death2", RpcTarget.All);
         }
 
 
