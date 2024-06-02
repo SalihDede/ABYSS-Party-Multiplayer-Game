@@ -92,11 +92,6 @@ public class GameTwoManager : MonoBehaviourPunCallbacks
                 GameManagerrr.GetComponent<GameManager>().PlayersSorted.AddRange(GameManagerrr.GetComponent<GameManager>().PlayersTemp);
             }
 
-
-
-            //GameManagerrr.GetComponent<GameManager>().PlayersSorted.Sort((player1, player2) => player2.GetComponent<>().score.CompareTo(player1.GetComponent<GameFourPlayer>().score));
-
-
             GameFinished = false;
             foreach (GameObject player in Ranking)
             {
@@ -110,12 +105,7 @@ public class GameTwoManager : MonoBehaviourPunCallbacks
     public void RandomMapGenerator()
     {
 
-
                 GameObject player = PhotonNetwork.Instantiate("Prometheus", Spawns[0].transform.position, Quaternion.identity);
-           
-
-       
      
-        
     }
 }
