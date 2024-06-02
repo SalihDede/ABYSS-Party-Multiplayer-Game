@@ -46930,9 +46930,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 424499720}
     - target: {fileID: 4838558373409366837, guid: 2966105e728257a41af182deba877483, type: 3}
+      propertyPath: gameDuration
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4838558373409366837, guid: 2966105e728257a41af182deba877483, type: 3}
       propertyPath: countdownText
       value: 
       objectReference: {fileID: 1316749056}
+    - target: {fileID: 4838558373409366837, guid: 2966105e728257a41af182deba877483, type: 3}
+      propertyPath: GameManagerrrr
+      value: 
+      objectReference: {fileID: 2132587769}
     - target: {fileID: 4838558373409366837, guid: 2966105e728257a41af182deba877483, type: 3}
       propertyPath: Spawns.Array.size
       value: 4
