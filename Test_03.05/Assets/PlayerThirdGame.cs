@@ -21,7 +21,7 @@ public class PlayerThirdGame : MonoBehaviour
     [PunRPC]
     void Death2()
     {
-        Debug.Log("Harbi Oldu");
+            Debug.Log("Harbi Oldu");
             transform.position = CP2.transform.position;
        
     }
