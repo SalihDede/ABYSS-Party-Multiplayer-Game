@@ -49668,6 +49668,26 @@ PrefabInstance:
       propertyPath: Spawns.Array.data[3]
       value: 
       objectReference: {fileID: 947471323}
+    - target: {fileID: 4838558373409366837, guid: 2966105e728257a41af182deba877483, type: 3}
+      propertyPath: PuzzleMapList.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4838558373409366837, guid: 2966105e728257a41af182deba877483, type: 3}
+      propertyPath: PuzzleMapList.Array.data[0]
+      value: 
+      objectReference: {fileID: 1964868656}
+    - target: {fileID: 4838558373409366837, guid: 2966105e728257a41af182deba877483, type: 3}
+      propertyPath: PuzzleMapList.Array.data[1]
+      value: 
+      objectReference: {fileID: 1742646508}
+    - target: {fileID: 4838558373409366837, guid: 2966105e728257a41af182deba877483, type: 3}
+      propertyPath: PuzzleMapList.Array.data[2]
+      value: 
+      objectReference: {fileID: 1864110903}
+    - target: {fileID: 4838558373409366837, guid: 2966105e728257a41af182deba877483, type: 3}
+      propertyPath: PuzzleMapList.Array.data[3]
+      value: 
+      objectReference: {fileID: 1099584391}
     - target: {fileID: 4838558373409366838, guid: 2966105e728257a41af182deba877483, type: 3}
       propertyPath: m_RootOrder
       value: 7

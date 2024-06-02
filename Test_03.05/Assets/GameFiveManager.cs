@@ -7,6 +7,10 @@ using TMPro;
 
 public class GameFiveManager : MonoBehaviourPunCallbacks
 {
+
+
+    public GameObject[] PuzzleMapList;
+
     public GameObject GameManagerrr;
     public bool StartTime;
     public GameObject GameTwoGUI;
