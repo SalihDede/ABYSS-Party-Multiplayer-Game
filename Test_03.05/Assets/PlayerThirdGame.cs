@@ -56,7 +56,13 @@ public class PlayerThirdGame : MonoBehaviour
   
         if(isDeath)
         {
-            //isDeath = false;
+
+            isDeath = false;
+            if (photonView.IsMine)
+            {
+                PhotonNetwork.Instantiate("YusufGamePlayer", CP2.transform.position, Quaternion.identity);
+            }
+
             Destroy(gameObject);
         }
 
