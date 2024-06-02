@@ -10,7 +10,7 @@ public class PlayerThirdGame : MonoBehaviour
 
     void Start()
     {
-        GameManagerr = GameObject.Find("Yusuf Game");
+        GameManagerr = GameObject.Find("YusufGame");
         GameManagerr.GetComponent<GameThreeManager>().StartingMans.Add(gameObject);
     }
 
