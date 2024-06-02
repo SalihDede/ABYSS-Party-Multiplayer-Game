@@ -55,7 +55,14 @@ public class GameOneManager : MonoBehaviourPunCallbacks
 
     IEnumerator GameFinishedCoroutine()
     {
-        Starters.Sort((player1, player2) => player2.GetComponent<PlayerABYSS>().score.CompareTo(player1.GetComponent<PlayerABYSS>().score));
+
+        if(PhotonNetwork.IsMasterClient)
+        {
+            photonView.RPC("AdminList", RpcTarget.All);
+            Starters.Sort((player1, player2) => player2.GetComponent<PlayerABYSS>().score.CompareTo(player1.GetComponent<PlayerABYSS>().score));
+
+        }
+        
 
         if (Starters.Count == 4)
         {
@@ -135,7 +142,23 @@ public class GameOneManager : MonoBehaviourPunCallbacks
             PhotonNetwork.Instantiate("Soccer Ball", BallSpawn.transform.position, Quaternion.identity);
         }
     }
+    [PunRPC]
+    void AdminList(int result)
+    {
+        if (PhotonNetwork.IsMasterClient)
+        {
+            Starters.AddRange(Ranking);
+            Starters.RemoveAt(0);
+            Starters.RemoveAt(1);
+            Starters.RemoveAt(2);
+            Starters.RemoveAt(3);
+        }
+        else
+        {
+            Starters.Clear();
+        }
 
+    }
     void FixedUpdate()
     {
 
@@ -148,6 +171,14 @@ public class GameOneManager : MonoBehaviourPunCallbacks
             GameFinished = true;
 
             Destroy(SpawnedBall);
+
+            if(PhotonNetwork.IsMasterClient)
+            {
+                
+            }
+
+
+
             StartCoroutine(GameFinishedCoroutine());
 
 
