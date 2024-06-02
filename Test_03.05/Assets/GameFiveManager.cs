@@ -30,7 +30,7 @@ public class GameFiveManager : MonoBehaviourPunCallbacks
         StartCoroutine(StartCountdownCoroutine());
     }
 
-    void Update()
+    void FixedUpdate()
     {
 
         if (Ranking.Count == 0)

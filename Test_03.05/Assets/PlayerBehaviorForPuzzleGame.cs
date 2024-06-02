@@ -35,7 +35,7 @@ namespace KinematicCharacterController.Walkthrough.MultipleMovementStates
             OrbitCamera.IgnoredColliders.AddRange(Character.GetComponentsInChildren<Collider>());
 
             // Ensure the image is initially hidden
-            puzzleImage.gameObject.SetActive(false);
+            //puzzleImage.gameObject.SetActive(false);
         }
 
         private void Update()
