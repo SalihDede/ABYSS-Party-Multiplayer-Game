@@ -82,7 +82,7 @@ public class DiceController : MonoBehaviourPunCallbacks
 
         if(BahaGame != null)
         {
-            if (BahaGame.GetComponent<GameTwoManager>().Ranking.Count == 2)
+            if (BahaGame.GetComponent<GameTwoManager>().Ranking.Count == 4)
             {
                 GUI.SetActive(true);
                 GameManager.GetComponent<GameManager>().MiniGameStarted = false;
@@ -106,7 +106,7 @@ public class DiceController : MonoBehaviourPunCallbacks
 
 
 
-            if(GameManager.GetComponent<GameManager>().PlayersSorted.Count == 2)
+            if(GameManager.GetComponent<GameManager>().PlayersSorted.Count == 4)
             {
                 if (GameManager.GetComponent<GameManager>().PlayersSorted[0].GetComponent<DiceController>().IsStart != 0)
                 {
@@ -142,7 +142,7 @@ public class DiceController : MonoBehaviourPunCallbacks
 
     public void StartGameButton()
     {
-        if (PhotonNetwork.IsMasterClient && PhotonNetwork.CurrentRoom.PlayerCount == 2)
+        if (PhotonNetwork.IsMasterClient && PhotonNetwork.CurrentRoom.PlayerCount == 4)
         {
             startButton.gameObject.SetActive(false);
             photonView.RPC("AdminStart", RpcTarget.All, 1);
@@ -167,7 +167,7 @@ public class DiceController : MonoBehaviourPunCallbacks
             StartCoroutine(MovePlayer(new Vector3(StepsList[stepLine].transform.position.x, StepsList[stepLine].transform.position.y + 0.5f, StepsList[stepLine].transform.position.z)));
             photonView.RPC("SyncDiceResult", RpcTarget.All, diceResult);
 
-            if (GameManager.GetComponent<GameManager>().WhoseTurn != 1)
+            if (GameManager.GetComponent<GameManager>().WhoseTurn != 3)
             {
 
                 GameManager.GetComponent<GameManager>().WhoseTurn = +1;
