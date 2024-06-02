@@ -27652,6 +27652,7 @@ MonoBehaviour:
   GameManagerrr: {fileID: 0}
   StartTime: 0
   OBJCordinate: {fileID: 1894563592}
+  DoorManager: {fileID: 1762472481}
   Ranking: []
   Starters: []
   IsWin: 0
@@ -38357,6 +38358,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1757682781}
   m_Mesh: {fileID: 4300000, guid: 8329acd25ffd119489ecb4acc0b7fda4, type: 3}
+--- !u!1 &1762472481 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7075467749620276955, guid: e03d1e9f5dfc793478867323badaaaff, type: 3}
+  m_PrefabInstance: {fileID: 1299971579}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1767465235
 GameObject:
   m_ObjectHideFlags: 0
