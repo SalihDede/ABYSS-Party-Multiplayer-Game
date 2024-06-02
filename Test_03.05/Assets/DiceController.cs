@@ -171,9 +171,12 @@ public class DiceController : MonoBehaviourPunCallbacks
             {
 
                 GameManager.GetComponent<GameManager>().WhoseTurn = +1;
+                photonView.RPC("WhoseTurnUpdate", RpcTarget.All, GameManager.GetComponent<GameManager>().WhoseTurn);
             }
             else
             {
+
+                photonView.RPC("WhoseTurnUpdate", RpcTarget.All, GameManager.GetComponent<GameManager>().WhoseTurn);
                 GameManager.GetComponent<GameManager>().MinigameCount = Random.Range(0,5);
                 photonView.RPC("MiniGameSelectUpdate", RpcTarget.All, GameManager.GetComponent<GameManager>().MinigameCount);
 
@@ -185,7 +188,6 @@ public class DiceController : MonoBehaviourPunCallbacks
 
 
 
-            photonView.RPC("WhoseTurnUpdate", RpcTarget.All, GameManager.GetComponent<GameManager>().WhoseTurn);
 
 
         }

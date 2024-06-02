@@ -46,6 +46,16 @@ public class GameManager : MonoBehaviourPunCallbacks
     void Update()
     {
        
+
+
+
+
+
+
+
+
+
+
         if(PlayersJoin.Count == 4 && PlayersSorted.Count != 4)
         {
             for (int i = 0; i < 4; i++)
