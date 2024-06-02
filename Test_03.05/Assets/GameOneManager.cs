@@ -55,7 +55,7 @@ public class GameOneManager : MonoBehaviourPunCallbacks
     void AdminList()
     {
         Starters.AddRange(Starters);
-        if(Starters.Count >= 4)
+        if(Starters.Count > 4)
         {
             Starters.RemoveAt(0);
             Starters.RemoveAt(1);
