@@ -280,6 +280,7 @@ public class DiceController : MonoBehaviourPunCallbacks
         if (GameManager.GetComponent<GameManager>().MinigameList[GameManager.GetComponent<GameManager>().MinigameCount].name == "SalihGame")
         {
             GameManager.GetComponent<GameManager>().MinigameList[GameManager.GetComponent<GameManager>().MinigameCount].GetComponent<GameFiveManager>().gameActive = true;
+
             for(int i = 0;i<4;i++)
             {
                 GameManager.GetComponent<GameManager>().MinigameList[GameManager.GetComponent<GameManager>().MinigameCount].GetComponent<GameFiveManager>().PuzzleMapList[i].GetComponent<PuzzleManager>().puzzleTiles = null;
@@ -287,7 +288,6 @@ public class DiceController : MonoBehaviourPunCallbacks
                 GameManager.GetComponent<GameManager>().MinigameList[GameManager.GetComponent<GameManager>().MinigameCount].GetComponent<GameFiveManager>().PuzzleMapList[i].GetComponent<PuzzleManager>().originalPositions.Clear();
                 GameManager.GetComponent<GameManager>().MinigameList[GameManager.GetComponent<GameManager>().MinigameCount].GetComponent<GameFiveManager>().PuzzleMapList[i].GetComponent<PuzzleManager>().currentPositions.Clear();
             }
-
         }
         if (GameManager.GetComponent<GameManager>().MinigameList[GameManager.GetComponent<GameManager>().MinigameCount].name == "YusufGame")
         {
