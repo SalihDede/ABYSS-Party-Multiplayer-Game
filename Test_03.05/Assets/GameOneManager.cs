@@ -92,7 +92,7 @@ public class GameOneManager : MonoBehaviourPunCallbacks
 
                 GameManagerrr.GetComponent<GameManager>().PlayersSorted.Clear();
 
-                if (GameManagerrr.GetComponent<GameManager>().PlayersSorted.Count != 2)
+                if (GameManagerrr.GetComponent<GameManager>().PlayersSorted.Count != 4)
                 {
                     GameManagerrr.GetComponent<GameManager>().PlayersSorted.AddRange(GameManagerrr.GetComponent<GameManager>().PlayersTemp);
                 }
