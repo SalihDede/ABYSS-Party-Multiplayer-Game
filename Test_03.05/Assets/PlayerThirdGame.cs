@@ -3,57 +3,34 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Realtime;
 using Photon.Pun;
+using TMPro;
 
 public class PlayerThirdGame : MonoBehaviour
 {
     private PhotonView photonView;
     public GameObject GameManagerr;
     public GameObject CP2;
+    public GameObject CP1;
     public bool isDeath;
+    public bool isDeath2;
+
 
     void Start()
     {
         photonView = gameObject.GetComponent<PhotonView>();
         CP2 = GameObject.Find("seksenseksen");
+        CP1 = GameObject.Find("seksen");
         GameManagerr = GameObject.Find("YusufGame");
         GameManagerr.GetComponent<GameThreeManager>().StartingMans.Add(gameObject);
     }
 
-    [PunRPC]
-    void Death2()
-    {
-        Debug.Log("Death2 method called"); // Check if the method is called
-        
-        if (photonView != null)
-        {
-            Debug.Log("PhotonView found"); // Check if PhotonView is found
-            if (photonView.IsMine)
-            {
-                Debug.Log("IsMine is true"); // Check if IsMine is true
-                if (CP2 != null)
-                {
-                    Debug.Log("CP2 found"); // Check if CP2 is found
-                    gameObject.transform.position = CP2.transform.position;
-                }
-                else
-                {
-                    Debug.LogError("CP2 is null"); // Log an error if CP2 is null
-                }
-            }
-            else
-            {
-                Debug.LogWarning("IsMine is false"); // Log a warning if IsMine is false
-            }
-        }
-        else
-        {
-            Debug.LogError("PhotonView is null"); // Log an error if PhotonView is null
-        }
-    }
-
+ 
     void Update()
     {
   
+        
+
+
         if(isDeath)
         {
 
@@ -61,6 +38,18 @@ public class PlayerThirdGame : MonoBehaviour
             if (photonView.IsMine)
             {
                 PhotonNetwork.Instantiate("YusufGamePlayer", CP2.transform.position, Quaternion.identity);
+            }
+
+            Destroy(gameObject);
+        }
+
+        if (isDeath2)
+        {
+
+            isDeath2 = false;
+            if (photonView.IsMine)
+            {
+                PhotonNetwork.Instantiate("YusufGamePlayer", CP1.transform.position, Quaternion.identity);
             }
 
             Destroy(gameObject);

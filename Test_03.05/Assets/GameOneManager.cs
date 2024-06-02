@@ -138,6 +138,10 @@ public class GameOneManager : MonoBehaviourPunCallbacks
 
     void FixedUpdate()
     {
+
+        
+
+
         if(countdownText.text == "Finish" || GameFinished == true)
         {
             countdownText.text = "";

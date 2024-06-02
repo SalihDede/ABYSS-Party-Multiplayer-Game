@@ -11,6 +11,7 @@ using Photon.Realtime;
 public class GameThreeManager : MonoBehaviourPunCallbacks
 {
 
+    public TMP_Text FinishList;
     public GameObject Door;
 
     public bool gameActive = false; // Indicates if the game has started
@@ -75,6 +76,28 @@ public class GameThreeManager : MonoBehaviourPunCallbacks
     // Update is called once per frame
     void Update()
     {
+        if(Ranking.Count == 1)
+        {
+            FinishList.text = "Ranking List \n" + Ranking[0].GetComponent<PhotonView>().Controller.NickName;
+
+        }
+        if (Ranking.Count == 2)
+        {
+            FinishList.text = "Ranking List \n" + Ranking[0].GetComponent<PhotonView>().Controller.NickName + "\n" + Ranking[1].GetComponent<PhotonView>().Controller.NickName;
+
+        }
+        /*
+        if (Ranking.Count == 3)
+        {
+            FinishList.text = "Ranking List \n" + Ranking[0].GetComponent<PhotonView>().Controller.NickName + "\n" + Ranking[1].GetComponent<PhotonView>().Controller.NickName + "\n" + Ranking[2].GetComponent<PhotonView>().Controller.NickName;
+        }
+        if (Ranking.Count == 4)
+        {
+            FinishList.text = "Ranking List \n" + Ranking[0].GetComponent<PhotonView>().Controller.NickName + "\n" + Ranking[1].GetComponent<PhotonView>().Controller.NickName + "\n" + Ranking[2].GetComponent<PhotonView>().Controller.NickName + "\n" + Ranking[3].GetComponent<PhotonView>().Controller.NickName;
+
+
+        }*/
+
         if (gameActive)
         {
             RandomMapGenerator();

@@ -20,8 +20,18 @@ public class ReturnFromFallGame3 : MonoBehaviour
     {
         if(other.tag == "Bullet")
         {
-            Debug.Log("Deðdi");
-            other.gameObject.GetComponent<PlayerThirdGame>().isDeath = true;
+            
+           
+
+            if(gameObject.tag == "Mine")
+            {
+                other.gameObject.GetComponent<PlayerThirdGame>().isDeath2 = true;
+            }
+            else
+            {
+                other.gameObject.GetComponent<PlayerThirdGame>().isDeath = true;
+
+            }
         }
     }
 
