@@ -111,7 +111,7 @@ public class GameTwoManager : MonoBehaviourPunCallbacks
     {
 
 
-                GameObject player = PhotonNetwork.Instantiate("SalihGamePlayer", Spawns[0].transform.position, Quaternion.identity);
+                GameObject player = PhotonNetwork.Instantiate("Prometheus", Spawns[0].transform.position, Quaternion.identity);
            
 
        
