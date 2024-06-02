@@ -58,7 +58,7 @@ public class GameFiveManager : MonoBehaviourPunCallbacks
 
 
         countdownText.text = countdown.ToString();
-        ElapsedTime.text = elapsedTime.ToString();
+        ElapsedTime.text = ((int)(elapsedTime)).ToString();
 
         if (gameStarted)
         {
