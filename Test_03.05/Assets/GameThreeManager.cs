@@ -82,9 +82,23 @@ public class GameThreeManager : MonoBehaviourPunCallbacks
             StartCoroutine(StartCountdownCoroutine());
         }
 
-        
+
         ElapsedTime.text = ((int)(elapsedTime)).ToString();
 
+
+        if (StartTime)
+        {
+            if (gameStarted)
+            {
+                elapsedTime += Time.deltaTime;
+            }
+            Door.SetActive(false);
+        }
+        else
+        {
+
+            Door.SetActive(true);
+        }
 
         if (Ranking.Count == 2)
         {
@@ -120,32 +134,6 @@ public class GameThreeManager : MonoBehaviourPunCallbacks
             Cursor.lockState = CursorLockMode.None;
             gameObject.SetActive(false);
 
-
-
-
-
-
-
-
-
-
-
-
-
-            if (StartTime)
-            {
-                if (gameStarted)
-                {
-                    elapsedTime += Time.deltaTime;
-                }
-                Door.SetActive(false);
-            }
-            else
-            {
-
-                Door.SetActive(true);
-            }
-
-
+        }
     }
 }
