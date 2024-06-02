@@ -60,24 +60,16 @@ public class DoorManager : MonoBehaviour
 
     public void StartDoorClosed()
     {
-        doorStates.Add(Kapý0, false);
-        lastClickTime.Add(Kapý0, 0f);
-        doorStates.Add(Kapý1, false);
-        lastClickTime.Add(Kapý1, 0f);
-        doorStates.Add(Kapý2, false);
-        lastClickTime.Add(Kapý2, 0f);
-        doorStates.Add(Kapý3, false);
-        lastClickTime.Add(Kapý3, 0f);
-        doorStates.Add(Kapý4, false);
-        lastClickTime.Add(Kapý4, 0f);
-        doorStates.Add(Kapý5, false);
-        lastClickTime.Add(Kapý5, 0f);
-        doorStates.Add(Kapý6, false);
-        lastClickTime.Add(Kapý6, 0f);
-        doorStates.Add(Kapý7, false);
-        lastClickTime.Add(Kapý7, 0f);
-        doorStates.Add(Kapý8, false);
-        lastClickTime.Add(Kapý8, 0f);
+        StartCoroutine(MoveObject(Kapý0, new Vector3(0, 0, 1.25f)));
+        StartCoroutine(MoveObject(Kapý1, new Vector3(0, 0, 1.26f)));
+        StartCoroutine(MoveObject(Kapý2, new Vector3(0, 0, -1.166f)));
+        StartCoroutine(MoveObject(Kapý3, new Vector3(-1.25f, 0, 0)));
+        StartCoroutine(MoveObject(Kapý4, new Vector3(-1.25f, 0, 0)));
+        StartCoroutine(RotateObject(Kapý5, new Vector3(0, 0, -90f)));
+        StartCoroutine(RotateObject(Kapý6, new Vector3(0, 0, -90f)));
+        StartCoroutine(RotateObject(Kapý7, new Vector3(0, 0, -90f)));
+        StartCoroutine(MoveObject(Kapý8, new Vector3(-1.25f, 0, 0)));
+
     }
 
 
