@@ -14,7 +14,7 @@ public class PlayerThirdGame : MonoBehaviour
     void Start()
     {
         photonView = gameObject.GetComponent<PhotonView>();
-        CP2 = GameObject.Find("SpawnerBefore2");
+        CP2 = GameObject.Find("seksenseksen");
         GameManagerr = GameObject.Find("YusufGame");
         GameManagerr.GetComponent<GameThreeManager>().StartingMans.Add(gameObject);
     }

@@ -2133,6 +2133,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameManagerr: {fileID: 0}
+  CP2: {fileID: 0}
+  isDeath: 0
 --- !u!1 &8987136569727909539
 GameObject:
   m_ObjectHideFlags: 0
