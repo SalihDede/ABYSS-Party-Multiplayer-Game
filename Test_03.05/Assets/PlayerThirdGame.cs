@@ -18,13 +18,6 @@ public class PlayerThirdGame : MonoBehaviour
 
     void Update()
     {
-        if(GameManagerr.GetComponent<GameThreeManager>().StartTime)
-        {
-            gameObject.GetComponent<KinematicCharacterController.Walkthrough.MultipleMovementStates.MyCharacterController>().enabled = true;
-        }
-        else
-        {
-            gameObject.GetComponent<KinematicCharacterController.Walkthrough.MultipleMovementStates.MyCharacterController>().enabled = false;
-        }
+  
     }
 }

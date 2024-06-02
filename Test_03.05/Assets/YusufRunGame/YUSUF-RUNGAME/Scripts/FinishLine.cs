@@ -6,7 +6,37 @@ using UnityEngine.UI;
 public class FinishLine : MonoBehaviourPunCallbacks
 {
     public Text finishMessageText; // Reference to the UI Text component for displaying the finish message
+    public GameObject GameThreeManager;
 
+
+
+    private void Start()
+    {
+        GameThreeManager = GameObject.Find("YusufGame");
+    }
+
+    private void Update()
+    {
+        
+    }
+
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "Bullet")
+        {
+            if(!GameThreeManager.GetComponent<GameThreeManager>().Ranking.Contains(other.gameObject))
+            {
+                GameThreeManager.GetComponent<GameThreeManager>().Ranking.Add(other.gameObject);
+            }
+
+        }
+    }
+
+
+
+    /*
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -42,5 +72,5 @@ public class FinishLine : MonoBehaviourPunCallbacks
     private void DisplayFinishMessage(string message)
     {
         finishMessageText.text = message;
-    }
+    }*/
 }

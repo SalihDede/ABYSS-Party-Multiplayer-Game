@@ -11,16 +11,24 @@ using Photon.Realtime;
 public class GameThreeManager : MonoBehaviourPunCallbacks
 {
 
+    public GameObject Door;
+
+    public bool gameActive = false; // Indicates if the game has started
     public List<GameObject> StartingMans = new List<GameObject>();
-    public TMP_Text countdownText;
+
     public bool StartTime;
     public TMP_Text Win;
     public bool IsWin;
     public List<GameObject> Ranking = new List<GameObject>();
-    public GameObject GameManagerr;
+    public GameObject GameManagerrr;
     public GameObject CharacterSpawn;
     public GameObject GameThreeGUI;
 
+    public TMP_Text countdownText;
+    public TMP_Text ElapsedTime;
+    public float gameDuration = 120f; // Duration of the game in seconds
+    private float elapsedTime = 0f; // Time elapsed since the start of the game
+    private bool gameStarted = false; // Indicates if the game has started
 
     private PhotonView photonView;
 
@@ -29,16 +37,14 @@ public class GameThreeManager : MonoBehaviourPunCallbacks
         
         photonView = GetComponent<PhotonView>();
 
-        GameManagerr = GameObject.Find("GameManager");
-        RandomMapGenerator();
-        StartCoroutine(StartCountdownCoroutine()); 
+        GameManagerrr = GameObject.Find("GameManager");
+
       
     }
 
-
     IEnumerator StartCountdownCoroutine()
     {
-        int countdown = 15; // Initial countdown value
+        int countdown = 10; // Initial countdown value
         while (countdown > 0)
         {
             countdownText.text = countdown.ToString(); 
@@ -55,8 +61,8 @@ public class GameThreeManager : MonoBehaviourPunCallbacks
     [PunRPC]
     void StartRace(bool result)
     {
-        GameThreeGUI.SetActive(false);
         StartTime = result;
+        gameStarted = result;
     }
 
 
@@ -69,6 +75,77 @@ public class GameThreeManager : MonoBehaviourPunCallbacks
     // Update is called once per frame
     void Update()
     {
+        if (gameActive)
+        {
+            RandomMapGenerator();
+            gameActive = false;
+            StartCoroutine(StartCountdownCoroutine());
+        }
+
         
+        ElapsedTime.text = ((int)(elapsedTime)).ToString();
+
+
+        if (Ranking.Count == 2)
+        {
+            GameManagerrr.GetComponent<GameManager>().Kamera.SetActive(true);
+            gameObject.SetActive(false);
+
+            GameManagerrr.GetComponent<GameManager>().PlayersTemp.Clear();
+            for (int i = 0; i < 2; i++)
+            {
+                foreach (GameObject Player in GameManagerrr.GetComponent<GameManager>().PlayersSorted)
+                {
+                    if (Ranking[i].GetComponent<PhotonView>().ViewID / 1000 == Player.GetComponent<PhotonView>().ViewID / 1000)
+                    {
+                        GameManagerrr.GetComponent<GameManager>().PlayersTemp.Add(Player);
+                    }
+                }
+            }
+
+            GameManagerrr.GetComponent<GameManager>().PlayersSorted.Clear();
+
+            if (GameManagerrr.GetComponent<GameManager>().PlayersSorted.Count != 2)
+            {
+                GameManagerrr.GetComponent<GameManager>().PlayersSorted.AddRange(GameManagerrr.GetComponent<GameManager>().PlayersTemp);
+            }
+
+            foreach (GameObject player in Ranking)
+            {
+                Destroy(player);
+            }
+            Ranking.Clear();
+            StartingMans.Clear();
+            GameManagerrr.GetComponent<GameManager>().MiniGameStarted = false;
+            Cursor.lockState = CursorLockMode.None;
+            gameObject.SetActive(false);
+
+
+
+
+
+
+
+
+
+
+
+
+
+            if (StartTime)
+            {
+                if (gameStarted)
+                {
+                    elapsedTime += Time.deltaTime;
+                }
+                Door.SetActive(false);
+            }
+            else
+            {
+
+                Door.SetActive(true);
+            }
+
+
     }
 }
