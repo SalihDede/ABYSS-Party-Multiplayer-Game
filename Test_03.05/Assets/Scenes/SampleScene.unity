@@ -46897,6 +46897,10 @@ PrefabInstance:
       propertyPath: GameFiveManager
       value: 
       objectReference: {fileID: 2132587770}
+    - target: {fileID: 4838558371835580720, guid: 2966105e728257a41af182deba877483, type: 3}
+      propertyPath: MainPlayerOfMap
+      value: 
+      objectReference: {fileID: 8987136569212136115, guid: 55ee85e5cc2f8974a8c15c98e3759ddd, type: 3}
     - target: {fileID: 4838558371926439898, guid: 2966105e728257a41af182deba877483, type: 3}
       propertyPath: m_Name
       value: SalihGameSpawn2
@@ -46905,6 +46909,10 @@ PrefabInstance:
       propertyPath: GameFiveManager
       value: 
       objectReference: {fileID: 2132587770}
+    - target: {fileID: 4838558371978645539, guid: 2966105e728257a41af182deba877483, type: 3}
+      propertyPath: MainPlayerOfMap
+      value: 
+      objectReference: {fileID: 8987136569212136115, guid: 55ee85e5cc2f8974a8c15c98e3759ddd, type: 3}
     - target: {fileID: 4838558372148830262, guid: 2966105e728257a41af182deba877483, type: 3}
       propertyPath: m_Name
       value: SalihGameSpawn4
@@ -46917,6 +46925,10 @@ PrefabInstance:
       propertyPath: GameFiveManager
       value: 
       objectReference: {fileID: 2132587770}
+    - target: {fileID: 4838558372672639255, guid: 2966105e728257a41af182deba877483, type: 3}
+      propertyPath: MainPlayerOfMap
+      value: 
+      objectReference: {fileID: 8987136569212136115, guid: 55ee85e5cc2f8974a8c15c98e3759ddd, type: 3}
     - target: {fileID: 4838558373373552568, guid: 2966105e728257a41af182deba877483, type: 3}
       propertyPath: m_Name
       value: SalihGameSpawn1
