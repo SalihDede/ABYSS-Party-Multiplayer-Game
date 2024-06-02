@@ -71,6 +71,7 @@ public class GameFiveManager : MonoBehaviourPunCallbacks
             Ranking.Clear();
             Starters.Clear();
             GameManagerrr.GetComponent<GameManager>().MiniGameStarted = false;
+            Cursor.lockState = CursorLockMode.None;
             gameObject.SetActive(false);
         }
 
