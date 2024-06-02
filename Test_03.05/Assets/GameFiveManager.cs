@@ -7,7 +7,7 @@ using TMPro;
 
 public class GameFiveManager : MonoBehaviourPunCallbacks
 {
-    public GameObject GameManagerrrr;
+    public GameObject GameManagerrr;
     public bool StartTime;
     public GameObject GameTwoGUI;
     public List<GameObject> Ranking = new List<GameObject>();
@@ -26,12 +26,54 @@ public class GameFiveManager : MonoBehaviourPunCallbacks
 
     void Start()
     {
-        GameManagerrrr = GameObject.Find("GameManager");
+        GameManagerrr = GameObject.Find("GameManager");
         StartCoroutine(StartCountdownCoroutine());
     }
 
     void FixedUpdate()
     {
+
+
+
+        if (Ranking.Count == 2)
+        {
+            GameManagerrr.GetComponent<GameManager>().Kamera.SetActive(true);
+            gameObject.SetActive(false);
+
+            GameManagerrr.GetComponent<GameManager>().PlayersTemp.Clear();
+            for (int i = 0; i < 2; i++)
+            {
+                foreach (GameObject Player in GameManagerrr.GetComponent<GameManager>().PlayersSorted)
+                {
+                    if (Ranking[i].GetComponent<PhotonView>().ViewID / 1000 == Player.GetComponent<PhotonView>().ViewID / 1000)
+                    {
+                        GameManagerrr.GetComponent<GameManager>().PlayersTemp.Add(Player);
+                    }
+                }
+            }
+
+            GameManagerrr.GetComponent<GameManager>().PlayersSorted.Clear();
+
+            if (GameManagerrr.GetComponent<GameManager>().PlayersSorted.Count != 2)
+            {
+                GameManagerrr.GetComponent<GameManager>().PlayersSorted.AddRange(GameManagerrr.GetComponent<GameManager>().PlayersTemp);
+            }
+
+
+            foreach(GameObject player in Ranking)
+            {
+                Destroy(player);
+            }
+            Ranking.Clear();
+            Starters.Clear();
+            GameManagerrr.GetComponent<GameManager>().MiniGameStarted = false;
+            gameObject.SetActive(false);
+
+        }
+
+
+
+
 
         if (Ranking.Count == 0)
         {
@@ -70,7 +112,7 @@ public class GameFiveManager : MonoBehaviourPunCallbacks
         }
     }
 
-    IEnumerator StartCountdownCoroutine()
+    public IEnumerator StartCountdownCoroutine()
     {
         countdownText.gameObject.SetActive(true); // 
         ElapsedTime.gameObject.SetActive(false);
