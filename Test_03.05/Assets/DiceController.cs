@@ -8,6 +8,10 @@ using System.Collections.Generic;
 
 public class DiceController : MonoBehaviourPunCallbacks
 {
+
+
+    private PhotonView photonView;
+
     public int diceResult;
     private int currentPlayerIndex = 0;
     public bool isMyTurn = false;
@@ -47,7 +51,7 @@ public class DiceController : MonoBehaviourPunCallbacks
     {
 
 
-
+        photonView = GetComponent<PhotonView>();
 
         GameManager = GameObject.Find("GameManager");
         gameObject.name = GameManager.GetComponent<GameManager>().PlayersJoin.Count.ToString();
