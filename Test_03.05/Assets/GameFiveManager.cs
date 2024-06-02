@@ -27,7 +27,6 @@ public class GameFiveManager : MonoBehaviourPunCallbacks
     void Start()
     {
         GameManagerrr = GameObject.Find("GameManager");
-        StartCoroutine(StartCountdownCoroutine());
     }
 
     void FixedUpdate()
