@@ -51,10 +51,28 @@ public class GameOneManager : MonoBehaviourPunCallbacks
 
 
 
+    [PunRPC]
+    void AdminList()
+    {
+        Starters.AddRange(Starters);
+        if(Starters.Count >= 4)
+        {
+            Starters.RemoveAt(0);
+            Starters.RemoveAt(1);
+            Starters.RemoveAt(2);
+            Starters.RemoveAt(3);
+        }
 
+    }
 
     IEnumerator GameFinishedCoroutine()
     {
+        if(PhotonNetwork.IsMasterClient)
+        {
+            photonView.RPC("AdminList", RpcTarget.All);
+        }
+
+
         Starters.Sort((player1, player2) => player2.GetComponent<PlayerABYSS>().score.CompareTo(player1.GetComponent<PlayerABYSS>().score));
 
         if (Starters.Count == 4)
@@ -124,6 +142,7 @@ public class GameOneManager : MonoBehaviourPunCallbacks
 
 
         }
+
 
 
     public void BallSpawnMethod()
