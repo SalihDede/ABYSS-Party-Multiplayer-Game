@@ -2134,7 +2134,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GameManagerr: {fileID: 0}
   CP2: {fileID: 0}
+  CP1: {fileID: 0}
   isDeath: 0
+  isDeath2: 0
 --- !u!1 &8987136569727909539
 GameObject:
   m_ObjectHideFlags: 0
