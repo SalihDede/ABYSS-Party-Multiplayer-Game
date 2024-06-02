@@ -74,7 +74,7 @@ public class GameFiveManager : MonoBehaviourPunCallbacks
     {
         countdownText.gameObject.SetActive(true); // 
         ElapsedTime.gameObject.SetActive(false);
-        countdown = 3; // Initial countdown value
+        countdown = 15; // Initial countdown value
         while (countdown > 0)
         {
 
@@ -172,4 +172,3 @@ public class GameFiveManager : MonoBehaviourPunCallbacks
         StartCoroutine(StartCountdownCoroutine());
     }
 }
-
