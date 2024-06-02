@@ -279,7 +279,7 @@ public class DiceController : MonoBehaviourPunCallbacks
 
         if (GameManager.GetComponent<GameManager>().MinigameList[GameManager.GetComponent<GameManager>().MinigameCount].name == "SalihGame")
         {
-            StartCoroutine(GameManager.GetComponent<GameManager>().MinigameList[GameManager.GetComponent<GameManager>().MinigameCount].GetComponent<GameFiveManager>().StartCountdownCoroutine());
+            GameManager.GetComponent<GameManager>().MinigameList[GameManager.GetComponent<GameManager>().MinigameCount].GetComponent<GameFiveManager>().gameActive = true;
         }
 
 

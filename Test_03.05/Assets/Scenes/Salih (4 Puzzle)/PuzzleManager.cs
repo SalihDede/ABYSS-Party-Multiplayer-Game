@@ -129,12 +129,13 @@ public class PuzzleManager : MonoBehaviourPunCallbacks
         {
             Debug.Log("Puzzle solved");
 
-
+            if (MainPlayerOfMap.GetComponent<PhotonView>().IsMine)
+            {
                 Debug.Log("You solved the puzzle!");
                 MainPlayerOfMap.GetComponent<GameFivePlayer>().IsHeSolve = true;
                 GameFiveManager.PlayerCompletedPuzzle(MainPlayerOfMap); // Notify GameFiveManager
                 //photonView.RPC("NotifyPuzzleSolved", RpcTarget.AllBuffered, MainPlayerOfMap.GetComponent<PhotonView>().ViewID);
-           
+            }
         }
         else
         {

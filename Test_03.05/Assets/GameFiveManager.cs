@@ -22,6 +22,7 @@ public class GameFiveManager : MonoBehaviourPunCallbacks
     private float elapsedTime = 0f; // Time elapsed since the start of the game
     public int countdown = 15;
     private bool gameStarted = false; // Indicates if the game has started
+    public bool gameActive = false; // Indicates if the game has started
     private int currentSpawnIndex = 0; // Current spawn point index
 
     void Start()
@@ -31,6 +32,14 @@ public class GameFiveManager : MonoBehaviourPunCallbacks
 
     void FixedUpdate()
     {
+
+        if(gameActive)
+        {
+            gameActive = false;
+            StartCoroutine(StartCountdownCoroutine());
+        }
+
+
         if (Ranking.Count == 2)
         {
             GameManagerrr.GetComponent<GameManager>().Kamera.SetActive(true);
@@ -110,6 +119,11 @@ public class GameFiveManager : MonoBehaviourPunCallbacks
         ElapsedTime.gameObject.SetActive(true); // Hide the countdown text
         StartGame(); // Start the game after the countdown
     }
+
+
+
+
+
 
     public void RandomMapGenerator()
     {
