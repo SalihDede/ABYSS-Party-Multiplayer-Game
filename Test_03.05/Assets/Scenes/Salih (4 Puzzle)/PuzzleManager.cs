@@ -67,7 +67,7 @@ public class PuzzleManager : MonoBehaviourPunCallbacks
     }
 
     // Shuffle the puzzle tiles
-    void ShufflePuzzle()
+    public void ShufflePuzzle()
     {
         bool puzzleSolved = true;
 
