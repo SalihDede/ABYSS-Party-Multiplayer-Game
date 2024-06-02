@@ -3356,6 +3356,7 @@ GameObject:
   m_Component:
   - component: {fileID: 201683282}
   - component: {fileID: 201683283}
+  - component: {fileID: 201683284}
   m_Layer: 0
   m_Name: Mines (11)
   m_TagString: Untagged
@@ -3397,6 +3398,28 @@ MonoBehaviour:
   - {fileID: 405462432}
   - {fileID: 1527428070}
   - {fileID: 730935066}
+--- !u!114 &201683284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 201683281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 116
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &201746355
 GameObject:
   m_ObjectHideFlags: 0
@@ -4803,6 +4826,7 @@ GameObject:
   m_Component:
   - component: {fileID: 267048609}
   - component: {fileID: 267048610}
+  - component: {fileID: 267048611}
   m_Layer: 0
   m_Name: Mines (7)
   m_TagString: Untagged
@@ -4844,6 +4868,28 @@ MonoBehaviour:
   - {fileID: 1250748431}
   - {fileID: 668509952}
   - {fileID: 755906766}
+--- !u!114 &267048611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 267048608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 115
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &273968463
 GameObject:
   m_ObjectHideFlags: 0
@@ -6781,6 +6827,7 @@ GameObject:
   m_Component:
   - component: {fileID: 372092082}
   - component: {fileID: 372092083}
+  - component: {fileID: 372092084}
   m_Layer: 0
   m_Name: Mines (14)
   m_TagString: Untagged
@@ -6822,6 +6869,28 @@ MonoBehaviour:
   - {fileID: 2119377094}
   - {fileID: 562869857}
   - {fileID: 739887534}
+--- !u!114 &372092084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 372092081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 114
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &379081691
 GameObject:
   m_ObjectHideFlags: 0
@@ -6988,6 +7057,7 @@ GameObject:
   m_Component:
   - component: {fileID: 381670697}
   - component: {fileID: 381670698}
+  - component: {fileID: 381670699}
   m_Layer: 0
   m_Name: Mines (15)
   m_TagString: Untagged
@@ -7029,6 +7099,28 @@ MonoBehaviour:
   - {fileID: 2115252868}
   - {fileID: 1091142206}
   - {fileID: 1858767555}
+--- !u!114 &381670699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 381670696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 113
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &386065799
 GameObject:
   m_ObjectHideFlags: 0
@@ -7151,6 +7243,7 @@ GameObject:
   m_Component:
   - component: {fileID: 396556160}
   - component: {fileID: 396556161}
+  - component: {fileID: 396556162}
   m_Layer: 0
   m_Name: Mines (3)
   m_TagString: Untagged
@@ -7192,6 +7285,28 @@ MonoBehaviour:
   - {fileID: 527081741}
   - {fileID: 1459906884}
   - {fileID: 1679980346}
+--- !u!114 &396556162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 396556159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 112
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &399758159
 GameObject:
   m_ObjectHideFlags: 0
@@ -8570,6 +8685,7 @@ GameObject:
   m_Component:
   - component: {fileID: 447001442}
   - component: {fileID: 447001443}
+  - component: {fileID: 447001444}
   m_Layer: 0
   m_Name: Mines (18)
   m_TagString: Untagged
@@ -8611,6 +8727,28 @@ MonoBehaviour:
   - {fileID: 1657870911}
   - {fileID: 1364994894}
   - {fileID: 1827788090}
+--- !u!114 &447001444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 447001441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 111
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &448154059
 GameObject:
   m_ObjectHideFlags: 0
@@ -9605,6 +9743,7 @@ GameObject:
   m_Component:
   - component: {fileID: 499307591}
   - component: {fileID: 499307592}
+  - component: {fileID: 499307593}
   m_Layer: 0
   m_Name: Mines (17)
   m_TagString: Untagged
@@ -9646,6 +9785,28 @@ MonoBehaviour:
   - {fileID: 583161028}
   - {fileID: 1210625820}
   - {fileID: 2015292682}
+--- !u!114 &499307593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 499307590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 110
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &504355301
 GameObject:
   m_ObjectHideFlags: 0
@@ -12164,6 +12325,7 @@ GameObject:
   m_Component:
   - component: {fileID: 609850198}
   - component: {fileID: 609850199}
+  - component: {fileID: 609850200}
   m_Layer: 0
   m_Name: Mines (16)
   m_TagString: Untagged
@@ -12205,6 +12367,28 @@ MonoBehaviour:
   - {fileID: 791806481}
   - {fileID: 526778701}
   - {fileID: 314252361}
+--- !u!114 &609850200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 609850197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 109
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &613089683
 GameObject:
   m_ObjectHideFlags: 0
@@ -12946,6 +13130,7 @@ GameObject:
   m_Component:
   - component: {fileID: 665539466}
   - component: {fileID: 665539467}
+  - component: {fileID: 665539468}
   m_Layer: 0
   m_Name: Mines (23)
   m_TagString: Untagged
@@ -12987,6 +13172,28 @@ MonoBehaviour:
   - {fileID: 30858018}
   - {fileID: 353361636}
   - {fileID: 129451917}
+--- !u!114 &665539468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 665539465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 108
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &668509952
 GameObject:
   m_ObjectHideFlags: 0
@@ -14356,6 +14563,7 @@ GameObject:
   m_Component:
   - component: {fileID: 753006987}
   - component: {fileID: 753006988}
+  - component: {fileID: 753006989}
   m_Layer: 0
   m_Name: Mines (13)
   m_TagString: Untagged
@@ -14397,6 +14605,28 @@ MonoBehaviour:
   - {fileID: 1473417189}
   - {fileID: 811650111}
   - {fileID: 1947943779}
+--- !u!114 &753006989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 753006986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 107
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &753351782
 GameObject:
   m_ObjectHideFlags: 0
@@ -16319,6 +16549,7 @@ GameObject:
   m_Component:
   - component: {fileID: 843029464}
   - component: {fileID: 843029465}
+  - component: {fileID: 843029466}
   m_Layer: 0
   m_Name: Mines (1)
   m_TagString: Untagged
@@ -16360,6 +16591,28 @@ MonoBehaviour:
   - {fileID: 1203281837}
   - {fileID: 2055454094}
   - {fileID: 1221956180}
+--- !u!114 &843029466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 843029463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 106
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &843793526
 GameObject:
   m_ObjectHideFlags: 0
@@ -16474,6 +16727,7 @@ GameObject:
   m_Component:
   - component: {fileID: 844293151}
   - component: {fileID: 844293152}
+  - component: {fileID: 844293153}
   m_Layer: 0
   m_Name: Mines
   m_TagString: Untagged
@@ -16515,6 +16769,28 @@ MonoBehaviour:
   - {fileID: 7087822683809769759}
   - {fileID: 823414886}
   - {fileID: 1453123830}
+--- !u!114 &844293153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 844293150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 105
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &848478941 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4838558372642984207, guid: 2966105e728257a41af182deba877483, type: 3}
@@ -20001,6 +20277,7 @@ GameObject:
   m_Component:
   - component: {fileID: 997984268}
   - component: {fileID: 997984269}
+  - component: {fileID: 997984270}
   m_Layer: 0
   m_Name: Mines (22)
   m_TagString: Untagged
@@ -20042,6 +20319,28 @@ MonoBehaviour:
   - {fileID: 1177959519}
   - {fileID: 1905194631}
   - {fileID: 438170590}
+--- !u!114 &997984270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 997984267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 104
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &1015512005
 GameObject:
   m_ObjectHideFlags: 0
@@ -20592,6 +20891,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1044957357}
   - component: {fileID: 1044957358}
+  - component: {fileID: 1044957359}
   m_Layer: 0
   m_Name: Mines (19)
   m_TagString: Untagged
@@ -20633,6 +20933,28 @@ MonoBehaviour:
   - {fileID: 273968463}
   - {fileID: 2018028297}
   - {fileID: 1726382510}
+--- !u!114 &1044957359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1044957356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 103
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &1045196245
 GameObject:
   m_ObjectHideFlags: 0
@@ -23135,6 +23457,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1132512363}
   - component: {fileID: 1132512364}
+  - component: {fileID: 1132512365}
   m_Layer: 0
   m_Name: Mines (8)
   m_TagString: Untagged
@@ -23176,6 +23499,28 @@ MonoBehaviour:
   - {fileID: 657019414}
   - {fileID: 1714265657}
   - {fileID: 1522959568}
+--- !u!114 &1132512365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1132512362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 102
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &1133758860
 GameObject:
   m_ObjectHideFlags: 0
@@ -23548,6 +23893,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1159453271}
   - component: {fileID: 1159453272}
+  - component: {fileID: 1159453273}
   m_Layer: 0
   m_Name: Mines (6)
   m_TagString: Untagged
@@ -23589,6 +23935,28 @@ MonoBehaviour:
   - {fileID: 480071859}
   - {fileID: 830212611}
   - {fileID: 1409173467}
+--- !u!114 &1159453273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1159453270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 101
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &1162510897
 GameObject:
   m_ObjectHideFlags: 0
@@ -25967,6 +26335,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1232339101}
   - component: {fileID: 1232339102}
+  - component: {fileID: 1232339103}
   m_Layer: 0
   m_Name: Mines (10)
   m_TagString: Untagged
@@ -26008,6 +26377,28 @@ MonoBehaviour:
   - {fileID: 1851554815}
   - {fileID: 542471560}
   - {fileID: 785282612}
+--- !u!114 &1232339103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1232339100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 100
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &1235119161
 GameObject:
   m_ObjectHideFlags: 0
@@ -29812,6 +30203,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1410860145}
   - component: {fileID: 1410860146}
+  - component: {fileID: 1410860147}
   m_Layer: 0
   m_Name: Mines (12)
   m_TagString: Untagged
@@ -29853,6 +30245,28 @@ MonoBehaviour:
   - {fileID: 2006355617}
   - {fileID: 880312940}
   - {fileID: 38778670}
+--- !u!114 &1410860147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1410860144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 99
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &1418621967
 GameObject:
   m_ObjectHideFlags: 0
@@ -31464,6 +31878,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1488700086}
   - component: {fileID: 1488700087}
+  - component: {fileID: 1488700088}
   m_Layer: 0
   m_Name: Mines (5)
   m_TagString: Untagged
@@ -31505,6 +31920,28 @@ MonoBehaviour:
   - {fileID: 1130981860}
   - {fileID: 898084655}
   - {fileID: 1685757361}
+--- !u!114 &1488700088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1488700085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 98
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &1491842595
 GameObject:
   m_ObjectHideFlags: 0
@@ -33404,6 +33841,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1589999332}
   - component: {fileID: 1589999333}
+  - component: {fileID: 1589999334}
   m_Layer: 0
   m_Name: Mines (2)
   m_TagString: Untagged
@@ -33445,6 +33883,28 @@ MonoBehaviour:
   - {fileID: 1591507784}
   - {fileID: 343200258}
   - {fileID: 1624164630}
+--- !u!114 &1589999334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1589999331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 97
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &1591507784
 GameObject:
   m_ObjectHideFlags: 0
@@ -36522,6 +36982,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1693585414}
   - component: {fileID: 1693585415}
+  - component: {fileID: 1693585416}
   m_Layer: 0
   m_Name: Mines (21)
   m_TagString: Untagged
@@ -36563,6 +37024,28 @@ MonoBehaviour:
   - {fileID: 1066761132}
   - {fileID: 1211523633}
   - {fileID: 1309319097}
+--- !u!114 &1693585416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1693585413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 96
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &1698224571
 GameObject:
   m_ObjectHideFlags: 0
@@ -36685,6 +37168,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1704555901}
   - component: {fileID: 1704555902}
+  - component: {fileID: 1704555903}
   m_Layer: 0
   m_Name: Mines (20)
   m_TagString: Untagged
@@ -36726,6 +37210,28 @@ MonoBehaviour:
   - {fileID: 287260002}
   - {fileID: 96697965}
   - {fileID: 2116009077}
+--- !u!114 &1704555903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1704555900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 95
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &1705013746
 GameObject:
   m_ObjectHideFlags: 0
@@ -38850,6 +39356,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1861014939}
   - component: {fileID: 1861014940}
+  - component: {fileID: 1861014941}
   m_Layer: 0
   m_Name: Mines (4)
   m_TagString: Untagged
@@ -38891,6 +39398,28 @@ MonoBehaviour:
   - {fileID: 1757682781}
   - {fileID: 1625980909}
   - {fileID: 1755073286}
+--- !u!114 &1861014941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1861014938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 94
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &1861412699
 GameObject:
   m_ObjectHideFlags: 0
@@ -42374,6 +42903,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2067005399}
   - component: {fileID: 2067005400}
+  - component: {fileID: 2067005401}
   m_Layer: 0
   m_Name: Mines (9)
   m_TagString: Untagged
@@ -42415,6 +42945,28 @@ MonoBehaviour:
   - {fileID: 304774639}
   - {fileID: 522485367}
   - {fileID: 349614160}
+--- !u!114 &2067005401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2067005398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 93
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &2084954096
 GameObject:
   m_ObjectHideFlags: 0
