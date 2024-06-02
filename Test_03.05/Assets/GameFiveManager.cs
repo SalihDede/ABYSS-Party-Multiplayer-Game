@@ -32,6 +32,31 @@ public class GameFiveManager : MonoBehaviourPunCallbacks
     void Update()
     {
 
+        if (Ranking.Count == 0)
+        {
+            // The first player to complete the puzzle
+
+
+
+            Win.text = "";
+        }
+        if (Ranking.Count == 1)
+        {
+            // The first player to complete the puzzle
+
+
+
+            Win.text = Ranking[0] + "\n";
+        }
+        if (Ranking.Count == 2)
+        {
+
+            Win.text = Ranking[0] + "\n" + Ranking[1];
+            //Win.text += "\nPlayer " + player.name + " finished in position " + Ranking.Count;
+        }
+
+
+
         ElapsedTime.text = elapsedTime.ToString();
 
         if (gameStarted)
@@ -92,20 +117,7 @@ public class GameFiveManager : MonoBehaviourPunCallbacks
             Debug.Log("AloAloAlo");
  
 
-            if (Ranking.Count == 1)
-            {
-                // The first player to complete the puzzle
-
-
-
-                Win.text =  Ranking[0] + "\n";
-            }
-            if (Ranking.Count == 2)
-            {
-            
-                    Win.text = Ranking[0] + "\n" + Ranking[1];
-                    //Win.text += "\nPlayer " + player.name + " finished in position " + Ranking.Count;
-            }
+      
 
             // Check if all players have finished
             if (Ranking.Count == PhotonNetwork.PlayerList.Length)
