@@ -20,9 +20,7 @@ public class ReturnFromFallGame3 : MonoBehaviour
     {
         if(other.tag == "Bullet")
         {
-            other.gameObject.GetComponent<Rigidbody>().useGravity = false;
-            other.gameObject.transform.position = SpawnAgain.transform.position;
-            other.gameObject.GetComponent<Rigidbody>().useGravity = true;
+            other.gameObject.GetComponent<PlayerThirdGame>().isDeath = true;
         }
     }
 
