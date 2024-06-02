@@ -33,7 +33,7 @@ public class PlayerThirdGame : MonoBehaviour
         if(isDeath)
         {
             isDeath = false;
-            gameObject.GetComponent<PhotonView>().RPC("Death2", RpcTarget.All, true);
+            gameObject.GetComponent<PhotonView>().RPC("Death2", RpcTarget.All);
         }
 
 
