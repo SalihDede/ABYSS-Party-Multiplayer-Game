@@ -1,9 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
+using Photon.Realtime;
+using UnityEngine;
 
 public class GameFivePlayer : MonoBehaviour
 {
+
+    private PhotonView photonView;
 
     public bool IsHeSolve;
     public GameObject GameFiveManager;
@@ -17,6 +22,9 @@ public class GameFivePlayer : MonoBehaviour
 
     void Start()
     {
+
+        photonView = GetComponent<PhotonView>();
+
 
         GameFiveManager = GameObject.Find("SalihGame");
 
@@ -43,9 +51,22 @@ public class GameFivePlayer : MonoBehaviour
 
     }
 
+    [PunRPC]
+    void SolvedThePuzzle(bool result)
+    {
+        IsHeSolve = result;
+    }
 
     void Update()
     {
+
+
+        if(photonView.IsMine)
+        {
+            photonView.RPC("SolvedThePuzzle", RpcTarget.All, IsHeSolve);
+        }
+
+
       
         if (IsHeSolve)
         {

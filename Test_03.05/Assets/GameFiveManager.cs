@@ -76,6 +76,9 @@ public class GameFiveManager : MonoBehaviourPunCallbacks
 
     public void PlayerCompletedPuzzle(GameObject player)
     {
+
+        player.GetComponent<GameFivePlayer>().IsHeSolve = true;
+
         if (!Ranking.Contains(player))
         {
             Ranking.Add(player);
