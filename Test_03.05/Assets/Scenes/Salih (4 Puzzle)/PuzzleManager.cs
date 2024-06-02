@@ -27,7 +27,7 @@ public class PuzzleManager : MonoBehaviourPunCallbacks
     }
 
     // Save where the puzzle pieces originally were
-    void SaveOriginalPositions()
+    public void SaveOriginalPositions()
     {
         originalPositions = new Dictionary<Transform, Vector3>();
         foreach (Transform tile in puzzleTiles)
@@ -38,7 +38,7 @@ public class PuzzleManager : MonoBehaviourPunCallbacks
     }
 
     // Save where the puzzle pieces are currently
-    void SaveCurrentPositions()
+    public void SaveCurrentPositions()
     {
         currentPositions = new Dictionary<Transform, Vector3>();
         foreach (Transform tile in puzzleTiles)
@@ -112,7 +112,7 @@ public class PuzzleManager : MonoBehaviourPunCallbacks
 
     //Control flow output for developer
     // Print the original positions of all pieces
-    void PrintOriginalPositions()
+    public void PrintOriginalPositions()
     {
         Debug.Log("Original Positions:");
         foreach (KeyValuePair<Transform, Vector3> kvp in originalPositions)
@@ -179,7 +179,7 @@ public class PuzzleManager : MonoBehaviourPunCallbacks
 
     // For developer, we want to see the flow and find the bug with check the flow of implemented code.
     // Coroutine to update the current positions every second
-    IEnumerator UpdateCurrentPositionsPeriodically()
+    public IEnumerator UpdateCurrentPositionsPeriodically()
     {
         while (true)
         {
