@@ -274,13 +274,17 @@ public class DiceController : MonoBehaviourPunCallbacks
             GameManager.GetComponent<GameManager>().MinigameList[GameManager.GetComponent<GameManager>().MinigameCount].GetComponent<GameFourManager>().OBJCordinate.GetComponent<ObjectCoordinateMaanager>().countdownTime = 30f;
             GameManager.GetComponent<GameManager>().MinigameList[GameManager.GetComponent<GameManager>().MinigameCount].GetComponent<GameFourManager>().OBJCordinate.GetComponent<ObjectCoordinateMaanager>().Line.SetActive(true);
             GameManager.GetComponent<GameManager>().MinigameList[GameManager.GetComponent<GameManager>().MinigameCount].GetComponent<GameFourManager>().OBJCordinate.GetComponent<ObjectCoordinateMaanager>().initialCountdownFinished = false;
-            GameManager.GetComponent<GameManager>().MinigameList[GameManager.GetComponent<GameManager>().MinigameCount].GetComponent<GameFourManager>().DoorManager.GetComponent<DoorManager>().StartDoorClosed();
-            foreach (GameObject player in GameManager.GetComponent<GameManager>().MinigameList[GameManager.GetComponent<GameManager>().MinigameCount].GetComponent<GameFourManager>().allObjectsMain)
-            {
-                player.SetActive(true);
+                       foreach (GameObject player in GameManager.GetComponent<GameManager>().MinigameList[GameManager.GetComponent<GameManager>().MinigameCount].GetComponent<GameFourManager>().allObjectsMain)
+                       {
+                            if(player != null)
+                            {
+                                player.SetActive(true);
+                            }
 
-            }
+
+                       }
             GameManager.GetComponent<GameManager>().MinigameList[GameManager.GetComponent<GameManager>().MinigameCount].GetComponent<GameFourManager>().GameStarted = true;
+            GameManager.GetComponent<GameManager>().MinigameList[GameManager.GetComponent<GameManager>().MinigameCount].GetComponent<GameFourManager>().DoorManager.GetComponent<DoorManager>().StartDoorClosed();
 
         }
 
