@@ -47017,6 +47017,10 @@ PrefabInstance:
       propertyPath: GameFiveManager
       value: 
       objectReference: {fileID: 2132587770}
+    - target: {fileID: 4838558373614325366, guid: 2966105e728257a41af182deba877483, type: 3}
+      propertyPath: MainPlayerOfMap
+      value: 
+      objectReference: {fileID: 8987136569212136115, guid: 55ee85e5cc2f8974a8c15c98e3759ddd, type: 3}
     m_RemovedComponents: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 4838558373409366838, guid: 2966105e728257a41af182deba877483, type: 3}
