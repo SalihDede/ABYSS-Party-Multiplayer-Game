@@ -17,7 +17,7 @@ public class GameFiveManager : MonoBehaviourPunCallbacks
     public GameObject[] Spawns; // List of spawn points
     public bool GameFinished;
     public TMP_Text countdownText;
-    public float gameDuration = 60f; // Duration of the game in seconds
+    public float gameDuration = 120f; // Duration of the game in seconds
     private float elapsedTime = 0f; // Time elapsed since the start of the game
     private bool gameStarted = false; // Indicates if the game has started
     private int currentSpawnIndex = 0; // Current spawn point index
