@@ -4,14 +4,13 @@ using System.Collections.Generic;
 using Photon.Pun;
 using Photon.Realtime;
 
-public class PuzzleManager : MonoBehaviour
+public class PuzzleManager : MonoBehaviourPunCallbacks
 {
     public Transform[] puzzleTiles; // Holds controls for puzzle pieces
     public Transform emptyTile; // Represents an empty space
     public int shuffleCount = 20; // Number of times to shuffle
     public float positionTolerance = 2.0f; // Tolerance for checking positions
     public GameObject MainPlayerOfMap;
-    
 
     private Dictionary<Transform, Vector3> originalPositions; // Stores where pieces originally were
     private Dictionary<Transform, Vector3> currentPositions;  // Stores where pieces are now
@@ -130,13 +129,13 @@ public class PuzzleManager : MonoBehaviour
         {
             Debug.Log("Puzzle solved");
 
-            if(MainPlayerOfMap.GetComponent<PhotonView>().IsMine)
+            if (MainPlayerOfMap.GetComponent<PhotonView>().IsMine)
             {
-                Debug.Log("Sen Bitirdin Haci");
+                Debug.Log("You solved the puzzle!");
                 MainPlayerOfMap.GetComponent<GameFivePlayer>().IsHeSolve = true;
                 GameFiveManager.PlayerCompletedPuzzle(MainPlayerOfMap); // Notify GameFiveManager
+                photonView.RPC("NotifyPuzzleSolved", RpcTarget.AllBuffered, MainPlayerOfMap.GetComponent<PhotonView>().ViewID);
             }
-
         }
         else
         {
@@ -145,6 +144,18 @@ public class PuzzleManager : MonoBehaviour
             {
                 Debug.Log(kvp.Key.name + " (World Position): " + kvp.Value);
             }
+        }
+    }
+
+    [PunRPC]
+    void NotifyPuzzleSolved(int viewID)
+    {
+        PhotonView playerPhotonView = PhotonView.Find(viewID);
+        if (playerPhotonView != null)
+        {
+            GameObject playerObject = playerPhotonView.gameObject;
+            playerObject.GetComponent<GameFivePlayer>().IsHeSolve = true;
+            Debug.Log(playerObject.name + " solved the puzzle!");
         }
     }
 
@@ -176,12 +187,12 @@ public class PuzzleManager : MonoBehaviour
     }
 
     // For developer, we want to see the flow and find the bug with check the flow of implemented code.
-    // Coroutine to update the current positions every 5 seconds
+    // Coroutine to update the current positions every second
     IEnumerator UpdateCurrentPositionsPeriodically()
     {
         while (true)
         {
-            yield return new WaitForSeconds(1); // Wait for 5 seconds
+            yield return new WaitForSeconds(1); // Wait for 1 second
             SaveCurrentPositions(); // Update current positions
             PrintCurrentPositions(); // Print updated positions - for developer
         }
