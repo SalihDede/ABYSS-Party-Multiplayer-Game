@@ -143,18 +143,13 @@ public class GameFiveManager : MonoBehaviourPunCallbacks
         PhotonNetwork.Instantiate("SalihGamePlayer", Spawns[spawnIndex].transform.position, Quaternion.identity);
     }
 
-    public void PlayerCompletedPuzzle(GameObject player)
+    public void PlayerCompletedPuzzle()
     {
-        if (!Ranking.Contains(player))
-        {
-            Debug.Log("AloAloAlo");
-            Ranking.Add(player);
 
-            // Check if all players have finished
-            if (Ranking.Count == PhotonNetwork.PlayerList.Length)
-            {
-                StartCoroutine(WaitAndContinue());
-            }
+
+        if (Ranking.Count == PhotonNetwork.PlayerList.Length)
+        {
+            StartCoroutine(WaitAndContinue());
         }
     }
 
