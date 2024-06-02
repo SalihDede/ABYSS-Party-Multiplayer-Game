@@ -188,15 +188,4 @@ public class PuzzleManager : MonoBehaviourPunCallbacks
             PrintCurrentPositions(); // Print updated positions - for developer
         }
     }
-
-    public void ResetPuzzleState()
-    {
-        // Reset current positions to original positions
-        foreach (KeyValuePair<Transform, Vector3> kvp in originalPositions)
-        {
-            kvp.Key.position = kvp.Value;
-        }
-        SaveCurrentPositions(); // Save positions after reset
-        PrintCurrentPositions(); // Print positions after reset
-    }
 }
