@@ -981,6 +981,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 48184777}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &54442853 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3505012294789075169, guid: 9bbbc7baff9da7749805b39f2e2dcec2, type: 3}
+  m_PrefabInstance: {fileID: 1516634219}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &85710267
 GameObject:
   m_ObjectHideFlags: 0
@@ -25550,10 +25555,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MinigameList:
   - {fileID: 1299971580}
-  - {fileID: 1299971580}
-  - {fileID: 1299971580}
-  - {fileID: 1299971580}
-  - {fileID: 1299971580}
+  - {fileID: 2132587769}
+  - {fileID: 1556911717}
+  - {fileID: 54442853}
+  - {fileID: 5397802263882941696}
   NameForPhoton: 
   Spawn: {fileID: 1719630230}
   LobbyListObjects: []
@@ -42704,7 +42709,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7659722119995444711, guid: 4fbd1d0820e6cd54f9734a3e8fca0689, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7659722119995444711, guid: 4fbd1d0820e6cd54f9734a3e8fca0689, type: 3}
       propertyPath: m_LocalPosition.x
@@ -43048,7 +43053,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7659722119995444711, guid: 4fbd1d0820e6cd54f9734a3e8fca0689, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7659722119995444711, guid: 4fbd1d0820e6cd54f9734a3e8fca0689, type: 3}
       propertyPath: m_LocalPosition.x
@@ -49374,7 +49379,7 @@ Transform:
   - {fileID: 121783399}
   - {fileID: 1043638571}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3634328017552707119
 MonoBehaviour:
