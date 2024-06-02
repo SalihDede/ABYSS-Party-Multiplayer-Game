@@ -21,10 +21,9 @@ public class PlayerThirdGame : MonoBehaviour
     [PunRPC]
     void Death2()
     {
-        if(gameObject.GetComponent<PhotonView>().IsMine)
-        {
+
             transform.position = CP2.transform.position;
-        }
+       
     }
 
     void Update()
