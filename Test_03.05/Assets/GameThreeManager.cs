@@ -103,7 +103,6 @@ public class GameThreeManager : MonoBehaviourPunCallbacks
         if (Ranking.Count == 2)
         {
             GameManagerrr.GetComponent<GameManager>().Kamera.SetActive(true);
-            gameObject.SetActive(false);
 
             GameManagerrr.GetComponent<GameManager>().PlayersTemp.Clear();
             for (int i = 0; i < 2; i++)
