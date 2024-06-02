@@ -25549,11 +25549,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MinigameList:
-  - {fileID: 2132587769}
-  - {fileID: 2132587769}
-  - {fileID: 2132587769}
-  - {fileID: 2132587769}
-  - {fileID: 2132587769}
+  - {fileID: 1299971580}
+  - {fileID: 1299971580}
+  - {fileID: 1299971580}
+  - {fileID: 1299971580}
+  - {fileID: 1299971580}
   NameForPhoton: 
   Spawn: {fileID: 1719630230}
   LobbyListObjects: []
