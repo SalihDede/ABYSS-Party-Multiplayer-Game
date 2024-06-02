@@ -85,6 +85,7 @@ public class GameFiveManager : MonoBehaviourPunCallbacks
 
         if (!Ranking.Contains(player))
         {
+            Debug.Log("AloAloAlo");
             Ranking.Add(player);
 
             if (Ranking.Count == 1)
