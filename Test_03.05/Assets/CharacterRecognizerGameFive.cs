@@ -20,15 +20,14 @@ public class CharacterRecognizerGameFive : MonoBehaviour
     }
 
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         
         if(other.tag == "Bullet")
         {
-            if (PuzzleManager.GetComponent<PuzzleManager>().MainPlayerOfMap == null)
-            {
+          
                 PuzzleManager.GetComponent<PuzzleManager>().MainPlayerOfMap = other.gameObject;
-            }
+           
         }
 
     }
