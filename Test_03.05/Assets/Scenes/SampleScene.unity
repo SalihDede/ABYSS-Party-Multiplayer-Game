@@ -1009,11 +1009,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 48184777}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &54442853 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3505012294789075169, guid: 9bbbc7baff9da7749805b39f2e2dcec2, type: 3}
-  m_PrefabInstance: {fileID: 1516634219}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &85710267
 GameObject:
   m_ObjectHideFlags: 0
@@ -26184,11 +26179,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MinigameList:
-  - {fileID: 1299971580}
   - {fileID: 2132587769}
-  - {fileID: 1556911717}
-  - {fileID: 54442853}
-  - {fileID: 5397802263882941696}
+  - {fileID: 2132587769}
+  - {fileID: 2132587769}
+  - {fileID: 2132587769}
+  - {fileID: 2132587769}
   NameForPhoton: 
   Spawn: {fileID: 1719630230}
   LobbyListObjects: []
