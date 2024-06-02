@@ -13,7 +13,6 @@ namespace KinematicCharacterController.Walkthrough.MultipleMovementStates
         public ExampleCharacterCamera OrbitCamera;
         public Transform CameraFollowPoint;
         public MyCharacterController Character;
-        public PuzzleManager puzzleManager; // Reference to the PuzzleManager
         public Image puzzleImage; // Reference to the Image component
 
         public float pushPullForce = 3f; // Push and Pull Force

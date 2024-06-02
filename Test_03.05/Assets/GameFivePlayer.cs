@@ -67,7 +67,14 @@ public class GameFivePlayer : MonoBehaviour
         }
 
 
-
+      
+        if (IsHeSolve)
+        {
+            if(!GameFiveManager.GetComponent<GameFiveManager>().Ranking.Contains(gameObject))
+            {
+                GameFiveManager.GetComponent<GameFiveManager>().Ranking.Add(gameObject);
+            }
+        }
 
 
     }

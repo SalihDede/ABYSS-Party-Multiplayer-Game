@@ -1,6 +1,8 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
+using Photon.Realtime;
 
 public class PuzzleManager : MonoBehaviour
 {
@@ -128,7 +130,12 @@ public class PuzzleManager : MonoBehaviour
         {
             Debug.Log("Puzzle solved");
 
-            GameFiveManager.PlayerCompletedPuzzle(MainPlayerOfMap); // Notify GameFiveManager
+            if(MainPlayerOfMap.GetComponent<PhotonView>().IsMine)
+            {
+                MainPlayerOfMap.GetComponent<GameFivePlayer>().IsHeSolve = true;
+                GameFiveManager.PlayerCompletedPuzzle(MainPlayerOfMap); // Notify GameFiveManager
+            }
+
         }
         else
         {

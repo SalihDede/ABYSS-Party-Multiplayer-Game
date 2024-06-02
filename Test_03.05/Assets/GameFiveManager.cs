@@ -76,17 +76,14 @@ public class GameFiveManager : MonoBehaviourPunCallbacks
 
     public void PlayerCompletedPuzzle(GameObject player)
     {
-        if(player.GetComponent<PhotonView>().IsMine)
-        {
 
-            player.GetComponent<GameFivePlayer>().IsHeSolve = true;
 
-        }
+
 
         if (!Ranking.Contains(player))
         {
             Debug.Log("AloAloAlo");
-            Ranking.Add(player);
+ 
 
             if (Ranking.Count == 1)
             {
