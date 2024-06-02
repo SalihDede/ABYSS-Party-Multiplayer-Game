@@ -132,6 +132,7 @@ public class PuzzleManager : MonoBehaviour
 
             if(MainPlayerOfMap.GetComponent<PhotonView>().IsMine)
             {
+                Debug.Log("Sen Bitirdin Haci");
                 MainPlayerOfMap.GetComponent<GameFivePlayer>().IsHeSolve = true;
                 GameFiveManager.PlayerCompletedPuzzle(MainPlayerOfMap); // Notify GameFiveManager
             }
