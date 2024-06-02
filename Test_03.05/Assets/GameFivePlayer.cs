@@ -53,19 +53,25 @@ public class GameFivePlayer : MonoBehaviour
     }
 
     [PunRPC]
-    void SolvedThePuzzle(bool result)
+    void SolvedThePuzzleRPC(bool result)
     {
         IsHeSolve = result;
     }
+
+    void SolvedThePuzzle()
+    {
+        if (photonView.IsMine)
+        {
+            photonView.RPC("SolvedThePuzzleRPC", RpcTarget.All, IsHeSolve);
+        }
+    }
+
 
     void Update()
     {
 
 
-        if(photonView.IsMine)
-        {
-            photonView.RPC("SolvedThePuzzle", RpcTarget.All, IsHeSolve);
-        }
+       
 
 
 
