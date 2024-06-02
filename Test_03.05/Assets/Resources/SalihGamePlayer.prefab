@@ -2136,7 +2136,6 @@ MonoBehaviour:
   OrbitCamera: {fileID: 312110741136010128}
   CameraFollowPoint: {fileID: 8987136569899355445}
   Character: {fileID: 8987136569212136118}
-  puzzleManager: {fileID: 0}
   puzzleImage: {fileID: 0}
   pushPullForce: 3
 --- !u!114 &1548504247458225539
@@ -2489,7 +2488,6 @@ MonoBehaviour:
   OrbitCamera: {fileID: 312110741136010128}
   CameraFollowPoint: {fileID: 8987136569899355445}
   Character: {fileID: 8987136569212136118}
-  puzzleManager: {fileID: 0}
   puzzleImage: {fileID: 0}
   pushPullForce: 3
 --- !u!1001 &2172064952394938348

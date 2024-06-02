@@ -17,6 +17,7 @@ public class GameFiveManager : MonoBehaviourPunCallbacks
     public GameObject[] Spawns; // List of spawn points
     public bool GameFinished;
     public TMP_Text countdownText;
+    public TMP_Text ElapsedTime;
     public float gameDuration = 120f; // Duration of the game in seconds
     private float elapsedTime = 0f; // Time elapsed since the start of the game
     private bool gameStarted = false; // Indicates if the game has started
@@ -30,6 +31,9 @@ public class GameFiveManager : MonoBehaviourPunCallbacks
 
     void Update()
     {
+
+        ElapsedTime.text = elapsedTime.ToString();
+
         if (gameStarted)
         {
             elapsedTime += Time.deltaTime;
@@ -42,7 +46,9 @@ public class GameFiveManager : MonoBehaviourPunCallbacks
 
     IEnumerator StartCountdownCoroutine()
     {
-        int countdown = 1; // Initial countdown value
+        countdownText.gameObject.SetActive(true); // 
+        ElapsedTime.gameObject.SetActive(false);
+        int countdown = 15; // Initial countdown value
         while (countdown > 0)
         {
             countdownText.text = countdown.ToString();
@@ -53,6 +59,7 @@ public class GameFiveManager : MonoBehaviourPunCallbacks
         countdownText.text = "GO!";
         yield return new WaitForSeconds(1);
         countdownText.gameObject.SetActive(false); // Hide the countdown text
+        ElapsedTime.gameObject.SetActive(true); // Hide the countdown text
         StartGame(); // Start the game after the countdown
     }
 
@@ -128,7 +135,7 @@ public class GameFiveManager : MonoBehaviourPunCallbacks
         // Additional logic to handle game end can be added here
 
         // Restart the game if needed
-        StartCoroutine(RestartGame());
+        //StartCoroutine(RestartGame());
     }
 
     IEnumerator RestartGame()
