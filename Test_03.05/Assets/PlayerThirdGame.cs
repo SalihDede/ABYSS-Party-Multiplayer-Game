@@ -22,7 +22,10 @@ public class PlayerThirdGame : MonoBehaviour
     void Death2()
     {
             Debug.Log("Harbi Oldu");
-            transform.position = CP2.transform.position;
+            if (gameObject.GetComponent<PhotonView>().IsMine)
+            {
+                gameObject.transform.position = CP2.transform.position;
+            }
        
     }
 
