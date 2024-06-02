@@ -56,7 +56,7 @@ public class PlayerThirdGame : MonoBehaviour
   
         if(isDeath)
         {
-            isDeath = false;
+            //isDeath = false;
             photonView.RPC("Death2", RpcTarget.All);
         }
 
