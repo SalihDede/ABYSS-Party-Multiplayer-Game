@@ -2133,8 +2133,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 352724ca8fc793a4fbc78781d8d32aaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OrbitCamera: {fileID: 0}
-  CameraFollowPoint: {fileID: 0}
+  OrbitCamera: {fileID: 312110741136010128}
+  CameraFollowPoint: {fileID: 8987136569899355445}
   Character: {fileID: 8987136569212136118}
   puzzleManager: {fileID: 0}
   pushPullForce: 3
