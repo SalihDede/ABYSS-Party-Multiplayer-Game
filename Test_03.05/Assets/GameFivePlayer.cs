@@ -71,7 +71,7 @@ public class GameFivePlayer : MonoBehaviour
     {
 
 
-       
+        SolvedThePuzzle();
 
 
 
