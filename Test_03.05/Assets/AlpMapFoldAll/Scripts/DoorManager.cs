@@ -57,6 +57,30 @@ public class DoorManager : MonoBehaviour
         //AUDIO
     }
 
+
+    public void StartDoorClosed()
+    {
+        doorStates.Add(Kapý0, false);
+        lastClickTime.Add(Kapý0, 0f);
+        doorStates.Add(Kapý1, false);
+        lastClickTime.Add(Kapý1, 0f);
+        doorStates.Add(Kapý2, false);
+        lastClickTime.Add(Kapý2, 0f);
+        doorStates.Add(Kapý3, false);
+        lastClickTime.Add(Kapý3, 0f);
+        doorStates.Add(Kapý4, false);
+        lastClickTime.Add(Kapý4, 0f);
+        doorStates.Add(Kapý5, false);
+        lastClickTime.Add(Kapý5, 0f);
+        doorStates.Add(Kapý6, false);
+        lastClickTime.Add(Kapý6, 0f);
+        doorStates.Add(Kapý7, false);
+        lastClickTime.Add(Kapý7, 0f);
+        doorStates.Add(Kapý8, false);
+        lastClickTime.Add(Kapý8, 0f);
+    }
+
+
     // Update is called once per frame
     void Update()
     {

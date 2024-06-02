@@ -10,6 +10,7 @@ public class GameFourManager : MonoBehaviourPunCallbacks
     public GameObject GameManagerrr;
     public bool StartTime;
     public GameObject OBJCordinate;
+    public GameObject DoorManager;
     //public GameObject GameFourGUI;
     //public GameObject GameFourGUI2;
     public List<GameObject> Ranking = new List<GameObject>();
