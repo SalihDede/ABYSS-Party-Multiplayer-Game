@@ -46,11 +46,11 @@ public class GameManager : MonoBehaviourPunCallbacks
     void Update()
     {
        
-        if(PlayersJoin.Count == 2 && PlayersSorted.Count != 2)
+        if(PlayersJoin.Count == 4 && PlayersSorted.Count != 4)
         {
-            for (int i = 0; i < 2; i++)
+            for (int i = 0; i < 4; i++)
             {
-                if (PlayersJoin[i].GetComponent<PhotonView>().ViewID == 1001)
+                if (PlayersJoin[i].GetComponent<PhotonView>().ViewID / 1000 == 1)
                 {
                     PlayersSorted.Add(PlayersJoin[i]);
                 }
@@ -58,9 +58,27 @@ public class GameManager : MonoBehaviourPunCallbacks
 
 
 
-            for (int i = 0; i < 2; i++)
+            for (int i = 0; i < 4; i++)
             {
-                if (PlayersJoin[i].GetComponent<PhotonView>().ViewID == 2001)
+                if (PlayersJoin[i].GetComponent<PhotonView>().ViewID / 1000 == 2)
+                {
+                    PlayersSorted.Add(PlayersJoin[i]);
+                    Debug.Log("alo");
+                }
+            }
+
+            for (int i = 0; i < 4; i++)
+            {
+                if (PlayersJoin[i].GetComponent<PhotonView>().ViewID / 1000 == 3)
+                {
+                    PlayersSorted.Add(PlayersJoin[i]);
+                    Debug.Log("alo");
+                }
+            }
+
+            for (int i = 0; i < 4; i++)
+            {
+                if (PlayersJoin[i].GetComponent<PhotonView>().ViewID /1000 == 4)
                 {
                     PlayersSorted.Add(PlayersJoin[i]);
                     Debug.Log("alo");
@@ -159,7 +177,7 @@ public class GameManager : MonoBehaviourPunCallbacks
     public void CreateRoomButton()
     {
 
-        PhotonNetwork.CreateRoom(RoomName.text, new RoomOptions { MaxPlayers = 2 }, null);
+        PhotonNetwork.CreateRoom(RoomName.text, new RoomOptions { MaxPlayers = 4 }, null);
     
     }
 

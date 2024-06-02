@@ -82,7 +82,7 @@ public class DiceController : MonoBehaviourPunCallbacks
 
         if(BahaGame != null)
         {
-            if (BahaGame.GetComponent<GameTwoManager>().Ranking.Count == 2)
+            if (BahaGame.GetComponent<GameTwoManager>().Ranking.Count == 4)
             {
                 GUI.SetActive(true);
                 GameManager.GetComponent<GameManager>().MiniGameStarted = false;
@@ -106,7 +106,7 @@ public class DiceController : MonoBehaviourPunCallbacks
 
 
 
-            if(GameManager.GetComponent<GameManager>().PlayersSorted.Count == 2)
+            if(GameManager.GetComponent<GameManager>().PlayersSorted.Count == 4)
             {
                 if (GameManager.GetComponent<GameManager>().PlayersSorted[0].GetComponent<DiceController>().IsStart != 0)
                 {
@@ -142,7 +142,7 @@ public class DiceController : MonoBehaviourPunCallbacks
 
     public void StartGameButton()
     {
-        if (PhotonNetwork.IsMasterClient && PhotonNetwork.CurrentRoom.PlayerCount == 2)
+        if (PhotonNetwork.IsMasterClient && PhotonNetwork.CurrentRoom.PlayerCount == 4)
         {
             startButton.gameObject.SetActive(false);
             photonView.RPC("AdminStart", RpcTarget.All, 1);
@@ -167,7 +167,7 @@ public class DiceController : MonoBehaviourPunCallbacks
             StartCoroutine(MovePlayer(new Vector3(StepsList[stepLine].transform.position.x, StepsList[stepLine].transform.position.y + 0.5f, StepsList[stepLine].transform.position.z)));
             photonView.RPC("SyncDiceResult", RpcTarget.All, diceResult);
 
-            if (GameManager.GetComponent<GameManager>().WhoseTurn != 1)
+            if (GameManager.GetComponent<GameManager>().WhoseTurn != 3)
             {
 
                 GameManager.GetComponent<GameManager>().WhoseTurn = +1;
@@ -290,20 +290,22 @@ public class DiceController : MonoBehaviourPunCallbacks
 
         if (GameManager.GetComponent<GameManager>().MinigameList[GameManager.GetComponent<GameManager>().MinigameCount].name == "SalihGame")
         {
-            GameManager.GetComponent<GameManager>().MinigameList[GameManager.GetComponent<GameManager>().MinigameCount].GetComponent<GameFiveManager>().gameActive = true;
+            var currentMinigame = GameManager.GetComponent<GameManager>().MinigameList[GameManager.GetComponent<GameManager>().MinigameCount].GetComponent<GameFiveManager>();
+            currentMinigame.gameActive = true;
 
-            for(int i = 0;i<4;i++)
+            foreach (var puzzleMap in currentMinigame.PuzzleMapList)
             {
+            var puzzleManager = puzzleMap.GetComponent<PuzzleManager>();
 
-                if (GameManager.GetComponent<GameManager>().MinigameList[GameManager.GetComponent<GameManager>().MinigameCount].GetComponent<GameFiveManager>().PuzzleMapList[i].GetComponent<PuzzleManager>().originalPositions != null)
+            if (puzzleManager.originalPositions != null)
                 {
-                    GameManager.GetComponent<GameManager>().MinigameList[GameManager.GetComponent<GameManager>().MinigameCount].GetComponent<GameFiveManager>().PuzzleMapList[i].GetComponent<PuzzleManager>().originalPositions.Clear();
-                    GameManager.GetComponent<GameManager>().MinigameList[GameManager.GetComponent<GameManager>().MinigameCount].GetComponent<GameFiveManager>().PuzzleMapList[i].GetComponent<PuzzleManager>().currentPositions.Clear();
-                    GameManager.GetComponent<GameManager>().MinigameList[GameManager.GetComponent<GameManager>().MinigameCount].GetComponent<GameFiveManager>().PuzzleMapList[i].GetComponent<PuzzleManager>().SaveOriginalPositions();
-                    GameManager.GetComponent<GameManager>().MinigameList[GameManager.GetComponent<GameManager>().MinigameCount].GetComponent<GameFiveManager>().PuzzleMapList[i].GetComponent<PuzzleManager>().PrintOriginalPositions(); 
-                    GameManager.GetComponent<GameManager>().MinigameList[GameManager.GetComponent<GameManager>().MinigameCount].GetComponent<GameFiveManager>().PuzzleMapList[i].GetComponent<PuzzleManager>().SaveCurrentPositions(); 
-                    GameManager.GetComponent<GameManager>().MinigameList[GameManager.GetComponent<GameManager>().MinigameCount].GetComponent<GameFiveManager>().PuzzleMapList[i].GetComponent<PuzzleManager>().ShufflePuzzle();
-                    StartCoroutine(GameManager.GetComponent<GameManager>().MinigameList[GameManager.GetComponent<GameManager>().MinigameCount].GetComponent<GameFiveManager>().PuzzleMapList[i].GetComponent<PuzzleManager>().UpdateCurrentPositionsPeriodically());
+                    puzzleManager.originalPositions.Clear();
+                    puzzleManager.currentPositions.Clear();
+                    puzzleManager.SaveOriginalPositions();
+                    puzzleManager.PrintOriginalPositions();
+                    puzzleManager.SaveCurrentPositions();
+                    puzzleManager.ShufflePuzzle();
+                    StartCoroutine(puzzleManager.UpdateCurrentPositionsPeriodically());
                 }
             }
         }

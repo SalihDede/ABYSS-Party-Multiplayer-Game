@@ -46,9 +46,12 @@ public class PlayerGameTwo : MonoBehaviourPunCallbacks
         GameManagerr.GetComponent<GameTwoManager>().StartCar.Add(gameObject);
 
 
-        transform.position = Spawns[GameManagerr.GetComponent<GameTwoManager>().StartCar.IndexOf(gameObject)].transform.position;
+       
 
-
+        if(!GameManagerr.GetComponent<GameTwoManager>().StartTime)
+        {
+            transform.position = Spawns[GameManagerr.GetComponent<GameTwoManager>().StartCar.IndexOf(gameObject)].transform.position;
+        }
     }
 
 
