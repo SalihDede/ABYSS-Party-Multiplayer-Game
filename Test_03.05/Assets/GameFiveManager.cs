@@ -20,6 +20,7 @@ public class GameFiveManager : MonoBehaviourPunCallbacks
     public TMP_Text ElapsedTime;
     public float gameDuration = 120f; // Duration of the game in seconds
     private float elapsedTime = 0f; // Time elapsed since the start of the game
+    public int countdown = 15;
     private bool gameStarted = false; // Indicates if the game has started
     private int currentSpawnIndex = 0; // Current spawn point index
 
@@ -46,17 +47,17 @@ public class GameFiveManager : MonoBehaviourPunCallbacks
 
 
 
-            Win.text = Ranking[0] + "\n";
+            Win.text = Ranking[0].GetComponent<PhotonView>().OwnerActorNr + "\n";
         }
         if (Ranking.Count == 2)
         {
 
-            Win.text = Ranking[0] + "\n" + Ranking[1];
+            Win.text = Ranking[0].GetComponent<PhotonView>().OwnerActorNr + "\n" + Ranking[1].GetComponent<PhotonView>().OwnerActorNr;
             //Win.text += "\nPlayer " + player.name + " finished in position " + Ranking.Count;
         }
 
 
-
+        countdownText.text = countdown.ToString();
         ElapsedTime.text = elapsedTime.ToString();
 
         if (gameStarted)
@@ -73,10 +74,10 @@ public class GameFiveManager : MonoBehaviourPunCallbacks
     {
         countdownText.gameObject.SetActive(true); // 
         ElapsedTime.gameObject.SetActive(false);
-        int countdown = 15; // Initial countdown value
+        countdown = 15; // Initial countdown value
         while (countdown > 0)
         {
-            countdownText.text = countdown.ToString();
+
             yield return new WaitForSeconds(1);
             countdown--;
         }
