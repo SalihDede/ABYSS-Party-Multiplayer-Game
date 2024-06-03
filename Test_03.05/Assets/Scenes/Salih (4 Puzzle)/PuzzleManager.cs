@@ -11,7 +11,7 @@ public class PuzzleManager : MonoBehaviourPunCallbacks
     public int shuffleCount = 20; // Number of times to shuffle
     public float positionTolerance = 2.0f; // Tolerance for checking positions
     public GameObject MainPlayerOfMap;
-
+    
     public Dictionary<Transform, Vector3> originalPositions; // Stores where pieces originally were
     public Dictionary<Transform, Vector3> currentPositions;  // Stores where pieces are now
 
