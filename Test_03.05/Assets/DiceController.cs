@@ -89,7 +89,7 @@ public class DiceController : MonoBehaviourPunCallbacks
     private void Update()
     {
 
-        GameManager.GetComponent<GameManager>().Line[GameManager.GetComponent<GameManager>().PlayersSorted.IndexOf(gameObject)].text = photonView.Controller.NickName;
+        //GameManager.GetComponent<GameManager>().Line[GameManager.GetComponent<GameManager>().PlayersSorted.IndexOf(gameObject)].text = photonView.Controller.NickName;
 
         MaxPlayerImplementFunc();
 
@@ -176,7 +176,10 @@ public class DiceController : MonoBehaviourPunCallbacks
     [PunRPC]
     void MaxPlayerImplement(int result)
     {
-        GameManager.GetComponent<GameManager>().MaxPlayer = result;
+
+
+            GameManager.GetComponent<GameManager>().MaxPlayer = result;
+     
 
 
     }

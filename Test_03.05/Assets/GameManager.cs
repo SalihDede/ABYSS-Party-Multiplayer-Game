@@ -70,7 +70,15 @@ public class GameManager : MonoBehaviourPunCallbacks
         MaxPlayer = (int)(MaxPlayerSlider.value);
         NickNameShowCase.text = NickName.text;
 
+        foreach(GameObject player in PlayersJoin)
+        {
 
+            if(player.GetComponent<PhotonView>().ViewID/1000==1)
+            {
+                MaxPlayer = player.GetComponent<DiceController>().GameManager.GetComponent<GameManager>().MaxPlayer;
+            }
+
+        }
 
 
 
