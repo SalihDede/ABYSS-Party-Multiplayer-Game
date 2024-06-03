@@ -7,7 +7,10 @@ using TMPro;
 
 public class GameFiveManager : MonoBehaviourPunCallbacks
 {
+
+
     public GameObject[] PuzzleMapList;
+
     public GameObject GameManagerrr;
     public bool StartTime;
     public GameObject GameTwoGUI;
@@ -33,11 +36,13 @@ public class GameFiveManager : MonoBehaviourPunCallbacks
 
     void FixedUpdate()
     {
+
         if(gameActive)
         {
             gameActive = false;
             StartCoroutine(StartCountdownCoroutine());
         }
+
 
         if (Ranking.Count == 4)
         {
@@ -74,11 +79,6 @@ public class GameFiveManager : MonoBehaviourPunCallbacks
             gameObject.SetActive(false);
         }
 
-        UpdateWinText();
-
-        countdownText.text = countdown.ToString();
-        ElapsedTime.text = ((int)(elapsedTime)).ToString();
-
         if (Ranking.Count == 0)
         {
             Win.text = "";
@@ -100,6 +100,9 @@ public class GameFiveManager : MonoBehaviourPunCallbacks
             Win.text = Ranking[0].GetComponent<PhotonView>().Controller.NickName + "\n" + Ranking[1].GetComponent<PhotonView>().Controller.NickName + "\n" + Ranking[2].GetComponent<PhotonView>().Controller.NickName + "\n" + Ranking[3].GetComponent<PhotonView>().Controller.NickName;
         }
 
+        countdownText.text = countdown.ToString();
+        ElapsedTime.text = ((int)(elapsedTime)).ToString();
+
         if (gameStarted)
         {
             elapsedTime += Time.deltaTime;
@@ -110,25 +113,9 @@ public class GameFiveManager : MonoBehaviourPunCallbacks
         }
     }
 
-    private void UpdateWinText()
-    {
-        if (Ranking.Count == 0)
-        {
-            Win.text = "";
-        }
-        else
-        {
-            Win.text = "";
-            for (int i = 0; i < Ranking.Count; i++)
-            {
-                Win.text += Ranking[i].GetComponent<PhotonView>().Controller.NickName + "\n";
-            }
-        }
-    }
-
     public IEnumerator StartCountdownCoroutine()
     {
-        countdownText.gameObject.SetActive(true);
+        countdownText.gameObject.SetActive(true); 
         ElapsedTime.gameObject.SetActive(false);
         countdown = 15; // Initial countdown value
         while (countdown > 0)
@@ -140,9 +127,14 @@ public class GameFiveManager : MonoBehaviourPunCallbacks
         countdownText.text = "GO!";
         yield return new WaitForSeconds(1);
         countdownText.gameObject.SetActive(false); // Hide the countdown text
-        ElapsedTime.gameObject.SetActive(true); // Show the elapsed time text
+        ElapsedTime.gameObject.SetActive(true); // Hide the countdown text
         StartGame(); // Start the game after the countdown
     }
+
+
+
+
+
 
     public void RandomMapGenerator()
     {
@@ -164,10 +156,7 @@ public class GameFiveManager : MonoBehaviourPunCallbacks
 
     public void PlayerCompletedPuzzle()
     {
-        if (!Ranking.Contains(gameObject))
-        {
-            Ranking.Add(gameObject);
-        }
+
 
         if (Ranking.Count == PhotonNetwork.PlayerList.Length)
         {
@@ -175,7 +164,7 @@ public class GameFiveManager : MonoBehaviourPunCallbacks
         }
     }
 
-    // For developer to handle flow.
+    //For developer to handle flow.
     IEnumerator WaitAndContinue()
     {
         yield return new WaitForSeconds(10); // Wait for 10 seconds before continuing
@@ -209,6 +198,10 @@ public class GameFiveManager : MonoBehaviourPunCallbacks
         }
 
         GameFinished = true;
+        // Additional logic to handle game end can be added here
+
+        // Restart the game if needed
+        //StartCoroutine(RestartGame());
     }
 
     IEnumerator RestartGame()
@@ -218,23 +211,5 @@ public class GameFiveManager : MonoBehaviourPunCallbacks
         Ranking.Clear(); // Clear the ranking list
         GameFinished = false;
         StartCoroutine(StartCountdownCoroutine());
-    }
-
-    public void ResetGame()
-    {
-        gameStarted = false;
-        gameActive = false;
-        elapsedTime = 0f;
-        countdown = 15;
-        currentSpawnIndex = 0;
-        Ranking.Clear();
-
-        // Reset puzzle managers
-        foreach (var puzzleMap in PuzzleMapList)
-        {
-            var puzzleManager = puzzleMap.GetComponent<PuzzleManager>();
-            puzzleManager.ResetPuzzle();
-        }
-
     }
 }
