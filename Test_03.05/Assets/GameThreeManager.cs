@@ -17,6 +17,8 @@ public class GameThreeManager : MonoBehaviourPunCallbacks
     public bool gameActive = false; // Indicates if the game has started
     public List<GameObject> StartingMans = new List<GameObject>();
 
+    public GameObject FinishGameObject;
+
     public bool StartTime;
     public TMP_Text Win;
     public bool IsWin;
@@ -136,6 +138,10 @@ public class GameThreeManager : MonoBehaviourPunCallbacks
 
         if (Ranking.Count == 4)
         {
+            foreach(GameObject Player in Ranking)
+            {
+                Player.transform.position = Player.GetComponent<PlayerThirdGame>().GameManagerr.GetComponent<GameThreeManager>().FinishGameObject.transform.position;
+            }
             GameManagerrr.GetComponent<GameManager>().Kamera.SetActive(true);
 
             GameManagerrr.GetComponent<GameManager>().PlayersTemp.Clear();
