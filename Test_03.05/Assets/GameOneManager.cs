@@ -92,7 +92,7 @@ public class GameOneManager : MonoBehaviourPunCallbacks
 
                 GameManagerrr.GetComponent<GameManager>().PlayersSorted.Clear();
 
-                if (GameManagerrr.GetComponent<GameManager>().PlayersSorted.Count != 2)
+                if (GameManagerrr.GetComponent<GameManager>().PlayersSorted.Count != 4)
                 {
                     GameManagerrr.GetComponent<GameManager>().PlayersSorted.AddRange(GameManagerrr.GetComponent<GameManager>().PlayersTemp);
                 }
@@ -210,7 +210,7 @@ public class GameOneManager : MonoBehaviourPunCallbacks
                     StartCoroutine(ScoreUp());
                 }
 
-                /*
+                
                 if (SpawnedBall.GetComponent<ball>().photonView.OwnerActorNr == Starters[2].GetComponent<PhotonView>().OwnerActorNr)
                 {
                     thisguy = Starters[2].GetComponent<PhotonView>().Owner;
@@ -221,7 +221,7 @@ public class GameOneManager : MonoBehaviourPunCallbacks
                     thisguy = Starters[3].GetComponent<PhotonView>().Owner;
                     StartCoroutine(ScoreUp());
                 }
-                */
+                
 
 
             }
@@ -231,9 +231,9 @@ public class GameOneManager : MonoBehaviourPunCallbacks
 
             Player1Text.text = Starters[0].GetComponent<PhotonView>().Owner.NickName+": " + Starters[0].GetComponent<PlayerABYSS>().score;
             Player2Text.text = Starters[1].GetComponent<PhotonView>().Owner.NickName + ": " + Starters[1].GetComponent<PlayerABYSS>().score;
-             /* Player3Text.text = Starters[2].GetComponent<PhotonView>().Owner.NickName + ": " + Starters[2].GetComponent<PlayerABYSS>().score;
-             Player4Text.text = Starters[3].GetComponent<PhotonView>().Owner.NickName + ": " + Starters[3].GetComponent<PlayerABYSS>().score;
-            */
+            Player3Text.text = Starters[2].GetComponent<PhotonView>().Owner.NickName + ": " + Starters[2].GetComponent<PlayerABYSS>().score;
+            Player4Text.text = Starters[3].GetComponent<PhotonView>().Owner.NickName + ": " + Starters[3].GetComponent<PlayerABYSS>().score;
+            
         }
 
     }
@@ -266,8 +266,7 @@ public class GameOneManager : MonoBehaviourPunCallbacks
 
     IEnumerator ScoreUp()
     {
-        //|| Starters[2].GetComponent<PlayerABYSS>().score < 1000000 || Starters[3].GetComponent<PlayerABYSS>().score < 1000000
-        while (Starters[0].GetComponent<PlayerABYSS>().score < 1000000 || Starters[1].GetComponent<PlayerABYSS>().score < 1000000 )
+        while (Starters[0].GetComponent<PlayerABYSS>().score < 1000000 || Starters[1].GetComponent<PlayerABYSS>().score < 1000000 || Starters[2].GetComponent<PlayerABYSS>().score < 1000000 || Starters[3].GetComponent<PlayerABYSS>().score < 1000000)
         {
             yield return new WaitForSeconds(1);
             if (Starters[0].GetComponent<PhotonView>().Owner == thisguy)
@@ -285,7 +284,7 @@ public class GameOneManager : MonoBehaviourPunCallbacks
                 }
                 Starters[1].GetComponent<PlayerABYSS>().score++;
             }
-            /*
+            
             if (Starters[2].GetComponent<PhotonView>().Owner == thisguy)
             {   if(Starters[2].GetComponent<PhotonView>().Owner != thisguy)
                 {
@@ -300,7 +299,7 @@ public class GameOneManager : MonoBehaviourPunCallbacks
                 }
                 Starters[3].GetComponent<PlayerABYSS>().score++;
             }
-            */
+            
         }
     }
 }
