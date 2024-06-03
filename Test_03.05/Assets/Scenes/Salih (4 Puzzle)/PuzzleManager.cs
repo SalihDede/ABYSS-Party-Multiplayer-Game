@@ -11,7 +11,7 @@ public class PuzzleManager : MonoBehaviourPunCallbacks
     public int shuffleCount = 20; // Number of times to shuffle
     public float positionTolerance = 2.0f; // Tolerance for checking positions
     public GameObject MainPlayerOfMap;
-    
+
     public Dictionary<Transform, Vector3> originalPositions; // Stores where pieces originally were
     public Dictionary<Transform, Vector3> currentPositions;  // Stores where pieces are now
 
@@ -148,8 +148,6 @@ public class PuzzleManager : MonoBehaviourPunCallbacks
         }
     }
 
-
-
     // Check if the puzzle is solved
     bool CheckIfPuzzleSolved()
     {
@@ -187,5 +185,14 @@ public class PuzzleManager : MonoBehaviourPunCallbacks
             SaveCurrentPositions(); // Update current positions
             PrintCurrentPositions(); // Print updated positions - for developer
         }
+    }
+
+    public void ResetPuzzle()
+    {
+        StopAllCoroutines();
+        SaveOriginalPositions();
+        SaveCurrentPositions();
+        ShufflePuzzle();
+        StartCoroutine(UpdateCurrentPositionsPeriodically());
     }
 }
