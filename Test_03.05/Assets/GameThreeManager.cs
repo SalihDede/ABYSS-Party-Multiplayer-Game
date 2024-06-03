@@ -97,7 +97,7 @@ public class GameThreeManager : MonoBehaviourPunCallbacks
             FinishList.text = "Ranking List \n" + Ranking[0].GetComponent<PhotonView>().Controller.NickName + "\n" + Ranking[1].GetComponent<PhotonView>().Controller.NickName;
 
         }
-        /*
+        
         if (Ranking.Count == 3)
         {
             FinishList.text = "Ranking List \n" + Ranking[0].GetComponent<PhotonView>().Controller.NickName + "\n" + Ranking[1].GetComponent<PhotonView>().Controller.NickName + "\n" + Ranking[2].GetComponent<PhotonView>().Controller.NickName;
@@ -107,7 +107,7 @@ public class GameThreeManager : MonoBehaviourPunCallbacks
             FinishList.text = "Ranking List \n" + Ranking[0].GetComponent<PhotonView>().Controller.NickName + "\n" + Ranking[1].GetComponent<PhotonView>().Controller.NickName + "\n" + Ranking[2].GetComponent<PhotonView>().Controller.NickName + "\n" + Ranking[3].GetComponent<PhotonView>().Controller.NickName;
 
 
-        }*/
+        }
 
         if (gameActive)
         {
@@ -134,12 +134,12 @@ public class GameThreeManager : MonoBehaviourPunCallbacks
             Door.SetActive(true);
         }
 
-        if (Ranking.Count == 2)
+        if (Ranking.Count == 4)
         {
             GameManagerrr.GetComponent<GameManager>().Kamera.SetActive(true);
 
             GameManagerrr.GetComponent<GameManager>().PlayersTemp.Clear();
-            for (int i = 0; i < 2; i++)
+            for (int i = 0; i < 4; i++)
             {
                 foreach (GameObject Player in GameManagerrr.GetComponent<GameManager>().PlayersSorted)
                 {
@@ -152,7 +152,7 @@ public class GameThreeManager : MonoBehaviourPunCallbacks
 
             GameManagerrr.GetComponent<GameManager>().PlayersSorted.Clear();
 
-            if (GameManagerrr.GetComponent<GameManager>().PlayersSorted.Count != 2)
+            if (GameManagerrr.GetComponent<GameManager>().PlayersSorted.Count != 4)
             {
                 GameManagerrr.GetComponent<GameManager>().PlayersSorted.AddRange(GameManagerrr.GetComponent<GameManager>().PlayersTemp);
             }

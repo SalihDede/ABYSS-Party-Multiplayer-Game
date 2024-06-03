@@ -59,13 +59,13 @@ public class GameFourManager : MonoBehaviourPunCallbacks
 
 
 
-        if (Ranking.Count == 2)
+        if (Ranking.Count == 4)
         {
             Ranking.Sort((player1, player2) => player2.GetComponent<GameFourPlayer>().score.CompareTo(player1.GetComponent<GameFourPlayer>().score));
 
 
             GameManagerrr.GetComponent<GameManager>().PlayersTemp.Clear();
-            for (int i = 0; i < 2; i++)
+            for (int i = 0; i < 4; i++)
             {
                 foreach (GameObject Player in GameManagerrr.GetComponent<GameManager>().PlayersSorted)
                 {
@@ -78,7 +78,7 @@ public class GameFourManager : MonoBehaviourPunCallbacks
 
             GameManagerrr.GetComponent<GameManager>().PlayersSorted.Clear();
 
-            if (GameManagerrr.GetComponent<GameManager>().PlayersSorted.Count != 2)
+            if (GameManagerrr.GetComponent<GameManager>().PlayersSorted.Count != 4)
             {
                 GameManagerrr.GetComponent<GameManager>().PlayersSorted.AddRange(GameManagerrr.GetComponent<GameManager>().PlayersTemp);
             }
