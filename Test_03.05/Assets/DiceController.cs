@@ -387,6 +387,14 @@ public class DiceController : MonoBehaviourPunCallbacks
             }
         }
 
+        void StartPuzzleManagerCoroutine(PuzzleManager puzzleManager)
+        {
+            if (puzzleManager.gameObject.activeInHierarchy)
+            {
+            puzzleManager.StartCoroutine(puzzleManager.UpdateCurrentPositionsPeriodically());
+            }
+        }
+
 
 
 
