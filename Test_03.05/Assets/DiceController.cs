@@ -354,6 +354,7 @@ public class DiceController : MonoBehaviourPunCallbacks
 
         }
 
+
         if (GameManager.GetComponent<GameManager>().MinigameList[GameManager.GetComponent<GameManager>().MinigameCount].name == "SalihGame")
         {
             var currentMinigame = GameManager.GetComponent<GameManager>().MinigameList[GameManager.GetComponent<GameManager>().MinigameCount].GetComponent<GameFiveManager>();
@@ -365,18 +366,21 @@ public class DiceController : MonoBehaviourPunCallbacks
 
                 if (puzzleManager.originalPositions != null)
                 {
-                    // clear current position
-                    puzzleManager.currentPositions.Clear();
+                    // Reset tiles to original positions
+                    foreach (var kvp in puzzleManager.originalPositions)
+                    {
+                        kvp.Key.position = kvp.Value;
+                    }
 
-                    // save goal position for replaying.
-                    puzzleManager.SaveOriginalPositions();
-                    puzzleManager.PrintOriginalPositions();
-                    puzzleManager.SaveCurrentPositions();
-                    puzzleManager.ShufflePuzzle();
-                    StartCoroutine(puzzleManager.UpdateCurrentPositionsPeriodically());
+                // Clear current position and shuffle puzzle
+                puzzleManager.SaveCurrentPositions();
+                puzzleManager.ShufflePuzzle();
+                puzzleManager.StartCoroutine(puzzleManager.UpdateCurrentPositionsPeriodically());
                 }
             }
-        }  
+        }
+
+
 
 
         if (GameManager.GetComponent<GameManager>().MinigameList[GameManager.GetComponent<GameManager>().MinigameCount].name == "YusufGame")

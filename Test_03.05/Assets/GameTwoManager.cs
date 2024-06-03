@@ -20,6 +20,7 @@ public class GameTwoManager : MonoBehaviourPunCallbacks
     public TMP_Text LastTouch;
 
     public GameObject[] Spawns;
+    private int currentSpawnIndex = 0; // Current spawn point index
 
     public bool GameFinished;
 
@@ -110,8 +111,19 @@ public class GameTwoManager : MonoBehaviourPunCallbacks
 
     public void RandomMapGenerator()
     {
+        if (Spawns.Length == 0)
+        {
+            Debug.LogError("No spawn points available.");
+            return;
+        }
 
-                GameObject player = PhotonNetwork.Instantiate("Prometheus", Spawns[0].transform.position, Quaternion.identity);
-     
+        // Get the player's index in the Photon player list
+        int playerIndex = PhotonNetwork.LocalPlayer.ActorNumber - 1;
+
+        // Ensure the spawn index is within bounds
+        int spawnIndex = playerIndex % Spawns.Length;
+
+        // Instantiate the player at the corresponding spawn point
+        PhotonNetwork.Instantiate("Prometheus", Spawns[spawnIndex].transform.position, Quaternion.identity);
     }
 }
