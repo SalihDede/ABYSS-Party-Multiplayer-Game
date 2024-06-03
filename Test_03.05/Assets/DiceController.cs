@@ -234,7 +234,7 @@ public class DiceController : MonoBehaviourPunCallbacks
             else
             {
 
-                GameManager.GetComponent<GameManager>().MinigameCount = Random.Range(0,5);
+                GameManager.GetComponent<GameManager>().MinigameCount = Random.Range(0, GameManager.GetComponent<GameManager>().MinigameList.Count);
                 photonView.RPC("MiniGameSelectUpdate", RpcTarget.All, GameManager.GetComponent<GameManager>().MinigameCount);
 
  

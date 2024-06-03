@@ -12,6 +12,7 @@ public class GameFiveManager : MonoBehaviourPunCallbacks
     public GameObject[] PuzzleMapList;
 
     public GameObject GameManagerrr;
+    public GameObject GUIDE;
     public bool StartTime;
     public GameObject GameTwoGUI;
     public List<GameObject> Ranking = new List<GameObject>();
@@ -100,7 +101,6 @@ public class GameFiveManager : MonoBehaviourPunCallbacks
             Win.text = Ranking[0].GetComponent<PhotonView>().Controller.NickName + "\n" + Ranking[1].GetComponent<PhotonView>().Controller.NickName + "\n" + Ranking[2].GetComponent<PhotonView>().Controller.NickName + "\n" + Ranking[3].GetComponent<PhotonView>().Controller.NickName;
         }
 
-        countdownText.text = countdown.ToString();
         ElapsedTime.text = ((int)(elapsedTime)).ToString();
 
         if (gameStarted)
@@ -115,12 +115,19 @@ public class GameFiveManager : MonoBehaviourPunCallbacks
 
     public IEnumerator StartCountdownCoroutine()
     {
+        GUIDE.SetActive(true);
         countdownText.gameObject.SetActive(true); 
         ElapsedTime.gameObject.SetActive(false);
         countdown = 15; // Initial countdown value
-        while (countdown > 0)
+        while (countdown < 0)
         {
+
+            countdownText.text = countdown.ToString();
             yield return new WaitForSeconds(1);
+            if(countdown<5)
+            {
+                GUIDE.SetActive(false);
+            }
             countdown--;
         }
 

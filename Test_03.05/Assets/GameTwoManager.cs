@@ -74,6 +74,27 @@ public class GameTwoManager : MonoBehaviourPunCallbacks
             StartCoroutine(StartCountdownCoroutine());
         }
 
+        if (Ranking.Count == 0)
+        {
+            Win.text = "";
+        }
+        if (Ranking.Count == 1)
+        {
+            Win.text = Ranking.IndexOf(Ranking[0]) + " " + Ranking[0].GetComponent<PhotonView>().Controller.NickName + "\n";
+        }
+        if (Ranking.Count == 2)
+        {
+            Win.text = Ranking.IndexOf(Ranking[0])+" " + Ranking[0].GetComponent<PhotonView>().Controller.NickName + "\n" + Ranking.IndexOf(Ranking[1]) + " " + Ranking[1].GetComponent<PhotonView>().Controller.NickName;
+        }
+        if (Ranking.Count == 3)
+        {
+            Win.text = Ranking.IndexOf(Ranking[0]) + " " + Ranking[0].GetComponent<PhotonView>().Controller.NickName + "\n" + Ranking.IndexOf(Ranking[1]) + " " + Ranking[1].GetComponent<PhotonView>().Controller.NickName + "\n" + Ranking.IndexOf(Ranking[2]) + " " + Ranking[2].GetComponent<PhotonView>().Controller.NickName;
+        }
+        if (Ranking.Count == 4)
+        {
+            Win.text = Ranking.IndexOf(Ranking[0]) + " " + Ranking[0].GetComponent<PhotonView>().Controller.NickName + "\n" + Ranking.IndexOf(Ranking[1]) + " " + Ranking[1].GetComponent<PhotonView>().Controller.NickName + "\n" + Ranking.IndexOf(Ranking[2]) + " " + Ranking[2].GetComponent<PhotonView>().Controller.NickName + "\n" + Ranking.IndexOf(Ranking[3]) + " " + Ranking[3].GetComponent<PhotonView>().Controller.NickName;
+        }
+
 
         if (Ranking.Count == 4)
         {
