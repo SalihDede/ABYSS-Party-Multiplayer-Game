@@ -50,37 +50,38 @@ public class GameOneManager : MonoBehaviourPunCallbacks
 
 
 
- 
+    [PunRPC]
+    void HostListCopying(List<GameObject> Starterss)
+    {
+
+        for(int i = 0; i< 4; i++)
+        {
+
+            Starters[i] = Starterss[i];
+        }
+
+
+    }
 
     IEnumerator GameFinishedCoroutine()
     {
-        bool okey = false;
-        int okeycount = 0;
-        while (!okey)
+
+        if(PhotonNetwork.IsMasterClient)
         {
-            foreach(GameObject player in Starters)
-            {
-                if(player.GetComponent<PlayerABYSS>().ScoreImplemented)
-                {
-                    okeycount += 1;
-                }
-                
-            }
+           
+                Starters.Sort((player1, player2) => player2.GetComponent<PlayerABYSS>().score.CompareTo(player1.GetComponent<PlayerABYSS>().score));
 
-            if(okeycount == 2)
-            {
-                okey = true;
-            }
+                photonView.RPC("HostListCopying", RpcTarget.All, Starters);
+
         }
-        
 
-        Starters.Sort((player1, player2) => player2.GetComponent<PlayerABYSS>().score.CompareTo(player1.GetComponent<PlayerABYSS>().score));
 
-        if (Starters.Count == 2)
+
+        if (Starters.Count == 4)
         {
 
                 GameManagerrr.GetComponent<GameManager>().PlayersTemp.Clear();
-                for (int i = 0; i < 2; i++)
+                for (int i = 0; i < 4; i++)
                 {
                     foreach (GameObject Player in GameManagerrr.GetComponent<GameManager>().PlayersSorted)
                     {

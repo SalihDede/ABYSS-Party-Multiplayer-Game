@@ -2132,6 +2132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 959a5be1b07764c44bfd3374e0f4c7dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ScoreImplemented: 0
   GameOneManager: {fileID: 0}
   Anim: {fileID: 8017516911683782433}
   score: 0

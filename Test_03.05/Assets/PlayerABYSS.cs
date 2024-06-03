@@ -12,6 +12,7 @@ public class PlayerABYSS : MonoBehaviourPunCallbacks
     public GameObject GameOneManager;
     public Animator Anim;
     public int score;
+    public bool isHost;
 
     void Start()
     {
@@ -64,13 +65,10 @@ public class PlayerABYSS : MonoBehaviourPunCallbacks
     [PunRPC]
     void Finito(bool result, int scoree)
     {
-        if (photonView.IsMine)
-        {
+        
 
-            GetComponent<PlayerABYSS>().score = scoree;
-            ScoreImplemented = true;
 
-        }
+
         GameOneManager.GetComponent<GameOneManager>().GameFinished = result;
 
     }
