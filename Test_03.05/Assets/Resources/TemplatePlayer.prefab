@@ -2136,6 +2136,7 @@ MonoBehaviour:
   GameOneManager: {fileID: 0}
   Anim: {fileID: 8017516911683782433}
   score: 0
+  isHost: 0
 --- !u!1 &8987136569727909539
 GameObject:
   m_ObjectHideFlags: 0
