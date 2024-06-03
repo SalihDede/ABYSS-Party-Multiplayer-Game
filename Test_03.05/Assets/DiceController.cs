@@ -52,7 +52,7 @@ public class DiceController : MonoBehaviourPunCallbacks
     {
 
 
-        
+
 
 
 
@@ -89,6 +89,7 @@ public class DiceController : MonoBehaviourPunCallbacks
     private void Update()
     {
 
+        GameManager.GetComponent<GameManager>().Line[GameManager.GetComponent<GameManager>().PlayersSorted.IndexOf(gameObject)].text = photonView.Controller.NickName;
 
         MaxPlayerImplementFunc();
 
