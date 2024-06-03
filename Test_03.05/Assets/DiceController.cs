@@ -90,10 +90,11 @@ public class DiceController : MonoBehaviourPunCallbacks
     {
 
 
-        
-       
+        MaxPlayerImplementFunc();
 
-            GameManager.GetComponent<GameManager>().PlayersJoin.Sort((player1, player2) => player2.GetComponent<DiceController>().stepLine.CompareTo(player1.GetComponent<DiceController>().stepLine));
+
+
+       GameManager.GetComponent<GameManager>().PlayersJoin.Sort((player1, player2) => player2.GetComponent<DiceController>().stepLine.CompareTo(player1.GetComponent<DiceController>().stepLine));
 
         if (BahaGame != null)
         {
