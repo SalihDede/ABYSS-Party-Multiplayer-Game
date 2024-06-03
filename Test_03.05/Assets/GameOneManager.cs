@@ -55,8 +55,25 @@ public class GameOneManager : MonoBehaviourPunCallbacks
 
     IEnumerator GameFinishedCoroutine()
     {
-            
-       
+        bool okey = false;
+        int okeycount = 0;
+        while (!okey)
+        {
+            foreach(GameObject player in Starters)
+            {
+                if(player.GetComponent<PlayerABYSS>().ScoreImplemented)
+                {
+                    okeycount += 1;
+                }
+                
+            }
+
+            if(okeycount == 4)
+            {
+                okey = true;
+            }
+        }
+        
 
         Starters.Sort((player1, player2) => player2.GetComponent<PlayerABYSS>().score.CompareTo(player1.GetComponent<PlayerABYSS>().score));
 
@@ -146,7 +163,7 @@ public class GameOneManager : MonoBehaviourPunCallbacks
         
 
 
-        if(countdownText.text == "Finish" || GameFinished == true)
+        if(GameFinished)
         {
             countdownText.text = "";
             GameFinished = true;

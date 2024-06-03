@@ -7,7 +7,7 @@ using Photon.Realtime;
 public class PlayerABYSS : MonoBehaviourPunCallbacks
 {
 
-
+    public bool ScoreImplemented;
     private PhotonView photonView;
     public GameObject GameOneManager;
     public Animator Anim;
@@ -33,6 +33,8 @@ public class PlayerABYSS : MonoBehaviourPunCallbacks
             photonView.RPC("Finito", RpcTarget.All, true);
         }
 
+   
+
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.A))
         {
             Anim.SetBool("IsRun", true);
@@ -57,6 +59,10 @@ public class PlayerABYSS : MonoBehaviourPunCallbacks
     [PunRPC]
     void AdminList()
     {
+
+
+     
+
         GameOneManager.GetComponent<GameOneManager>().Starters.AddRange(GameOneManager.GetComponent<GameOneManager>().Starters);
         if (GameOneManager.GetComponent<GameOneManager>().Starters.Count > 4)
         {
@@ -69,26 +75,20 @@ public class PlayerABYSS : MonoBehaviourPunCallbacks
     }
 
 
-    void HostList()
-    {
-        if (PhotonNetwork.IsMasterClient)
-        {
-            foreach (GameObject Player in GameOneManager.GetComponent<GameOneManager>().Starters)
-            {
-                if (Player.GetComponent<PhotonView>().ViewID / 1000 == 1)
-                {
-                    Player.GetComponent<PhotonView>().RPC("AdminList", RpcTarget.All);
-                }
-
-            }
-        }
-    }
+   
 
     [PunRPC]
     void Finito(bool result)
     {
+        if (photonView.IsMine)
+        {
+
+            GetComponent<PlayerABYSS>().score = GetComponent<PlayerABYSS>().score;
+            ScoreImplemented = true;
+
+        }
         GameOneManager.GetComponent<GameOneManager>().GameFinished = result;
-        
+
     }
 
     private void OnTriggerStay(Collider other)
