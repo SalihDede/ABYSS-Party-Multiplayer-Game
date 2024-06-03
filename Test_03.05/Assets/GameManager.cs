@@ -72,35 +72,7 @@ public class GameManager : MonoBehaviourPunCallbacks
     {
 
 
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            PlayersSorted[0].GetComponent<DiceController>().Kameraa.gameObject.SetActive(true);
-            PlayersSorted[1].GetComponent<DiceController>().Kameraa.gameObject.SetActive(false);
-            PlayersSorted[2].GetComponent<DiceController>().Kameraa.gameObject.SetActive(false);
-            PlayersSorted[3].GetComponent<DiceController>().Kameraa.gameObject.SetActive(false);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            PlayersSorted[0].GetComponent<DiceController>().Kameraa.gameObject.SetActive(false);
-            PlayersSorted[1].GetComponent<DiceController>().Kameraa.gameObject.SetActive(true);
-            PlayersSorted[2].GetComponent<DiceController>().Kameraa.gameObject.SetActive(false);
-            PlayersSorted[3].GetComponent<DiceController>().Kameraa.gameObject.SetActive(false);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            PlayersSorted[0].GetComponent<DiceController>().Kameraa.gameObject.SetActive(false);
-            PlayersSorted[1].GetComponent<DiceController>().Kameraa.gameObject.SetActive(false);
-            PlayersSorted[2].GetComponent<DiceController>().Kameraa.gameObject.SetActive(true);
-            PlayersSorted[3].GetComponent<DiceController>().Kameraa.gameObject.SetActive(false);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha4))
-        {
-            PlayersSorted[0].GetComponent<DiceController>().Kameraa.gameObject.SetActive(false);
-            PlayersSorted[1].GetComponent<DiceController>().Kameraa.gameObject.SetActive(false);
-            PlayersSorted[2].GetComponent<DiceController>().Kameraa.gameObject.SetActive(false);
-            PlayersSorted[3].GetComponent<DiceController>().Kameraa.gameObject.SetActive(true);
-        }
-
+      
 
 
         MaxPlayer = (int)(MaxPlayerSlider.value);
@@ -253,22 +225,7 @@ public class GameManager : MonoBehaviourPunCallbacks
     public void CreateRoomButton()
     {
         PhotonNetwork.CreateRoom(RoomName.text, new RoomOptions { MaxPlayers = 4 }, null);
-        if (MaxPlayer == 4)
-        {
 
-        }
-        if (MaxPlayer == 3)
-        {
-            PhotonNetwork.CreateRoom(RoomName.text, new RoomOptions { MaxPlayers = 3 }, null);
-        }
-        if (MaxPlayer == 2)
-        {
-            PhotonNetwork.CreateRoom(RoomName.text, new RoomOptions { MaxPlayers = 2 }, null);
-        }
-        if (MaxPlayer == 1)
-        {
-            PhotonNetwork.CreateRoom(RoomName.text, new RoomOptions { MaxPlayers = 1 }, null);
-        }
 
     }
 
