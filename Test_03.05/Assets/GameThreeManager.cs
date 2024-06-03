@@ -31,6 +31,9 @@ public class GameThreeManager : MonoBehaviourPunCallbacks
     private float elapsedTime = 0f; // Time elapsed since the start of the game
     private bool gameStarted = false; // Indicates if the game has started
 
+    public GameObject GUIDE;
+
+
     private PhotonView photonView;
 
     void Start()
@@ -43,13 +46,21 @@ public class GameThreeManager : MonoBehaviourPunCallbacks
       
     }
 
+
+
+
+
     IEnumerator StartCountdownCoroutine()
     {
-        int countdown = 10; // Initial countdown value
+        int countdown = 15; // Initial countdown value
         while (countdown > 0)
         {
             countdownText.text = countdown.ToString(); 
             yield return new WaitForSeconds(1); 
+            if(countdown<5)
+            {
+                GUIDE.SetActive(false);
+            }
             countdown--; 
         }
 

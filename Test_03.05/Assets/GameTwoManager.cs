@@ -8,6 +8,7 @@ using TMPro;
 public class GameTwoManager : MonoBehaviourPunCallbacks
 {
     public GameObject GameManagerrr;
+    public GameObject GUIDE;
     public bool StartTime;
     public GameObject GameTwoGUI;
     public List<GameObject> Ranking = new List<GameObject>();
@@ -39,8 +40,13 @@ public class GameTwoManager : MonoBehaviourPunCallbacks
         int countdown = 15; // Initial countdown value
         while (countdown > 0)
         {
+            GUIDE.SetActive(true);
             countdownText.text = countdown.ToString(); 
             yield return new WaitForSeconds(1); 
+            if(countdown<5)
+            {
+                GUIDE.SetActive(false);
+            }
             countdown--; 
         }
 

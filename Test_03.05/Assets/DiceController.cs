@@ -33,9 +33,10 @@ public class DiceController : MonoBehaviourPunCallbacks
     bool AlreadyAdded = false;
 
     public GameObject[] Steps = new GameObject[24];
-    private int stepLine = 0;
+    public int stepLine = 0;
 
     public TMP_Text diceResultText;
+    public TMP_Text NameOf;
     public GameObject throwButton;
     int sorted = 0;
 
@@ -54,14 +55,14 @@ public class DiceController : MonoBehaviourPunCallbacks
         photonView = GetComponent<PhotonView>();
 
         GameManager = GameObject.Find("GameManager");
-        gameObject.name = GameManager.GetComponent<GameManager>().PlayersJoin.Count.ToString();
+        gameObject.name = PhotonNetwork.NickName;
 
         GameManager.GetComponent<GameManager>().NameForPhoton = gameObject.name;
 
         diceResultText = GameObject.Find("DiceNumberResult").GetComponent<TMP_Text>();
         GameManager.GetComponent<GameManager>().PlayersJoin.Add(gameObject);
 
-
+        NameOf.text = PhotonNetwork.NickName;
 
 
         if (photonView.IsMine)
@@ -84,7 +85,13 @@ public class DiceController : MonoBehaviourPunCallbacks
     private void Update()
     {
 
-        if(BahaGame != null)
+
+        
+       
+
+            GameManager.GetComponent<GameManager>().PlayersJoin.Sort((player1, player2) => player2.GetComponent<DiceController>().stepLine.CompareTo(player1.GetComponent<DiceController>().stepLine));
+
+        if (BahaGame != null)
         {
             if (BahaGame.GetComponent<GameTwoManager>().Ranking.Count == 4)
             {
@@ -141,18 +148,26 @@ public class DiceController : MonoBehaviourPunCallbacks
 
 
     }
-
-  
-
-    public void StartGameButton()
+    public void NameUpdate()
     {
-        if (PhotonNetwork.IsMasterClient && PhotonNetwork.CurrentRoom.PlayerCount == 4)
+        if (photonView.IsMine)
         {
-            startButton.gameObject.SetActive(false);
-            photonView.RPC("AdminStart", RpcTarget.All, 1);
+            photonView.RPC("NAME", RpcTarget.All, PhotonNetwork.NickName);
 
         }
+
     }
+
+
+            public void StartGameButton()
+            {
+                if (PhotonNetwork.IsMasterClient && PhotonNetwork.CurrentRoom.PlayerCount == 4)
+                {
+                    startButton.gameObject.SetActive(false);
+                    photonView.RPC("AdminStart", RpcTarget.All, 1);
+
+                }
+            }
     //PhotonNetwork.Instantiate("Playerr", new Vector3(0, 0.51f, 0), Quaternion.identity);
 
     public void ThrowDice()
@@ -169,7 +184,7 @@ public class DiceController : MonoBehaviourPunCallbacks
             }
 
             StartCoroutine(MovePlayer(new Vector3(StepsList[stepLine].transform.position.x, StepsList[stepLine].transform.position.y + 0.5f, StepsList[stepLine].transform.position.z)));
-            photonView.RPC("SyncDiceResult", RpcTarget.All, diceResult);
+            photonView.RPC("SyncDiceResult", RpcTarget.All, diceResult,stepLine);
 
             if (GameManager.GetComponent<GameManager>().WhoseTurn != 3)
             {
@@ -260,7 +275,7 @@ public class DiceController : MonoBehaviourPunCallbacks
     [PunRPC]
     void MiniGameSelectUpdate(int result)
     {
-
+        
         GameManager.GetComponent<GameManager>().MinigameCount = result;
 
         GameManager.GetComponent<GameManager>().Kamera.SetActive(false);
@@ -269,8 +284,9 @@ public class DiceController : MonoBehaviourPunCallbacks
         GameManager.GetComponent<GameManager>().MiniGameStarted = true;
         if(GameManager.GetComponent<GameManager>().MinigameList[GameManager.GetComponent<GameManager>().MinigameCount].name == "SemihGame")
         {
-            GameManager.GetComponent<GameManager>().MinigameList[GameManager.GetComponent<GameManager>().MinigameCount].GetComponent<GameOneManager>().Goal = true;
+            //GameManager.GetComponent<GameManager>().MinigameList[GameManager.GetComponent<GameManager>().MinigameCount].GetComponent<GameOneManager>().Goal = true;
             GameManager.GetComponent<GameManager>().MinigameList[GameManager.GetComponent<GameManager>().MinigameCount].GetComponent<GameOneManager>().GameFinished = false;
+            StartCoroutine(GameManager.GetComponent<GameManager>().MinigameList[GameManager.GetComponent<GameManager>().MinigameCount].GetComponent<GameOneManager>().GUIDECoroutine());
         }
         if (GameManager.GetComponent<GameManager>().MinigameList[GameManager.GetComponent<GameManager>().MinigameCount].name == "Alp Game")
         {
@@ -330,11 +346,19 @@ public class DiceController : MonoBehaviourPunCallbacks
 
 
     [PunRPC]
-    void SyncDiceResult(int result)
+    void SyncDiceResult(int result,int stepline)
     {
         diceResult = result;
-        diceResultText.text = "Dice result: " + result; // Update the text component with the dice result
+        stepLine = stepline;
+        diceResultText.text = result.ToString(); // Update the text component with the dice result
     }
+
+    [PunRPC]
+    void NAME(string result)
+    {
+        NameOf.text = result;
+    }
+
 
 
 }

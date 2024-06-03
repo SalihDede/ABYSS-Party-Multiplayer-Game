@@ -12,7 +12,7 @@ public class GameOneManager : MonoBehaviourPunCallbacks
     public bool Goal1;
     public bool Goal2;
     public GameObject BallPrefab;
-
+    public GameObject GUIDE;
     public List<GameObject> Ranking = new List<GameObject>();
     public List<GameObject> Starters = new List<GameObject>();
 
@@ -55,18 +55,8 @@ public class GameOneManager : MonoBehaviourPunCallbacks
 
     IEnumerator GameFinishedCoroutine()
     {
-        if(PhotonNetwork.IsMasterClient)
-        {
-            foreach(GameObject Player in Starters)
-            {
-                if(Player.GetComponent<PhotonView>().ViewID/1000 == 1)
-                {
-                    Player.GetComponent<PhotonView>().RPC("AdminList", RpcTarget.All);
-                }
-
-            }
-        }
-
+            
+       
 
         Starters.Sort((player1, player2) => player2.GetComponent<PlayerABYSS>().score.CompareTo(player1.GetComponent<PlayerABYSS>().score));
 
@@ -122,7 +112,7 @@ public class GameOneManager : MonoBehaviourPunCallbacks
         IEnumerator StartCountdownCoroutine()
         {
 
-            int countdown = 20; // Initial countdown value
+            int countdown = 45; // Initial countdown value
             while (countdown > 0)
             {
                 countdownText.text = countdown.ToString();
@@ -233,7 +223,27 @@ public class GameOneManager : MonoBehaviourPunCallbacks
 
     }
 
-        public void RandomMapGenerator()
+    public IEnumerator GUIDECoroutine()
+    {
+        int countdown = 15; // Initial countdown value
+        while (countdown > 0)
+        {
+            countdownText.text = countdown.ToString();
+            yield return new WaitForSeconds(1);
+            if (countdown < 5)
+            {
+                GUIDE.SetActive(false);
+            }
+            countdown--;
+        }
+        Goal = true;
+        countdownText.text = "GO!";
+        yield return new WaitForSeconds(1);
+        countdownText.gameObject.SetActive(false); // Hide the countdown text
+    }
+
+
+    public void RandomMapGenerator()
         {
         
              GameObject player1 = PhotonNetwork.Instantiate("TemplatePlayer", Spawn0.transform.position, Quaternion.identity);

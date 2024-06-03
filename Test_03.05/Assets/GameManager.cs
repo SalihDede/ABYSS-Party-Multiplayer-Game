@@ -12,6 +12,11 @@ public class GameManager : MonoBehaviourPunCallbacks
 
     public string NameForPhoton;
 
+
+    public TMP_InputField NickName;
+
+    public TMP_Text[] Line;
+
     public GameObject Spawn;
     public GameObject[] LobbyListObjects;
     public GameObject LobbyListContent;
@@ -21,6 +26,7 @@ public class GameManager : MonoBehaviourPunCallbacks
 
     public GameObject position;
     public GameObject GUI;
+    public GameObject StartGUI;
     public GameObject GameGUI;
     public GameObject RunGame;
     public TMP_InputField Input;
@@ -41,7 +47,17 @@ public class GameManager : MonoBehaviourPunCallbacks
     {
         PhotonNetwork.ConnectUsingSettings();
     }
-
+    public void PlayButton()
+    {
+        if(NickName.text != "")
+        {
+            PhotonNetwork.NickName = NickName.text;
+            StartGUI.SetActive(false);
+        }
+ 
+    
+    
+    }
     // Update is called once per frame
     void Update()
     {
