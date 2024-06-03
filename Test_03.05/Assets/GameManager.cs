@@ -9,8 +9,8 @@ using System.Linq;
 public class GameManager : MonoBehaviourPunCallbacks
 {
 
-    public GameObject[] MinigameList;
 
+    public List<GameObject> MinigameList = new List<GameObject>();
     public string NameForPhoton;
 
 

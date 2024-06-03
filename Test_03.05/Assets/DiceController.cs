@@ -407,9 +407,12 @@ public class DiceController : MonoBehaviourPunCallbacks
         }
 
 
+
+
         GameManager.GetComponent<GameManager>().MinigameList[GameManager.GetComponent<GameManager>().MinigameCount].SetActive(true);
 
 
+        GameManager.GetComponent<GameManager>().MinigameList.Remove(GameManager.GetComponent<GameManager>().MinigameList[GameManager.GetComponent<GameManager>().MinigameCount]);
 
     }
 
