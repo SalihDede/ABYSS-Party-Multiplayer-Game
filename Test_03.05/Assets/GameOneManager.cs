@@ -160,10 +160,11 @@ public class GameOneManager : MonoBehaviourPunCallbacks
     void FixedUpdate()
     {
 
-        
+      
 
 
-        if(GameFinished)
+
+        if (GameFinished)
         {
             countdownText.text = "";
             GameFinished = true;

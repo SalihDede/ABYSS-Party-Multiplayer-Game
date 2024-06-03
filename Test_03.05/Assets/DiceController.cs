@@ -11,6 +11,7 @@ public class DiceController : MonoBehaviourPunCallbacks
 
 
     private PhotonView photonView;
+    public GameObject Kameraa;
 
     public int diceResult;
     private int currentPlayerIndex = 0;

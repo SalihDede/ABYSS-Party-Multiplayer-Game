@@ -25745,7 +25745,7 @@ MonoBehaviour:
   StartGUI: {fileID: 335406997}
   GameGUI: {fileID: 926095705}
   RunGame: {fileID: 1836466180}
-  Input: {fileID: 1382469737}
+  InputName: {fileID: 0}
   RoomName: {fileID: 1398772429}
   Name: {fileID: 0}
   ShopPanel: {fileID: 0}
@@ -29295,7 +29295,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1360402728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31941,7 +31941,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!81 &1481093703
 AudioListener:
   m_ObjectHideFlags: 0
@@ -34449,7 +34449,7 @@ RectTransform:
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -41084,7 +41084,7 @@ RectTransform:
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}

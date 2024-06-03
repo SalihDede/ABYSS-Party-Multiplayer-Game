@@ -6,6 +6,7 @@ using TMPro;
 using Photon.Pun;
 using Photon.Realtime;
 using System.Linq;
+
 public class GameManager : MonoBehaviourPunCallbacks
 {
 
@@ -34,7 +35,7 @@ public class GameManager : MonoBehaviourPunCallbacks
     public GameObject StartGUI;
     public GameObject GameGUI;
     public GameObject RunGame;
-    public TMP_InputField Input;
+    public TMP_InputField InputName;
     public TMP_InputField RoomName;
     public TMP_InputField Name;
     public GameObject ShopPanel;
@@ -50,6 +51,12 @@ public class GameManager : MonoBehaviourPunCallbacks
     // Start is called before the first frame update
     void Start()
     {
+
+            PlayersSorted[0].GetComponent<DiceController>().Kameraa.gameObject.SetActive(true);
+            PlayersSorted[1].GetComponent<DiceController>().Kameraa.gameObject.SetActive(false);
+            PlayersSorted[2].GetComponent<DiceController>().Kameraa.gameObject.SetActive(false);
+            PlayersSorted[3].GetComponent<DiceController>().Kameraa.gameObject.SetActive(false);
+      
         PhotonNetwork.ConnectUsingSettings();
     }
     public void PlayButton()
@@ -66,6 +73,38 @@ public class GameManager : MonoBehaviourPunCallbacks
     // Update is called once per frame
     void Update()
     {
+
+
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            PlayersSorted[0].GetComponent<DiceController>().Kameraa.gameObject.SetActive(true);
+            PlayersSorted[1].GetComponent<DiceController>().Kameraa.gameObject.SetActive(false);
+            PlayersSorted[2].GetComponent<DiceController>().Kameraa.gameObject.SetActive(false);
+            PlayersSorted[3].GetComponent<DiceController>().Kameraa.gameObject.SetActive(false);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            PlayersSorted[0].GetComponent<DiceController>().Kameraa.gameObject.SetActive(false);
+            PlayersSorted[1].GetComponent<DiceController>().Kameraa.gameObject.SetActive(true);
+            PlayersSorted[2].GetComponent<DiceController>().Kameraa.gameObject.SetActive(false);
+            PlayersSorted[3].GetComponent<DiceController>().Kameraa.gameObject.SetActive(false);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            PlayersSorted[0].GetComponent<DiceController>().Kameraa.gameObject.SetActive(false);
+            PlayersSorted[1].GetComponent<DiceController>().Kameraa.gameObject.SetActive(false);
+            PlayersSorted[2].GetComponent<DiceController>().Kameraa.gameObject.SetActive(true);
+            PlayersSorted[3].GetComponent<DiceController>().Kameraa.gameObject.SetActive(false);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            PlayersSorted[0].GetComponent<DiceController>().Kameraa.gameObject.SetActive(false);
+            PlayersSorted[1].GetComponent<DiceController>().Kameraa.gameObject.SetActive(false);
+            PlayersSorted[2].GetComponent<DiceController>().Kameraa.gameObject.SetActive(false);
+            PlayersSorted[3].GetComponent<DiceController>().Kameraa.gameObject.SetActive(true);
+        }
+
+
 
         MaxPlayer = (int)(MaxPlayerSlider.value);
         NickNameShowCase.text = NickName.text;
@@ -161,7 +200,7 @@ public class GameManager : MonoBehaviourPunCallbacks
     }
     public void JoinRoom()
     {
-        PhotonNetwork.JoinRoom(Input.text);
+        PhotonNetwork.JoinRoom(InputName.text);
     }
 
 
