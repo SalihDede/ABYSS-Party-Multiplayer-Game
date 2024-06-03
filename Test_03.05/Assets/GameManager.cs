@@ -88,7 +88,7 @@ public class GameManager : MonoBehaviourPunCallbacks
 
         if(PlayersJoin.Count == 4 && PlayersSorted.Count != 4)
         {
-            for (int i = 0; i < MaxPlayer; i++)
+            for (int i = 0; i < 4; i++)
             {
                 if (PlayersJoin[i].GetComponent<PhotonView>().ViewID / 1000 == 1)
                 {
@@ -98,7 +98,7 @@ public class GameManager : MonoBehaviourPunCallbacks
 
 
 
-            for (int i = 0; i < MaxPlayer; i++)
+            for (int i = 0; i < 4; i++)
             {
                 if (PlayersJoin[i].GetComponent<PhotonView>().ViewID / 1000 == 2)
                 {
