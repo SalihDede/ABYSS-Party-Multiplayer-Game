@@ -11855,7 +11855,6 @@ GameObject:
   - component: {fileID: 547942901}
   - component: {fileID: 547942903}
   - component: {fileID: 547942902}
-  - component: {fileID: 547942904}
   m_Layer: 0
   m_Name: ImageToggle
   m_TagString: Untagged
@@ -11880,8 +11879,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 592, y: -316}
-  m_SizeDelta: {x: 640.7217, y: 359.1613}
+  m_AnchoredPosition: {x: 688, y: 381}
+  m_SizeDelta: {x: 447.6896, y: 250.9557}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &547942902
 MonoBehaviour:
@@ -11921,18 +11920,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 547942900}
   m_CullTransparentMesh: 1
---- !u!114 &547942904
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 547942900}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a13fbe75fcd0f2f40b1e89c8a0336d2c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &556883700
 GameObject:
   m_ObjectHideFlags: 0
