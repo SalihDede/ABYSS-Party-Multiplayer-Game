@@ -66,15 +66,15 @@ public class GameOneManager : MonoBehaviourPunCallbacks
     IEnumerator GameFinishedCoroutine()
     {
 
-        if(PhotonNetwork.IsMasterClient)
+  /*      if(PhotonNetwork.IsMasterClient)
         {
            
-                Starters.Sort((player1, player2) => player2.GetComponent<PlayerABYSS>().score.CompareTo(player1.GetComponent<PlayerABYSS>().score));
-
+               
                 photonView.RPC("HostListCopying", RpcTarget.All, Starters);
 
         }
-
+  */
+        Starters.Sort((player1, player2) => player2.GetComponent<PlayerABYSS>().score.CompareTo(player1.GetComponent<PlayerABYSS>().score));
 
 
         if (Starters.Count == 4)
