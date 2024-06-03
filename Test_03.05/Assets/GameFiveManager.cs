@@ -44,13 +44,13 @@ public class GameFiveManager : MonoBehaviourPunCallbacks
         }
 
 
-        if (Ranking.Count == 2)
+        if (Ranking.Count == 4)
         {
             GameManagerrr.GetComponent<GameManager>().Kamera.SetActive(true);
             gameObject.SetActive(false);
 
             GameManagerrr.GetComponent<GameManager>().PlayersTemp.Clear();
-            for (int i = 0; i < 2; i++)
+            for (int i = 0; i < 4; i++)
             {
                 foreach (GameObject Player in GameManagerrr.GetComponent<GameManager>().PlayersSorted)
                 {
@@ -63,7 +63,7 @@ public class GameFiveManager : MonoBehaviourPunCallbacks
 
             GameManagerrr.GetComponent<GameManager>().PlayersSorted.Clear();
 
-            if (GameManagerrr.GetComponent<GameManager>().PlayersSorted.Count != 2)
+            if (GameManagerrr.GetComponent<GameManager>().PlayersSorted.Count != 4)
             {
                 GameManagerrr.GetComponent<GameManager>().PlayersSorted.AddRange(GameManagerrr.GetComponent<GameManager>().PlayersTemp);
             }
@@ -81,17 +81,23 @@ public class GameFiveManager : MonoBehaviourPunCallbacks
 
         if (Ranking.Count == 0)
         {
-            // The first player to complete the puzzle
             Win.text = "";
         }
         if (Ranking.Count == 1)
         {
-            // The first player to complete the puzzle
-            Win.text = Ranking[0].GetComponent<PhotonView>().OwnerActorNr + "\n";
+            Win.text = Ranking[0].GetComponent<PhotonView>().Controller.NickName + "\n";
         }
         if (Ranking.Count == 2)
         {
-            Win.text = Ranking[0].GetComponent<PhotonView>().OwnerActorNr + "\n" + Ranking[1].GetComponent<PhotonView>().OwnerActorNr;
+            Win.text = Ranking[0].GetComponent<PhotonView>().Controller.NickName + "\n" + Ranking[1].GetComponent<PhotonView>().Controller.NickName;
+        }
+        if (Ranking.Count == 3)
+        {
+            Win.text = Ranking[0].GetComponent<PhotonView>().Controller.NickName + "\n" + Ranking[1].GetComponent<PhotonView>().Controller.NickName + "\n" + Ranking[2].GetComponent<PhotonView>().Controller.NickName;
+        }
+        if (Ranking.Count == 4)
+        {
+            Win.text = Ranking[0].GetComponent<PhotonView>().Controller.NickName + "\n" + Ranking[1].GetComponent<PhotonView>().Controller.NickName + "\n" + Ranking[2].GetComponent<PhotonView>().Controller.NickName + "\n" + Ranking[3].GetComponent<PhotonView>().Controller.NickName;
         }
 
         countdownText.text = countdown.ToString();
