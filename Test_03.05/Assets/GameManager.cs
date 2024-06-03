@@ -52,10 +52,7 @@ public class GameManager : MonoBehaviourPunCallbacks
     void Start()
     {
 
-            PlayersSorted[0].GetComponent<DiceController>().Kameraa.gameObject.SetActive(true);
-            PlayersSorted[1].GetComponent<DiceController>().Kameraa.gameObject.SetActive(false);
-            PlayersSorted[2].GetComponent<DiceController>().Kameraa.gameObject.SetActive(false);
-            PlayersSorted[3].GetComponent<DiceController>().Kameraa.gameObject.SetActive(false);
+           
       
         PhotonNetwork.ConnectUsingSettings();
     }
