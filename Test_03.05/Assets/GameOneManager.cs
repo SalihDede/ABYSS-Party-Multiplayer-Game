@@ -43,7 +43,8 @@ public class GameOneManager : MonoBehaviourPunCallbacks
     void Start()
     {
         GameManagerrr = GameObject.Find("GameManager");
-
+        GameFinished = false;
+        StartCoroutine(GUIDECoroutine());
 
     }
 
@@ -252,7 +253,7 @@ public class GameOneManager : MonoBehaviourPunCallbacks
             countdown--;
         }
         Goal = true;
-        countdownText.text = "GO!";
+        countdownText.text = "";
         yield return new WaitForSeconds(1);
         countdownText.gameObject.SetActive(false); // Hide the countdown text
     }

@@ -326,9 +326,12 @@ public class DiceController : MonoBehaviourPunCallbacks
         GameManager.GetComponent<GameManager>().MiniGameStarted = true;
         if(GameManager.GetComponent<GameManager>().MinigameList[GameManager.GetComponent<GameManager>().MinigameCount].name == "SemihGame")
         {
-            //GameManager.GetComponent<GameManager>().MinigameList[GameManager.GetComponent<GameManager>().MinigameCount].GetComponent<GameOneManager>().Goal = true;
-            GameManager.GetComponent<GameManager>().MinigameList[GameManager.GetComponent<GameManager>().MinigameCount].GetComponent<GameOneManager>().GameFinished = false;
-            StartCoroutine(GameManager.GetComponent<GameManager>().MinigameList[GameManager.GetComponent<GameManager>().MinigameCount].GetComponent<GameOneManager>().GUIDECoroutine());
+            if(GameManager.GetComponent<GameManager>().MinigameList[GameManager.GetComponent<GameManager>().MinigameCount].GetComponent<GameOneManager>().GameManagerrr != null)
+            {
+                GameManager.GetComponent<GameManager>().MinigameList[GameManager.GetComponent<GameManager>().MinigameCount].GetComponent<GameOneManager>().GameFinished = false;
+                StartCoroutine(GameManager.GetComponent<GameManager>().MinigameList[GameManager.GetComponent<GameManager>().MinigameCount].GetComponent<GameOneManager>().GUIDECoroutine());
+            }
+
         }
         if (GameManager.GetComponent<GameManager>().MinigameList[GameManager.GetComponent<GameManager>().MinigameCount].name == "Alp Game")
         {
