@@ -49,10 +49,40 @@ public class PlayerABYSS : MonoBehaviourPunCallbacks
         {
             Anim.SetBool("IsJump", false);
         }
-        
-        
+    
+
     }
 
+
+    [PunRPC]
+    void AdminList()
+    {
+        GameOneManager.GetComponent<GameOneManager>().Starters.AddRange(GameOneManager.GetComponent<GameOneManager>().Starters);
+        if (GameOneManager.GetComponent<GameOneManager>().Starters.Count > 4)
+        {
+            GameOneManager.GetComponent<GameOneManager>().Starters.RemoveAt(0);
+            GameOneManager.GetComponent<GameOneManager>().Starters.RemoveAt(1);
+            GameOneManager.GetComponent<GameOneManager>().Starters.RemoveAt(2);
+            GameOneManager.GetComponent<GameOneManager>().Starters.RemoveAt(3);
+        }
+
+    }
+
+
+    void HostList()
+    {
+        if (PhotonNetwork.IsMasterClient)
+        {
+            foreach (GameObject Player in GameOneManager.GetComponent<GameOneManager>().Starters)
+            {
+                if (Player.GetComponent<PhotonView>().ViewID / 1000 == 1)
+                {
+                    Player.GetComponent<PhotonView>().RPC("AdminList", RpcTarget.All);
+                }
+
+            }
+        }
+    }
 
     [PunRPC]
     void Finito(bool result)
