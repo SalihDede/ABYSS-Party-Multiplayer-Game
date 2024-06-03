@@ -25732,7 +25732,7 @@ MonoBehaviour:
   StartGUI: {fileID: 335406997}
   GameGUI: {fileID: 926095705}
   RunGame: {fileID: 1836466180}
-  InputName: {fileID: 0}
+  InputName: {fileID: 1382469737}
   RoomName: {fileID: 1398772429}
   Name: {fileID: 0}
   ShopPanel: {fileID: 0}
