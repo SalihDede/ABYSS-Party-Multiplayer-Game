@@ -14,7 +14,6 @@ public class GameManager : MonoBehaviourPunCallbacks
     public List<GameObject> MinigameList = new List<GameObject>();
     public string NameForPhoton;
 
-    public GameObject Error;
 
     public int MaxPlayer;
     public Slider MaxPlayerSlider;
@@ -52,42 +51,54 @@ public class GameManager : MonoBehaviourPunCallbacks
     // Start is called before the first frame update
     void Start()
     {
+
+
+
         PhotonNetwork.ConnectUsingSettings();
     }
     public void PlayButton()
     {
-        if(NickName.text != "")
+        if (NickName.text != "")
         {
             PhotonNetwork.NickName = NickName.text;
             StartGUI.SetActive(false);
         }
- 
-    
-    
-    }
-
-    IEnumerator AppQuit()
-    {
 
 
-        Error.SetActive(true);
-        yield return new WaitForSeconds(5);
-
-        Application.Quit();
 
     }
-
     // Update is called once per frame
     void Update()
     {
 
 
-        foreach(GameObject Player in PlayersSorted)
+        if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            if(Player == null)
-            {
-                StartCoroutine(AppQuit());
-            }
+            PlayersSorted[0].GetComponent<DiceController>().Kameraa.gameObject.SetActive(true);
+            PlayersSorted[1].GetComponent<DiceController>().Kameraa.gameObject.SetActive(false);
+            PlayersSorted[2].GetComponent<DiceController>().Kameraa.gameObject.SetActive(false);
+            PlayersSorted[3].GetComponent<DiceController>().Kameraa.gameObject.SetActive(false);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            PlayersSorted[0].GetComponent<DiceController>().Kameraa.gameObject.SetActive(false);
+            PlayersSorted[1].GetComponent<DiceController>().Kameraa.gameObject.SetActive(true);
+            PlayersSorted[2].GetComponent<DiceController>().Kameraa.gameObject.SetActive(false);
+            PlayersSorted[3].GetComponent<DiceController>().Kameraa.gameObject.SetActive(false);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            PlayersSorted[0].GetComponent<DiceController>().Kameraa.gameObject.SetActive(false);
+            PlayersSorted[1].GetComponent<DiceController>().Kameraa.gameObject.SetActive(false);
+            PlayersSorted[2].GetComponent<DiceController>().Kameraa.gameObject.SetActive(true);
+            PlayersSorted[3].GetComponent<DiceController>().Kameraa.gameObject.SetActive(false);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            PlayersSorted[0].GetComponent<DiceController>().Kameraa.gameObject.SetActive(false);
+            PlayersSorted[1].GetComponent<DiceController>().Kameraa.gameObject.SetActive(false);
+            PlayersSorted[2].GetComponent<DiceController>().Kameraa.gameObject.SetActive(false);
+            PlayersSorted[3].GetComponent<DiceController>().Kameraa.gameObject.SetActive(true);
         }
 
 
@@ -111,7 +122,7 @@ public class GameManager : MonoBehaviourPunCallbacks
 
 
 
-        if(PlayersJoin.Count == 4 && PlayersSorted.Count != 4)
+        if (PlayersJoin.Count == 4 && PlayersSorted.Count != 4)
         {
             for (int i = 0; i < 4; i++)
             {
@@ -131,7 +142,7 @@ public class GameManager : MonoBehaviourPunCallbacks
                     Debug.Log("alo");
                 }
             }
-            
+
             for (int i = 0; i < 4; i++)
             {
                 if (PlayersJoin[i].GetComponent<PhotonView>().ViewID / 1000 == 3)
@@ -143,7 +154,7 @@ public class GameManager : MonoBehaviourPunCallbacks
 
             for (int i = 0; i < 4; i++)
             {
-                if (PlayersJoin[i].GetComponent<PhotonView>().ViewID /1000 == 4)
+                if (PlayersJoin[i].GetComponent<PhotonView>().ViewID / 1000 == 4)
                 {
                     PlayersSorted.Add(PlayersJoin[i]);
                     Debug.Log("alo");
@@ -151,7 +162,7 @@ public class GameManager : MonoBehaviourPunCallbacks
             }
 
         }
-       
+
 
     }
 
@@ -173,7 +184,7 @@ public class GameManager : MonoBehaviourPunCallbacks
     }
 
 
-    
+
 
 
     public void CreateRoom()
@@ -182,7 +193,7 @@ public class GameManager : MonoBehaviourPunCallbacks
         RoomOptions options = new RoomOptions();
         options.MaxPlayers = 4; // Set maximum players
         PhotonNetwork.CreateRoom(RoomName.text, options);
-   
+
     }
     public void JoinRoom()
     {
@@ -209,7 +220,7 @@ public class GameManager : MonoBehaviourPunCallbacks
 
 
 
-    
+
     public override void OnJoinedRoom()
     {
 
@@ -218,7 +229,7 @@ public class GameManager : MonoBehaviourPunCallbacks
         GUI.SetActive(false);
 
     }
-    
+
 
     public override void OnPlayerEnteredRoom(Photon.Realtime.Player newPlayer)
     {
@@ -234,7 +245,7 @@ public class GameManager : MonoBehaviourPunCallbacks
     {
 
         base.OnPlayerLeftRoom(otherPlayer);
-    
+
     }
 
 
@@ -244,7 +255,7 @@ public class GameManager : MonoBehaviourPunCallbacks
         PhotonNetwork.CreateRoom(RoomName.text, new RoomOptions { MaxPlayers = 4 }, null);
         if (MaxPlayer == 4)
         {
-           
+
         }
         if (MaxPlayer == 3)
         {
