@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 using Photon.Pun;
 using Photon.Realtime;
@@ -13,7 +14,11 @@ public class GameManager : MonoBehaviourPunCallbacks
     public string NameForPhoton;
 
 
+    public int MaxPlayer;
+    public Slider MaxPlayerSlider;
+
     public TMP_InputField NickName;
+    public TMP_Text NickNameShowCase;
 
     public TMP_Text[] Line;
 
@@ -61,7 +66,9 @@ public class GameManager : MonoBehaviourPunCallbacks
     // Update is called once per frame
     void Update()
     {
-       
+
+        MaxPlayer = (int)(MaxPlayerSlider.value);
+        NickNameShowCase.text = NickName.text;
 
 
 
@@ -71,10 +78,9 @@ public class GameManager : MonoBehaviourPunCallbacks
 
 
 
-
-        if(PlayersJoin.Count == 4 && PlayersSorted.Count != 4)
+        if(PlayersJoin.Count == MaxPlayer && PlayersSorted.Count != MaxPlayer)
         {
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < MaxPlayer; i++)
             {
                 if (PlayersJoin[i].GetComponent<PhotonView>().ViewID / 1000 == 1)
                 {
@@ -84,7 +90,7 @@ public class GameManager : MonoBehaviourPunCallbacks
 
 
 
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < MaxPlayer; i++)
             {
                 if (PlayersJoin[i].GetComponent<PhotonView>().ViewID / 1000 == 2)
                 {
@@ -92,7 +98,7 @@ public class GameManager : MonoBehaviourPunCallbacks
                     Debug.Log("alo");
                 }
             }
-
+            /*
             for (int i = 0; i < 4; i++)
             {
                 if (PlayersJoin[i].GetComponent<PhotonView>().ViewID / 1000 == 3)
@@ -109,7 +115,7 @@ public class GameManager : MonoBehaviourPunCallbacks
                     PlayersSorted.Add(PlayersJoin[i]);
                     Debug.Log("alo");
                 }
-            }
+            }*/
 
         }
        
@@ -202,9 +208,23 @@ public class GameManager : MonoBehaviourPunCallbacks
 
     public void CreateRoomButton()
     {
+        if(MaxPlayer == 4)
+        {
+            PhotonNetwork.CreateRoom(RoomName.text, new RoomOptions { MaxPlayers = 4 }, null);
+        }
+        if (MaxPlayer == 3)
+        {
+            PhotonNetwork.CreateRoom(RoomName.text, new RoomOptions { MaxPlayers = 3 }, null);
+        }
+        if (MaxPlayer == 2)
+        {
+            PhotonNetwork.CreateRoom(RoomName.text, new RoomOptions { MaxPlayers = 2 }, null);
+        }
+        if (MaxPlayer == 1)
+        {
+            PhotonNetwork.CreateRoom(RoomName.text, new RoomOptions { MaxPlayers = 1 }, null);
+        }
 
-        PhotonNetwork.CreateRoom(RoomName.text, new RoomOptions { MaxPlayers = 4 }, null);
-    
     }
 
 }
