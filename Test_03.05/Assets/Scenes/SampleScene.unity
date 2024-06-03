@@ -25556,11 +25556,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MinigameList:
-  - {fileID: 2132587769}
-  - {fileID: 2132587769}
-  - {fileID: 2132587769}
-  - {fileID: 2132587769}
-  - {fileID: 2132587769}
+  - {fileID: 1556911717}
+  - {fileID: 1556911717}
+  - {fileID: 1556911717}
+  - {fileID: 1556911717}
+  - {fileID: 1556911717}
   NameForPhoton: 
   MaxPlayer: 0
   MaxPlayerSlider: {fileID: 12919862}

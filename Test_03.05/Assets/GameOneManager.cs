@@ -195,7 +195,7 @@ public class GameOneManager : MonoBehaviourPunCallbacks
                 }
      
 
-            if(Starters.Count == 2)
+            if(Starters.Count == 4)
             {
 
                 if (SpawnedBall.GetComponent<PhotonView>().Owner == Starters[0].GetComponent<PhotonView>().Owner && SpawnedBall.GetComponent<ball>().SomeoneTouch)
@@ -267,7 +267,7 @@ public class GameOneManager : MonoBehaviourPunCallbacks
 
     IEnumerator ScoreUp()
     {
-        while (Starters[0].GetComponent<PlayerABYSS>().score < 1000000 || Starters[1].GetComponent<PlayerABYSS>().score < 1000000 || Starters[2].GetComponent<PlayerABYSS>().score < 1000000 || Starters[3].GetComponent<PlayerABYSS>().score < 1000000)
+        while (!GameFinished)
         {
             yield return new WaitForSeconds(1);
             if (Starters[0].GetComponent<PhotonView>().Owner == thisguy)

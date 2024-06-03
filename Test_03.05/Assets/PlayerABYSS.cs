@@ -28,7 +28,7 @@ public class PlayerABYSS : MonoBehaviourPunCallbacks
     {
 
 
-        if(score == 1000000 || GameOneManager.GetComponent<GameOneManager>().countdownText.text == "Finish")
+        if(GameOneManager.GetComponent<GameOneManager>().countdownText.text == "Finish")
         {
             photonView.RPC("Finito", RpcTarget.All, true,score);
         }
