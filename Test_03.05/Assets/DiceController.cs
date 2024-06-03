@@ -52,17 +52,21 @@ public class DiceController : MonoBehaviourPunCallbacks
     {
 
 
+        
+
+
+
         photonView = GetComponent<PhotonView>();
 
         GameManager = GameObject.Find("GameManager");
-        gameObject.name = PhotonNetwork.NickName;
+        gameObject.name = photonView.Controller.NickName;
 
         GameManager.GetComponent<GameManager>().NameForPhoton = gameObject.name;
 
         diceResultText = GameObject.Find("DiceNumberResult").GetComponent<TMP_Text>();
         GameManager.GetComponent<GameManager>().PlayersJoin.Add(gameObject);
 
-        NameOf.text = PhotonNetwork.NickName;
+        NameOf.text = photonView.Controller.NickName;
 
 
         if (photonView.IsMine)
@@ -157,9 +161,25 @@ public class DiceController : MonoBehaviourPunCallbacks
         }
 
     }
+    public void MaxPlayerImplementFunc()
+    {
+        if (PhotonNetwork.IsMasterClient)
+        {
+            photonView.RPC("MaxPlayerImplement", RpcTarget.All, GameManager.GetComponent<GameManager>().MaxPlayer);
+
+        }
+
+    }
+
+    [PunRPC]
+    void MaxPlayerImplement(int result)
+    {
+        GameManager.GetComponent<GameManager>().MaxPlayer = result;
 
 
-            public void StartGameButton()
+    }
+
+    public void StartGameButton()
             {
                 if (PhotonNetwork.IsMasterClient && PhotonNetwork.CurrentRoom.PlayerCount == 4)
                 {
@@ -174,7 +194,22 @@ public class DiceController : MonoBehaviourPunCallbacks
     {
         if (photonView.IsMine)
         {
-            diceResult = Random.Range(1, 7);
+            if(GameManager.GetComponent<GameManager>().WhoseTurn == 0)
+            {
+                diceResult = Random.Range(1, 9);
+            }
+            if (GameManager.GetComponent<GameManager>().WhoseTurn == 1)
+            {
+                diceResult = Random.Range(1, 7);
+            }
+            if (GameManager.GetComponent<GameManager>().WhoseTurn == 2)
+            {
+                diceResult = Random.Range(1, 5);
+            }
+            if (GameManager.GetComponent<GameManager>().WhoseTurn == 3)
+            {
+                diceResult = Random.Range(1, 3);
+            }
             stepLine += diceResult;
 
             if (stepLine >= StepsList.Count)
@@ -263,6 +298,8 @@ public class DiceController : MonoBehaviourPunCallbacks
 
 
     }
+
+
 
     [PunRPC]
     void WhoseTurnUpdate(int result)
