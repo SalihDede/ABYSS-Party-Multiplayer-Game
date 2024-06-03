@@ -106,7 +106,7 @@ public class GameManager : MonoBehaviourPunCallbacks
                     Debug.Log("alo");
                 }
             }
-            /*
+            
             for (int i = 0; i < 4; i++)
             {
                 if (PlayersJoin[i].GetComponent<PhotonView>().ViewID / 1000 == 3)
@@ -123,7 +123,7 @@ public class GameManager : MonoBehaviourPunCallbacks
                     PlayersSorted.Add(PlayersJoin[i]);
                     Debug.Log("alo");
                 }
-            }*/
+            }
 
         }
        
