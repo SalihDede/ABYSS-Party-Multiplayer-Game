@@ -90,10 +90,10 @@ public class DiceController : MonoBehaviourPunCallbacks
     {
 
         //GameManager.GetComponent<GameManager>().Line[GameManager.GetComponent<GameManager>().PlayersSorted.IndexOf(gameObject)].text = photonView.Controller.NickName;
-
+        /*
         MaxPlayerImplementFunc();
 
-
+        */
 
        GameManager.GetComponent<GameManager>().PlayersJoin.Sort((player1, player2) => player2.GetComponent<DiceController>().stepLine.CompareTo(player1.GetComponent<DiceController>().stepLine));
 
@@ -226,7 +226,7 @@ public class DiceController : MonoBehaviourPunCallbacks
             StartCoroutine(MovePlayer(new Vector3(StepsList[stepLine].transform.position.x, StepsList[stepLine].transform.position.y + 0.5f, StepsList[stepLine].transform.position.z)));
             photonView.RPC("SyncDiceResult", RpcTarget.All, diceResult,stepLine);
 
-            if (GameManager.GetComponent<GameManager>().WhoseTurn != GameManager.GetComponent<GameManager>().MaxPlayer -1)
+            if (GameManager.GetComponent<GameManager>().WhoseTurn != 3)
             {
 
                 GameManager.GetComponent<GameManager>().WhoseTurn += 1;

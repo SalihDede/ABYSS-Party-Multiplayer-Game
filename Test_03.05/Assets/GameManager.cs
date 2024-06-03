@@ -69,7 +69,7 @@ public class GameManager : MonoBehaviourPunCallbacks
 
         MaxPlayer = (int)(MaxPlayerSlider.value);
         NickNameShowCase.text = NickName.text;
-
+        /*
         foreach(GameObject player in PlayersJoin)
         {
 
@@ -82,11 +82,11 @@ public class GameManager : MonoBehaviourPunCallbacks
 
 
 
+        */
 
 
 
-
-        if(PlayersJoin.Count == MaxPlayer && PlayersSorted.Count != MaxPlayer)
+        if(PlayersJoin.Count == 4 && PlayersSorted.Count != 4)
         {
             for (int i = 0; i < MaxPlayer; i++)
             {
@@ -216,9 +216,10 @@ public class GameManager : MonoBehaviourPunCallbacks
 
     public void CreateRoomButton()
     {
-        if(MaxPlayer == 4)
+        PhotonNetwork.CreateRoom(RoomName.text, new RoomOptions { MaxPlayers = 4 }, null);
+        if (MaxPlayer == 4)
         {
-            PhotonNetwork.CreateRoom(RoomName.text, new RoomOptions { MaxPlayers = 4 }, null);
+           
         }
         if (MaxPlayer == 3)
         {
