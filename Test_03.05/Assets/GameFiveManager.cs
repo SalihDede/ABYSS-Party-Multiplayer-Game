@@ -46,8 +46,7 @@ public class GameFiveManager : MonoBehaviourPunCallbacks
 
 
         if (Ranking.Count == 4)
-        {
-            GameManagerrr.GetComponent<GameManager>().Kamera.SetActive(true);
+        {   
             gameObject.SetActive(false);
 
             GameManagerrr.GetComponent<GameManager>().PlayersTemp.Clear();
@@ -76,6 +75,10 @@ public class GameFiveManager : MonoBehaviourPunCallbacks
             Ranking.Clear();
             Starters.Clear();
             GameManagerrr.GetComponent<GameManager>().MiniGameStarted = false;
+            GameManagerrr.GetComponent<GameManager>().PlayersSorted[0].GetComponent<DiceController>().Kameraa.gameObject.SetActive(true);
+            GameManagerrr.GetComponent<GameManager>().PlayersSorted[1].GetComponent<DiceController>().Kameraa.gameObject.SetActive(false);
+            GameManagerrr.GetComponent<GameManager>().PlayersSorted[2].GetComponent<DiceController>().Kameraa.gameObject.SetActive(false);
+            GameManagerrr.GetComponent<GameManager>().PlayersSorted[3].GetComponent<DiceController>().Kameraa.gameObject.SetActive(false);
             Cursor.lockState = CursorLockMode.None;
             gameObject.SetActive(false);
         }
