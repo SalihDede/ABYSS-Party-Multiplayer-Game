@@ -2794,6 +2794,11 @@ Transform:
   m_Father: {fileID: 1836466181}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &145862497 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3505012294789075169, guid: 9bbbc7baff9da7749805b39f2e2dcec2, type: 3}
+  m_PrefabInstance: {fileID: 1516634219}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &148553832
 GameObject:
   m_ObjectHideFlags: 0
@@ -25556,11 +25561,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MinigameList:
-  - {fileID: 1556911717}
-  - {fileID: 1556911717}
-  - {fileID: 1556911717}
-  - {fileID: 1556911717}
-  - {fileID: 1556911717}
+  - {fileID: 145862497}
+  - {fileID: 145862497}
+  - {fileID: 145862497}
+  - {fileID: 145862497}
+  - {fileID: 145862497}
   NameForPhoton: 
   MaxPlayer: 0
   MaxPlayerSlider: {fileID: 12919862}
