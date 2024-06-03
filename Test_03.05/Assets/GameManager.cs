@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviourPunCallbacks
     public List<GameObject> MinigameList = new List<GameObject>();
     public string NameForPhoton;
 
+    public GameObject Error;
 
     public int MaxPlayer;
     public Slider MaxPlayerSlider;
@@ -64,12 +65,30 @@ public class GameManager : MonoBehaviourPunCallbacks
     
     
     }
+
+    IEnumerator AppQuit()
+    {
+
+
+        Error.SetActive(true);
+        yield return new WaitForSeconds(5);
+
+        Application.Quit();
+
+    }
+
     // Update is called once per frame
     void Update()
     {
 
 
-   
+        foreach(GameObject Player in PlayersSorted)
+        {
+            if(Player == null)
+            {
+                StartCoroutine(AppQuit());
+            }
+        }
 
 
 
