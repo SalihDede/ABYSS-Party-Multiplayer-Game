@@ -372,10 +372,16 @@ public class DiceController : MonoBehaviourPunCallbacks
                         kvp.Key.position = kvp.Value;
                     }
 
-                // Clear current position and shuffle puzzle
-                puzzleManager.SaveCurrentPositions();
-                puzzleManager.ShufflePuzzle();
-                puzzleManager.StartCoroutine(puzzleManager.UpdateCurrentPositionsPeriodically());
+                    // Activate the GameObject if it's inactive
+                    if (!puzzleManager.gameObject.activeInHierarchy)
+                    {
+                        puzzleManager.gameObject.SetActive(true);
+                    }
+
+                    // Clear current position and shuffle puzzle
+                    puzzleManager.SaveCurrentPositions();
+                    puzzleManager.ShufflePuzzle();
+                    puzzleManager.StartCoroutine(puzzleManager.UpdateCurrentPositionsPeriodically());
                 }
             }
         }
