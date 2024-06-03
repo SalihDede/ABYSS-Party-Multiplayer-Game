@@ -381,7 +381,8 @@ public class DiceController : MonoBehaviourPunCallbacks
                     // Clear current position and shuffle puzzle
                     puzzleManager.SaveCurrentPositions();
                     puzzleManager.ShufflePuzzle();
-                    puzzleManager.StartCoroutine(puzzleManager.UpdateCurrentPositionsPeriodically());
+                    StartPuzzleManagerCoroutine(puzzleManager);
+                    //puzzleManager.StartCoroutine(puzzleManager.UpdateCurrentPositionsPeriodically());
                 }
             }
         }
