@@ -25714,7 +25714,6 @@ MonoBehaviour:
   - {fileID: 2132587769}
   - {fileID: 1516634223}
   NameForPhoton: 
-  Error: {fileID: 1787695011}
   MaxPlayer: 0
   MaxPlayerSlider: {fileID: 12919862}
   NickName: {fileID: 377854081}
@@ -31930,7 +31929,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!81 &1481093703
 AudioListener:
   m_ObjectHideFlags: 0
