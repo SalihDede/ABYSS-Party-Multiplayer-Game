@@ -116,10 +116,8 @@ public class GameOneManager : MonoBehaviourPunCallbacks
                 }
             }
 
-            GameManagerrr.GetComponent<GameManager>().PlayersSorted[0].GetComponent<DiceController>().Kameraa.gameObject.SetActive(true);
-            GameManagerrr.GetComponent<GameManager>().PlayersSorted[1].GetComponent<DiceController>().Kameraa.gameObject.SetActive(false);
-            GameManagerrr.GetComponent<GameManager>().PlayersSorted[2].GetComponent<DiceController>().Kameraa.gameObject.SetActive(false);
-            GameManagerrr.GetComponent<GameManager>().PlayersSorted[3].GetComponent<DiceController>().Kameraa.gameObject.SetActive(false);
+
+            GameManagerrr.GetComponent<GameManager>().Kamera.SetActive(true);
             GameFinished = false;
             GameManagerrr.GetComponent<GameManager>().MiniGameStarted = false;
             Cursor.visible = true;

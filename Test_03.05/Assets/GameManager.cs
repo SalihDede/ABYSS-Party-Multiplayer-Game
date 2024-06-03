@@ -51,9 +51,6 @@ public class GameManager : MonoBehaviourPunCallbacks
     // Start is called before the first frame update
     void Start()
     {
-
-           
-      
         PhotonNetwork.ConnectUsingSettings();
     }
     public void PlayButton()
@@ -72,34 +69,7 @@ public class GameManager : MonoBehaviourPunCallbacks
     {
 
 
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            PlayersSorted[0].GetComponent<DiceController>().Kameraa.gameObject.SetActive(true);
-            PlayersSorted[1].GetComponent<DiceController>().Kameraa.gameObject.SetActive(false);
-            PlayersSorted[2].GetComponent<DiceController>().Kameraa.gameObject.SetActive(false);
-            PlayersSorted[3].GetComponent<DiceController>().Kameraa.gameObject.SetActive(false);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            PlayersSorted[0].GetComponent<DiceController>().Kameraa.gameObject.SetActive(false);
-            PlayersSorted[1].GetComponent<DiceController>().Kameraa.gameObject.SetActive(true);
-            PlayersSorted[2].GetComponent<DiceController>().Kameraa.gameObject.SetActive(false);
-            PlayersSorted[3].GetComponent<DiceController>().Kameraa.gameObject.SetActive(false);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            PlayersSorted[0].GetComponent<DiceController>().Kameraa.gameObject.SetActive(false);
-            PlayersSorted[1].GetComponent<DiceController>().Kameraa.gameObject.SetActive(false);
-            PlayersSorted[2].GetComponent<DiceController>().Kameraa.gameObject.SetActive(true);
-            PlayersSorted[3].GetComponent<DiceController>().Kameraa.gameObject.SetActive(false);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha4))
-        {
-            PlayersSorted[0].GetComponent<DiceController>().Kameraa.gameObject.SetActive(false);
-            PlayersSorted[1].GetComponent<DiceController>().Kameraa.gameObject.SetActive(false);
-            PlayersSorted[2].GetComponent<DiceController>().Kameraa.gameObject.SetActive(false);
-            PlayersSorted[3].GetComponent<DiceController>().Kameraa.gameObject.SetActive(true);
-        }
+   
 
 
 
