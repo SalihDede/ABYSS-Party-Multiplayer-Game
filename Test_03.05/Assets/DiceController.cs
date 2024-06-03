@@ -316,12 +316,14 @@ public class DiceController : MonoBehaviourPunCallbacks
 
             foreach (var puzzleMap in currentMinigame.PuzzleMapList)
             {
-            var puzzleManager = puzzleMap.GetComponent<PuzzleManager>();
+                var puzzleManager = puzzleMap.GetComponent<PuzzleManager>();
 
-            if (puzzleManager.originalPositions != null)
+                if (puzzleManager.originalPositions != null)
                 {
-                    puzzleManager.originalPositions.Clear();
+                    // clear current position
                     puzzleManager.currentPositions.Clear();
+
+                    // save goal position for replaying.
                     puzzleManager.SaveOriginalPositions();
                     puzzleManager.PrintOriginalPositions();
                     puzzleManager.SaveCurrentPositions();
@@ -329,7 +331,8 @@ public class DiceController : MonoBehaviourPunCallbacks
                     StartCoroutine(puzzleManager.UpdateCurrentPositionsPeriodically());
                 }
             }
-        }
+        }  
+
 
         if (GameManager.GetComponent<GameManager>().MinigameList[GameManager.GetComponent<GameManager>().MinigameCount].name == "YusufGame")
         {
