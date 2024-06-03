@@ -39,12 +39,10 @@ public class GameOneManager : MonoBehaviourPunCallbacks
     public GameObject BallSpawn;
     public GameObject SpawnedBall;
 
-    private PhotonView photonView;
     public bool GameFinished;
     void Start()
     {
         GameManagerrr = GameObject.Find("GameManager");
-        photonView = GetComponent<PhotonView>();
 
 
     }
@@ -231,10 +229,10 @@ public class GameOneManager : MonoBehaviourPunCallbacks
 
 
 
-            Player1Text.text = "Player 1: " + Starters[0].GetComponent<PlayerABYSS>().score;
-            Player2Text.text = "Player 2: " + Starters[1].GetComponent<PlayerABYSS>().score;
-             Player3Text.text = "Player 3: " + Starters[2].GetComponent<PlayerABYSS>().score;
-             Player4Text.text = "Player 4: " + Starters[3].GetComponent<PlayerABYSS>().score;
+            Player1Text.text = Starters[0].GetComponent<PhotonView>().Owner.NickName+": " + Starters[0].GetComponent<PlayerABYSS>().score;
+            Player2Text.text = Starters[1].GetComponent<PhotonView>().Owner.NickName + ": " + Starters[1].GetComponent<PlayerABYSS>().score;
+             Player3Text.text = Starters[2].GetComponent<PhotonView>().Owner.NickName + ": " + Starters[2].GetComponent<PlayerABYSS>().score;
+             Player4Text.text = Starters[3].GetComponent<PhotonView>().Owner.NickName + ": " + Starters[3].GetComponent<PlayerABYSS>().score;
             
         }
 

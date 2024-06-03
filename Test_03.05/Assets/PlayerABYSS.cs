@@ -30,7 +30,7 @@ public class PlayerABYSS : MonoBehaviourPunCallbacks
 
         if(score == 1000000 || GameOneManager.GetComponent<GameOneManager>().countdownText.text == "Finish")
         {
-            photonView.RPC("Finito", RpcTarget.All, true);
+            photonView.RPC("Finito", RpcTarget.All, true,score);
         }
 
    
@@ -56,34 +56,18 @@ public class PlayerABYSS : MonoBehaviourPunCallbacks
     }
 
 
-    [PunRPC]
-    void AdminList()
-    {
-
-
-     
-
-        GameOneManager.GetComponent<GameOneManager>().Starters.AddRange(GameOneManager.GetComponent<GameOneManager>().Starters);
-        if (GameOneManager.GetComponent<GameOneManager>().Starters.Count > 4)
-        {
-            GameOneManager.GetComponent<GameOneManager>().Starters.RemoveAt(0);
-            GameOneManager.GetComponent<GameOneManager>().Starters.RemoveAt(1);
-            GameOneManager.GetComponent<GameOneManager>().Starters.RemoveAt(2);
-            GameOneManager.GetComponent<GameOneManager>().Starters.RemoveAt(3);
-        }
-
-    }
+  
 
 
    
 
     [PunRPC]
-    void Finito(bool result)
+    void Finito(bool result, int scoree)
     {
         if (photonView.IsMine)
         {
 
-            GetComponent<PlayerABYSS>().score = GetComponent<PlayerABYSS>().score;
+            GetComponent<PlayerABYSS>().score = scoree;
             ScoreImplemented = true;
 
         }
