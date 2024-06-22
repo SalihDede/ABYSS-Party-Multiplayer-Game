@@ -2135,6 +2135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7adbd8d90c915ac4f8a9d775ed03ede4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Anim: {fileID: 8017516911683782433}
   chair: {fileID: 0}
   bluePlate: {fileID: 0}
   happyPillow: {fileID: 0}
@@ -2806,6 +2807,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 8987136569212136119}
     m_Modifications:
+    - target: {fileID: 743415513315065826, guid: a5909dfcd082e00408e58b24c2e23de9, type: 3}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 743415513315065854, guid: a5909dfcd082e00408e58b24c2e23de9, type: 3}
       propertyPath: m_Name
       value: Canvas

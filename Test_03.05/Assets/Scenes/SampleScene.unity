@@ -22216,7 +22216,7 @@ Transform:
   - {fileID: 203276102}
   - {fileID: 592086501}
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1064075232
 GameObject:
@@ -25713,6 +25713,8 @@ MonoBehaviour:
   MinigameList:
   - {fileID: 2132587769}
   - {fileID: 1516634223}
+  - {fileID: 1299971580}
+  - {fileID: 1556911717}
   NameForPhoton: 
   MaxPlayer: 0
   MaxPlayerSlider: {fileID: 12919862}
@@ -34981,7 +34983,7 @@ Transform:
   - {fileID: 1757312734}
   - {fileID: 926095706}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1624030720 stripped
 GameObject:

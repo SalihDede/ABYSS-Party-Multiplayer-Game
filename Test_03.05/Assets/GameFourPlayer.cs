@@ -7,6 +7,9 @@ using Photon.Realtime;
 
 public class GameFourPlayer : MonoBehaviour
 {
+
+    public Animator Anim;
+
     // Game objects for different objects in the scene
     public GameObject chair; public GameObject bluePlate; public GameObject happyPillow; public GameObject Fork;
     public GameObject Spoon; public GameObject Knife; public GameObject Hat;
@@ -212,7 +215,6 @@ public class GameFourPlayer : MonoBehaviour
     {
 
 
-
         GameManagerr = GameObject.Find("Alp Game");
         GameManagerr.GetComponent<GameFourManager>().Starters.Add(gameObject);
         photonView = GetComponent<PhotonView>();
@@ -362,7 +364,26 @@ public class GameFourPlayer : MonoBehaviour
     void Update()
     {
 
-            if(gameObject.GetComponent<PhotonView>().IsMine)
+
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.A))
+        {
+            Anim.SetBool("IsRun", true);
+        }
+        else
+        {
+            Anim.SetBool("IsRun", false);
+        }
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Anim.SetBool("IsJump", true);
+        }
+        else
+        {
+            Anim.SetBool("IsJump", false);
+        }
+
+
+        if (gameObject.GetComponent<PhotonView>().IsMine)
             {
                 photonView.RPC("MyScorePublish", RpcTarget.All, score);
             }

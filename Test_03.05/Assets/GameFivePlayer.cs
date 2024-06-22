@@ -8,6 +8,9 @@ using UnityEngine;
 public class GameFivePlayer : MonoBehaviour
 {
 
+
+    public Animator Anim;
+
     private PhotonView photonView;
 
     public bool IsHeSolve;
@@ -22,7 +25,6 @@ public class GameFivePlayer : MonoBehaviour
 
     void Start()
     {
-
         photonView = GetComponent<PhotonView>();
 
 
@@ -70,6 +72,24 @@ public class GameFivePlayer : MonoBehaviour
     void Update()
     {
 
+
+
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.A))
+        {
+            Anim.SetBool("IsRun", true);
+        }
+        else
+        {
+            Anim.SetBool("IsRun", false);
+        }
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Anim.SetBool("IsJump", true);
+        }
+        else
+        {
+            Anim.SetBool("IsJump", false);
+        }
 
         SolvedThePuzzle();
 
